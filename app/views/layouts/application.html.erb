@@ -22,6 +22,20 @@
       </div>
     <% end %>
 
+    <%= link_to root_path do %>
+      <h1 style="font-family: cursive;">portfolio</h1>
+    <% end %>
+
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <button type="button" class="btn btn-warning">ログアウト</button>
+    <% end %>
+    <%= link_to new_user_session_path do %>
+      <button type="button" class="btn btn-warning">ログイン</button>
+    <% end %>
+    <%= link_to new_user_registration_path do %>
+      <button type="button" class="btn btn-warning">新規登録</button>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
