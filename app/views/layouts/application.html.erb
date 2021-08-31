@@ -22,23 +22,44 @@
       </div>
     <% end %>
 
-    <%= link_to root_path do %>
-      <h1 style="font-family: cursive;">portfolio</h1>
-    <% end %>
 
-    <% if user_signed_in? %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        <button type="button" class="btn btn-warning">ログアウト</button>
-      <% end %>
-    <% else %>
-      <%= link_to new_user_session_path do %>
-        <button type="button" class="btn btn-warning">ログイン</button>
-      <% end %>
-      <%= link_to new_user_registration_path do %>
-        <button type="button" class="btn btn-warning">新規登録</button>
-      <% end %>
-    <% end %>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#fcefca;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <%= link_to root_path do %>
+        <h1 style="font-family: cursive;">portfolio</h1>
+      <% end %>
+
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <button type="button" class="btn btn-warning">ログアウト</button>
+            <% end %>
+          </li>
+
+        <% else %>
+          <li class="nav-item active mx-3">
+            <%= link_to new_user_session_path do %>
+              <button type="button" class="btn btn-warning">ログイン</button>
+            <% end %>
+          </li>
+
+          <li class="nav-item active">
+            <%= link_to new_user_registration_path do %>
+              <button type="button" class="btn btn-warning">新規登録</button>
+            <% end %>
+          </li>
+        <% end %>
+
+        </ul>
+      </div>
+
+    </nav>
     <%= yield %>
   </body>
 </html>
