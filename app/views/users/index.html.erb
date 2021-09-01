@@ -3,16 +3,20 @@
 </div>
 
 <div class="container">
-  <div class="card-deck py-5">
+  <div class="card-deck py-5" style="width:40rem">
     <% @users.each do |user| %>
       <div class="card">
-        <%= attachment_image_tag user, :profile_image, fallback: "no-image.png" %>
+        <div class="text-center">
+          <%= link_to user_path(user) do %>
+            <%= attachment_image_tag user, :profile_image, fallback: "no-image.png" %>
+          <% end %>
+        </div>
         <div class="card-body">
           <h4 class="card-title">
-            <%= user.username %>
+            <%= link_to user.username, user_path(user) %>
           </h4>
           <h6 class="card-title">
-            投稿数：
+            投稿数：あとで実装
           </h6>
         </div>
       </div>
