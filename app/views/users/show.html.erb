@@ -4,20 +4,27 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image is-rounded" %>
     </div>
 
-    <div class="col-sm-4 d-flex align-items-center">
+    <div class="col-sm-3 d-flex align-items-center">
       <strong><%= @user.username %></strong>
     </div>
 
     <% if @user.id == current_user.id %>
-      <div class="col-sm-4 d-flex align-items-center">
+      <div class="col-sm-3 d-flex align-items-center">
         <%= @user.email %>
+      </div>
+
+      <div class="col-sm-3 d-flex align-items-center">
+        <%= link_to "編集", edit_user_path(@user), class:"btn btn-primary" %>
       </div>
     <% end %>
 
     <%= @user.profile %>
   </div>
 </div>
+
+
+レシピの情報は後ほど実装。
