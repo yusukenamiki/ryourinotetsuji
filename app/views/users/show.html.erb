@@ -1,10 +1,21 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="text-white p-5" style="background-color:#332f28;">
+  <h1 class="display-5">マイページ</h1>
+</div>
 
-<%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image is-rounded" %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+        <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image is-rounded" %>
+    </div>
 
-<%= @user.username %>
+    <div class="col-sm-4 d-flex align-items-center">
+      <strong><%= @user.username %></strong>
+    </div>
 
-<%= @user.email %>
+    <div class="col-sm-4 d-flex align-items-center">
+      <%= @user.email %>
+    </div>
 
-<%= @user.profile %>
+    <%= @user.profile %>
+  </div>
+</div>
