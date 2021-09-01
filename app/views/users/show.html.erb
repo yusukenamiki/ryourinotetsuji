@@ -12,9 +12,11 @@
       <strong><%= @user.username %></strong>
     </div>
 
-    <div class="col-sm-4 d-flex align-items-center">
-      <%= @user.email %>
-    </div>
+    <% if @user.id == current_user.id %>
+      <div class="col-sm-4 d-flex align-items-center">
+        <%= @user.email %>
+      </div>
+    <% end %>
 
     <%= @user.profile %>
   </div>
