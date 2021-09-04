@@ -3,13 +3,14 @@
 </div>
 
 <div class="container">
-  <div class="card-deck py-5" style="width:40rem">
+  <div class="card-deck py-5" style="width: 40rem">
     <% @users.each do |user| %>
       <div class="card">
-        <div class="text-center">
+        <div class="text-center p-3">
           <%= link_to user_path(user) do %>
-            <%= attachment_image_tag user, :profile_image, fallback: "no-image.png" %>
+            <%= attachment_image_tag user, :profile_image, fallback: "no-image.png", size: "250x250" %>
           <% end %>
+
         </div>
         <div class="card-body">
           <h4 class="card-title">

@@ -3,28 +3,41 @@
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-3">
-        <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image is-rounded" %>
+  <div class="row my-5 mx-3">
+
+    <div class="col-3 d-flex align-items-center p-1">
+      <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "128x128" %>
     </div>
 
-    <div class="col-sm-3 d-flex align-items-center">
-      <strong><%= @user.username %></strong>
+    <div class="col-9">
+      <table class="table table-borderless mt-1">
+        <tr>
+          <td class="align-middle">
+            <strong><%= @user.username %></strong>
+          </td>
+
+          <% if @user.id == current_user.id %>
+            <td class="align-middle">
+              <%= @user.email %>
+            </td>
+
+            <td class="py-1 align-middle">
+              <%= link_to "編集", edit_user_path(@user), class:"btn btn-primary" %>
+            </td>
+          <% end %>
+        </tr>
+      </table>
+
+      <table class="table table-borderless">
+        <tr>
+          <td>
+            <%= @user.profile %>
+          </td>
+        </tr>
+      </table>
     </div>
 
-    <% if @user.id == current_user.id %>
-      <div class="col-sm-3 d-flex align-items-center">
-        <%= @user.email %>
-      </div>
-
-      <div class="col-sm-3 d-flex align-items-center">
-        <%= link_to "編集", edit_user_path(@user), class:"btn btn-primary" %>
-      </div>
-    <% end %>
-
-    <%= @user.profile %>
   </div>
 </div>
-
 
 レシピの情報は後ほど実装。
