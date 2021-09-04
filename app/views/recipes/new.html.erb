@@ -1,15 +1,28 @@
-<h1>Recipes#new</h1>
-<p>Find me in app/views/recipes/new.html.erb</p>
+<div class="text-white p-5" style="background-color:#332f28;">
+  <h1 class="display-5">新規レシピ作成</h1>
+</div>
 
-<%= form_for @recipe do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<div class="container">
+  <div class="text-left p-5">
+    <%= form_for @recipe do |f| %>
 
-  <%= f.label :body %>
-  <%= f.text_area :body %>
+    <div class="form-group">
+      <%= f.label :title, "レシピ名" %><br />
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
 
-  <%= f.label :image %>
-  <%= f.attachment_field :image %>
+    <div class="form-group">
+      <%= f.label :body, "作り方" %><br />
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
 
-  <%= f.submit %>
-<% end %>
+    <div class="form-group">
+      <%= f.label :image, "写真" %><br />
+      <%= f.attachment_field :image %>
+    </div>
+
+    <%= f.submit "投稿", class:"btn btn-primary" %>
+
+    <% end %>
+  </div>
+</div>
