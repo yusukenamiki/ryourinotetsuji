@@ -1,2 +1,9 @@
 <h1>Recipes#index</h1>
 <p>Find me in app/views/recipes/index.html.erb</p>
+
+<% @recipes.each do |recipe| %>
+  <%= attachment_image_tag recipe, :image %>
+  <%= attachment_image_tag recipe.user, :profile_image, fallback: "no-image.png" %>
+  <%= recipe.user.username %>
+  <%= recipe.updated_at.strftime("%Y-%m-%d %H:%M") %>
+<% end %>
