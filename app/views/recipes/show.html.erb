@@ -1,8 +1,27 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<div class="text-white p-5" style="background-color:#332f28;">
+  <h1 class="display-5">レシピ詳細</h1>
+</div>
 
-<%= attachment_image_tag @recipe, :image %>
+<div class="col d-flex justify-content-center">
+  <div class="text-center py-5">
+    <div class="card" style="width: 42.5rem">
 
-<%= @recipe.title %>
+      <div class="p-3">
+        <%= attachment_image_tag @recipe, :image, size: "640x480" %>
+      </div>
 
-<%= simple_format @recipe.body %>
+      <div class="card-body text-left  py-0">
+        <h4 class="card-title">
+          <strong><%= @recipe.title %></strong>
+        </h4>
+        <p class="border-bottom pb-1 mb-1">
+          <strong>レシピ</strong>
+        </p>
+        <div>
+          <%= simple_format @recipe.body %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
