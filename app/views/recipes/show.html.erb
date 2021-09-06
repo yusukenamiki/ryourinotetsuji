@@ -1,2 +1,45 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<div class="text-white p-5 mb-5" style="background-color:#332f28;">
+  <h1 class="display-5">レシピ詳細</h1>
+</div>
+
+<div class="container">
+  <div class="card-deck">
+    <div class="card mb-5" style="min-width: 42.5rem">
+      <div class="p-3 text-center">
+        <%= attachment_image_tag @recipe, :image, size: "640x480" %>
+      </div>
+      <div class="card-body text-left pt-0">
+        <h4 class="card-title">
+          <strong><%= @recipe.title %></strong>
+        </h4>
+        <p class="border-bottom pb-1 mb-1">
+          <strong>レシピ</strong>
+        </p>
+        <div>
+          <%= simple_format @recipe.body %>
+        </div>
+        <% if @recipe.user.id == current_user.id %>
+          <%= link_to edit_recipe_path(@recipe) do %>
+            <button type="button" class="btn btn-primary">編集</button>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="card mb-5 bg-warning" style="width: 18rem; height: 10rem;">
+      <div class="card-header">
+        <%= @recipe.user.username %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= @recipe.user.profile %>
+        </h5>
+      </div>
+      <%= link_to user_path(@recipe.user) do %>
+        <div class="m-3">
+          <%= @recipe.user.username %>さんのページへ
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
