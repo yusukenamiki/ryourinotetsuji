@@ -40,4 +40,9 @@
   </div>
 </div>
 
-レシピの情報は後ほど実装。
+<% @user.recipes.each do |recipe| %>
+  <%= attachment_image_tag recipe, :image %>
+  <%= link_to "詳細", recipe_path(recipe) %>
+  <%= link_to "編集", edit_recipe_path(recipe) %>
+  <%= link_to "削除", recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"} %>
+<% end %>
