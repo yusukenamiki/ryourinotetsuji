@@ -3,9 +3,9 @@
 </div>
 
 <div class="container">
-  <div class="row my-5 mx-3">
+  <div class="row my-5 mx-1">
 
-    <div class="col-3 d-flex align-items-center p-1">
+    <div class="col-3 d-flex align-items-center p-0">
       <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "128x128" %>
     </div>
 
@@ -20,7 +20,6 @@
             <td class="align-middle">
               <%= @user.email %>
             </td>
-
             <td class="py-1 align-middle">
               <%= link_to "編集", edit_user_path(@user), class:"btn btn-primary" %>
             </td>
@@ -40,9 +39,40 @@
   </div>
 </div>
 
-<% @user.recipes.each do |recipe| %>
-  <%= attachment_image_tag recipe, :image %>
-  <%= link_to "詳細", recipe_path(recipe) %>
-  <%= link_to "編集", edit_recipe_path(recipe) %>
-  <%= link_to "削除", recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"} %>
-<% end %>
+<div class="container">
+  <div class="card-deck" style="width: 25rem">
+    <% @user.recipes.each do |recipe| %>
+
+        <div class="card shadow-sm mb-5">
+          <div class="text-center p-0">
+            <%= attachment_image_tag recipe, :image, width: '100%', height: '100%' %>
+          </div>
+
+          <div class="card-body text-left p-3">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item pl-0">
+                <%= link_to recipe_path(recipe) do %>
+                  このレシピを見る
+                <% end %>
+              </li>
+              <li class="list-group-item pl-0">
+                <%= link_to edit_recipe_path(recipe) do %>
+                  このレシピを編集する
+                <% end %>
+              </li>
+              <li class="list-group-item pl-0">
+                <%= link_to recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"} do %>
+                  このレシピを削除する
+                <% end %>
+              </li>
+            </ul>
+
+            <h6 class="card-title mt-3 mb-0">
+              <time><%= recipe.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+            </h6>
+          </div>
+        </div>
+
+    <% end %>
+  </div>
+</div>
