@@ -14,9 +14,7 @@
         <div class="card-body text-left p-3">
           <div class="row">
             <div class="col-2">
-              <div class="bg-success">
-                <%= attachment_image_tag recipe.user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "48x48" %>
-              </div>
+              <%= attachment_image_tag recipe.user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "48x48" %>
             </div>
 
             <div class="col-10 mt-1">
