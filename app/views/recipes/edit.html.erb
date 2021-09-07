@@ -1,2 +1,28 @@
-<h1>Recipes#edit</h1>
-<p>Find me in app/views/recipes/edit.html.erb</p>
+<div class="text-white p-5" style="background-color:#332f28;">
+  <h1 class="display-5">レシピ編集</h1>
+</div>
+
+<div class="container">
+  <div class="text-left p-5">
+    <%= form_for @recipe do |f| %>
+
+      <div class="form-group">
+        <%= f.label :title, "レシピ名" %><br />
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :body, "作り方" %><br />
+        <%= f.text_area :body, rows: 5, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :image, "写真" %><br />
+        <%= f.attachment_field :image %>
+      </div>
+
+      <%= f.submit "更新", class:"btn btn-primary" %>
+
+    <% end %>
+  </div>
+</div>
