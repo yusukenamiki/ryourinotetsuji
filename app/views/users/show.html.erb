@@ -55,16 +55,18 @@
                   このレシピを見る
                 <% end %>
               </li>
-              <li class="list-group-item pl-0">
-                <%= link_to edit_recipe_path(recipe) do %>
-                  このレシピを編集する
-                <% end %>
-              </li>
-              <li class="list-group-item pl-0">
-                <%= link_to recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"} do %>
-                  このレシピを削除する
-                <% end %>
-              </li>
+              <% if @user.id == current_user.id %>
+                <li class="list-group-item pl-0">
+                  <%= link_to edit_recipe_path(recipe) do %>
+                    このレシピを編集する
+                  <% end %>
+                </li>
+                <li class="list-group-item pl-0">
+                  <%= link_to recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"} do %>
+                    このレシピを削除する
+                  <% end %>
+                </li>
+              <% end %>
             </ul>
 
             <h6 class="card-title mt-3 mb-0">
