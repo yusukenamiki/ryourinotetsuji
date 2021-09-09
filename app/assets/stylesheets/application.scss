@@ -23,3 +23,10 @@
 img {
   object-fit: cover;
 }
+
+.main-image {
+	height: 940px;
+	background-image: url(kari.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
