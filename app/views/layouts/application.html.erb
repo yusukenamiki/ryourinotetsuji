@@ -59,6 +59,11 @@
               <button type="button" class="btn btn-warning">新規投稿</button>
             <% end %>
           </li>
+          <li class="nav-item active mr-3">
+            <%= link_to edit_user_registration_path do %>
+              <button type="button" class="btn btn-warning">ユーザー編集</button>
+            <% end %>
+          </li>
           <li class="nav-item active">
             <%= link_to destroy_user_session_path, method: :delete do %>
               <button type="button" class="btn btn-warning">ログアウト</button>
