@@ -3,6 +3,7 @@
 </div>
 
 <div class="container-login">
+<%= render 'shared/flash_messages' %>
   <div class="text-left p-5">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
