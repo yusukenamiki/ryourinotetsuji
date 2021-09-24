@@ -1,0 +1,5 @@
+<% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name %> rounded-0 py-4" role="alert">
+    <%= msg %>
+  </div>
+<% end %>
