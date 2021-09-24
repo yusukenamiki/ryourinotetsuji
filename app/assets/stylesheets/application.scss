@@ -36,3 +36,11 @@ img {
   max-width: 576px;
   padding: 2rem;
 }
+
+.alert-notice {
+  @extend .alert-primary;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
