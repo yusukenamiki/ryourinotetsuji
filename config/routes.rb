@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  post '/home/guest_sign_in', to: 'home#new_guest'
+  devise_scope :user do
+    post '/users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
   root to: "home#index"
   resources :users
   resources :recipes
