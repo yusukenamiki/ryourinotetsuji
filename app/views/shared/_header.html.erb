@@ -51,14 +51,9 @@
           <button type="button" class="btn btn-warning">新規登録</button>
         <% end %>
       </li>
-      <li class="nav-item active mr-3">
+      <li class="nav-item active">
         <%= link_to new_user_session_path do %>
           <button type="button" class="btn btn-warning">ログイン</button>
-        <% end %>
-      </li>
-      <li class="nav-item active">
-        <%= link_to users_guest_sign_in_path, method: :post do %>
-          <button type="button" class="btn btn-warning">ゲストログイン(閲覧用)</button>
         <% end %>
       </li>
     <% end %>
