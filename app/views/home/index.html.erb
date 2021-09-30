@@ -4,12 +4,22 @@
   <div class="text-center">
     <h1 style="font-family: cursive;">portfolio</h1>
     <br>
-    <%= link_to new_user_session_path do %>
-      <button type="button" class="btn btn-warning btn-lg btn-block">ログイン</button>
-    <% end %>
-    <br>
-    <%= link_to new_user_registration_path do %>
-      <button type="button" class="btn btn-warning btn-lg btn-block">新規登録</button>
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <button type="button" class="btn btn-warning btn-lg btn-block">ログアウト</button>
+      <% end %>
+    <% else %>
+      <%= link_to users_guest_sign_in_path, method: :post do %>
+        <button type="button" class="btn btn-danger btn-lg btn-block">ゲストログイン(閲覧用)</button>
+      <% end %>
+      <br>
+      <%= link_to new_user_session_path do %>
+        <button type="button" class="btn btn-warning btn-lg btn-block">ログイン</button>
+      <% end %>
+      <br>
+      <%= link_to new_user_registration_path do %>
+        <button type="button" class="btn btn-warning btn-lg btn-block">新規登録</button>
+      <% end %>
     <% end %>
     <br>
     <div class="main-image"></div>

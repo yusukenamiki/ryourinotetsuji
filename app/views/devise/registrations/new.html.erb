@@ -55,6 +55,10 @@
     </div>
     <% end %>
 
+    <%= link_to users_guest_sign_in_path, method: :post do %>
+      <button type="button" class="btn btn-danger btn-block mt-3">ゲストログイン(閲覧用)</button>
+    <% end %>
+
     <%= render "devise/shared/links" %>
   </div>
 </div>
