@@ -1,4 +1,4 @@
-<div class="bg-primary text-white p-5">
+<div class="text-white p-5" style="background-color:#332f28;">
   <h1 class="display-5"><%= t('.change_your_password') %></h1>
 </div>
 <%= bootstrap_devise_error_messages! %>
@@ -33,7 +33,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit t('.change_my_password'), class:"btn btn-primary btn-block" %>
+        <%= f.submit t('.change_my_password'), class:"btn btn-danger btn-block" %>
       </div>
     <% end %>
 
