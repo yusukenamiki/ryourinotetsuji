@@ -4,7 +4,7 @@
 
 <% if @recipe.errors.any? %>
   <div class="alert alert-danger pt-4 rounded-0" role="alert">
-    <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+    <h2><%= pluralize(@recipe.errors.count, "error", locale: :en) %> prohibited this object from being saved: not successfully</h2>
     <ul>
       <% @recipe.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -19,12 +19,22 @@
 
       <div class="form-group">
         <%= f.label :title, "レシピ名" %><br />
-        <%= f.text_field :title, class: "form-control" %>
+        <%= f.text_field :title,
+                         autofocus: true,
+                         autocomplete: "email",
+                         class: "form-control",
+                         required: true,
+                         maxlength: '100' %>
       </div>
 
       <div class="form-group">
         <%= f.label :body, "作り方" %><br />
-        <%= f.text_area :body, rows: 5, class: "form-control" %>
+        <%= f.text_area :body,
+                        rows: 5,
+                        autofocus: true,
+                        autocomplete: "email",
+                        class: "form-control",
+                        required: true %>
       </div>
 
       <div class="form-group">
