@@ -26,7 +26,7 @@
             </h6>
             <% if @recipe.user.id == current_user.id %>
               <%= link_to edit_recipe_path(@recipe) do %>
-                <button type="button" class="btn btn-primary mt-1 mb-3">編集</button>
+                <button type="button" class="btn btn-warning mt-1 mb-3">編集</button>
               <% end %>
               <%= link_to recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"} do %>
                 <button type="button" class="btn btn-danger mt-1 mb-3 ml-2">削除</button>
