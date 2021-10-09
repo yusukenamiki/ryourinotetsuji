@@ -35,6 +35,13 @@
             <h6 class="card-title mt-3 mb-0">
               <time><%= recipe.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
             </h6>
+
+            <% if current_user.already_favorited?(recipe) %>
+              <%= link_to 'いいねを外す', recipe_favorites_path(recipe), method: :delete %>
+            <% else %>
+              <%= link_to 'いいね', recipe_favorites_path(recipe), method: :post %>
+            <% end %>
+            <%= recipe.favorites.count %>
           </div>
         </div>
 

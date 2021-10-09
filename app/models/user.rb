@@ -13,4 +13,8 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
     end
   end
+
+  def already_favorited?(recipe)
+    self.favorites.exists?(recipe_id: recipe.id)
+  end
 end
