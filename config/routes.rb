@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   end
   root to: "home#index"
   resources :users
-  resources :recipes
+  resources :recipes do
+    resource :favorites, only: [:create, :destroy]
+  end
 end

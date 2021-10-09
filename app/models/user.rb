@@ -5,12 +5,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   attachment :profile_image
   has_many :recipes, dependent: :destroy
-
+  has_many :favorites, dependent: :destroy
   validates :username, presence: true
 
   def self.guest
     find_or_create_by(username: "ゲストユーザー", email: 'guestuser@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
     end
+  end
+
+  def already_favorited?(recipe)
+    self.favorites.exists?(recipe_id: recipe.id)
   end
 end
