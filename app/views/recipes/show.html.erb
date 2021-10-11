@@ -25,24 +25,32 @@
               <time><%= @recipe.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
             </h6>
 
-            <% if current_user.already_favorited?(@recipe) %>
-              <%= link_to recipe_favorites_path(@recipe), method: :delete do %>
-                <i class="fas fa-heart"></i>
-              <% end %>
-            <% else %>
-              <%= link_to recipe_favorites_path(@recipe), method: :create do %>
-                <i class="far fa-heart"></i>
-              <% end %>
-            <% end %>
-            <%= @recipe.favorites.count %>
+            <div class="row mt-4">
+              <div class="col-1 pr-0">
+                <% if current_user.already_favorited?(@recipe) %>
+                  <%= link_to recipe_favorites_path(@recipe), method: :delete do %>
+                    <i class="fas fa-heart"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to recipe_favorites_path(@recipe), method: :create do %>
+                    <i class="far fa-heart"></i>
+                  <% end %>
+                <% end %>
+              </div>
 
+              <div class="col-11 pl-0">
+                <%= @recipe.favorites.count %>
+              </div>
+            </div>
+
+            <br />
             <% if @recipe.user.id == current_user.id %>
               <div class="btn-group" role="group">
                 <%= link_to edit_recipe_path(@recipe) do %>
-                  <button type="button" class="btn btn-warning mt-1 mb-3 mr-1">編集</button>
+                  <button type="button" class="btn btn-warning mt-0 mb-3 mr-1">編集</button>
                 <% end %>
                 <%= link_to recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"} do %>
-                  <button type="button" class="btn btn-danger mt-1 mb-3 ml-2">削除</button>
+                  <button type="button" class="btn btn-danger mt-0 mb-3 ml-2">削除</button>
                 <% end %>
               </div>
             <% end %>
