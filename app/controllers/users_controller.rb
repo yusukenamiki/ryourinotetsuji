@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
-    @users = User.page params[:page]
+    @users = User.page(params[:page])
   end
 
   def show
