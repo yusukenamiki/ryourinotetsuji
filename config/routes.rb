@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     post '/users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   root to: "home#index"
-  resources :users
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+    get :followings, on: :member
+    get :followers, on: :member
+  end
   resources :recipes do
     resource :favorites, only: [:create, :destroy]
   end
