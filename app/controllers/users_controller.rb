@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
-    @users = User.where.not(id: current_user.id)
+    if user_signed_in?
+      @users = User.where.not(id: current_user.id).page(params[:page])
+    else
+      @users = User.page(params[:page])
+    end
   end
 
   def followings
