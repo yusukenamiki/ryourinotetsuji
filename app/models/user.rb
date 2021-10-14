@@ -24,4 +24,8 @@ class User < ApplicationRecord
   def already_favorited?(recipe)
     self.favorites.exists?(recipe_id: recipe.id)
   end
+
+  def is_followed_by?(user)
+    reverse_of_relationships.find_by(following_id: user.id).present?
+  end
 end
