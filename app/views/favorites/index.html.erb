@@ -1,0 +1,65 @@
+<div class="text-white p-5" style="background-color:#332f28;">
+  <h1 class="display-5">いいね一覧</h1>
+</div>
+
+<div class="container mt-5 mb-3">
+  <div class="row row-cols-1 row-cols-md-3">
+    <% @recipes.each do |recipe| %>
+      <div class="col mb-4" style="min-width: 20rem">
+
+        <div class="card shadow-sm">
+          <div class="text-center p-0">
+            <%= link_to recipe_path(recipe) do %>
+              <%= attachment_image_tag recipe, :image, width: '100%', height: '300px' %>
+            <% end %>
+          </div>
+
+          <div class="card-body text-left p-3">
+            <div class="row">
+              <div class="col-2">
+                <%= link_to user_path(recipe.user.id) do %>
+                  <%= attachment_image_tag recipe.user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "48x48" %>
+                <% end %>
+              </div>
+
+              <div class="col-10 mt-1">
+                <h3 class="card-title">
+                  <%= link_to user_path(recipe.user.id) do %>
+                    <%= recipe.user.username %>
+                  <% end %>
+                </h3>
+              </div>
+            </div>
+
+            <h6 class="card-title mt-3 mb-2">
+              <time><%= recipe.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+            </h6>
+
+            <div class="row mt-3 mx-0">
+              <div class="col-1 pl-0">
+                <% if user_signed_in? %>
+                  <% if current_user.already_favorited?(recipe) %>
+                    <%= link_to recipe_favorites_path(recipe), method: :delete do %>
+                      <i class="fas fa-heart"></i>
+                    <% end %>
+                  <% else %>
+                    <%= link_to recipe_favorites_path(recipe), method: :post do %>
+                      <i class="far fa-heart"></i>
+                    <% end %>
+                  <% end %>
+                <% else %>
+                  <i class="far fa-heart"></i>
+                <% end %>
+              </div>
+
+              <div class="col-11 pl-0">
+                <%= recipe.favorites.count %>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>
