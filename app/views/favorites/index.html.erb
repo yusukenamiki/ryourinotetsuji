@@ -1,0 +1,15 @@
+<% @recipes.each do |recipe| %>
+  <div>
+    <div>
+      <%= link_to recipe.user.email, [recipe.user] %>
+    </div>
+    <div>
+      <%= link_to [recipe] do %>
+        <%= image_tag recipe.image %>
+      <% end %>
+    </div>
+    <div>
+      <%= recipe.caption %>
+    </div>
+  </div>
+<% end %>
