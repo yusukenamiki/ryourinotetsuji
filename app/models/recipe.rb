@@ -4,6 +4,7 @@ class Recipe < ApplicationRecord
   attachment :image
 
   has_many :favorites, dependent: :destroy
+  has_many :comments
 
   with_options presence: true do
     validates :title

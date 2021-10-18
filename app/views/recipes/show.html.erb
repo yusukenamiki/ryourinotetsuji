@@ -57,6 +57,12 @@
           </div>
         </div>
 
+        <% @recipe.comments.each do |comment| %>
+          <div>
+            <%= comment.body %>
+          </div>
+        <% end %>
+
         <%= form_with model: [@recipe, @comment], local: true do |f| %>
           <div>
             <%= f.text_field :body %>
