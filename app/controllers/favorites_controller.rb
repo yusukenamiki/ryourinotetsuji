@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @recipes = Recipe.joins(:favorites).where(favorites: { user_id: params[:user_id] })
+    @recipes = Recipe.joins(:favorites).where(favorites: { user_id: params[:user_id] }).page(params[:page])
   end
 
   def create
