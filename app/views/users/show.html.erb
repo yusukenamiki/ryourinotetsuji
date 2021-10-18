@@ -17,7 +17,7 @@
             <strong><%= @user.username %></strong>
           </td>
           <div>
-          <%= link_to 'favorites', [@user, :favorites] %>
+          <%= link_to 'いいね一覧', [@user, :favorites] %>
           </div>
           <p class="text-small"><%= link_to @user.followings.count, followings_user_path(@user) %> フォロー <%= link_to @user.followers.count, followers_user_path(@user) %> フォロワー</p>
           <% if @user.id == current_user.id %>
