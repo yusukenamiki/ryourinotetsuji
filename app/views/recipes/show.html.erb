@@ -59,6 +59,9 @@
 
         <% @recipe.comments.each do |comment| %>
           <div>
+            <%= comment.user.email %>
+          </div>
+          <div>
             <%= comment.body %>
           </div>
         <% end %>
