@@ -57,6 +57,22 @@
           </div>
         </div>
 
+        <% @recipe.comments.each do |comment| %>
+          <div>
+            <%= link_to comment.user.email, [comment.user] %>
+          </div>
+          <div>
+            <%= comment.body %>
+          </div>
+        <% end %>
+
+        <%= form_with model: [@recipe, @comment], local: true do |f| %>
+          <div>
+            <%= f.text_field :body %>
+          </div>
+          <%= f.submit %>
+        <% end %>
+
         <div class="card shadow-sm">
           <div class="card-header">
             <div class="row">
