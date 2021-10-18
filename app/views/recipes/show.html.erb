@@ -59,7 +59,7 @@
 
         <% @recipe.comments.each do |comment| %>
           <div>
-            <%= comment.user.email %>
+            <%= link_to comment.user.email, [comment.user] %>
           </div>
           <div>
             <%= comment.body %>
