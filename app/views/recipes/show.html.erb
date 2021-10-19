@@ -64,9 +64,11 @@
           <div>
             <%= comment.body %>
           </div>
-          <div>
-            <%= link_to 'delete', [@recipe, comment], method: :delete %>
-          </div>
+          <% if comment.user == current_user %>
+            <div>
+              <%= link_to 'delete', [@recipe, comment], method: :delete %>
+            </div>
+          <% end %>
         <% end %>
 
         <%= form_with model: [@recipe, @comment], local: true do |f| %>
