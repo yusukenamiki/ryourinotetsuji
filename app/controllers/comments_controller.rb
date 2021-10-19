@@ -12,6 +12,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = current_user.comments.find(params[:id])
+    comment.destroy
+
+    redirect_to [:recipe, { id: params[:recipe_id] }]
+  end
+
   private
 
   def comment_params
