@@ -61,7 +61,9 @@
         <% @recipe.comments.each do |comment| %>
           <div>
             <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "48x48" %>
-            <%= link_to comment.user.username, [comment.user] %>
+            <%= link_to user_path(comment.user.id) do %>
+              <%= comment.user.username %>
+            <% end %>
           </div>
           <div>
             <%= comment.body %>
