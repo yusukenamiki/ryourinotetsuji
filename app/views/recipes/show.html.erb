@@ -57,9 +57,11 @@
           </div>
         </div>
 
+
         <% @recipe.comments.each do |comment| %>
           <div>
-            <%= link_to comment.user.email, [comment.user] %>
+            <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "48x48" %>
+            <%= link_to comment.user.username, [comment.user] %>
           </div>
           <div>
             <%= comment.body %>
@@ -70,6 +72,7 @@
             </div>
           <% end %>
         <% end %>
+
 
         <div class="my-5">
           <%= form_with model: [@recipe, @comment], local: true do |f| %>
