@@ -66,6 +66,7 @@
             <%= link_to user_path(comment.user.id) do %>
               <%= comment.user.username %>
             <% end %>
+            <time><%= comment.updated_at.strftime("%Y-%m-%d %H:%M") %></time>
           </div>
           <div>
             <%= comment.body %>
