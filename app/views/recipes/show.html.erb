@@ -71,12 +71,17 @@
           <% end %>
         <% end %>
 
-        <%= form_with model: [@recipe, @comment], local: true do |f| %>
-          <div>
-            <%= f.text_field :body %>
-          </div>
-          <%= f.submit %>
-        <% end %>
+        <div class="my-5">
+          <%= form_with model: [@recipe, @comment], local: true do |f| %>
+            <div class="form-group">
+              <%= f.text_field :body,
+                              class: "form-control",
+                              required: true,
+                              maxlength: '140' %>
+            </div>
+            <%= f.submit 'コメントを投稿する', class:"btn btn-warning btn-block" %>
+          <% end %>
+        </div>
 
         <div class="card shadow-sm">
           <div class="card-header">
