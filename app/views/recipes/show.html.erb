@@ -79,7 +79,7 @@
                   <% if comment.user == current_user %>
                     <td class="align-middle bg-danger text-right">
                       <div>
-                        <%= link_to 'delete', [@recipe, comment], method: :delete %>
+                        <%= link_to 'delete', [@recipe, comment], method: :delete, data: {confirm: "削除しますか？"} %>
                       </div>
                     </td>
                   <% end %>
