@@ -57,10 +57,24 @@
           </div>
         </div>
 
-        <div class="my-5">
+        <div class="mb-5">
           <h5>
             <%= @recipe.comments.count %>件のコメント
           </h5>
+        </div>
+
+        <div class="mb-5">
+          <%= form_with model: [@recipe, @comment], local: true do |f| %>
+            <div class="form-group">
+              <%= f.text_area :body,
+                              rows: 1,
+                              class: "form-control",
+                              required: true,
+                              maxlength: '140',
+                              placeholder: "コメントを追加…" %>
+            </div>
+            <%= f.submit 'コメントを投稿する', class:"btn btn-warning btn-block" %>
+          <% end %>
         </div>
 
         <% @recipe.comments.each do |comment| %>
@@ -103,21 +117,6 @@
             </div>
           </div>
         <% end %>
-
-
-        <div class="mb-5">
-          <%= form_with model: [@recipe, @comment], local: true do |f| %>
-            <div class="form-group">
-              <%= f.text_area :body,
-                              rows: 1,
-                              class: "form-control",
-                              required: true,
-                              maxlength: '140',
-                              placeholder: "コメントを追加…" %>
-            </div>
-            <%= f.submit 'コメントを投稿する', class:"btn btn-warning btn-block" %>
-          <% end %>
-        </div>
 
         <div class="card shadow-sm">
           <div class="card-header">
