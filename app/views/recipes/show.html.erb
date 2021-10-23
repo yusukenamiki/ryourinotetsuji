@@ -57,6 +57,11 @@
           </div>
         </div>
 
+        <div class="my-5">
+          <h5>
+            <%= @recipe.comments.count %>件のコメント
+          </h5>
+        </div>
 
         <% @recipe.comments.each do |comment| %>
           <div class="row">
