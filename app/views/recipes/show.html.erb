@@ -77,10 +77,10 @@
                   </td>
 
                   <% if comment.user == current_user %>
-                    <td class="align-middle bg-danger text-right">
+                    <td class="align-middle text-right p-0">
                       <div>
                         <%= link_to [@recipe, comment], method: :delete, data: {confirm: "削除しますか？"} do %>
-                          delete
+                          <button type="button" class="btn btn-danger">削除</button>
                         <% end %>
                       </div>
                     </td>
