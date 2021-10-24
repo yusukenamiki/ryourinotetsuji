@@ -22,7 +22,7 @@
               <%= simple_format @recipe.body %>
             </div>
             <h6 class="card-title my-3">
-              <time><%= @recipe.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+              <time><%= @recipe.updated_at.strftime("%Y/%m/%d") %></time>更新
             </h6>
 
             <div class="row mt-4">
@@ -92,7 +92,7 @@
                     <%= link_to user_path(comment.user.id) do %>
                       <%= comment.user.username %>
                     <% end %>
-                    <time><%= comment.updated_at.strftime("%Y-%m-%d %H:%M") %></time>
+                    <span><%= time_ago_in_words(comment.created_at) %></span>前
                   </td>
 
                   <% if comment.user == current_user %>
