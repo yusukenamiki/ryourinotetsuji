@@ -57,6 +57,25 @@
           </div>
         </div>
 
+        <div class="mb-5">
+          <h5>
+            <%= @recipe.comments.count %>件のコメント
+          </h5>
+        </div>
+
+        <div class="mb-5">
+          <%= form_with model: [@recipe, @comment], local: true do |f| %>
+            <div class="form-group">
+              <%= f.text_area :body,
+                              rows: 1,
+                              class: "form-control",
+                              required: true,
+                              maxlength: '140',
+                              placeholder: "コメントを追加…" %>
+            </div>
+            <%= f.submit 'コメントを投稿する', class:"btn btn-warning btn-block" %>
+          <% end %>
+        </div>
 
         <% @recipe.comments.each do |comment| %>
           <div class="row">
@@ -77,9 +96,11 @@
                   </td>
 
                   <% if comment.user == current_user %>
-                    <td class="align-middle bg-danger text-right">
+                    <td class="align-middle text-right p-0">
                       <div>
-                        <%= link_to 'delete', [@recipe, comment], method: :delete %>
+                        <%= link_to [@recipe, comment], method: :delete, data: {confirm: "削除しますか？"} do %>
+                          <button type="button" class="btn btn-danger">削除</button>
+                        <% end %>
                       </div>
                     </td>
                   <% end %>
@@ -96,21 +117,6 @@
             </div>
           </div>
         <% end %>
-
-
-        <div class="mb-5">
-          <%= form_with model: [@recipe, @comment], local: true do |f| %>
-            <div class="form-group">
-              <%= f.text_area :body,
-                              rows: 1,
-                              class: "form-control",
-                              required: true,
-                              maxlength: '140',
-                              placeholder: "コメントを追加…" %>
-            </div>
-            <%= f.submit 'コメントを投稿する', class:"btn btn-warning btn-block" %>
-          <% end %>
-        </div>
 
         <div class="card shadow-sm">
           <div class="card-header">
