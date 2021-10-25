@@ -45,15 +45,27 @@ img {
   @extend .alert-danger;
 }
 
-.link {
+.link-logo {
   color: #332f28;
+}
+
+.link-logo:hover {
+  color: #332f28;
+}
+
+.ryaku {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.link {
+  color: #212529;
 }
 
 .link:hover {
-  color: #332f28;
+  color: #212529;
 }
-
-
 
 
 
