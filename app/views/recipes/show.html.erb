@@ -89,7 +89,7 @@
               <table class="table table-borderless my-0">
                 <tr>
                   <td class="align-middle pr-0">
-                    <%= link_to user_path(comment.user.id) do %>
+                    <%= link_to user_path(comment.user.id), class:"link" do %>
                       <%= comment.user.username %>
                     <% end %>
                     <span><%= time_ago_in_words(comment.created_at) %></span>前

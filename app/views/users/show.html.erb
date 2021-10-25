@@ -17,9 +17,11 @@
             <strong><%= @user.username %></strong>
           </td>
           <div>
-          <%= link_to 'いいね一覧', [@user, :favorites] %>
+          <%= link_to [@user, :favorites], class:"link" do %>
+            いいね一覧
+          <% end %>
           </div>
-          <p class="text-small"><%= link_to @user.followings.count, followings_user_path(@user) %> フォロー <%= link_to @user.followers.count, followers_user_path(@user) %> フォロワー</p>
+          <p class="text-small"><%= link_to @user.followings.count, followings_user_path(@user), class:"link" %> フォロー <%= link_to @user.followers.count, followers_user_path(@user), class:"link" %> フォロワー</p>
           <% if @user.id == current_user.id %>
             <td class="align-middle">
               <%= @user.email %>
@@ -66,18 +68,18 @@
           <div class="card-body text-left p-3">
             <ul class="list-group list-group-flush">
               <li class="list-group-item pl-0">
-                <%= link_to recipe_path(recipe) do %>
+                <%= link_to recipe_path(recipe), class:"link" do %>
                   このレシピを見る
                 <% end %>
               </li>
               <% if @user.id == current_user.id %>
                 <li class="list-group-item pl-0">
-                  <%= link_to edit_recipe_path(recipe) do %>
+                  <%= link_to edit_recipe_path(recipe), class:"link" do %>
                     このレシピを編集する
                   <% end %>
                 </li>
                 <li class="list-group-item pl-0">
-                  <%= link_to recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"} do %>
+                  <%= link_to recipe_path(recipe), class:"link", method: :delete, data: {confirm: "削除しますか？"} do %>
                     このレシピを削除する
                   <% end %>
                 </li>
