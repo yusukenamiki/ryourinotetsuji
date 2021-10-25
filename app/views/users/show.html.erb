@@ -5,23 +5,17 @@
 
 <div class="container">
   <div class="row my-5 mx-1">
-
-    <div class="col-3 d-flex align-items-center p-0">
+    <div class="col-3 d-flex align-items-center p-0 bg-danger">
       <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "128x128" %>
     </div>
 
-    <div class="col-9">
+    <div class="col-9 bg-info">
       <table class="table table-borderless mt-1">
         <tr>
           <td class="align-middle">
             <strong><%= @user.username %></strong>
           </td>
-          <div>
-          <%= link_to [@user, :favorites], class:"link" do %>
-            いいね一覧
-          <% end %>
-          </div>
-          <p class="text-small"><%= link_to @user.followings.count, followings_user_path(@user), class:"link" %> フォロー <%= link_to @user.followers.count, followers_user_path(@user), class:"link" %> フォロワー</p>
+
           <% if @user.id == current_user.id %>
             <td class="align-middle">
               <%= @user.email %>
@@ -41,6 +35,17 @@
             <% end %>
           <% end %>
         </tr>
+
+        <tr>
+          <td class="align-middle">
+            <h6 class="card-title">
+              投稿<%= @user.recipes.count %>件
+            </h6>
+          </td>
+          <td class="align-middle">
+            <p class="text-small"><%= link_to @user.followings.count, followings_user_path(@user), class:"link" %> フォロー <%= link_to @user.followers.count, followers_user_path(@user), class:"link" %> フォロワー</p>
+          </td>
+        </tr>
       </table>
 
       <table class="table table-borderless">
@@ -53,6 +58,12 @@
     </div>
 
   </div>
+</div>
+
+<div>
+  <%= link_to [@user, :favorites], class:"link" do %>
+    いいね一覧
+  <% end %>
 </div>
 
 <div class="container">
@@ -99,8 +110,6 @@
                 <%= recipe.favorites.count %>
               </div>
             </div>
-
-
           </div>
         </div>
 
