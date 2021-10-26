@@ -5,47 +5,62 @@
 
 <div class="container">
   <div class="row my-5 mx-1">
-    <div class="col-3 d-flex align-items-center p-0 bg-danger">
+    <div class="col-3 p-0 pt-3">
       <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "128x128" %>
     </div>
 
-    <div class="col-9 bg-info">
-      <table class="table table-borderless mt-1">
+    <div class="col-9">
+      <table class="table table-borderless mt-3">
         <tr>
           <td class="align-middle">
-            <strong><%= @user.username %></strong>
+            <h4><%= @user.username %></h4>
           </td>
-
           <% if @user.id == current_user.id %>
-            <td class="align-middle">
-              <%= @user.email %>
+            <td class="align-middle d-flex justify-content-end pr-0">
+              <%= link_to edit_user_path(@user) do %>
+                <button class="btn btn-warning">プロフィールを編集</button>
+              <% end %>
             </td>
-            <td class="py-1 align-middle">
-              <%= link_to "編集", edit_user_path(@user), class:"btn btn-warning" %>
-            </td>
+          <% else %>
+            <% if @user.is_followed_by?(current_user) %>
+              <td class="align-middle d-flex justify-content-end pr-0">
+                <%=link_to user_relationships_path(@user), method: :delete do %>
+                  <button class="btn btn-danger">フォロー解除</button>
+                <% end %>
+              </td>
+            <% else %>
+              <td class="align-middle d-flex justify-content-end pr-0">
+                <%=link_to user_relationships_path(@user), method: :post do %>
+                  <button class="btn btn-warning">フォロー</button>
+                <% end %>
+              </td>
+            <% end %>
           <% end %>
         </tr>
 
-        <% if @user.id != current_user.id %>
-          <% if @user.is_followed_by?(current_user) %>
-            <%=link_to user_relationships_path(@user), method: :delete do %>
-              <button class="btn btn-danger">フォロー解除</button>
-            <% end %>
-          <% else %>
-            <%=link_to user_relationships_path(@user), method: :post do %>
-              <button class="btn btn-warning">フォロー</button>
-            <% end %>
-          <% end %>
-        <% end %>
-
-        <tr>
+        <% if @user.id == current_user.id %>
           <td class="align-middle">
-            <h6 class="card-title">
+            <%= @user.email %>
+          </td>
+        <% end %>
+      </table>
+
+      <table class="table table-borderless">
+        <tr>
+          <td class="align-middle pt-3" style="width:110px;">
+            <h6>
               投稿<%= @user.recipes.count %>件
             </h6>
           </td>
-          <td class="align-middle">
-            <p class="text-small"><%= link_to @user.followings.count, followings_user_path(@user), class:"link" %> フォロー <%= link_to @user.followers.count, followers_user_path(@user), class:"link" %> フォロワー</p>
+          <td class="align-middle pt-3" style="width:110px;">
+            <h6>
+              <%= link_to @user.followings.count, followings_user_path(@user), class:"link" %> フォロー
+            </h6>
+          </td>
+          <td class="align-middle pt-3">
+            <h6>
+              <%= link_to @user.followers.count, followers_user_path(@user), class:"link" %> フォロワー
+            </h6>
           </td>
         </tr>
       </table>
@@ -53,12 +68,11 @@
       <table class="table table-borderless">
         <tr>
           <td>
-            <%= @user.profile %>
+            <%= simple_format @user.profile %>
           </td>
         </tr>
       </table>
     </div>
-
   </div>
 </div>
 
