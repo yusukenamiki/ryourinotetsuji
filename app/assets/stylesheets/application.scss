@@ -33,7 +33,7 @@ img {
 
 .container-login {
   @extend .container-fluid;
-  max-width: 576px;
+  max-width: 768px;
   padding: 2rem;
 }
 
@@ -66,6 +66,8 @@ img {
 .link:hover {
   color: #212529;
 }
+
+
 
 
 
