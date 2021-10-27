@@ -33,7 +33,7 @@ img {
 
 .container-login {
   @extend .container-fluid;
-  max-width: 768px;
+  max-width: 576px;
   padding: 2rem;
 }
 
@@ -67,6 +67,10 @@ img {
   color: #212529;
 }
 
+.form-control::placeholder{
+  color: #cccccc;
+  font-size: 16px;
+}
 
 
 
