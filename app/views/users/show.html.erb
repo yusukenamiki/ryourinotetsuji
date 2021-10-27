@@ -25,13 +25,13 @@
             <% if @user.is_followed_by?(current_user) %>
               <td class="align-middle d-flex justify-content-end pr-0">
                 <%=link_to user_relationships_path(@user), method: :delete do %>
-                  <button class="btn btn-danger">フォロー解除</button>
+                  <button class="btn btn-danger">フォロー中</button>
                 <% end %>
               </td>
             <% else %>
               <td class="align-middle d-flex justify-content-end pr-0">
                 <%=link_to user_relationships_path(@user), method: :post do %>
-                  <button class="btn btn-warning">フォロー</button>
+                  <button class="btn btn-warning">フォローする</button>
                 <% end %>
               </td>
             <% end %>
@@ -47,19 +47,19 @@
 
       <table class="table table-borderless">
         <tr>
-          <td class="align-middle pt-3" style="width:110px;">
+          <td class="align-middle pt-3" style="width:85px;">
             <h6>
               投稿<%= @user.recipes.count %>件
             </h6>
           </td>
-          <td class="align-middle pt-3" style="width:110px;">
+          <td class="align-middle pt-3" style="width:130px;">
             <h6>
-              <%= link_to @user.followings.count, followings_user_path(@user), class:"link" %> フォロー
+              フォロワー<%= link_to @user.followers.count, followers_user_path(@user), class:"link" %>人
             </h6>
           </td>
           <td class="align-middle pt-3">
             <h6>
-              <%= link_to @user.followers.count, followers_user_path(@user), class:"link" %> フォロワー
+              フォロー中<%= link_to @user.followings.count, followings_user_path(@user), class:"link" %>人
             </h6>
           </td>
         </tr>
@@ -75,6 +75,10 @@
     </div>
   </div>
 </div>
+
+<li class="nav-item active mr-3">
+<%= link_to 'ユーザー編集', edit_user_registration_path, class:"link" %>
+</li>
 
 <div>
   <%= link_to [@user, :favorites], class:"link" do %>
