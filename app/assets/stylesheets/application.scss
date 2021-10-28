@@ -72,6 +72,13 @@ img {
   font-size: 16px;
 }
 
+.container-edit {
+  @extend .container-fluid;
+  max-width: 768px;
+  padding: 2rem;
+}
+
+
 
 
 

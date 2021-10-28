@@ -1,15 +1,21 @@
 <hr class="my-5">
-<div class="form-group">
+<div class="form-group mb-5">
   <%- if controller_name != 'sessions' %>
-    <%= link_to "アカウントをお持ちの方", new_session_path(resource_name), class: 'btn btn-warning btn-block btn-lg' %><br />
+    <div class="text-center text-secondary">
+      すでにアカウントをお持ちですか？ <%= link_to "ログイン", new_session_path(resource_name) %>
+    </div>
   <% end -%>
 
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-    <%= link_to "アカウントをお持ちでない方", new_registration_path(resource_name), class: 'btn btn-warning btn-block btn-lg' %><br />
+    <div class="text-center text-secondary mb-4">
+      アカウントをお持ちでないですか？ <%= link_to "新規登録", new_registration_path(resource_name) %>
+    </div>
   <% end -%>
 
   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-    <%= link_to t(".forgot_your_password"), new_password_path(resource_name), class: 'btn btn-secondary btn-block btn-lg mt-4' %><br />
+    <div class="text-center text-secondary">
+      パスワードを忘れた場合は <%= link_to "こちら", new_password_path(resource_name) %>
+    </div>
   <% end -%>
 
   <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
