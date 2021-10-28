@@ -1,24 +1,32 @@
-<div class="text-white p-5" style="background-color:#332f28;">
-  <h1 class="display-5"><%= t('.forgot_your_password') %></h1>
-</div>
 <%= bootstrap_devise_error_messages! %>
 
 <div class="container-login">
-  <div class="text-left p-5">
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <div class="card shadow-lg my-5 px-5 pt-5">
+    <h2 class="display-5 mb-5 text-center">
+      パスワードを忘れた場合
+    </h2>
 
-      <div class="form-group">
-        <%= f.label :email %><br />
+    <p class="mb-5">
+      <font color="#aaaaaa">
+        ご登録いただいたメールアドレスを入力してください。
+        パスワード変更ページのURLが記載されたメールを送信
+        します。
+      </font>
+    </p>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <div class="form-group mb-5">
         <%= f.email_field :email,
                           autofocus: true,
                           autocomplete: "email",
-                          class: "form-control",
+                          class: "form-control form-control-lg",
                           required: true,
-                          maxlength: '100' %>
+                          maxlength: '100',
+                          placeholder: "メールアドレス" %>
       </div>
 
       <div class="actions">
-        <%= f.submit t('.send_me_reset_password_instructions'), class:"btn btn-danger btn-block" %>
+        <%= f.submit '送信', class:"btn btn-danger btn-block btn-lg" %>
       </div>
     <% end %>
 
