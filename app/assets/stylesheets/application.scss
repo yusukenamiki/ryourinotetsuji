@@ -84,6 +84,25 @@ img {
 
 
 /*------------------------------------
+- COLOR beige
+------------------------------------*/
+.btn-beige {
+  color: #212529;
+  background-color: #fcefca;
+  border-color: #fcefca;
+}
+
+.btn-beige:hover {
+  color: #212529;
+  background-color: #fae4a8;
+  border-color: #f9e099;
+}
+
+
+
+
+
+/*------------------------------------
 - COLOR danger
 ------------------------------------*/
 .alert-danger {
