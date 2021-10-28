@@ -6,11 +6,9 @@
       パスワードを忘れた場合
     </h2>
 
-    <p class="mb-5" style="line-height: 28px;">
-      <font color="#aaaaaa">
-        ご登録いただいたメールアドレスを入力してください。
-        メールアドレス宛に、パスワード変更ページのURLが記載されたメールを送信します。
-      </font>
+    <p class="mb-5 text-secondary" style="line-height: 28px;">
+      ご登録いただいたメールアドレスを入力してください。
+      メールアドレス宛に、パスワード変更ページのURLが記載されたメールを送信します。
     </p>
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -25,7 +23,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit '送信', class:"btn btn-danger btn-block btn-lg" %>
+        <%= f.submit '送信', class:"btn btn-warning btn-block btn-lg" %>
       </div>
     <% end %>
   </div>

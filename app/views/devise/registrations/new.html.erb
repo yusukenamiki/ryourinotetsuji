@@ -7,7 +7,7 @@
     </h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <div class="form-group mb-5">
+    <div class="form-group mb-4">
       <%= f.text_field :username,
                        autofocus: true,
                        autocomplete: "email",
@@ -17,7 +17,7 @@
                        placeholder: "ユーザー名" %>
     </div>
 
-    <div class="form-group mb-5">
+    <div class="form-group mb-4">
       <%= f.email_field :email,
                         autofocus: true,
                         autocomplete: "email",
@@ -27,7 +27,7 @@
                         placeholder: "メールアドレス" %>
     </div>
 
-    <div class="form-group mb-5">
+    <div class="form-group mb-4">
       <%= f.password_field :password,
                            autocomplete: "new-password",
                            class: "form-control form-control-lg",
@@ -47,13 +47,13 @@
                            placeholder: "パスワード（確認用）" %>
     </div>
 
-    <div class="actions">
+    <div class="actions mb-4">
       <%= f.submit t('.sign_up'), class:"btn btn-warning btn-block btn-lg" %>
     </div>
     <% end %>
 
     <%= link_to users_guest_sign_in_path, method: :post do %>
-      <button type="button" class="btn btn-danger btn-block btn-lg mt-3">ゲストログイン(閲覧用)</button>
+      <button type="button" class="btn btn-danger btn-block btn-lg">ゲストログイン(閲覧用)</button>
     <% end %>
 
     <%= render "devise/shared/links" %>
