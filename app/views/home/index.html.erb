@@ -1,30 +1,24 @@
 <%= render 'shared/flash_messages' %>
 
-<div class="container mt-5">
+<div class="bg-light py-5">
   <div class="text-center">
-    <h1 style="font-family: cursive;"><font color="#332f28">portfolio</font></h1>
-    <br>
+    <h2 class="mb-5" style="font-family: 'Kiwi Maru', serif; color: #332f28;">
+      レシピ館
+    </h2>
+
+    <h4 class="mb-5 text-secondary" style="font-family: cursive;">
+      レシピを投稿しよう
+    </h4>
+
     <% if user_signed_in? %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        <button type="button" class="btn btn-warning btn-lg btn-block">ログアウト</button>
-      <% end %>
     <% else %>
-      <%= link_to users_guest_sign_in_path, method: :post do %>
-        <button type="button" class="btn btn-danger btn-lg btn-block">ゲストログイン(閲覧用)</button>
-      <% end %>
-      <br>
-      <%= link_to new_user_session_path do %>
-        <button type="button" class="btn btn-warning btn-lg btn-block">ログイン</button>
-      <% end %>
-      <br>
       <%= link_to new_user_registration_path do %>
-        <button type="button" class="btn btn-warning btn-lg btn-block">新規登録</button>
+        <button type="button" class="btn btn-warning btn-lg py-3" style="width: 200px">今すぐはじめる</button>
       <% end %>
     <% end %>
-    <br>
-    <div class="main-image"></div>
   </div>
 </div>
-<footer class="text-center text-muted py-4" style="background-color:#fcefca;">
-  © 2021 portfolio
+
+<footer class="text-center py-2 text-secondary" style="background-color:#fcefca;">
+  <p class="pt-3" style="font-size: 14px;">© 2021 レシピ館</p>
 </footer>
