@@ -30,17 +30,17 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "48x48" %>
+            <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "32x32" %>
           </a>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink" style="background-color:#fcefca;">
+          <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="navbarDropdownMenuLink">
             <%= link_to user_path(current_user), class: "dropdown-item" do %>
-              <button type="button" class="btn btn-beige btn-lg">マイページ</button>
+              <p class="pt-3" style="font-size: 14px;">マイページ</p>
             <% end %>
             <%= link_to new_recipe_path, class: "dropdown-item" do %>
-              <button type="button" class="btn btn-beige btn-lg">新規投稿</button>
+              <p class="pt-3" style="font-size: 14px;">新規投稿</p>
             <% end %>
             <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-              <button type="button" class="btn btn-beige btn-lg">ログアウト</button>
+              <p class="pt-3" style="font-size: 14px;">ログアウト</p>
             <% end %>
           </div>
         </li>
