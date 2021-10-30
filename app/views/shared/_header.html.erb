@@ -27,21 +27,24 @@
     <div class="navbar-collapse justify-content-end">
       <ul class="navbar-nav">
       <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to user_path(current_user) do %>
-            <button type="button" class="btn btn-beige btn-lg">マイページ</button>
-          <% end %>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            エクスポート
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#fcefca;">
+            <%= link_to user_path(current_user), class: "dropdown-item" do %>
+              <button type="button" class="btn btn-beige btn-lg">マイページ</button>
+            <% end %>
+            <%= link_to new_recipe_path, class: "dropdown-item" do %>
+              <button type="button" class="btn btn-beige btn-lg">新規投稿</button>
+            <% end %>
+            <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+              <button type="button" class="btn btn-beige btn-lg">ログアウト</button>
+            <% end %>
+          </div>
         </li>
-        <li class="nav-item">
-          <%= link_to new_recipe_path do %>
-            <button type="button" class="btn btn-beige btn-lg">新規投稿</button>
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            <button type="button" class="btn btn-beige btn-lg">ログアウト</button>
-          <% end %>
-        </li>
+
       <% else %>
         <li class="nav-item">
           <%= link_to new_user_registration_path do %>
