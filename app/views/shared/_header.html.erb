@@ -30,7 +30,7 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            エクスポート
+            <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "48x48" %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:#fcefca;">
             <%= link_to user_path(current_user), class: "dropdown-item" do %>
