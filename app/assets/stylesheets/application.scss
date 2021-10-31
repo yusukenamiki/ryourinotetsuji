@@ -102,6 +102,10 @@ img {
   border-color: #fae4a8;
 }
 
+.btn-beige:focus, .btn-beige.focus {
+  box-shadow: 0 0 0 0.2rem rgba(252, 239, 202, 0.5);
+}
+
 
 
 
