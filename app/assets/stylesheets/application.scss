@@ -68,9 +68,16 @@ img {
   color: #212529;
 }
 
+.form-group {
+  position: relative;
+}
+
 .form-control::placeholder{
   color: #cccccc;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 48px;
+  position: absolute;
+  top: 0;
 }
 
 .container-edit {
@@ -89,6 +96,14 @@ img {
 
 .dropdown-menu {
   width: 220px;
+}
+
+.guest-btn:hover {
+  text-decoration: none;
+}
+
+p {
+  font-size: 14px;
 }
 
 
