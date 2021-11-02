@@ -2,9 +2,9 @@
 
 <div class="container-login">
   <div class="card shadow-lg my-5 px-5 pt-5">
-    <h2 class="display-5 mb-5 text-center">
+    <h3 class="display-5 mb-5 text-center">
       ログイン
-    </h2>
+    </h3>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group mb-4">
@@ -28,12 +28,12 @@
       </div>
 
       <div class="actions mb-4">
-        <%= f.submit t('.sign_in'), class:"btn btn-warning btn-block btn-lg" %>
+        <%= f.submit t('.sign_in'), class:"btn btn-warning btn-block btn-lg", style:"height: 48px" %>
       </div>
     <% end %>
 
     <%= link_to users_guest_sign_in_path, method: :post, class: "guest-btn" do %>
-      <button type="button" class="btn btn-danger btn-block btn-lg">ゲストログイン(閲覧用)</button>
+      <button type="button" class="btn btn-danger btn-block btn-lg" style="height: 48px">ゲストログイン(閲覧用)</button>
     <% end %>
 
     <%= render "devise/shared/links" %>
