@@ -28,11 +28,15 @@
       <ul class="navbar-nav">
       <% if user_signed_in? %>
 
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown ml-3">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "profile_image rounded-circle", size: "32x32" %>
           </a>
           <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="navbarDropdownMenuLink">
+            <p class="dropdown-header py-4 ryaku">
+              <%= current_user.username %>
+            </p>
+            <div class="dropdown-divider my-0"></div>
             <%= link_to user_path(current_user), class: "dropdown-item" do %>
               <p class="pt-3" style="font-size: 14px;">マイページ</p>
             <% end %>
