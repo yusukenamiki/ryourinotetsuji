@@ -67,6 +67,10 @@
     <% end %>
   </div>
 
-  <%= paginate @recipes %>
-  <%= page_entries_info @recipes %>
+  <div class="d-flex justify-content-center">
+    <%= paginate @recipes %>
+  </div>
+  <p class="d-flex justify-content-center text-secondary">
+    <%= page_entries_info @recipes %>
+  </p>
 </div>
