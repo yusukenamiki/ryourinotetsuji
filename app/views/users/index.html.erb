@@ -34,6 +34,10 @@
     <% end %>
   </div>
 
-  <%= paginate @users %>
-  <%= page_entries_info @users %>
+  <div class="d-flex justify-content-center">
+    <%= paginate @users %>
+  </div>
+  <p class="d-flex justify-content-center text-secondary">
+    <%= page_entries_info @users %>
+  </p>
 </div>

@@ -14,4 +14,4 @@ ja:
           one: "<strong>1-1</strong>/1件中"
           other: "<strong>1-%{count}</strong>/%{count}件中"
       more_pages:
-        display_entries: "<strong>%{first}-%{last}</strong>/%{total}件中"
+        display_entries: "%{first} - %{last} / %{total} 件中"
