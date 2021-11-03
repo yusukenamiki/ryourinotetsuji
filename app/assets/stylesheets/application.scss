@@ -111,6 +111,48 @@ p {
 
 
 /*------------------------------------
+- ページネーション
+------------------------------------*/
+.pagination>li>a {
+  color: #6c757d;
+  font-size: 14px;
+  margin-right: 12px;
+  border: none;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {
+  color: #6c757d;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+  border-radius: 15px
+}
+
+.page-item:first-child .page-link {
+  border-radius: 15px;
+}
+
+.page-item:last-child .page-link {
+  border-radius: 15px;
+}
+
+// ボタンクリック時の縁を非表示
+.page-link:focus {
+  z-index: 3;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0);
+}
+
+
+
+
+
+/*------------------------------------
 - COLOR beige
 ------------------------------------*/
 .btn-beige {
