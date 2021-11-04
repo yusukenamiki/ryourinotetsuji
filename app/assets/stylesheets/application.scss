@@ -106,6 +106,18 @@ p {
   font-size: 14px;
 }
 
+#fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+body {
+  position: relative;
+  top: 66px;
+}
+
 
 
 
@@ -126,7 +138,7 @@ p {
 }
 
 .page-item.active .page-link {
-  z-index: 3;
+
   color: #fff;
   background-color: #ffc107;
   border-color: #ffc107;
