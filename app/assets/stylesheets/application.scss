@@ -16,33 +16,39 @@
 
 @import "bootstrap";
 
+/*------------------------------------
+- A
+------------------------------------*/
+// PART 2 32:40
 .alert:not(:last-child){
 	margin-bottom: 0;
 }
 
-img {
-  object-fit: cover;
-}
-
-.main-image {
-	height: 940px;
-	background-image: url(kari.png);
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-
+/*------------------------------------
+- B
+------------------------------------*/
+// [1/4] 8:50
 .container-login {
   @extend .container-fluid;
   max-width: 576px;
   padding: 2rem;
 }
 
+// [1/4] 8:50
 .alert-notice {
   @extend .alert-info;
 }
 
+// [1/4] 8:50
 .alert-alert {
   @extend .alert-danger;
+}
+
+/*------------------------------------
+- A, B以外
+------------------------------------*/
+img {
+  object-fit: cover;
 }
 
 .link-logo {
@@ -118,11 +124,7 @@ body {
   top: 66px;
 }
 
-
-
-
-
-/*------------------------------------
+/*
 - ページネーション
 ------------------------------------*/
 .pagination>li>a {
@@ -160,11 +162,7 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0);
 }
 
-
-
-
-
-/*------------------------------------
+/*
 - COLOR beige
 ------------------------------------*/
 .btn-beige {
@@ -183,11 +181,7 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(252, 239, 202, 0.5);
 }
 
-
-
-
-
-/*------------------------------------
+/*
 - COLOR danger
 ------------------------------------*/
 .alert-danger {
