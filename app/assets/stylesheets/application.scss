@@ -19,7 +19,7 @@
 /*------------------------------------
 - ※A
 ------------------------------------*/
-// PART 2 32:40
+// PART 2 32:40 フラッシュメッセージの下の余白を消す
 .alert:not(:last-child){
 	margin-bottom: 0;
 }
@@ -47,20 +47,21 @@
 /*------------------------------------
 - 共通
 ------------------------------------*/
+// 画像の縦横比を維持したまま中央でトリミング
 img {
   object-fit: cover;
 }
-
+// デフォルトのルート font-size を 16px から変更
 html {
   font-size: 14px;
 }
-
+// body をヘッダー分下げる
 body {
   position: relative;
   top: 64.5px;
   color: #6c757d;
 }
-
+// 全てのリンクの下線を外す
 a:link {
   text-decoration: none;
 }
@@ -85,15 +86,30 @@ a:link {
   font-size: 1rem;
   color: #343a40;
 }
+// はみ出した文字を省略
+.ryaku {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
 /*------------------------------------
 - ヘッダー
 ------------------------------------*/
+// ヘッダーを固定
 .fixed {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
+}
+// ハンバーガーメニューの開閉の不具合を修正
+#menu {
+  transition: 0s;
+}
+// ドロップダウンリストの幅
+.dropdown-menu {
+  width: 220px;
 }
 
 /*
@@ -108,7 +124,7 @@ a:link {
   background-color: #fae4a8;
   border-color: #fae4a8;
 }
-
+// ボタンクリック時の縁を非表示
 .btn-beige:focus, .btn-beige.focus {
   box-shadow: 0 0 0 0.2rem rgba(252, 239, 202, 0.5);
 }
@@ -123,23 +139,10 @@ a:link {
 
 
 // まだ
-#menu {
-  transition: 0s;
-}
-
-// .dropdown-menu {
-//   width: 220px;
-// }
 
 // .guest-btn:hover {
 //   text-decoration: none;
 // }
-
-.ryaku {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 
 .form-group {
   position: relative;
