@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color:#fcefca;" id="fixed">
+<nav class="navbar navbar-expand-md navbar-light shadow-sm fixed" style="background-color:#fcefca;">
 
-  <%= link_to root_path, class:"link-logo" do %>
-    <h2 class="mt-1 mr-2" style="font-family: 'Kiwi Maru', serif;">レシピ館</h2>
+  <%= link_to root_path, class:"link-title" do %>
+    <h2 class="mt-1 mr-2 py-1" style="font-family: 'Kiwi Maru', serif;">レシピ館</h2>
   <% end %>
 
   <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
@@ -33,18 +33,18 @@
             <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "32x32" %>
           </a>
           <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="navbarDropdownMenuLink">
-            <p class="dropdown-header py-4 ryaku">
+            <div class="dropdown-header py-4 ryaku">
               <%= current_user.username %>
-            </p>
+            </div>
             <div class="dropdown-divider my-0"></div>
             <%= link_to user_path(current_user), class: "dropdown-item" do %>
-              <p class="pt-3" style="font-size: 14px;">マイページ</p>
+              <div class="py-3">マイページ</div>
             <% end %>
             <%= link_to new_recipe_path, class: "dropdown-item" do %>
-              <p class="pt-3" style="font-size: 14px;">新規投稿</p>
+              <div class="py-3">新規投稿</div>
             <% end %>
             <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-              <p class="pt-3" style="font-size: 14px;">ログアウト</p>
+              <div class="py-3">ログアウト</div>
             <% end %>
           </div>
         </li>

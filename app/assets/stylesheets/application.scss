@@ -17,15 +17,15 @@
 @import "bootstrap";
 
 /*------------------------------------
-- A
+- ※A
 ------------------------------------*/
-// PART 2 32:40
+// PART 2 32:40 フラッシュメッセージの下の余白を消す
 .alert:not(:last-child){
 	margin-bottom: 0;
 }
 
 /*------------------------------------
-- B
+- ※B
 ------------------------------------*/
 // [1/4] 8:50
 .container-login {
@@ -45,46 +45,116 @@
 }
 
 /*------------------------------------
-- A, B以外
+- 共通
 ------------------------------------*/
+// 画像の縦横比を維持したまま中央でトリミング
 img {
   object-fit: cover;
 }
-
-.link-logo {
-  color: #332f28;
+// デフォルトのルート font-size を 16px から変更
+html {
+  font-size: 14px;
 }
-
-.link-logo:hover {
-  color: #332f28;
+// body をヘッダー分下げる
+body {
+  position: relative;
+  top: 64.5px;
+  color: #6c757d;
+}
+// 全てのリンクの下線を外す
+a:link {
   text-decoration: none;
 }
 
+.link {
+  color: #6c757d;
+}
+
+.link:hover {
+  color: #6c757d;
+}
+
+.link-title {
+  color: #343a40;
+}
+
+.link-title:hover {
+  color: #343a40;
+}
+
+.btn {
+  font-size: 1rem;
+  color: #343a40;
+}
+// はみ出した文字を省略
 .ryaku {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-.link {
-  color: #212529;
+/*------------------------------------
+- ヘッダー
+------------------------------------*/
+// ヘッダーを固定
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+// ハンバーガーメニューの開閉の不具合を修正
+#menu {
+  transition: 0s;
+}
+// ドロップダウンリストの幅
+.dropdown-menu {
+  width: 220px;
 }
 
-.link:hover {
-  color: #212529;
+/*
+- ヘッダーボタン
+------------------------------------*/
+.btn-beige {
+  background-color: #fcefca;
+  border-color: #fcefca;
 }
+
+.btn-beige:hover {
+  background-color: #fae4a8;
+  border-color: #fae4a8;
+}
+// ボタンクリック時の縁を非表示
+.btn-beige:focus, .btn-beige.focus {
+  box-shadow: 0 0 0 0.2rem rgba(252, 239, 202, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+// まだ
+
+// .guest-btn:hover {
+//   text-decoration: none;
+// }
 
 .form-group {
   position: relative;
 }
 
-.form-control::placeholder{
-  color: #cccccc;
-  font-size: 14px;
-  line-height: 48px;
-  position: absolute;
-  top: 0;
-}
+// .form-control::placeholder{
+//   color: #cccccc;
+//   font-size: 14px;
+//   line-height: 48px;
+//   position: absolute;
+//   top: 0;
+// }
 
 .container-edit {
   @extend .container-fluid;
@@ -92,94 +162,51 @@ img {
   padding: 2rem;
 }
 
-.btn {
-  font-size: 14px;
-}
 
-#menu {
-  transition: 0s;
-}
 
-.dropdown-menu {
-  width: 220px;
-}
 
-.guest-btn:hover {
-  text-decoration: none;
-}
-
-p {
-  font-size: 14px;
-}
-
-#fixed {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
-body {
-  position: relative;
-  top: 66px;
-}
 
 /*
 - ページネーション
 ------------------------------------*/
-.pagination>li>a {
-  color: #6c757d;
-  font-size: 14px;
-  margin-right: 12px;
-  border: none;
-  border-radius: 15px;
-}
+// .pagination>li>a {
+//   color: #6c757d;
+//   font-size: 14px;
+//   margin-right: 12px;
+//   border: none;
+//   border-radius: 15px;
+// }
 
-.pagination>li>a:hover {
-  color: #6c757d;
-}
+// .pagination>li>a:hover {
+//   color: #6c757d;
+// }
 
-.page-item.active .page-link {
+// .page-item.active .page-link {
 
-  color: #fff;
-  background-color: #ffc107;
-  border-color: #ffc107;
-  border-radius: 15px
-}
+//   color: #fff;
+//   background-color: #ffc107;
+//   border-color: #ffc107;
+//   border-radius: 15px
+// }
 
-.page-item:first-child .page-link {
-  border-radius: 15px;
-}
+// .page-item:first-child .page-link {
+//   border-radius: 15px;
+// }
 
-.page-item:last-child .page-link {
-  border-radius: 15px;
-}
+// .page-item:last-child .page-link {
+//   border-radius: 15px;
+// }
 
-// ボタンクリック時の縁を非表示
-.page-link:focus {
-  z-index: 3;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0);
-}
+// // ボタンクリック時の縁を非表示
+// .page-link:focus {
+//   z-index: 3;
+//   outline: 0;
+//   box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0);
+// }
 
-/*
-- COLOR beige
-------------------------------------*/
-.btn-beige {
-  color: #212529;
-  background-color: #fcefca;
-  border-color: #fcefca;
-}
 
-.btn-beige:hover {
-  color: #212529;
-  background-color: #fae4a8;
-  border-color: #fae4a8;
-}
 
-.btn-beige:focus, .btn-beige.focus {
-  box-shadow: 0 0 0 0.2rem rgba(252, 239, 202, 0.5);
-}
+
 
 /*
 - COLOR danger
