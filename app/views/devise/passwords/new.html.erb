@@ -2,28 +2,28 @@
 
 <div class="container-login">
   <div class="card shadow-lg my-5 p-5">
-    <h3 class="display-5 mb-5 text-center text-dark">
+    <h3 class="text-center text-dark mb-5">
       パスワードを忘れた場合
     </h3>
 
-    <p class="mb-5 text-secondary text-center" style="line-height: 26px;">
+    <div class="text-center mb-5" style="line-height: 26px;">
       ご登録頂いたメールアドレスを入力してください。<br>
       パスワード変更ページのURLを送信します。
-    </p>
+    </div>
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <div class="form-group mb-5">
         <%= f.email_field :email,
                           autofocus: true,
                           autocomplete: "email",
-                          class: "form-control form-control-lg",
+                          class: "form-control",
                           required: true,
                           maxlength: '100',
                           placeholder: "メールアドレス" %>
       </div>
 
       <div class="actions">
-        <%= f.submit '送信', class:"btn btn-warning btn-block btn-lg", style:"height: 48px" %>
+        <%= f.submit '送信', class:"btn btn-warning btn-block" %>
       </div>
     <% end %>
   </div>

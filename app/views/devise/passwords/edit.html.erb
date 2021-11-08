@@ -2,13 +2,13 @@
 
 <div class="container-login">
   <div class="card shadow-lg my-5 p-5">
-    <h3 class="display-5 mb-5 text-center">
+    <h3 class="text-center text-dark mb-5">
       パスワード再設定
     </h3>
 
-    <p class="mb-5 text-secondary text-center">
+    <div class="text-center mb-5">
       新しいパスワードを入力してください
-    </p>
+    </div>
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.hidden_field :reset_password_token %>
@@ -17,7 +17,7 @@
         <%= f.password_field :password,
                              autofocus: true,
                              autocomplete: "new-password",
-                             class: "form-control form-control-lg",
+                             class: "form-control",
                              required: true,
                              minlength: @minimum_password_length,
                              maxlength: '30',
@@ -27,7 +27,7 @@
       <div class="form-group mb-5">
         <%= f.password_field :password_confirmation,
                              autocomplete: "new-password",
-                             class: "form-control form-control-lg",
+                             class: "form-control",
                              required: true,
                              minlength: @minimum_password_length,
                              maxlength: '30',
@@ -35,7 +35,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit 'パスワード再設定', class:"btn btn-warning btn-block btn-lg", style:"height: 48px" %>
+        <%= f.submit 'パスワード再設定', class:"btn btn-warning btn-block" %>
       </div>
     <% end %>
   </div>

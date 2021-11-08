@@ -51,16 +51,19 @@
 img {
   object-fit: cover;
 }
+
 // デフォルトのルート font-size を 16px から変更
 html {
   font-size: 14px;
 }
+
 // body をヘッダー分下げる
 body {
   position: relative;
   top: 64.5px;
   color: #6c757d;
 }
+
 // 全てのリンクの下線を外す
 a:link {
   text-decoration: none;
@@ -83,9 +86,11 @@ a:link {
 }
 
 .btn {
-  font-size: 1rem;
   color: #343a40;
+  font-size: 1rem;
+  height: 48px;
 }
+
 // はみ出した文字を省略
 .ryaku {
   overflow: hidden;
@@ -103,10 +108,12 @@ a:link {
   width: 100%;
   z-index: 1;
 }
+
 // ハンバーガーメニューの開閉の不具合を修正
 #menu {
   transition: 0s;
 }
+
 // ドロップダウンリストの幅
 .dropdown-menu {
   width: 220px;
@@ -124,43 +131,53 @@ a:link {
   background-color: #fae4a8;
   border-color: #fae4a8;
 }
+
 // ボタンクリック時の縁を非表示
 .btn-beige:focus, .btn-beige.focus {
   box-shadow: 0 0 0 0.2rem rgba(252, 239, 202, 0.5);
 }
 
-
-
-
-
-
-
-
-
-
-// まだ
-
-// .guest-btn:hover {
-//   text-decoration: none;
-// }
-
+/*------------------------------------
+- フォーム
+------------------------------------*/
 .form-group {
   position: relative;
 }
 
-// .form-control::placeholder{
-//   color: #cccccc;
-//   font-size: 14px;
-//   line-height: 48px;
-//   position: absolute;
-//   top: 0;
-// }
+.form-control::placeholder{
+  background-color: #fae4a8;
+  color: #cccccc;
+  font-size: 1rem;
+  line-height: 48px;
+  position: absolute;
+  top: 0;
+}
 
+input[type="text"] {
+  height: 48px;
+}
+
+input[type="email"] {
+  height: 48px;
+}
+
+input[type="password"] {
+  height: 48px;
+}
+
+/*
+- フォーム幅 ( プロフィールを編集、レシピ編集、新規投稿 )
+------------------------------------*/
 .container-edit {
   @extend .container-fluid;
   max-width: 768px;
   padding: 2rem;
 }
+
+
+
+
+
 
 
 
