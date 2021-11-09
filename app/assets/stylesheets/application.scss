@@ -106,9 +106,9 @@ a:link {
   color: rgb(237, 73, 86);
 }
 
-// 画像と文字の横並び
+// 画像 ( または Font Awesome ) と文字の横並び
 .img-container {
-  display:flex;
+  display: flex;
   align-items: center;
 }
 

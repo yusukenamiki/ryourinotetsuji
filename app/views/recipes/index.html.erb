@@ -3,17 +3,15 @@
 <div class="container p-5">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
     <% @recipes.each do |recipe| %>
-      <div class="col mb-4 px-1">
-
-        <div class="card shadow-sm mx-2">
-          <div class="text-center p-0">
+      <div class="col px-1">
+        <div class="card shadow-sm mx-2 mb-4">
+          <div class="p-0">
             <%= link_to recipe_path(recipe) do %>
               <%= attachment_image_tag recipe, :image, width: '100%', height: '300px' %>
             <% end %>
           </div>
 
           <div class="card-body p-4">
-
             <div class="img-container">
               <div>
                 <%= link_to user_path(recipe.user.id) do %>
@@ -27,22 +25,18 @@
               </div>
             </div>
 
-
-
-
-
-            <div class="card-title font-weight-normal mt-4 ryaku">
+            <div class="ryaku mt-4">
               <%= link_to user_path(recipe.user.id), class:"link" do %>
                 <%= recipe.user.username %>
               <% end %>
             </div>
 
-            <div class="card-title mt-3 mb-2">
+            <div class="mt-3">
               <span><%= time_ago_in_words(recipe.updated_at) %></span>前更新
             </div>
 
-            <div class="row mt-3 mx-0">
-              <div class="col-1 pl-0">
+            <div class="img-container mt-3">
+              <div>
                 <% if user_signed_in? %>
                   <% if current_user.already_favorited?(recipe) %>
                     <%= link_to recipe_favorites_path(recipe), method: :delete do %>
@@ -57,14 +51,12 @@
                   <i class="far fa-heart"></i>
                 <% end %>
               </div>
-
-              <div class="col-11 pl-0">
+              <div class="ml-2">
                 <%= recipe.favorites.count %>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     <% end %>
   </div>
