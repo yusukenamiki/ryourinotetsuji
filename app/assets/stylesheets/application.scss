@@ -98,6 +98,20 @@ a:link {
   text-overflow: ellipsis;
 }
 
+.fa-heart {
+  color: #343a40;
+}
+
+.heart-pink {
+  color: rgb(237, 73, 86);
+}
+
+// 画像 ( または Font Awesome ) と文字の横並び
+.img-container {
+  display: flex;
+  align-items: center;
+}
+
 /*------------------------------------
 - ヘッダー
 ------------------------------------*/
@@ -145,7 +159,6 @@ a:link {
 }
 
 .form-control::placeholder{
-  background-color: #fae4a8;
   color: #cccccc;
   font-size: 1rem;
   line-height: 48px;
@@ -165,13 +178,45 @@ input[type="password"] {
   height: 48px;
 }
 
-/*
-- フォーム幅 ( プロフィールを編集、レシピ編集、新規投稿 )
-------------------------------------*/
+// フォーム幅 ( プロフィールを編集、レシピ編集、新規投稿 )
 .container-edit {
   @extend .container-fluid;
   max-width: 768px;
   padding: 2rem;
+}
+
+/*------------------------------------
+- ページネーション
+------------------------------------*/
+.pagination>li>a {
+  color: #6c757d;
+  margin-right: 12px;
+  border: none;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {
+  color: #6c757d;
+}
+
+.page-item.active .page-link {
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
+  border-radius: 15px
+}
+
+.page-item:first-child .page-link {
+  border-radius: 15px;
+}
+
+.page-item:last-child .page-link {
+  border-radius: 15px;
+}
+
+// ボタンクリック時の縁を非表示
+.page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0);
 }
 
 
@@ -183,49 +228,12 @@ input[type="password"] {
 
 
 
-/*
-- ページネーション
-------------------------------------*/
-// .pagination>li>a {
-//   color: #6c757d;
-//   font-size: 14px;
-//   margin-right: 12px;
-//   border: none;
-//   border-radius: 15px;
-// }
-
-// .pagination>li>a:hover {
-//   color: #6c757d;
-// }
-
-// .page-item.active .page-link {
-
-//   color: #fff;
-//   background-color: #ffc107;
-//   border-color: #ffc107;
-//   border-radius: 15px
-// }
-
-// .page-item:first-child .page-link {
-//   border-radius: 15px;
-// }
-
-// .page-item:last-child .page-link {
-//   border-radius: 15px;
-// }
-
-// // ボタンクリック時の縁を非表示
-// .page-link:focus {
-//   z-index: 3;
-//   outline: 0;
-//   box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0);
-// }
 
 
 
 
 
-/*
+/*------------------------------------
 - COLOR danger
 ------------------------------------*/
 .alert-danger {
