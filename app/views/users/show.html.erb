@@ -1,71 +1,60 @@
 <%= render 'shared/flash_messages' %>
 
-
-
-
-
-<div class="container px-5 mt-5 bg-light">
-
-
-  <div>
-    <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "150x150" %>
-  </div>
-
-
-  <div class="text-dark bg-info">
-    <%= @user.username %>
-  </div>
-
-
-  <% if @user.id == current_user.id %>
+<div class="container mt-5 px-5 pb-4 text-dark" style="max-width: 600px;">
+  <div class="oya">
     <div>
-      <%= link_to edit_user_path(@user) do %>
-        <button class="btn btn-warning">プロフィールを編集</button>
+      <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "150x150" %>
+    </div>
+    <div class="ko">
+      <% if @user.id == current_user.id %>
+        <div>
+          <%= link_to edit_user_path(@user) do %>
+            <button class="btn btn-outline-secondary">プロフィールを編集</button>
+          <% end %>
+        </div>
+      <% else %>
+        <% if @user.is_followed_by?(current_user) %>
+          <div>
+            <%=link_to user_relationships_path(@user), method: :delete do %>
+              <button class="btn btn-danger">フォロー中</button>
+            <% end %>
+          </div>
+        <% else %>
+          <div>
+            <%=link_to user_relationships_path(@user), method: :post do %>
+              <button class="btn btn-warning">フォローする</button>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
-  <% else %>
-    <% if @user.is_followed_by?(current_user) %>
-      <div>
-        <%=link_to user_relationships_path(@user), method: :delete do %>
-          <button class="btn btn-danger">フォロー中</button>
-        <% end %>
-      </div>
-    <% else %>
-      <div>
-        <%=link_to user_relationships_path(@user), method: :post do %>
-          <button class="btn btn-warning">フォローする</button>
-        <% end %>
-      </div>
-    <% end %>
-  <% end %>
+  </div>
 
-
+  <div class="ryaku mt-5">
+    <strong><%= @user.username %></strong>
+  </div>
 
   <% if @user.id == current_user.id %>
-    <div class="bg-danger">
+    <div class="ryaku text-secondary">
       <%= @user.email %>
     </div>
   <% end %>
 
-
-  <div class="bg-warning">
-    <div>
-      投稿<%= @user.recipes.count %>件
-    </div>
-    <div>
-      フォロワー<%= link_to @user.followers.count, followers_user_path(@user), class:"link" %>人
-    </div>
-    <div>
-      フォロー中<%= link_to @user.followings.count, followings_user_path(@user), class:"link" %>人
-    </div>
+  <div class="mt-4">
+    <span class="mr-4">
+      投稿 <strong><%= @user.recipes.count %></strong>件
+    </span>
+    <span class="mr-4">
+      フォロワー <strong><%= link_to @user.followers.count, followers_user_path(@user), class: "link-title" %></strong>人
+    </span>
+    <span>
+      フォロー中 <strong><%= link_to @user.followings.count, followings_user_path(@user), class: "link-title" %></strong>人
+    </span>
   </div>
 
-
-  <div>
+  <div class="mt-4">
     <%= simple_format @user.profile %>
   </div>
-
-
 </div>
 
 
@@ -77,15 +66,16 @@
 
 
 
-<li class="nav-item active mr-3">
-<%= link_to 'ユーザー編集', edit_user_registration_path, class:"link" %>
-</li>
-
+※後で対応
 <div>
-  <%= link_to [@user, :favorites], class:"link" do %>
+<%= link_to 'ユーザー編集', edit_user_registration_path, class: "link" %>
+</div>
+<div>
+  <%= link_to [@user, :favorites], class: "link" do %>
     いいね一覧
   <% end %>
 </div>
+※後で対応
 
 
 
@@ -95,11 +85,10 @@
 
 
 
-
-<div class="container px-5 pb-4 bg-light">
+<div class="container px-5 pb-4">
   <hr class="my-0">
 
-  <div class="my-4 text-center">投稿一覧</div>
+  <div class="my-4 text-center text-dark">投稿一覧</div>
 
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
     <% @user.recipes.reverse_each do |recipe| %>
