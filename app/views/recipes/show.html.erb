@@ -62,21 +62,23 @@
 
 
 
-    <div class="bg-danger">
-      <div class="img-container bg-dark">
+
+    ※以下、後で対応
+    <div class="pr-4">
+      <div class="img-container">
         <div>
           <%= link_to user_path(@recipe.user) do %>
             <%= attachment_image_tag @recipe.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
           <% end %>
         </div>
-        <div class="ryaku ml-4 bg-warning pr-5">
+        <div class="ml-4 bg-warning">
           <%= link_to user_path(@recipe.user.id), class:"link-title" do %>
-            <%= @recipe.user.username %>
+            <strong><%= @recipe.user.username %></strong>
           <% end %>
         </div>
       </div>
 
-      <div class="bg-info ml-5 tameshi pr-3" style="word-wrap: break-word;">
+      <div class="ml-5 pl-4 mt-2 bg-info" style="word-wrap: break-word;">
         <%= simple_format @recipe.user.profile %>
       </div>
     </div>
@@ -85,10 +87,7 @@
 
 
 
-
-
-
-      <hr class="mb-4 mt-0">
+      <hr class="my-4">
 
       <div class="mb-4">
         <h5>
