@@ -1,121 +1,122 @@
 <%= render 'shared/flash_messages' %>
 
-<div class="container">
-  <div class="row my-5 mx-1">
-    <div class="col-3 p-0 pt-3">
-      <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "128x128" %>
+<div class="container mt-5 px-5 pb-4 text-dark" style="max-width: 600px;">
+  <div class="oya">
+    <div>
+      <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "150x150" %>
     </div>
-
-    <div class="col-9">
-      <table class="table table-borderless mt-3">
-        <tr>
-          <td class="align-middle">
-            <h4><%= @user.username %></h4>
-          </td>
-          <% if @user.id == current_user.id %>
-            <td class="align-middle d-flex justify-content-end pr-0">
-              <%= link_to edit_user_path(@user) do %>
-                <button class="btn btn-warning">プロフィールを編集</button>
-              <% end %>
-            </td>
-          <% else %>
-            <% if @user.is_followed_by?(current_user) %>
-              <td class="align-middle d-flex justify-content-end pr-0">
-                <%=link_to user_relationships_path(@user), method: :delete do %>
-                  <button class="btn btn-danger">フォロー中</button>
-                <% end %>
-              </td>
-            <% else %>
-              <td class="align-middle d-flex justify-content-end pr-0">
-                <%=link_to user_relationships_path(@user), method: :post do %>
-                  <button class="btn btn-warning">フォローする</button>
-                <% end %>
-              </td>
-            <% end %>
+    <div class="ko">
+      <% if @user.id == current_user.id %>
+        <div>
+          <%= link_to edit_user_path(@user) do %>
+            <button class="btn btn-outline-secondary">プロフィールを編集</button>
           <% end %>
-        </tr>
-
-        <% if @user.id == current_user.id %>
-          <td class="align-middle">
-            <%= @user.email %>
-          </td>
+        </div>
+      <% else %>
+        <% if @user.is_followed_by?(current_user) %>
+          <div>
+            <%=link_to user_relationships_path(@user), method: :delete do %>
+              <button class="btn btn-danger">フォロー中</button>
+            <% end %>
+          </div>
+        <% else %>
+          <div>
+            <%=link_to user_relationships_path(@user), method: :post do %>
+              <button class="btn btn-warning">フォローする</button>
+            <% end %>
+          </div>
         <% end %>
-      </table>
-
-      <table class="table table-borderless">
-        <tr>
-          <td class="align-middle pt-3" style="width:85px;">
-            <h6>
-              投稿<%= @user.recipes.count %>件
-            </h6>
-          </td>
-          <td class="align-middle pt-3" style="width:130px;">
-            <h6>
-              フォロワー<%= link_to @user.followers.count, followers_user_path(@user), class:"link" %>人
-            </h6>
-          </td>
-          <td class="align-middle pt-3">
-            <h6>
-              フォロー中<%= link_to @user.followings.count, followings_user_path(@user), class:"link" %>人
-            </h6>
-          </td>
-        </tr>
-      </table>
-
-      <table class="table table-borderless">
-        <tr>
-          <td>
-            <%= simple_format @user.profile %>
-          </td>
-        </tr>
-      </table>
+      <% end %>
     </div>
+  </div>
+
+  <div class="ryaku mt-5">
+    <strong><%= @user.username %></strong>
+  </div>
+
+  <% if @user.id == current_user.id %>
+    <div class="ryaku text-secondary">
+      <%= @user.email %>
+    </div>
+  <% end %>
+
+  <div class="mt-4">
+    <span class="mr-4">
+      投稿 <strong><%= @user.recipes.count %></strong>件
+    </span>
+    <span class="mr-4">
+      フォロワー <strong><%= link_to @user.followers.count, followers_user_path(@user), class: "link-title" %></strong>人
+    </span>
+    <span>
+      フォロー中 <strong><%= link_to @user.followings.count, followings_user_path(@user), class: "link-title" %></strong>人
+    </span>
+  </div>
+
+  <div class="mt-4">
+    <%= simple_format @user.profile %>
   </div>
 </div>
 
-<li class="nav-item active mr-3">
-<%= link_to 'ユーザー編集', edit_user_registration_path, class:"link" %>
-</li>
 
+
+
+
+
+
+
+
+
+※後で対応
 <div>
-  <%= link_to [@user, :favorites], class:"link" do %>
+<%= link_to 'ユーザー編集', edit_user_registration_path, class: "link" %>
+</div>
+<div>
+  <%= link_to [@user, :favorites], class: "link" do %>
     いいね一覧
   <% end %>
 </div>
+※後で対応
 
-<div class="container">
-  <hr>
 
-  <h5 class="my-4 text-center">投稿一覧</h5>
 
-  <div class="row row-cols-1 row-cols-md-3">
+
+
+
+
+
+
+<div class="container px-5 pb-4">
+  <hr class="my-0">
+
+  <div class="my-4 text-center text-dark">投稿一覧</div>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
     <% @user.recipes.reverse_each do |recipe| %>
-      <div class="col mb-4" style="min-width: 20rem">
-
-        <div class="card shadow-sm">
-          <div class="text-center p-0">
+      <div class="col px-1">
+        <div class="card shadow-sm mx-2 mb-4">
+          <div class="p-0">
             <%= link_to recipe_path(recipe) do %>
               <%= attachment_image_tag recipe, :image, width: '100%', height: '300px' %>
             <% end %>
           </div>
 
-          <div class="card-body text-left p-3">
-            <h5 class="card-title ryaku">
-              <%= link_to recipe_path(recipe), class:"link" do %>
+          <div class="card-body p-4">
+            <div class="ryaku">
+              <%= link_to recipe_path(recipe), class:"link-title" do %>
                 <strong><%= recipe.title %></strong>
               <% end %>
-            </h5>
+            </div>
 
-            <h6 class="card-title mt-3 mb-2">
-              <span><%= time_ago_in_words(recipe.updated_at) %></span>前更新
-            </h6>
+            <div class="mt-3">
+              <span><%= time_ago_in_words(recipe.updated_at) %></span>前
+            </div>
 
-            <div class="row mt-3 mx-0">
-              <div class="col-1 pl-0">
+            <div class="img-container mt-3">
+              <div>
                 <% if user_signed_in? %>
                   <% if current_user.already_favorited?(recipe) %>
                     <%= link_to recipe_favorites_path(recipe), method: :delete do %>
-                      <i class="fas fa-heart"></i>
+                      <i class="fas fa-heart heart-pink"></i>
                     <% end %>
                   <% else %>
                     <%= link_to recipe_favorites_path(recipe), method: :post do %>
@@ -126,14 +127,12 @@
                   <i class="far fa-heart"></i>
                 <% end %>
               </div>
-
-              <div class="col-11 pl-0">
+              <div class="ml-2">
                 <%= recipe.favorites.count %>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     <% end %>
   </div>

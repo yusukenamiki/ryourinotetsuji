@@ -112,6 +112,16 @@ a:link {
   align-items: center;
 }
 
+.oya {
+  position: relative;
+}
+
+.ko {
+  position: absolute;
+  top: 51px;
+  right: 0px;
+}
+
 /*------------------------------------
 - ヘッダー
 ------------------------------------*/
@@ -158,7 +168,7 @@ a:link {
   position: relative;
 }
 
-.form-control::placeholder{
+.form-control::placeholder {
   color: #cccccc;
   font-size: 1rem;
   line-height: 48px;
