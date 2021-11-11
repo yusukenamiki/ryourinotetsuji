@@ -79,15 +79,6 @@
         </div>
       </div>
 
-
-
-
-
-
-
-
-
-
       <div class="mb-5">
         <hr>
 
@@ -107,10 +98,20 @@
                               placeholder: "コメントを追加…" %>
             </div>
 
-            <%= f.submit 'コメントを投稿する', class:"btn btn-warning btn-block" %>
+            <%= f.submit 'コメントを投稿する', class:"btn btn-warning btn-block mt-4" %>
           <% end %>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
 
       <% @recipe.comments.each do |comment| %>
         <div class="row">
