@@ -59,55 +59,57 @@
         </div>
       </div>
 
+      <div class="mb-5">
+        <div class="img-container">
+          <div>
+            <%= link_to user_path(@recipe.user) do %>
+              <%= attachment_image_tag @recipe.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
+            <% end %>
+          </div>
 
-
-
-
-    ※以下、後で対応
-    <div class="pr-4">
-      <div class="img-container">
-        <div>
-          <%= link_to user_path(@recipe.user) do %>
-            <%= attachment_image_tag @recipe.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
-          <% end %>
+          <div class="ryaku ml-4" style="width: 320px;">
+            <%= link_to user_path(@recipe.user.id), class:"link-title" do %>
+              <strong><%= @recipe.user.username %></strong>
+            <% end %>
+          </div>
         </div>
-        <div class="ml-4 bg-warning">
-          <%= link_to user_path(@recipe.user.id), class:"link-title" do %>
-            <strong><%= @recipe.user.username %></strong>
-          <% end %>
+
+        <div class="ml-5 pl-4 mt-3 pr-4" style="word-wrap: break-word;">
+          <%= simple_format @recipe.user.profile %>
         </div>
       </div>
 
-      <div class="ml-5 pl-4 mt-2 bg-info" style="word-wrap: break-word;">
-        <%= simple_format @recipe.user.profile %>
-      </div>
-    </div>
 
 
 
 
 
-      <hr class="my-4">
 
-      <div class="mb-4">
-        <h5>
-          <%= @recipe.comments.count %>件のコメント
-        </h5>
-      </div>
+
+
 
       <div class="mb-5">
-        <%= form_with model: [@recipe, @comment], local: true do |f| %>
-          <div class="form-group">
-            <%= f.text_area :body,
-                            rows: 1,
-                            style: "height: 48px;",
-                            class: "form-control",
-                            required: true,
-                            maxlength: '140',
-                            placeholder: "コメントを追加…" %>
-          </div>
-          <%= f.submit 'コメントを投稿する', class:"btn btn-warning btn-block" %>
-        <% end %>
+        <hr>
+
+        <h5 class="mt-4 text-dark">
+          <%= @recipe.comments.count %> 件のコメント
+        </h5>
+
+        <div class="mt-4">
+          <%= form_with model: [@recipe, @comment], local: true do |f| %>
+            <div class="form-group">
+              <%= f.text_area :body,
+                              rows: 1,
+                              style: "height: 48px;",
+                              class: "form-control",
+                              required: true,
+                              maxlength: '140',
+                              placeholder: "コメントを追加…" %>
+            </div>
+
+            <%= f.submit 'コメントを投稿する', class:"btn btn-warning btn-block" %>
+          <% end %>
+        </div>
       </div>
 
       <% @recipe.comments.each do |comment| %>
