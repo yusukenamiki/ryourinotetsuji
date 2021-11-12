@@ -112,10 +112,10 @@
 
 
 
-      <div class="bg-dark">
+      <div>
         <% @recipe.comments.each do |comment| %>
 
-          <div class="bg-info">
+          <div>
             <%= link_to user_path(comment.user.id) do %>
               <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
             <% end %>
@@ -144,9 +144,9 @@
               <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-ellipsis-v"></i>
               </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <%= link_to [@recipe, comment], method: :delete, data: {confirm: "削除しますか？"} do %>
-                  <button type="button" class="btn btn-danger">削除</button>
+              <div class="dropdown-menu shadow-sm py-3" aria-labelledby="dropdownMenuButton" style="width: 120px;">
+                <%= link_to [@recipe, comment], class:"link", method: :delete, data: {confirm: "削除しますか？"} do %>
+                  <i class="far fa-trash-alt px-4"></i>削除
                 <% end %>
               </div>
             </div>
