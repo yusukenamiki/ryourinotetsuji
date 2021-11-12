@@ -131,14 +131,6 @@
             <span><%= time_ago_in_words(comment.created_at) %></span>前
           </div>
 
-          <% if comment.user == current_user %>
-            <div>
-              <%= link_to [@recipe, comment], method: :delete, data: {confirm: "削除しますか？"} do %>
-                <button type="button" class="btn btn-danger">削除</button>
-              <% end %>
-            </div>
-          <% end %>
-
           <div style="word-wrap: break-word;">
             <%= simple_format comment.body %>
           </div>
@@ -147,15 +139,18 @@
 
 
 
-          <div class="dropdown">
-            <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-ellipsis-v"></i>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="https://www.aukdemerchant.com/mi-cuenta"><img src="http://www.aukdemerchant.com/wp-content/uploads/2019/11/1486564400-account_81513-e1573572938865.png"> Mi cuenta</a>
-              <a class="dropdown-item" href="https://www.aukdemerchant.com/wp-login.php?action=logout&redirect_to=https%3A%2F%2Fwww.aukdemerchant.com%2F&_wpnonce=2537f31616"><img src="http://www.aukdemerchant.com/wp-content/uploads/2019/11/Graphicloads-100-Flat-2-Inside-logout-0-e1573572899209.png"> Cerrar Sesión</a>
+          <% if comment.user == current_user %>
+            <div class="dropdown">
+              <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <%= link_to [@recipe, comment], method: :delete, data: {confirm: "削除しますか？"} do %>
+                  <button type="button" class="btn btn-danger">削除</button>
+                <% end %>
+              </div>
             </div>
-          </div>
+          <% end %>
 
 
 
