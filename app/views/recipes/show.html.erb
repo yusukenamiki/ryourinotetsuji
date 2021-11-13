@@ -59,99 +59,115 @@
         </div>
       </div>
 
+      <div class="mb-5">
+        <div class="img-container">
+          <div>
+            <%= link_to user_path(@recipe.user) do %>
+              <%= attachment_image_tag @recipe.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
+            <% end %>
+          </div>
 
-
-
-
-    ※以下、後で対応
-    <div class="pr-4">
-      <div class="img-container">
-        <div>
-          <%= link_to user_path(@recipe.user) do %>
-            <%= attachment_image_tag @recipe.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
-          <% end %>
+          <div class="ryaku ml-4" style="width: 320px;">
+            <%= link_to user_path(@recipe.user.id), class:"link-title" do %>
+              <strong><%= @recipe.user.username %></strong>
+            <% end %>
+          </div>
         </div>
-        <div class="ml-4 bg-warning">
-          <%= link_to user_path(@recipe.user.id), class:"link-title" do %>
-            <strong><%= @recipe.user.username %></strong>
-          <% end %>
+
+        <div class="ml-5 pl-4 mt-3 pr-4" style="word-wrap: break-word;">
+          <%= simple_format @recipe.user.profile %>
         </div>
-      </div>
-
-      <div class="ml-5 pl-4 mt-2 bg-info" style="word-wrap: break-word;">
-        <%= simple_format @recipe.user.profile %>
-      </div>
-    </div>
-
-
-
-
-
-      <hr class="my-4">
-
-      <div class="mb-4">
-        <h5>
-          <%= @recipe.comments.count %>件のコメント
-        </h5>
       </div>
 
       <div class="mb-5">
-        <%= form_with model: [@recipe, @comment], local: true do |f| %>
-          <div class="form-group">
-            <%= f.text_area :body,
-                            rows: 1,
-                            style: "height: 48px;",
-                            class: "form-control",
-                            required: true,
-                            maxlength: '140',
-                            placeholder: "コメントを追加…" %>
-          </div>
-          <%= f.submit 'コメントを投稿する', class:"btn btn-warning btn-block" %>
-        <% end %>
+        <hr>
+
+        <h5 class="mt-4 text-dark">
+          <%= @recipe.comments.count %> 件のコメント
+        </h5>
+
+        <div class="mt-4">
+          <%= form_with model: [@recipe, @comment], local: true do |f| %>
+            <div class="form-group">
+              <%= f.text_area :body,
+                              rows: 1,
+                              style: "height: 48px;",
+                              class: "form-control",
+                              required: true,
+                              maxlength: '140',
+                              placeholder: "コメントを追加…" %>
+            </div>
+
+            <%= f.submit 'コメントを投稿する', class:"btn btn-warning btn-block mt-4" %>
+          <% end %>
+        </div>
       </div>
 
-      <% @recipe.comments.each do |comment| %>
-        <div class="row">
-          <div class="col-1">
+
+
+
+
+
+
+
+
+
+      <div>
+        <% @recipe.comments.each do |comment| %>
+
+          <div>
             <%= link_to user_path(comment.user.id) do %>
               <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
             <% end %>
           </div>
 
-          <div class="col-11">
-            <table class="table table-borderless my-0">
-              <tr>
-                <td class="align-middle pr-0">
-                  <%= link_to user_path(comment.user.id), class:"link" do %>
-                    <%= comment.user.username %>
-                  <% end %>
-                  <span><%= time_ago_in_words(comment.created_at) %></span>前
-                </td>
-
-                <% if comment.user == current_user %>
-                  <td class="align-middle text-right p-0">
-                    <div>
-                      <%= link_to [@recipe, comment], method: :delete, data: {confirm: "削除しますか？"} do %>
-                        <button type="button" class="btn btn-danger">削除</button>
-                      <% end %>
-                    </div>
-                  </td>
-                <% end %>
-              </tr>
-            </table>
-
-            <table class="table table-borderless mb-5" style="table-layout: fixed;">
-              <tr>
-                <td style="word-wrap: break-word;">
-                  <%= simple_format comment.body %>
-                </td>
-              </tr>
-            </table>
+          <div>
+            <%= link_to user_path(comment.user.id), class:"link" do %>
+              <%= comment.user.username %>
+            <% end %>
           </div>
-        </div>
-      <% end %>
+
+          <div>
+            <span><%= time_ago_in_words(comment.created_at) %></span>前
+          </div>
+
+          <div style="word-wrap: break-word;">
+            <%= simple_format comment.body %>
+          </div>
+
+
+
+
+
+          <% if comment.user == current_user %>
+            <div class="dropdown">
+              <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </a>
+              <div class="dropdown-menu shadow-sm py-3" aria-labelledby="dropdownMenuButton" style="width: 120px;">
+                <%= link_to [@recipe, comment], class:"link", method: :delete, data: {confirm: "削除しますか？"} do %>
+                  <i class="far fa-trash-alt px-4"></i>削除
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+
+
+
+
+
+        <% end %>
+      </div>
+
+
+
+
+
+
+
+
+
 
     </div>
   </div>
-
 </div>
