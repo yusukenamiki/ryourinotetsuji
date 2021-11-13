@@ -132,7 +132,7 @@
           </div>
 
           <div class="bg-info" style="word-wrap: break-word;">
-            <%= simple_format comment.body %>
+            <%= simple_format comment.body, {}, wrapper_tag: "div" %>
           </div>
 
           <div class="bg-primary">
