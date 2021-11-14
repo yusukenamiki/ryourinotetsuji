@@ -135,11 +135,11 @@
             <%= simple_format comment.body, {}, wrapper_tag: "div" %>
           </div>
 
-          <div class="bg-primary">
+          <div>
             <% if comment.user == current_user %>
-              <div class="dropdown">
+              <div class="dropdown bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                 <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fas fa-ellipsis-v"></i>
+                  <i class="fas fa-ellipsis-v py-1"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right shadow-sm py-3" aria-labelledby="dropdownMenuButton" style="width: 120px;">
                   <%= link_to [@recipe, comment], class:"link", method: :delete, data: {confirm: "削除しますか？"} do %>
