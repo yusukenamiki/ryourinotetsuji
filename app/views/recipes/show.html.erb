@@ -60,14 +60,14 @@
       </div>
 
       <div class="mb-5">
-        <div class="img-container">
+        <div class="img-container bg-warning mr-3">
           <div>
             <%= link_to user_path(@recipe.user) do %>
               <%= attachment_image_tag @recipe.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
             <% end %>
           </div>
 
-          <div class="ryaku ml-4" style="width: 320px;">
+          <div class="ryaku ml-4 bg-success">
             <%= link_to user_path(@recipe.user.id), class:"link-title" do %>
               <strong><%= @recipe.user.username %></strong>
             <% end %>
@@ -123,13 +123,10 @@
                 <% end %>
               </div>
 
-              <div class="ml-4">
-                <div class="bg-success">
-                  <%= link_to user_path(comment.user.id), class:"link-title" do %>
-                    <%= comment.user.username %>
-                  <% end %>
-                </div>
-
+              <div class="ryaku ml-4 bg-success">
+                <%= link_to user_path(comment.user.id), class:"link-title" do %>
+                  <%= comment.user.username %>
+                <% end %>
                 <div class="bg-danger">
                   <span><%= time_ago_in_words(comment.created_at) %></span>前
                 </div>
