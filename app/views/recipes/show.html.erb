@@ -1,8 +1,8 @@
 <%= render 'shared/flash_messages' %>
 
-<div class="container p-5 bg-dark">
+<div class="container p-5">
   <div class="d-flex justify-content-center">
-    <div class="col px-0 bg-light" style="max-width: 600px">
+    <div class="col px-0" style="max-width: 600px">
 
       <div class="card shadow-sm mb-5">
         <div>
@@ -115,7 +115,7 @@
       <div>
         <% @recipe.comments.each do |comment| %>
 
-          <div class="oya2 bg-primary mb-5">
+          <div class="oya2 mb-5">
             <div class="img-container2 bg-warning mr-5">
               <div>
                 <%= link_to user_path(comment.user.id) do %>

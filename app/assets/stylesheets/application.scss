@@ -121,6 +121,10 @@ a:link {
   top: 51px;
   right: 0px;
 }
+
+/*------------------------------------
+- コメント欄
+------------------------------------*/
 // コメント欄のドロップダウン内の削除のアイコン
 .fa-trash-alt {
   font-size: 16px;
@@ -139,6 +143,12 @@ a:link {
   position: absolute;
   top: 0px;
   right: 0px;
+}
+
+// コメント欄のドロップダウンのホバーのみ
+.ko2 > .dropdown:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
 }
 
 /*------------------------------------
