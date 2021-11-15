@@ -115,22 +115,24 @@
       <div>
         <% @recipe.comments.each do |comment| %>
 
-          <div class="img-container2 oya2 bg-warning">
-            <div>
-              <%= link_to user_path(comment.user.id) do %>
-                <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
-              <% end %>
-            </div>
-
-            <div class="ml-4">
-              <div class="bg-success">
-                <%= link_to user_path(comment.user.id), class:"link-title" do %>
-                  <%= comment.user.username %>
+          <div class="oya2 bg-primary mb-5">
+            <div class="img-container2 bg-warning mr-5">
+              <div>
+                <%= link_to user_path(comment.user.id) do %>
+                  <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
                 <% end %>
               </div>
 
-              <div class="bg-danger">
-                <span><%= time_ago_in_words(comment.created_at) %></span>前
+              <div class="ml-4">
+                <div class="bg-success">
+                  <%= link_to user_path(comment.user.id), class:"link-title" do %>
+                    <%= comment.user.username %>
+                  <% end %>
+                </div>
+
+                <div class="bg-danger">
+                  <span><%= time_ago_in_words(comment.created_at) %></span>前
+                </div>
               </div>
             </div>
 
@@ -148,10 +150,10 @@
                 </div>
               <% end %>
             </div>
-          </div>
 
-          <div class="mx-5 pl-4 mt-3 mb-5" style="word-wrap: break-word;">
-            <%= simple_format comment.body, {}, wrapper_tag: "div" %>
+            <div class="mx-5 pl-4 mt-3 bg-warning" style="word-wrap: break-word;">
+              <%= simple_format comment.body, {}, wrapper_tag: "div" %>
+            </div>
           </div>
 
         <% end %>
