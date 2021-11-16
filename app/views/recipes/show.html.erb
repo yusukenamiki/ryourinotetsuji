@@ -16,12 +16,11 @@
         <div class="card-body p-4">
 
           <div class="bg-light oya2">
-            <div class="bg-success mr-5" style="padding: 9px 0px 10px 0px;">
-              <strong><%= @recipe.title %></strong>
-            </div>
-
-            <div class="bg-primary ko2">
-              <% if @recipe.user.id == current_user.id %>
+            <% if @recipe.user.id == current_user.id %>
+              <div class="bg-success mr-5" style="padding: 9px 0px 10px 0px;">
+                <strong><%= @recipe.title %></strong>
+              </div>
+              <div class="bg-primary ko2">
                 <div class="dropdown rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                   <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-ellipsis-v py-1"></i>
@@ -35,9 +34,12 @@
                     <% end %>
                   </div>
                 </div>
-              <% end %>
-            </div>
-
+              </div>
+            <% else %>
+              <div class="bg-success" style="padding: 9px 0px 10px 0px;">
+                <strong><%= @recipe.title %></strong>
+              </div>
+            <% end %>
           </div>
 
 
