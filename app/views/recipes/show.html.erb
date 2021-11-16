@@ -26,13 +26,15 @@
                   <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-ellipsis-v py-1"></i>
                   </a>
-                  <div class="dropdown-menu dropdown-menu-right shadow-sm py-3" aria-labelledby="dropdownMenuButton" style="width: 120px;">
-                    <div class="btn-group mt-4" role="group">
-                      <%= link_to edit_recipe_path(@recipe) do %>
-                        <button type="button" class="btn btn-warning mr-4" style="width: 100px;">編集</button>
+                  <div class="dropdown-menu dropdown-menu-right shadow-sm py-0" aria-labelledby="dropdownMenuButton" style="width: 120px;">
+                    <div class="py-4">
+                      <%= link_to edit_recipe_path(@recipe), class:"link" do %>
+                        <i class="far fa-edit px-4"></i>編集
                       <% end %>
-                      <%= link_to recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"} do %>
-                        <button type="button" class="btn btn-danger" style="width: 100px;">削除</button>
+                    </div>
+                    <div class="py-4">
+                      <%= link_to recipe_path(@recipe), class:"link", method: :delete, data: {confirm: "削除しますか？"} do %>
+                        <i class="far fa-trash-alt px-4"></i>削除
                       <% end %>
                     </div>
                   </div>
