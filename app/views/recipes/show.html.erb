@@ -15,32 +15,32 @@
 
         <div class="card-body p-4">
 
-            <div class="bg-warning img-container2">
-              <div class="bg-success" style="padding: 9px 0px 10px 0px;">
-                <strong><%= @recipe.title %></strong>
-              </div>
+          <div class="bg-light oya2">
+            <div class="bg-success mr-5" style="padding: 9px 0px 10px 0px;">
+              <strong><%= @recipe.title %></strong>
+            </div>
 
-              <div class="bg-primary">
-                <% if @recipe.user.id == current_user.id %>
-                  <div class="dropdown rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                    <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v py-1"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow-sm py-3" aria-labelledby="dropdownMenuButton" style="width: 120px;">
-                      <div class="btn-group mt-4" role="group">
-                        <%= link_to edit_recipe_path(@recipe) do %>
-                          <button type="button" class="btn btn-warning mr-4" style="width: 100px;">編集</button>
-                        <% end %>
-                        <%= link_to recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"} do %>
-                          <button type="button" class="btn btn-danger" style="width: 100px;">削除</button>
-                        <% end %>
-                      </div>
+            <div class="bg-primary ko2">
+              <% if @recipe.user.id == current_user.id %>
+                <div class="dropdown rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                  <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-v py-1"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right shadow-sm py-3" aria-labelledby="dropdownMenuButton" style="width: 120px;">
+                    <div class="btn-group mt-4" role="group">
+                      <%= link_to edit_recipe_path(@recipe) do %>
+                        <button type="button" class="btn btn-warning mr-4" style="width: 100px;">編集</button>
+                      <% end %>
+                      <%= link_to recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"} do %>
+                        <button type="button" class="btn btn-danger" style="width: 100px;">削除</button>
+                      <% end %>
                     </div>
                   </div>
-                <% end %>
-              </div>
-
+                </div>
+              <% end %>
             </div>
+
+          </div>
 
 
 
@@ -165,7 +165,7 @@
               </div>
             </div>
 
-            <div class="ko2">
+            <div class="ko2 bg-primary">
               <% if comment.user == current_user %>
                 <div class="dropdown rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                   <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
