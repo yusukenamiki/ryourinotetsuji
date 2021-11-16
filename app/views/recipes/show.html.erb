@@ -169,9 +169,9 @@
                   <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-ellipsis-v py-1"></i>
                   </a>
-                  <div class="dropdown-menu dropdown-menu-right shadow-sm py-3" aria-labelledby="dropdownMenuButton" style="width: 120px;">
-                    <%= link_to [@recipe, comment], class:"link", method: :delete, data: {confirm: "削除しますか？"} do %>
-                      <i class="far fa-trash-alt px-4"></i>削除
+                  <div class="dropdown-menu dropdown-menu-right shadow-sm py-0" aria-labelledby="dropdownMenuButton" style="width: 120px;">
+                    <%= link_to [@recipe, comment], class: "dropdown-item", method: :delete, data: {confirm: "削除しますか？"} do %>
+                      <div class="text-secondary py-3"><i class="far fa-trash-alt pr-4"></i>削除</div>
                     <% end %>
                   </div>
                 </div>
