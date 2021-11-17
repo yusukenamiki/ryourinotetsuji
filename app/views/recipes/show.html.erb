@@ -9,20 +9,15 @@
           <%= attachment_image_tag @recipe, :image, width: '100%', height: '100%' %>
         </div>
 
-
-
-
-
         <div class="card-body p-4">
-
-          <div class="bg-light oya2">
+          <div class="oya2">
             <% if @recipe.user.id == current_user.id %>
-              <div class="bg-success mr-5" style="padding: 9px 0px 10px 0px;">
+              <div class="mr-5" style="padding: 9px 0px 10px 0px;">
                 <strong><%= @recipe.title %></strong>
               </div>
-              <div class="bg-primary ko2">
+              <div class="ko2">
                 <div class="dropdown rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                  <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-ellipsis-v py-1"></i>
                   </a>
                   <div class="dropdown-menu dropdown-menu-right shadow-sm py-0" aria-labelledby="dropdownMenuButton" style="width: 120px;">
@@ -36,15 +31,11 @@
                 </div>
               </div>
             <% else %>
-              <div class="bg-success" style="padding: 9px 0px 10px 0px;">
+              <div style="padding: 9px 0px 10px 0px;">
                 <strong><%= @recipe.title %></strong>
               </div>
             <% end %>
           </div>
-
-
-
-
 
           <div class="mt-4">
             レシピ
@@ -56,9 +47,9 @@
             <%= simple_format @recipe.body %>
           </div>
 
-          <h6 class="mt-4">
+          <div class="mt-4">
             <time><%= @recipe.updated_at.strftime("%Y/%m/%d") %></time>更新
-          </h6>
+          </div>
 
           <div class="img-container mt-4">
             <div>
@@ -77,19 +68,18 @@
               <%= @recipe.favorites.count %>
             </div>
           </div>
-
         </div>
       </div>
 
       <div class="mb-5">
-        <div class="img-container bg-warning mr-3">
+        <div class="img-container mr-3">
           <div>
             <%= link_to user_path(@recipe.user) do %>
               <%= attachment_image_tag @recipe.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
             <% end %>
           </div>
 
-          <div class="ryaku ml-4 bg-success">
+          <div class="ryaku ml-4">
             <%= link_to user_path(@recipe.user.id), class:"link-title" do %>
               <strong><%= @recipe.user.username %></strong>
             <% end %>
@@ -125,37 +115,27 @@
         </div>
       </div>
 
-
-
-
-
-
-
-
-
-
       <div>
         <% @recipe.comments.each do |comment| %>
-
-          <div class="oya2 mb-5 bg-light">
-            <div class="img-container2 bg-warning mr-5">
+          <div class="oya2 mb-5">
+            <div class="img-container2 mr-5">
               <div>
                 <%= link_to user_path(comment.user.id) do %>
                   <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
                 <% end %>
               </div>
 
-              <div class="ryaku ml-4 bg-success">
+              <div class="ryaku ml-4">
                 <%= link_to user_path(comment.user.id), class:"link-title" do %>
                   <%= comment.user.username %>
                 <% end %>
-                <div class="bg-danger">
+                <div>
                   <span><%= time_ago_in_words(comment.created_at) %></span>前
                 </div>
               </div>
             </div>
 
-            <div class="ko2 bg-primary">
+            <div class="ko2">
               <% if comment.user == current_user %>
                 <div class="dropdown rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                   <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -170,22 +150,12 @@
               <% end %>
             </div>
 
-            <div class="mx-5 pl-4 mt-3 bg-warning" style="word-wrap: break-word;">
+            <div class="mx-5 pl-4 mt-3" style="word-wrap: break-word;">
               <%= simple_format comment.body, {}, wrapper_tag: "div" %>
             </div>
           </div>
-
         <% end %>
       </div>
-
-
-
-
-
-
-
-
-
 
     </div>
   </div>
