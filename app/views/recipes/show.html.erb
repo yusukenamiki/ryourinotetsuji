@@ -10,12 +10,12 @@
         </div>
 
         <div class="card-body p-4">
-          <div class="oya2">
+          <div class="oya">
             <% if @recipe.user.id == current_user.id %>
               <div class="text-dark pr-3 mr-5" style="padding: 9px 0px 10px 0px;">
                 <strong><%= @recipe.title %></strong>
               </div>
-              <div class="ko2">
+              <div class="ko-top0right0">
                 <div class="dropdown rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                   <a type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-ellipsis-v py-1"></i>
@@ -117,7 +117,7 @@
 
       <div>
         <% @recipe.comments.each do |comment| %>
-          <div class="oya2 mb-5">
+          <div class="oya mb-5">
             <div class="img-container mr-5">
               <div>
                 <%= link_to user_path(comment.user.id) do %>
@@ -134,7 +134,7 @@
               </div>
             </div>
 
-            <div class="ko2">
+            <div class="ko-top0right0">
               <% if comment.user == current_user %>
                 <div class="dropdown rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                   <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

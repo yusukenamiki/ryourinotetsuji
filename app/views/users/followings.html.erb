@@ -8,7 +8,7 @@
 
       <div>
         <% @users.each do |user| %>
-          <div class="oya2 mb-5 bg-warning">
+          <div class="oya mb-5 bg-warning">
             <div class="img-container">
               <div class="bg-danger">
                 <%= link_to user_path(user) do %>
@@ -22,7 +22,7 @@
               </div>
             </div>
 
-            <div class="ko2">
+            <div class="ko-top0right0">
               <% if user != current_user %>
                 <% if user.is_followed_by?(current_user) %>
                   <%=link_to user_relationships_path(user), method: :delete do %>
