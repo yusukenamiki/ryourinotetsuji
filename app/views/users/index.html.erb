@@ -1,3 +1,54 @@
+<div class="container p-5 bg-dark">
+  <div class="d-flex justify-content-center">
+    <div class="col px-0 bg-light" style="max-width: 600px">
+
+      <div>
+        <% @users.each do |user| %>
+          <div class="oya mb-5 bg-warning">
+            <div class="img-container">
+              <div class="bg-danger">
+                <%= link_to user_path(user) do %>
+                  <%= attachment_image_tag user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "136x136" %>
+                <% end %>
+              </div>
+              <div class="ryaku ml-4 bg-success" style="max-width: 56%;">
+                <%= link_to user_path(user), class:"link-title" do %>
+                  <strong><%= user.username %></strong>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="ko-top0right0">
+              <% if user_signed_in? %>
+                <% if user.is_followed_by?(current_user) %>
+                  <%=link_to user_relationships_path(user), method: :delete do %>
+                    <button class="btn btn-outline-secondary">フォロー中</button>
+                  <% end %>
+                <% else %>
+                  <%=link_to user_relationships_path(user), method: :post do %>
+                    <button class="btn btn-dark text-white">フォローする</button>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<hr>
+
+
+
+
+
 <div class="container py-5">
   <div class="row row-cols-1 row-cols-md-3">
     <% @users.each do |user| %>
@@ -5,7 +56,7 @@
         <div class="card shadow-sm">
           <div class="text-center p-3">
             <%= link_to user_path(user) do %>
-              <%= attachment_image_tag user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "250x250" %>
+              <%= attachment_image_tag user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "136x136" %>
             <% end %>
           </div>
           <div class="card-body pt-0">
