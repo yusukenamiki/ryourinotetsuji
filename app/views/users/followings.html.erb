@@ -8,29 +8,29 @@
 
       <div>
         <% @users.each do |user| %>
-          <div class="oya2 mb-5 bg-warning">
+          <div class="oya mb-5 bg-warning">
             <div class="img-container">
               <div class="bg-danger">
                 <%= link_to user_path(user) do %>
                   <%= attachment_image_tag user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "48x48" %>
                 <% end %>
               </div>
-              <div class="ryaku ml-4 bg-success" style="max-width: 54%;">
+              <div class="ryaku ml-4 bg-success" style="max-width: 56%;">
                 <%= link_to user_path(user), class:"link-title" do %>
                   <strong><%= user.username %></strong>
                 <% end %>
               </div>
             </div>
 
-            <div class="ko2">
+            <div class="ko-top0right0">
               <% if user != current_user %>
                 <% if user.is_followed_by?(current_user) %>
                   <%=link_to user_relationships_path(user), method: :delete do %>
-                    <button class="btn btn-danger">フォロー中</button>
+                    <button class="btn btn-outline-secondary">フォロー中</button>
                   <% end %>
                 <% else %>
                   <%=link_to user_relationships_path(user), method: :post do %>
-                    <button class="btn btn-warning">フォローする</button>
+                    <button class="btn btn-dark text-white">フォローする</button>
                   <% end %>
                 <% end %>
               <% end %>

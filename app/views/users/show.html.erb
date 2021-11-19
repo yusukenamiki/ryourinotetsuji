@@ -5,7 +5,7 @@
     <div>
       <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "150x150" %>
     </div>
-    <div class="ko">
+    <div class="ko-mypage">
       <% if @user.id == current_user.id %>
         <div>
           <%= link_to edit_user_path(@user) do %>

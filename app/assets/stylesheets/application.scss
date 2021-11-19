@@ -47,7 +47,7 @@
 /*------------------------------------
 - 共通
 ------------------------------------*/
-// 画像の縦横比を維持したまま中央でトリミング
+// 画像の縦横比を維持したまま、縦横のうち小さい方を基準に拡大・縮小され、中央の位置でトリミング
 img {
   object-fit: cover;
 }
@@ -106,7 +106,8 @@ a:link {
   color: rgb(237, 73, 86);
 }
 
-// 画像 ( または Font Awesome ) と文字の横並び
+// ユーザーの画像と、文字の横並び
+// fa-heartと、数字の横並び
 .img-container {
   display: flex;
   align-items: center;
@@ -116,40 +117,27 @@ a:link {
   position: relative;
 }
 
-.ko {
+.ko-mypage {
   position: absolute;
   top: 51px;
   right: 0px;
 }
 
-/*------------------------------------
-- コメント欄
-------------------------------------*/
-// コメント欄のドロップダウン内の削除のアイコン
-.fa-trash-alt {
-  font-size: 16px;
-  margin-right: 2px;
-}
-
-.img-container2 {
-  display: flex;
-  align-items: flex-start;
-}
-
-.oya2 {
-  position: relative;
-}
-
-.ko2 {
+.ko-top0right0 {
   position: absolute;
   top: 0px;
   right: 0px;
 }
 
-// レシピ詳細のドロップダウンアイコンのホバー
-.ko2 > .dropdown:hover {
+// ドロップダウンアイコンのホバー時の反応 ( レシピ詳細のみ )
+.ko-top0right0 > .dropdown:hover {
   background-color: #e9ecef;
   cursor: pointer;
+}
+
+.fa-trash-alt {
+  font-size: 16px;
+  margin-right: 2px;
 }
 
 /*------------------------------------
