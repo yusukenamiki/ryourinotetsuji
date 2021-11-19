@@ -6,22 +6,24 @@
         <% @users.each do |user| %>
 
 
-          <div class="bg-warning wrapper mb-5">
+          <div class="wrapper mb-5">
             <div class="bg-danger kotei136">
               <%= link_to user_path(user) do %>
                 <%= attachment_image_tag user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "136x136" %>
               <% end %>
             </div>
 
-            <div class="bg-success kahen">
-              <%= link_to user_path(user), class:"link-title" do %>
-                <%= user.username %>
-              <% end %>
-              <div>
+            <div class="bg-warning kahen">
+              <div class="bg-success">
+                <%= link_to user_path(user), class:"link-title" do %>
+                  <%= user.username %>
+                <% end %>
+              </div>
+              <div class="bg-info">
                 <%= user.recipes.count %> 件のレシピ
               </div>
-              <div>
-                <%= simple_format user.profile %>
+              <div class="bg-success">
+                <%= simple_format user.profile, {}, wrapper_tag: "div" %>
               </div>
             </div>
 
