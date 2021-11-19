@@ -5,6 +5,7 @@
       <div>
         <% @users.each do |user| %>
           <div class="oya mb-5 bg-warning">
+
             <div class="img-container">
               <div class="bg-danger">
                 <%= link_to user_path(user) do %>
@@ -15,6 +16,12 @@
                 <%= link_to user_path(user), class:"link-title" do %>
                   <strong><%= user.username %></strong>
                 <% end %>
+                <div>
+                  <%= user.recipes.count %> 件のレシピ
+                </div>
+                <div class="mt-4">
+                  <%= simple_format user.profile %>
+                </div>
               </div>
             </div>
 
