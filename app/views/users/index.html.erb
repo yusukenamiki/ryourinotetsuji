@@ -14,7 +14,7 @@
             </div>
 
             <div class="bg-warning kahen">
-              <div class="bg-success">
+              <div class="bg-success text-ellipsis1">
                 <%= link_to user_path(user), class:"link-title" do %>
                   <%= user.username %>
                 <% end %>
@@ -22,7 +22,7 @@
               <div class="bg-info">
                 <%= user.recipes.count %> 件のレシピ
               </div>
-              <div class="bg-success">
+              <div class="bg-success text-ellipsis2">
                 <%= simple_format user.profile, {}, wrapper_tag: "div" %>
               </div>
             </div>
