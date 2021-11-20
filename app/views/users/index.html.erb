@@ -13,21 +13,36 @@
               <% end %>
             </div>
 
-            <div class="bg-warning kahen px-4 d-flex align-items-center">
-              <div class="bg-dark">
-                <h5 class="bg-success text-ellipsis1 mb-0">
-                  <%= link_to user_path(user), class:"link-title" do %>
-                    <%= user.username %>
-                  <% end %>
-                </h5>
-                <div class="bg-info" style="font-size: 12px">
-                  <%= user.recipes.count %> 件のレシピ
-                </div>
-                <div class="bg-success text-ellipsis2" style="font-size: 12px">
-                  <%= simple_format user.profile, {}, wrapper_tag: "div" %>
+            <% if user.profile.present? %>
+              <div class="bg-warning kahen px-4 d-flex align-items-center">
+                <div class="bg-dark">
+                  <h5 class="bg-success text-ellipsis1 mb-2">
+                    <%= link_to user_path(user), class:"link-title" do %>
+                      <%= user.username %>
+                    <% end %>
+                  </h5>
+                  <div class="bg-info mb-2" style="font-size: 12px">
+                    <%= user.recipes.count %> 件のレシピ
+                  </div>
+                  <div class="bg-success text-ellipsis2" style="font-size: 12px">
+                    <%= simple_format user.profile, {}, wrapper_tag: "div" %>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% else %>
+              <div class="bg-white kahen px-4 d-flex align-items-center">
+                <div class="bg-dark">
+                  <h5 class="bg-success text-ellipsis1 mb-2">
+                    <%= link_to user_path(user), class:"link-title" do %>
+                      <%= user.username %>
+                    <% end %>
+                  </h5>
+                  <div class="bg-info" style="font-size: 12px">
+                    <%= user.recipes.count %> 件のレシピ
+                  </div>
+                </div>
+              </div>
+            <% end %>
 
             <div class="bg-primary kotei107 d-flex align-items-center justify-content-start">
               <% if user_signed_in? %>
