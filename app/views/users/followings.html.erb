@@ -1,44 +1,69 @@
-<div class="container p-5 bg-dark">
+<div class="container p-5">
+  <h5 class="text-center text-dark mb-5">
+    フォロー中 <%= @users.count %>人
+  </h5>
+
+  <hr class="mb-5" style="max-width: 600px">
+
   <div class="d-flex justify-content-center">
-    <div class="col px-0 bg-light" style="max-width: 600px">
-
-      <h5 class="text-center text-dark my-5">
-        <strong>フォロー中</strong>
-      </h5>
-
+    <div class="col px-0" style="max-width: 600px">
       <div>
         <% @users.each do |user| %>
-          <div class="oya mb-5 bg-warning">
-            <div class="img-container">
-              <div class="bg-danger">
-                <%= link_to user_path(user) do %>
-                  <%= attachment_image_tag user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "48x48" %>
-                <% end %>
-              </div>
-              <div class="ryaku ml-4 bg-success" style="max-width: 56%;">
-                <%= link_to user_path(user), class:"link-title" do %>
-                  <strong><%= user.username %></strong>
-                <% end %>
-              </div>
+          <div class="wrapper mb-5 pb-5">
+            <div class="kotei136">
+              <%= link_to user_path(user) do %>
+                <%= attachment_image_tag user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "136x136" %>
+              <% end %>
             </div>
 
-            <div class="ko-top0right0">
-              <% if user != current_user %>
+            <% if user.profile.present? %>
+              <div class="kahen px-4 d-flex align-items-center">
+                <div>
+                  <h5 class="text-ellipsis1 mb-2">
+                    <%= link_to user_path(user), class:"link-title" do %>
+                      <%= user.username %>
+                    <% end %>
+                  </h5>
+                  <div class="mb-2" style="font-size: 12px;">
+                    <%= user.recipes.count %> 件のレシピ
+                  </div>
+                  <div class="text-ellipsis2" style="font-size: 12px;">
+                    <%= simple_format user.profile, {}, wrapper_tag: "div" %>
+                  </div>
+                </div>
+              </div>
+            <% else %>
+              <div class="kahen px-4 d-flex align-items-center">
+                <div>
+                  <h5 class="text-ellipsis1 mb-2">
+                    <%= link_to user_path(user), class:"link-title" do %>
+                      <%= user.username %>
+                    <% end %>
+                  </h5>
+                  <div style="font-size: 12px;">
+                    <%= user.recipes.count %> 件のレシピ
+                  </div>
+                </div>
+              </div>
+            <% end %>
+
+            <% if user != current_user %>
+              <div class="kotei107 d-flex align-items-center">
                 <% if user.is_followed_by?(current_user) %>
                   <%=link_to user_relationships_path(user), method: :delete do %>
-                    <button class="btn btn-outline-secondary">フォロー中</button>
+                    <button class="btn btn-outline-secondary" style="width: 107px;">フォロー中</button>
                   <% end %>
                 <% else %>
                   <%=link_to user_relationships_path(user), method: :post do %>
                     <button class="btn btn-dark text-white">フォローする</button>
                   <% end %>
                 <% end %>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>
-
     </div>
   </div>
+
 </div>
