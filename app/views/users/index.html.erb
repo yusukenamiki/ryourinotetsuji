@@ -1,6 +1,6 @@
 <div class="container p-5">
   <div class="d-flex justify-content-center">
-    <div class="col px-0" style="max-width: 600px">
+    <div class="col px-0" style="max-width: 600px;">
 
       <div>
         <% @users.each do |user| %>
@@ -21,10 +21,10 @@
                       <%= user.username %>
                     <% end %>
                   </h5>
-                  <div class="mb-2" style="font-size: 12px">
+                  <div class="mb-2" style="font-size: 12px;">
                     <%= user.recipes.count %> 件のレシピ
                   </div>
-                  <div class="text-ellipsis2" style="font-size: 12px">
+                  <div class="text-ellipsis2" style="font-size: 12px;">
                     <%= simple_format user.profile, {}, wrapper_tag: "div" %>
                   </div>
                 </div>
@@ -37,18 +37,18 @@
                       <%= user.username %>
                     <% end %>
                   </h5>
-                  <div style="font-size: 12px">
+                  <div style="font-size: 12px;">
                     <%= user.recipes.count %> 件のレシピ
                   </div>
                 </div>
               </div>
             <% end %>
 
-            <div class="kotei107 d-flex align-items-center justify-content-start">
+            <div class="kotei107 d-flex align-items-center">
               <% if user_signed_in? %>
                 <% if user.is_followed_by?(current_user) %>
                   <%=link_to user_relationships_path(user), method: :delete do %>
-                    <button class="btn btn-outline-secondary">フォロー中</button>
+                    <button class="btn btn-outline-secondary" style="width: 107px;">フォロー中</button>
                   <% end %>
                 <% else %>
                   <%=link_to user_relationships_path(user), method: :post do %>
