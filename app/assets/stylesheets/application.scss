@@ -140,6 +140,36 @@ a:link {
   margin-right: 2px;
 }
 
+.wrapper {
+  display: flex;
+}
+
+.kotei136 {
+  width: 136px;
+}
+
+.kotei107 {
+  width: 107px;
+}
+
+.kahen {
+  flex: 1;
+}
+
+.text-ellipsis1 {
+  display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 1;
+ overflow: hidden;
+}
+
+.text-ellipsis2 {
+  display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 2;
+ overflow: hidden;
+}
+
 /*------------------------------------
 - ヘッダー
 ------------------------------------*/
