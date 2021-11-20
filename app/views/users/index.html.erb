@@ -15,7 +15,7 @@
 
             <div class="bg-warning kahen px-4 d-flex align-items-center">
               <div class="bg-dark">
-                <h5 class="bg-success text-ellipsis1">
+                <h5 class="bg-success text-ellipsis1 mb-0">
                   <%= link_to user_path(user), class:"link-title" do %>
                     <%= user.username %>
                   <% end %>
@@ -23,7 +23,7 @@
                 <div class="bg-info" style="font-size: 12px">
                   <%= user.recipes.count %> 件のレシピ
                 </div>
-                <div class="bg-success text-ellipsis2 mt-2" style="font-size: 12px">
+                <div class="bg-success text-ellipsis2" style="font-size: 12px">
                   <%= simple_format user.profile, {}, wrapper_tag: "div" %>
                 </div>
               </div>
