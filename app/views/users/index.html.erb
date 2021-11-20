@@ -4,8 +4,6 @@
 
       <div>
         <% @users.each do |user| %>
-
-
           <div class="wrapper mb-5 pb-5">
             <div class="kotei136">
               <%= link_to user_path(user) do %>
@@ -44,8 +42,8 @@
               </div>
             <% end %>
 
-            <div class="kotei107 d-flex align-items-center">
-              <% if user_signed_in? %>
+            <% if user_signed_in? %>
+              <div class="kotei107 d-flex align-items-center">
                 <% if user.is_followed_by?(current_user) %>
                   <%=link_to user_relationships_path(user), method: :delete do %>
                     <button class="btn btn-outline-secondary" style="width: 107px;">フォロー中</button>
@@ -55,11 +53,9 @@
                     <button class="btn btn-dark text-white">フォローする</button>
                   <% end %>
                 <% end %>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
-
-
         <% end %>
       </div>
 
