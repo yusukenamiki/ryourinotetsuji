@@ -121,13 +121,13 @@ a:link {
 .ko-mypage {
   position: absolute;
   top: 51px;
-  right: 0px;
+  right: 0;
 }
 
 .ko-top0right0 {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
 }
 
 // ドロップダウンアイコンのホバー時の反応 ( レシピ詳細のみ )
@@ -262,7 +262,7 @@ input[type="password"] {
   color: #fff;
   background-color: #ffc107;
   border-color: #ffc107;
-  border-radius: 15px
+  border-radius: 15px;
 }
 
 .page-item:first-child .page-link {
