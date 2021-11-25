@@ -9,19 +9,21 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <div class="form-group mb-4">
         <%= f.text_field :username,
-                        autofocus: true,
-                        autocomplete: "email",
-                        class: "form-control",
-                        required: true,
-                        maxlength: '30',
-                        placeholder: "ユーザー名" %>
+                         autofocus: true,
+                         autocomplete: "email",
+                         class: "form-control text-dark",
+                         style: "font-size: 1.4rem;",
+                         required: true,
+                         maxlength: '30',
+                         placeholder: "ユーザー名" %>
       </div>
 
       <div class="form-group mb-4">
         <%= f.email_field :email,
                           autofocus: true,
                           autocomplete: "email",
-                          class: "form-control",
+                          class: "form-control text-dark",
+                          style: "font-size: 1.4rem;",
                           required: true,
                           maxlength: '100',
                           placeholder: "メールアドレス" %>
@@ -29,22 +31,24 @@
 
       <div class="form-group mb-4">
         <%= f.password_field :password,
-                            autocomplete: "new-password",
-                            class: "form-control",
-                            required: true,
-                            minlength: @minimum_password_length,
-                            maxlength: '30',
-                            placeholder: "パスワード（6文字以上）" %>
+                             autocomplete: "new-password",
+                             class: "form-control text-dark",
+                             style: "font-size: 1.4rem;",
+                             required: true,
+                             minlength: @minimum_password_length,
+                             maxlength: '30',
+                             placeholder: "パスワード（6文字以上）" %>
       </div>
 
       <div class="form-group mb-5">
         <%= f.password_field :password_confirmation,
-                            autocomplete: "new-password",
-                            class: "form-control",
-                            required: true,
-                            minlength: @minimum_password_length,
-                            maxlength: '30',
-                            placeholder: "パスワード（確認用）" %>
+                             autocomplete: "new-password",
+                             class: "form-control text-dark",
+                             style: "font-size: 1.4rem;",
+                             required: true,
+                             minlength: @minimum_password_length,
+                             maxlength: '30',
+                             placeholder: "パスワード（確認用）" %>
       </div>
 
       <div class="actions mb-4">
