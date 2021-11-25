@@ -52,9 +52,9 @@ img {
   object-fit: cover;
 }
 
-// デフォルトのルート font-size を 16px から変更
+// ブラウザのデフォルトのルート font-size （ 通常は16px ） を変更
 html {
-  font-size: 14px;
+  font-size: 62.5%;
 }
 
 // body をヘッダー分下げる
@@ -62,6 +62,7 @@ body {
   position: relative;
   top: 64.5px;
   color: #6c757d;
+  font-size: 1.4rem;
 }
 
 // 全てのリンクの下線を外す
