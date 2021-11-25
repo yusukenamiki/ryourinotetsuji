@@ -22,10 +22,10 @@
                   </a>
                   <div class="dropdown-menu dropdown-menu-right shadow-sm py-0" aria-labelledby="dropdownMenuButton" style="width: 120px;">
                     <%= link_to edit_recipe_path(@recipe), class: "dropdown-item" do %>
-                      <div class="text-secondary py-3"><i class="far fa-edit pr-4"></i>編集</div>
+                      <div class="text-secondary py-4"><i class="far fa-edit pr-4"></i>編集</div>
                     <% end %>
                     <%= link_to recipe_path(@recipe), class: "dropdown-item", method: :delete, data: {confirm: "削除しますか？"} do %>
-                      <div class="text-secondary py-3"><i class="far fa-trash-alt pr-4"></i>削除</div>
+                      <div class="text-secondary py-4"><i class="far fa-trash-alt pr-4"></i>削除</div>
                     <% end %>
                   </div>
                 </div>
@@ -142,7 +142,7 @@
                   </a>
                   <div class="dropdown-menu dropdown-menu-right shadow-sm py-0" aria-labelledby="dropdownMenuButton" style="width: 120px;">
                     <%= link_to [@recipe, comment], class: "dropdown-item", method: :delete, data: {confirm: "削除しますか？"} do %>
-                      <div class="text-secondary py-3"><i class="far fa-trash-alt pr-4"></i>削除</div>
+                      <div class="text-secondary py-4"><i class="far fa-trash-alt pr-4"></i>削除</div>
                     <% end %>
                   </div>
                 </div>
