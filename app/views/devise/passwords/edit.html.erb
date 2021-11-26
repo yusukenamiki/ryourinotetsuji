@@ -2,9 +2,9 @@
 
 <div class="container-login">
   <div class="card shadow-lg my-5 p-5">
-    <h3 class="text-center text-dark mb-5">
+    <h1 class="text-center text-dark mb-5">
       パスワード再設定
-    </h3>
+    </h1>
 
     <div class="text-center mb-5">
       新しいパスワードを入力してください
@@ -17,7 +17,8 @@
         <%= f.password_field :password,
                              autofocus: true,
                              autocomplete: "new-password",
-                             class: "form-control",
+                             class: "form-control text-dark",
+                             style: "font-size: 1.4rem;",
                              required: true,
                              minlength: @minimum_password_length,
                              maxlength: '30',
@@ -27,7 +28,8 @@
       <div class="form-group mb-5">
         <%= f.password_field :password_confirmation,
                              autocomplete: "new-password",
-                             class: "form-control",
+                             class: "form-control text-dark",
+                             style: "font-size: 1.4rem;",
                              required: true,
                              minlength: @minimum_password_length,
                              maxlength: '30',

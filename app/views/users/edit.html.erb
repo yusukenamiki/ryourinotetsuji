@@ -18,7 +18,8 @@
         <%= f.text_field :username,
                          autofocus: true,
                          autocomplete: "email",
-                         class: "form-control",
+                         class: "form-control text-dark",
+                         style: "font-size: 1.4rem;",
                          required: true,
                          maxlength: '30' %>
       </div>
@@ -28,7 +29,8 @@
         <%= f.email_field :email,
                           autofocus: true,
                           autocomplete: "email",
-                          class: "form-control",
+                          class: "form-control text-dark",
+                          style: "font-size: 1.4rem;",
                           required: true,
                           maxlength: '100' %>
       </div>
@@ -37,7 +39,8 @@
         <%= f.label :profile, "プロフィール" %><br />
         <%= f.text_area :profile,
                         rows: 5,
-                        class: "form-control",
+                        class: "form-control text-dark",
+                        style: "font-size: 1.4rem;",
                         maxlength: '150' %>
       </div>
 

@@ -52,16 +52,17 @@ img {
   object-fit: cover;
 }
 
-// デフォルトのルート font-size を 16px から変更
+// ブラウザのデフォルトのルート font-size （ 通常は16px ） を変更
 html {
-  font-size: 14px;
+  font-size: 62.5%;
 }
 
 // body をヘッダー分下げる
 body {
   position: relative;
-  top: 64.5px;
+  top: 71.5px;
   color: #6c757d;
+  font-size: 1.4rem;
 }
 
 // 全てのリンクの下線を外す
@@ -87,7 +88,7 @@ a:link {
 
 .btn {
   color: #343a40;
-  font-size: 1rem;
+  font-size: 1.4rem;
   height: 48px;
 }
 
@@ -120,13 +121,13 @@ a:link {
 .ko-mypage {
   position: absolute;
   top: 51px;
-  right: 0px;
+  right: 0;
 }
 
 .ko-top0right0 {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
 }
 
 // ドロップダウンアイコンのホバー時の反応 ( レシピ詳細のみ )
@@ -136,7 +137,7 @@ a:link {
 }
 
 .fa-trash-alt {
-  font-size: 16px;
+  font-size: 1.6rem;
   margin-right: 2px;
 }
 
@@ -189,6 +190,7 @@ a:link {
 // ドロップダウンリストの幅
 .dropdown-menu {
   width: 220px;
+  font-size: 1.4rem;
 }
 
 /*
@@ -218,7 +220,7 @@ a:link {
 
 .form-control::placeholder {
   color: #cccccc;
-  font-size: 1rem;
+  font-size: 1.4rem;
   line-height: 48px;
   position: absolute;
   top: 0;
@@ -248,9 +250,12 @@ input[type="password"] {
 ------------------------------------*/
 .pagination>li>a {
   color: #6c757d;
-  margin-right: 12px;
   border: none;
-  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 7.5px;
 }
 
 .pagination>li>a:hover {
@@ -261,15 +266,18 @@ input[type="password"] {
   color: #fff;
   background-color: #ffc107;
   border-color: #ffc107;
-  border-radius: 15px
+  width: 30px;
+  height: 30px;
+  text-align: center;
 }
 
 .page-item:first-child .page-link {
-  border-radius: 15px;
+  border-radius: 50%;
+  margin: 0 7.5px;
 }
 
 .page-item:last-child .page-link {
-  border-radius: 15px;
+  border-radius: 50%;
 }
 
 // ボタンクリック時の縁を非表示

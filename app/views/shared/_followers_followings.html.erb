@@ -1,7 +1,7 @@
 <hr class="mb-5" style="max-width: 600px;">
 
 <div class="d-flex justify-content-center">
-  <div class="col px-0" style="max-width: 600px">
+  <div class="col px-0" style="max-width: 600px;">
     <div>
       <% @users.each do |user| %>
         <div class="wrapper mb-5 pb-5">
@@ -14,15 +14,15 @@
           <% if user.profile.present? %>
             <div class="kahen px-4 d-flex align-items-center">
               <div>
-                <h5 class="text-ellipsis1 mb-2">
+                <h3 class="text-ellipsis1 mb-2">
                   <%= link_to user_path(user), class:"link-title" do %>
                     <%= user.username %>
                   <% end %>
-                </h5>
-                <div class="mb-2" style="font-size: 12px;">
+                </h3>
+                <div class="mb-2" style="font-size: 1.2rem;">
                   <%= user.recipes.count %> 件のレシピ
                 </div>
-                <div class="text-ellipsis2" style="font-size: 12px;">
+                <div class="text-ellipsis2" style="font-size: 1.2rem;">
                   <%= simple_format user.profile, {}, wrapper_tag: "div" %>
                 </div>
               </div>
@@ -30,12 +30,12 @@
           <% else %>
             <div class="kahen px-4 d-flex align-items-center">
               <div>
-                <h5 class="text-ellipsis1 mb-2">
+                <h3 class="text-ellipsis1 mb-2">
                   <%= link_to user_path(user), class:"link-title" do %>
                     <%= user.username %>
                   <% end %>
-                </h5>
-                <div style="font-size: 12px;">
+                </h3>
+                <div style="font-size: 1.2rem;">
                   <%= user.recipes.count %> 件のレシピ
                 </div>
               </div>

@@ -2,9 +2,9 @@
 
 <div class="container-login">
   <div class="card shadow-lg my-5 p-5">
-    <h3 class="text-center text-dark mb-5">
+    <h1 class="text-center text-dark mb-5">
       パスワードを忘れた場合
-    </h3>
+    </h1>
 
     <div class="text-center mb-5" style="line-height: 26px;">
       ご登録頂いたメールアドレスを入力してください。<br>
@@ -16,7 +16,8 @@
         <%= f.email_field :email,
                           autofocus: true,
                           autocomplete: "email",
-                          class: "form-control",
+                          class: "form-control text-dark",
+                          style: "font-size: 1.4rem;",
                           required: true,
                           maxlength: '100',
                           placeholder: "メールアドレス" %>
