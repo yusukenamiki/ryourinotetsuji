@@ -1,9 +1,7 @@
 <hr class="my-5">
-<div class="form-group mb-5">
+<div class="form-group" style="font-size: 1.2rem;">
   <%- if controller_name != 'sessions' %>
-    <div class="text-center">
-      <div class="mb-0">すでにアカウントをお持ちですか？ <%= link_to "ログイン", new_session_path(resource_name) %></div>
-    </div>
+    <div>すでにアカウントをお持ちですか？ <%= link_to "ログイン", new_session_path(resource_name) %></div>
   <% end -%>
 
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
