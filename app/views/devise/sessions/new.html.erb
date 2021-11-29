@@ -1,10 +1,16 @@
 <%= render 'shared/flash_messages' %>
 
 <div class="container-login">
-  <div class="card border-0 shadow-lg my-5 px-5 pt-5">
-    <h1 class="text-center text-dark mb-5">
+  <div class="card border-0 p-5 text-center">
+    <%= link_to root_path do %>
+      <div class="text-dark mb-5" style="font-size: 3.4rem; font-family: 'Kiwi Maru', serif;">
+        レシピ館
+      </div>
+    <% end %>
+
+    <div class="mb-5" style="font-size: 2.4rem;">
       ログイン
-    </h1>
+    </div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group mb-4">
