@@ -33,15 +33,16 @@
 ------------------------------------*/
 // B [1/4] 8:50
 .container-login {
-  position: relative;
+  // position: relative;
   @extend .container-fluid;
   max-width: 480px;
   padding: 0;
 }
 // card をヘッダー分上げる
 .container-login > .card {
-  position: absolute;
-  top: -71.5px;
+  // position: absolute;
+  // top: -71.5px;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
 }
 
 // B [1/4] 8:50
@@ -446,11 +447,11 @@ a.text-danger:hover, a.text-danger:focus {
 - タブレット用デザインとして付け足すデザイン
 ------------------------------------*/
 @media (min-width: 480px) {
-  .container-login > .card {
-    position: absolute;                                      /* card をヘッダー分下げる */
-    top: 0;                                                  /* card をヘッダー分下げる */
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
-  }
+  // .container-login > .card {
+  //   position: absolute;                                      /* card をヘッダー分下げる */
+  //   top: 0;                                                  /* card をヘッダー分下げる */
+  //   box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
+  // }
 
 }
 
