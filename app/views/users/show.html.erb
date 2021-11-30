@@ -82,7 +82,9 @@
 <div class="container px-5 pb-4">
   <hr class="my-0">
 
-  <div class="my-4 text-center text-dark">投稿一覧</div>
+  <div class="text-center text-dark my-5" style="font-size: 1.6rem;">
+    投稿一覧
+  </div>
 
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
     <% @user.recipes.reverse_each do |recipe| %>
@@ -101,11 +103,11 @@
               <% end %>
             </div>
 
-            <div class="mt-3">
+            <div class="mt-3" style="font-size: 1.2rem;">
               <span><%= time_ago_in_words(recipe.updated_at) %></span>前
             </div>
 
-            <div class="img-container mt-3">
+            <div class="img-container mt-3" style="font-size: 1.2rem;">
               <div>
                 <% if user_signed_in? %>
                   <% if current_user.already_favorited?(recipe) %>
