@@ -130,7 +130,7 @@ a:link {
 
 .ko-mypage {
   position: absolute;
-  top: 51px;
+  top: 1.95rem;
   right: 0;
 }
 
@@ -184,6 +184,11 @@ a:link {
 .user-icon48 {
   width: 4.8rem;
   height: 4.8rem;
+}
+
+.user-icon87 {
+  width: 8.7rem;
+  height: 8.7rem;
 }
 
 /*
@@ -457,10 +462,12 @@ a.text-danger:hover, a.text-danger:focus {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
   }
 
+  // フォロー中画面、フォロワー画面、ユーザー一覧画面
   .kotei48 {
     width: 9.6rem;
   }
 
+  // フォロー中画面、フォロワー画面、ユーザー一覧画面
   .text-ellipsis2 {
     display: -webkit-box;
    -webkit-box-orient: vertical;
@@ -468,11 +475,22 @@ a.text-danger:hover, a.text-danger:focus {
    overflow: hidden;
   }
 
+  // フォロー中画面、フォロワー画面、ユーザー一覧画面
   .user-icon48 {
     width: 9.6rem;
     height: 9.6rem;
   }
 
+  .ko-mypage {
+    position: absolute;
+    top: 5.1rem;
+    right: 0;
+  }
+
+  .user-icon87 {
+    width: 15rem;
+    height: 15rem;
+  }
 }
 
 

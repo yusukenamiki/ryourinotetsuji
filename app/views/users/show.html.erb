@@ -1,9 +1,9 @@
 <%= render 'shared/flash_messages' %>
 
-<div class="container mt-5 px-5 pb-4 text-dark" style="max-width: 600px;">
+<div class="container mt-5 px-5 pb-4 text-dark" style="max-width: 480px;">
   <div class="oya">
     <div>
-      <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "150x150" %>
+      <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "user-icon87 rounded-circle" %>
     </div>
     <div class="ko-mypage">
       <% if @user.id == current_user.id %>
@@ -13,7 +13,7 @@
       <% else %>
         <% if @user.is_followed_by?(current_user) %>
           <%=link_to user_relationships_path(@user), method: :delete do %>
-            <button class="btn btn-outline-secondary" style="width: 107px;">フォロー中</button>
+            <button class="btn btn-outline-secondary" style="width: 10.1rem;">フォロー中</button>
           <% end %>
         <% else %>
           <%=link_to user_relationships_path(@user), method: :post do %>
@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <div class="ryaku mt-5">
+  <div class="ryaku mt-5" style="font-size: 1.6rem;">
     <strong><%= @user.username %></strong>
   </div>
 
