@@ -15,6 +15,7 @@
     <% if current_page?(new_user_registration_path) %>
     <% elsif current_page?(new_user_session_path) %>
     <% elsif current_page?(new_user_password_path) %>
+    <% elsif current_page?(edit_user_password_path) %>
     <% else %>
       <%= render 'shared/header' %>
     <% end %>
