@@ -1,24 +1,30 @@
 <%= bootstrap_devise_error_messages! %>
 
 <div class="container-login">
-  <div class="card border-0 shadow-lg my-5 p-5">
-    <h1 class="text-center text-dark mb-5">
-      パスワード再設定
-    </h1>
+  <div class="card border-0 p-5 text-center">
+    <%= link_to root_path do %>
+      <div class="text-dark mb-5" style="font-size: 3.4rem; font-family: 'Kiwi Maru', serif;">
+        レシピ館
+      </div>
+    <% end %>
 
-    <div class="text-center mb-5">
+    <div class="mb-5" style="font-size: 2.2rem;">
+      パスワード再設定
+    </div>
+
+    <div class="mb-5" style="font-size: 1.2rem;">
       新しいパスワードを入力してください
     </div>
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.hidden_field :reset_password_token %>
 
-      <div class="form-group mb-4">
+      <div class="form-group mb-4 mt-3">
         <%= f.password_field :password,
                              autofocus: true,
                              autocomplete: "new-password",
                              class: "form-control text-dark",
-                             style: "font-size: 1.4rem;",
+                             style: "font-size: 1.4rem; padding-right: 18.75rem;",
                              required: true,
                              minlength: @minimum_password_length,
                              maxlength: '30',
@@ -36,7 +42,7 @@
                              placeholder: "新しいパスワード（確認用）" %>
       </div>
 
-      <div class="actions">
+      <div class="actions mb-4">
         <%= f.submit 'パスワード再設定', class:"btn btn-warning btn-block" %>
       </div>
     <% end %>

@@ -1,18 +1,24 @@
 <%= bootstrap_devise_error_messages! %>
 
 <div class="container-login">
-  <div class="card border-0 shadow-lg my-5 p-5">
-    <h1 class="text-center text-dark mb-5">
-      パスワードを忘れた場合
-    </h1>
+  <div class="card border-0 p-5 text-center">
+    <%= link_to root_path do %>
+      <div class="text-dark mb-5" style="font-size: 3.4rem; font-family: 'Kiwi Maru', serif;">
+        レシピ館
+      </div>
+    <% end %>
 
-    <div class="text-center mb-5" style="line-height: 26px;">
-      ご登録頂いたメールアドレスを入力してください。<br>
+    <div class="mb-5" style="font-size: 2.2rem;">
+      パスワードを忘れた場合
+    </div>
+
+    <div class="mb-5" style="font-size: 1.2rem; line-height: 2.6rem;">
+      ご登録中のメールアドレスを入力して下さい。<br>
       パスワード変更ページのURLを送信します。
     </div>
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <div class="form-group mb-5">
+      <div class="form-group mb-5 mt-3">
         <%= f.email_field :email,
                           autofocus: true,
                           autocomplete: "email",
@@ -23,7 +29,7 @@
                           placeholder: "メールアドレス" %>
       </div>
 
-      <div class="actions">
+      <div class="actions mb-4">
         <%= f.submit '送信', class:"btn btn-warning btn-block" %>
       </div>
     <% end %>
