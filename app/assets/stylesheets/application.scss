@@ -141,7 +141,7 @@ a:link {
 }
 
 // ドロップダウンアイコンのホバー時の反応 ( レシピ詳細のみ )
-.ko-top0right0 > .dropdown:hover {
+.kotei40 > .dropdown:hover {
   background-color: #e9ecef;
   cursor: pointer;
 }
@@ -153,6 +153,10 @@ a:link {
 
 .wrapper {
   display: flex;
+}
+
+.kotei40 {
+  width: 4rem;
 }
 
 .kotei48 {
