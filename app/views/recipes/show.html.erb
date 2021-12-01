@@ -117,42 +117,46 @@
 あ
       <div>
         <% @recipe.comments.each do |comment| %>
-          <div class="oya mb-5">
+          <div class="mb-5" bg-danger>
             <div class="wrapper">
               <div class="kotei40">
                 <%= link_to user_path(comment.user.id) do %>
                   <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
                 <% end %>
               </div>
-              <div class="kahen px-4 d-flex align-items-center bg-light">
-                <div class="text-ellipsis1">
-                  <%= link_to user_path(comment.user.id), class:"link-title" do %>
-                    <strong><%= comment.user.username %></strong>
-                  <% end %>
-                </div>
-              </div>
-              <div class="kotei40">
-              <% if comment.user == current_user %>
-                <div class="dropdown rounded-circle d-flex align-items-center justify-content-center" style="width: 4rem; height: 4rem;">
-                  <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-ellipsis-v py-1"></i>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right shadow-sm py-0" aria-labelledby="dropdownMenuButton" style="width: 12rem;">
-                    <%= link_to [@recipe, comment], class: "dropdown-item", method: :delete, data: {confirm: "削除しますか？"} do %>
-                      <div class="text-secondary py-4"><i class="far fa-trash-alt pr-4"></i>削除</div>
+
+              <div class="kahen pl-4 d-flex align-items-center bg-warning">
+                <div>
+                  <div class="text-ellipsis1">
+                    <%= link_to user_path(comment.user.id), class:"link-title" do %>
+                      <strong><%= comment.user.username %></strong>
                     <% end %>
                   </div>
                 </div>
-              <% end %>
-            </div>
-            </div>
+              </div>
 
-            <div class="mx-5 pl-5 pb-5 bg-warning">
-              <div style="font-size: 1.2rem;">
+              <div class="bg-info d-flex justify-content-end pr-4" style="font-size: 1rem; line-height: 4rem; min-width: 8rem;">
                 <span><%= time_ago_in_words(comment.created_at) %>前</span>
               </div>
 
-              <div style="word-wrap: break-word;">
+              <div class="kotei40">
+                <% if comment.user == current_user %>
+                  <div class="bg-primary dropdown rounded-circle d-flex align-items-center justify-content-center" style="width: 4rem; height: 4rem;">
+                    <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v py-1"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow-sm py-0" aria-labelledby="dropdownMenuButton" style="width: 12rem;">
+                      <%= link_to [@recipe, comment], class: "dropdown-item", method: :delete, data: {confirm: "削除しますか？"} do %>
+                        <div class="text-secondary py-4"><i class="far fa-trash-alt pr-4"></i>削除</div>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="px-4 bg-success" style="margin:0 4rem;">
+              <div class="pt-3 pb-5 text-dark" style="word-wrap: break-word;">
                 <%= simple_format comment.body, {}, wrapper_tag: "div" %>
               </div>
             </div>

@@ -33,15 +33,10 @@
 ------------------------------------*/
 // B [1/4] 8:50
 .container-login {
-  position: relative;
+  position: relative;          /* 独自に追加 ( card をヘッダー分上げる為 ) */
   @extend .container-fluid;
-  max-width: 480px;
-  padding: 0;
-}
-// card をヘッダー分上げる
-.container-login > .card {
-  position: absolute;
-  top: -71.5px;
+  max-width: 48rem;            /* 数値変更 */
+  padding: 0;                  /* 数値変更 */
 }
 
 // B [1/4] 8:50
@@ -70,7 +65,7 @@ html {
 // body をヘッダー分下げる
 body {
   position: relative;
-  top: 71.5px;
+  top: 7.15rem;
   color: #6c757d;
   font-size: 1.4rem;
 }
@@ -99,72 +94,93 @@ a:link {
 .btn {
   color: #343a40;
   font-size: 1.4rem;
-  height: 48px;
+  height: 4.8rem;
 }
 
-// はみ出した文字を省略
-.ryaku {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+/*
+- ヘッダー
+------------------------------------*/
+// ヘッダーを固定
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
-.fa-heart {
-  color: #343a40;
+.btn-beige {
+  background-color: #fcefca;
+  border-color: #fcefca;
 }
 
-.heart-pink {
-  color: rgb(237, 73, 86);
+.btn-beige:hover {
+  background-color: #fae4a8;
+  border-color: #fae4a8;
 }
 
-// ユーザーの画像と、文字の横並び
-// fa-heartと、数字の横並び
-.img-container {
-  display: flex;
-  align-items: center;
+// ボタンクリック時の縁を非表示
+.btn-beige:focus, .btn-beige.focus {
+  box-shadow: 0 0 0 0.2rem rgba(252, 239, 202, 0.5);
 }
 
-.oya {
+// ハンバーガーメニューの開閉の不具合を修正
+#menu {
+  transition: 0s;
+}
+
+// ドロップダウンリストの幅
+.dropdown-menu {
+  width: 22rem;
+  font-size: 1.4rem;
+}
+
+/*
+- 新規登録画面、ログイン画面、パスワードを忘れた場合画面、パスワード再設定画面
+------------------------------------*/
+// card をヘッダー分上げる
+.container-login > .card {
+  position: absolute;
+  top: -7.15rem;
+}
+
+.form-group {
   position: relative;
 }
 
-.ko-mypage {
-  position: absolute;
-  top: 1.95rem;
-  right: 0;
-}
-
-.ko-top0right0 {
+.form-control::placeholder {
+  color: #cccccc;
+  font-size: 1.4rem;
+  line-height: 4.8rem;
   position: absolute;
   top: 0;
-  right: 0;
 }
 
-// ドロップダウンアイコンのホバー時の反応 ( レシピ詳細のみ )
-.kotei40 > .dropdown:hover {
-  background-color: #e9ecef;
-  cursor: pointer;
+input[type="text"] {
+  height: 4.8rem;
 }
 
-.fa-trash-alt {
-  font-size: 1.6rem;
-  margin-right: 2px;
+input[type="email"] {
+  height: 4.8rem;
 }
 
+input[type="password"] {
+  height: 4.8rem;
+}
+
+/*
+- フォロー中画面、フォロワー画面、ユーザー一覧画面
+------------------------------------*/
 .wrapper {
   display: flex;
-}
-
-.kotei40 {
-  width: 4rem;
 }
 
 .kotei48 {
   width: 4.8rem;
 }
 
-.kotei101 {
-  width: 10.1rem;
+.user-icon48 {
+  width: 4.8rem;
+  height: 4.8rem;
 }
 
 .kahen {
@@ -185,14 +201,26 @@ a:link {
  overflow: hidden;
 }
 
-.user-icon48 {
-  width: 4.8rem;
-  height: 4.8rem;
+.kotei101 {
+  width: 10.1rem;
+}
+
+/*
+- マイページ
+------------------------------------*/
+.oya {
+  position: relative;
 }
 
 .user-icon87 {
   width: 8.7rem;
   height: 8.7rem;
+}
+
+.ko-mypage {
+  position: absolute;
+  top: 1.95rem;
+  right: 0;
 }
 
 .count-wrapper {
@@ -202,77 +230,74 @@ a:link {
 }
 
 /*
-- ヘッダー
+- レシピ詳細画面
 ------------------------------------*/
-// ヘッダーを固定
-.fixed {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
+
+
+
+
+
+
+
+
+
+// はみ出した文字を省略
+.ryaku {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-// ハンバーガーメニューの開閉の不具合を修正
-#menu {
-  transition: 0s;
+// ユーザーの画像と、文字の横並び
+// fa-heartと、数字の横並び
+.img-container {
+  display: flex;
+  align-items: center;
 }
 
-// ドロップダウンリストの幅
-.dropdown-menu {
-  width: 220px;
-  font-size: 1.4rem;
-}
-
-/*
-- ヘッダーボタン
-------------------------------------*/
-.btn-beige {
-  background-color: #fcefca;
-  border-color: #fcefca;
-}
-
-.btn-beige:hover {
-  background-color: #fae4a8;
-  border-color: #fae4a8;
-}
-
-// ボタンクリック時の縁を非表示
-.btn-beige:focus, .btn-beige.focus {
-  box-shadow: 0 0 0 0.2rem rgba(252, 239, 202, 0.5);
-}
-
-/*
-- フォーム
-------------------------------------*/
-.form-group {
-  position: relative;
-}
-
-.form-control::placeholder {
-  color: #cccccc;
-  font-size: 1.4rem;
-  line-height: 48px;
+.ko-top0right0 {
   position: absolute;
   top: 0;
+  right: 0;
 }
 
-input[type="text"] {
-  height: 48px;
+.fa-trash-alt {
+  font-size: 1.6rem;
+  margin-right: 2px;
 }
 
-input[type="email"] {
-  height: 48px;
+.kotei40 {
+  width: 4rem;
 }
 
-input[type="password"] {
-  height: 48px;
+// ドロップダウンアイコンのホバー時の反応 ( レシピ詳細のみ )
+.kotei40 > .dropdown:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
 }
+
+.kotei60 {
+  width: 6rem;
+}
+
+
+
+
+
 
 // フォーム幅 ( プロフィールを編集、レシピ編集、新規投稿 )
 .container-edit {
   @extend .container-fluid;
   max-width: 768px;
   padding: 2rem;
+}
+
+.fa-heart {
+  color: #343a40;
+}
+
+.heart-pink {
+  color: rgb(237, 73, 86);
 }
 
 /*
@@ -466,6 +491,7 @@ a.text-danger:hover, a.text-danger:focus {
 - タブレット用デザインとして付け足すデザイン
 ------------------------------------*/
 @media (min-width: 480px) {
+  // 新規登録画面、ログイン画面、パスワードを忘れた場合画面、パスワード再設定画面
   .container-login > .card {
     position: absolute;                                      /* card をヘッダー分下げる */
     top: 0;                                                  /* card をヘッダー分下げる */
@@ -491,15 +517,17 @@ a.text-danger:hover, a.text-danger:focus {
     height: 9.6rem;
   }
 
+  // マイページ
+  .user-icon87 {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  // マイページ
   .ko-mypage {
     position: absolute;
     top: 5.1rem;
     right: 0;
-  }
-
-  .user-icon87 {
-    width: 15rem;
-    height: 15rem;
   }
 }
 
