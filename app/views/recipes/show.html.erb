@@ -71,26 +71,52 @@
         </div>
       </div>
 
+
+
+
+
+済み
       <div class="mb-5">
-        <div class="img-container mr-3">
-          <div>
+        <div class="wrapper d-flex align-items-center">
+          <div class="kotei40">
             <%= link_to user_path(@recipe.user) do %>
-              <%= attachment_image_tag @recipe.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
+              <%= attachment_image_tag @recipe.user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
             <% end %>
           </div>
 
-          <div class="ryaku ml-4">
-            <%= link_to user_path(@recipe.user.id), class:"link-title" do %>
-              <strong><%= @recipe.user.username %></strong>
-            <% end %>
+          <div class="kahen pl-4">
+            <div class="text-ellipsis1">
+              <%= link_to user_path(@recipe.user.id), class:"link-title" do %>
+                <strong><%= @recipe.user.username %></strong>
+              <% end %>
+            </div>
           </div>
+
+          <% if @recipe.user.id != current_user.id %>
+            <div class="kotei101 ml-3">
+              <% if @recipe.user.is_followed_by?(current_user) %>
+                <%=link_to user_relationships_path(@recipe.user), method: :delete do %>
+                  <button class="btn btn-outline-secondary" style="width: 10.1rem;">フォロー中</button>
+                <% end %>
+              <% else %>
+                <%=link_to user_relationships_path(@recipe.user), method: :post do %>
+                  <button class="btn btn-dark text-white">フォローする</button>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
 
-        <div class="ml-5 pl-4 mt-3 pr-4" style="word-wrap: break-word;">
+        <div class="pt-5 text-dark" style="word-wrap: break-word;">
           <%= simple_format @recipe.user.profile %>
         </div>
       </div>
 
+
+
+
+
+済み
       <div class="mb-5">
         <hr>
 
@@ -115,42 +141,53 @@
         </div>
       </div>
 
+
+
+
+
+済み
       <div>
         <% @recipe.comments.each do |comment| %>
-          <div class="oya mb-5">
-            <div class="img-container mr-5">
-              <div>
+          <div class="mb-5">
+            <div class="wrapper">
+              <div class="kotei40">
                 <%= link_to user_path(comment.user.id) do %>
-                  <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "40x40" %>
+                  <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
                 <% end %>
               </div>
-              <div class="ryaku ml-4" style="max-width: 54%;">
-                <%= link_to user_path(comment.user.id), class:"link-title" do %>
-                  <strong><%= comment.user.username %></strong>
-                <% end %>
+
+              <div class="kahen pl-4 d-flex align-items-center bg-warning">
+                <div class="text-ellipsis1">
+                  <%= link_to user_path(comment.user.id), class:"link-title" do %>
+                    <strong><%= comment.user.username %></strong>
+                  <% end %>
+                </div>
               </div>
-              <div class="ml-2" style="font-size: 1.2rem;">
+
+              <div class="bg-info d-flex justify-content-end pr-4" style="font-size: 1rem; line-height: 4rem; min-width: 8rem;">
                 <span><%= time_ago_in_words(comment.created_at) %>前</span>
               </div>
-            </div>
 
-            <div class="ko-top0right0">
-              <% if comment.user == current_user %>
-                <div class="dropdown rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                  <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-ellipsis-v py-1"></i>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right shadow-sm py-0" aria-labelledby="dropdownMenuButton" style="width: 120px;">
-                    <%= link_to [@recipe, comment], class: "dropdown-item", method: :delete, data: {confirm: "削除しますか？"} do %>
-                      <div class="text-secondary py-4"><i class="far fa-trash-alt pr-4"></i>削除</div>
-                    <% end %>
+              <div class="kotei40">
+                <% if comment.user == current_user %>
+                  <div class="bg-primary dropdown rounded-circle d-flex align-items-center justify-content-center" style="width: 4rem; height: 4rem;">
+                    <a  type="text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v py-1"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow-sm py-0" aria-labelledby="dropdownMenuButton" style="width: 12rem;">
+                      <%= link_to [@recipe, comment], class: "dropdown-item", method: :delete, data: {confirm: "削除しますか？"} do %>
+                        <div class="text-secondary py-4"><i class="far fa-trash-alt pr-4"></i>削除</div>
+                      <% end %>
+                    </div>
                   </div>
-                </div>
-              <% end %>
+                <% end %>
+              </div>
             </div>
 
-            <div class="mx-5 pl-4 mt-3 pb-5" style="word-wrap: break-word;">
-              <%= simple_format comment.body, {}, wrapper_tag: "div" %>
+            <div class="px-4 bg-success" style="margin:0 4rem;">
+              <div class="pt-3 pb-5 text-dark" style="word-wrap: break-word;">
+                <%= simple_format comment.body, {}, wrapper_tag: "div" %>
+              </div>
             </div>
           </div>
         <% end %>

@@ -33,15 +33,10 @@
 ------------------------------------*/
 // B [1/4] 8:50
 .container-login {
-  position: relative;
+  position: relative;          /* 独自に追加 ( card をヘッダー分上げる為 ) */
   @extend .container-fluid;
-  max-width: 480px;
-  padding: 0;
-}
-// card をヘッダー分上げる
-.container-login > .card {
-  position: absolute;
-  top: -71.5px;
+  max-width: 48rem;            /* 数値変更 */
+  padding: 0;                  /* 数値変更 */
 }
 
 // B [1/4] 8:50
@@ -70,7 +65,7 @@ html {
 // body をヘッダー分下げる
 body {
   position: relative;
-  top: 71.5px;
+  top: 7.15rem;
   color: #6c757d;
   font-size: 1.4rem;
 }
@@ -99,86 +94,7 @@ a:link {
 .btn {
   color: #343a40;
   font-size: 1.4rem;
-  height: 48px;
-}
-
-// はみ出した文字を省略
-.ryaku {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.fa-heart {
-  color: #343a40;
-}
-
-.heart-pink {
-  color: rgb(237, 73, 86);
-}
-
-// ユーザーの画像と、文字の横並び
-// fa-heartと、数字の横並び
-.img-container {
-  display: flex;
-  align-items: center;
-}
-
-.oya {
-  position: relative;
-}
-
-.ko-mypage {
-  position: absolute;
-  top: 51px;
-  right: 0;
-}
-
-.ko-top0right0 {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-// ドロップダウンアイコンのホバー時の反応 ( レシピ詳細のみ )
-.ko-top0right0 > .dropdown:hover {
-  background-color: #e9ecef;
-  cursor: pointer;
-}
-
-.fa-trash-alt {
-  font-size: 1.6rem;
-  margin-right: 2px;
-}
-
-.wrapper {
-  display: flex;
-}
-
-.kotei136 {
-  width: 136px;
-}
-
-.kotei107 {
-  width: 107px;
-}
-
-.kahen {
-  flex: 1;
-}
-
-.text-ellipsis1 {
-  display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: 1;
- overflow: hidden;
-}
-
-.text-ellipsis2 {
-  display: -webkit-box;
- -webkit-box-orient: vertical;
- -webkit-line-clamp: 2;
- overflow: hidden;
+  height: 4.8rem;
 }
 
 /*
@@ -192,20 +108,6 @@ a:link {
   z-index: 1;
 }
 
-// ハンバーガーメニューの開閉の不具合を修正
-#menu {
-  transition: 0s;
-}
-
-// ドロップダウンリストの幅
-.dropdown-menu {
-  width: 220px;
-  font-size: 1.4rem;
-}
-
-/*
-- ヘッダーボタン
-------------------------------------*/
 .btn-beige {
   background-color: #fcefca;
   border-color: #fcefca;
@@ -221,9 +123,26 @@ a:link {
   box-shadow: 0 0 0 0.2rem rgba(252, 239, 202, 0.5);
 }
 
+// ハンバーガーメニューの開閉の不具合を修正
+#menu {
+  transition: 0s;
+}
+
+// ドロップダウンリストの幅
+.dropdown-menu {
+  width: 22rem;
+  font-size: 1.4rem;
+}
+
 /*
-- フォーム
+- 新規登録画面、ログイン画面、パスワードを忘れた場合画面、パスワード再設定画面
 ------------------------------------*/
+// card をヘッダー分上げる
+.container-login > .card {
+  position: absolute;
+  top: -7.15rem;
+}
+
 .form-group {
   position: relative;
 }
@@ -231,28 +150,155 @@ a:link {
 .form-control::placeholder {
   color: #cccccc;
   font-size: 1.4rem;
-  line-height: 48px;
+  line-height: 4.8rem;
   position: absolute;
   top: 0;
 }
 
 input[type="text"] {
-  height: 48px;
+  height: 4.8rem;
 }
 
 input[type="email"] {
-  height: 48px;
+  height: 4.8rem;
 }
 
 input[type="password"] {
-  height: 48px;
+  height: 4.8rem;
 }
+
+/*
+- フォロー中画面、フォロワー画面、ユーザー一覧画面
+------------------------------------*/
+.wrapper {
+  display: flex;
+}
+
+.kotei48 {
+  width: 4.8rem;
+}
+
+.user-icon48 {
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+.kahen {
+  flex: 1;
+}
+
+.text-ellipsis1 {
+  display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 1;
+ overflow: hidden;
+}
+
+.text-ellipsis2 {
+  display: none;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 2;
+ overflow: hidden;
+}
+
+.kotei101 {
+  width: 10.1rem;
+}
+
+/*
+- マイページ
+------------------------------------*/
+.oya {
+  position: relative;
+}
+
+.user-icon87 {
+  width: 8.7rem;
+  height: 8.7rem;
+}
+
+.ko-mypage {
+  position: absolute;
+  top: 1.95rem;
+  right: 0;
+}
+
+.count-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+/*
+- レシピ詳細画面
+------------------------------------*/
+.kotei40 {
+  width: 4rem;
+}
+
+.user-icon40 {
+  width: 4rem;
+  height: 4rem;
+}
+
+// ドロップダウンアイコンのホバー時の反応 ( レシピ詳細のみ )
+.kotei40 > .dropdown:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+}
+
+.fa-trash-alt {
+  font-size: 1.6rem;
+  margin-right: 2px;
+}
+
+
+
+
+
+
+
+
+
+// はみ出した文字を省略
+.ryaku {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// ユーザーの画像と、文字の横並び
+// fa-heartと、数字の横並び
+.img-container {
+  display: flex;
+  align-items: center;
+}
+
+.ko-top0right0 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+
+
+
+
 
 // フォーム幅 ( プロフィールを編集、レシピ編集、新規投稿 )
 .container-edit {
   @extend .container-fluid;
   max-width: 768px;
   padding: 2rem;
+}
+
+.fa-heart {
+  color: #343a40;
+}
+
+.heart-pink {
+  color: rgb(237, 73, 86);
 }
 
 /*
@@ -446,12 +492,44 @@ a.text-danger:hover, a.text-danger:focus {
 - タブレット用デザインとして付け足すデザイン
 ------------------------------------*/
 @media (min-width: 480px) {
+  // 新規登録画面、ログイン画面、パスワードを忘れた場合画面、パスワード再設定画面
   .container-login > .card {
     position: absolute;                                      /* card をヘッダー分下げる */
     top: 0;                                                  /* card をヘッダー分下げる */
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
   }
 
+  // フォロー中画面、フォロワー画面、ユーザー一覧画面
+  .kotei48 {
+    width: 9.6rem;
+  }
+
+  // フォロー中画面、フォロワー画面、ユーザー一覧画面
+  .text-ellipsis2 {
+    display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+   overflow: hidden;
+  }
+
+  // フォロー中画面、フォロワー画面、ユーザー一覧画面
+  .user-icon48 {
+    width: 9.6rem;
+    height: 9.6rem;
+  }
+
+  // マイページ
+  .user-icon87 {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  // マイページ
+  .ko-mypage {
+    position: absolute;
+    top: 5.1rem;
+    right: 0;
+  }
 }
 
 

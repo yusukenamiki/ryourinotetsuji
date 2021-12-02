@@ -1,9 +1,9 @@
 <%= render 'shared/flash_messages' %>
 
-<div class="container mt-5 px-5 pb-4 text-dark" style="max-width: 600px;">
-  <div class="oya">
+<div class="container mt-5 px-5 pb-4" style="max-width: 480px;">
+  <div class="oya bg-light">
     <div>
-      <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "150x150" %>
+      <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "user-icon87 rounded-circle" %>
     </div>
     <div class="ko-mypage">
       <% if @user.id == current_user.id %>
@@ -13,7 +13,7 @@
       <% else %>
         <% if @user.is_followed_by?(current_user) %>
           <%=link_to user_relationships_path(@user), method: :delete do %>
-            <button class="btn btn-outline-secondary" style="width: 107px;">フォロー中</button>
+            <button class="btn btn-outline-secondary" style="width: 10.1rem;">フォロー中</button>
           <% end %>
         <% else %>
           <%=link_to user_relationships_path(@user), method: :post do %>
@@ -24,30 +24,36 @@
     </div>
   </div>
 
-  <div class="ryaku mt-5">
+  <div class="ryaku text-dark mt-5" style="font-size: 1.6rem;">
     <strong><%= @user.username %></strong>
   </div>
 
   <% if @user.id == current_user.id %>
-    <div class="ryaku text-secondary">
+    <div class="ryaku">
       <%= @user.email %>
     </div>
   <% end %>
 
-  <div class="mt-4">
-    <span class="mr-4">
-      投稿 <strong><%= @user.recipes.count %></strong>件
-    </span>
-    <span class="mr-4">
-      フォロワー <strong><%= link_to @user.followers.count, followers_user_path(@user), class: "link-title" %></strong>人
-    </span>
-    <span>
-      フォロー中 <strong><%= link_to @user.followings.count, followings_user_path(@user), class: "link-title" %></strong>人
-    </span>
+  <div class="count-wrapper text-center mt-5">
+    <div>
+      <div>投稿</div>
+      <div><strong><%= @user.recipes.count %></strong></div>
+      <div>件</div>
+    </div>
+    <div>
+      <div>フォロワー</div>
+      <div><strong><%= link_to @user.followers.count, followers_user_path(@user), class: "link-title" %></strong></div>
+      <div>人</div>
+    </div>
+    <div>
+      <div>フォロー中</div>
+      <div><strong><%= link_to @user.followings.count, followings_user_path(@user), class: "link-title" %></strong></div>
+      <div>人</div>
+    </div>
   </div>
 
-  <div class="mt-4">
-    <%= simple_format @user.profile %>
+  <div class="mt-5">
+    <%= simple_format @user.profile, {}, wrapper_tag: "div" %>
   </div>
 </div>
 
@@ -82,7 +88,9 @@
 <div class="container px-5 pb-4">
   <hr class="my-0">
 
-  <div class="my-4 text-center text-dark">投稿一覧</div>
+  <div class="text-center text-dark my-5" style="font-size: 1.6rem;">
+    投稿一覧
+  </div>
 
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
     <% @user.recipes.reverse_each do |recipe| %>
@@ -101,11 +109,11 @@
               <% end %>
             </div>
 
-            <div class="mt-3">
+            <div class="mt-3" style="font-size: 1.2rem;">
               <span><%= time_ago_in_words(recipe.updated_at) %></span>前
             </div>
 
-            <div class="img-container mt-3">
+            <div class="img-container mt-3" style="font-size: 1.2rem;">
               <div>
                 <% if user_signed_in? %>
                   <% if current_user.already_favorited?(recipe) %>
