@@ -236,12 +236,6 @@ input[type="password"] {
   width: 4rem;
 }
 
-.user-icon40 {
-  width: 4rem;
-  height: 4rem;
-}
-
-// ドロップダウンアイコンのホバー時の反応 ( レシピ詳細のみ )
 .kotei40 > .dropdown:hover {
   background-color: #e9ecef;
   cursor: pointer;
@@ -249,8 +243,21 @@ input[type="password"] {
 
 .fa-trash-alt {
   font-size: 1.6rem;
-  margin-right: 2px;
+  margin-right: 0.2rem;
 }
+
+.user-icon40 {
+  width: 4rem;
+  height: 4rem;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -279,8 +286,6 @@ input[type="password"] {
   top: 0;
   right: 0;
 }
-
-
 
 
 
