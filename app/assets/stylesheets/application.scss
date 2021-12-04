@@ -128,10 +128,22 @@ a:link {
   transition: 0s;
 }
 
+.user-icon32 {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
 // ドロップダウンリストの幅
 .dropdown-menu {
-  width: 22rem;
+  width: 21rem;
   font-size: 1.4rem;
+}
+
+// ヘッダーのみ text-ellipsis1 だとうまくいかない為
+.ryaku {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /*
@@ -313,12 +325,7 @@ input[type="password"] {
 
 
 
-// はみ出した文字を省略
-.ryaku {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
+
 
 // ユーザーの画像と、文字の横並び
 // fa-heartと、数字の横並び
