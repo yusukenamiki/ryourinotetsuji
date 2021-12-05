@@ -17,7 +17,7 @@
     <% elsif current_page?(new_user_password_path) %>
     <% elsif current_page?(edit_user_password_path) %>
     <% else %>
-      <%= render 'shared/header' %>
+      <%= render 'shared/header2' %>
     <% end %>
     <%= yield %>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -29,6 +29,19 @@
       });
       $(".dropdown-toggle").click( function() {
         $(this).find(".dropdown-menu").toggle();
+      });
+
+
+
+
+
+      $(".openbtn1").click(function () {
+        $(this).toggleClass('active');
+          $("#g-nav").toggleClass('panelactive');
+      });
+      $("#g-nav a").click(function () {
+        $(".openbtn1").removeClass('active');
+          $("#g-nav").removeClass('panelactive');
       });
     </script>
   </body>
