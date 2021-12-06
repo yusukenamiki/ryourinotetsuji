@@ -235,6 +235,11 @@ button:focus{
 //   font-weight: bold;
 // }
 
+/* 独自に追加 */
+#g-nav .text-secondary:hover {
+  background-color: #f8f9fa;
+}
+
 /*========= ボタンのためのCSS ===============*/
 .openbtn1 {
   position: fixed;
