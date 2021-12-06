@@ -12,12 +12,43 @@
   <nav id="g-nav">
     <div id="g-nav-list">
       <ul>
-        <li><a href="#">icon username email</a></li>
-        <li><a href="#">レシピ一覧</a></li>
-        <li><a href="#">ユーザー一覧</a></li>
-        <li><a href="#">マイページ</a></li>
-        <li><a href="#">新規投稿</a></li>
-        <li><a href="#">ログアウト</a></li>
+        <% if user_signed_in? %>
+          <li><a href="#">icon username email</a></li>
+          <li><a href="#">レシピ一覧</a></li>
+          <li><a href="#">ユーザー一覧</a></li>
+          <li><a href="#">マイページ</a></li>
+          <li><a href="#">新規投稿</a></li>
+          <li><a href="#">ログアウト</a></li>
+        <% else %>
+          <li>
+            <a href="#">
+              <%= link_to recipes_path do %>
+                <button type="button" class="btn btn-beige">レシピ一覧</button>
+              <% end %>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <%= link_to users_path do %>
+                <button type="button" class="btn btn-beige">ユーザー一覧</button>
+              <% end %>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <%= link_to new_user_registration_path do %>
+                <button type="button" class="btn btn-beige">新規登録</button>
+              <% end %>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <%= link_to new_user_session_path do %>
+                <button type="button" class="btn btn-beige">ログイン</button>
+              <% end %>
+            </a>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav>
