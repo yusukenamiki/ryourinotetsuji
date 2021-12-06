@@ -212,27 +212,28 @@ button:focus{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  background-color: orange;         /* 独自に追加 */
+  background-color: white;         /* 独自に追加 */
   padding: 0;                         /* 独自に追加 */
   margin: 0;                          /* 独自に追加 */
+  width: 21rem;                       /* 独自に追加 */
 }
 
-/*リストのレイアウト設定*/
-#g-nav li {
-  list-style: none;
-  text-align: left;                    /* 独自に変更 */
-  background-color: white;          /* 独自に追加 */
-}
+// /*リストのレイアウト設定*/
+// #g-nav li {
+//   list-style: none;
+//   text-align: left;                    /* 独自に変更 */
+//   background-color: white;          /* 独自に追加 */
+// }
 
-#g-nav li a {
-  color: #333;
-  text-decoration: none;
-  padding: 10px;
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: bold;
-}
+// #g-nav li a {
+//   color: #333;
+//   text-decoration: none;
+//   padding: 10px;
+//   display: block;
+//   text-transform: uppercase;
+//   letter-spacing: 0.1em;
+//   font-weight: bold;
+// }
 
 /*========= ボタンのためのCSS ===============*/
 .openbtn1 {
