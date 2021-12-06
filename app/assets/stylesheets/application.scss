@@ -220,7 +220,7 @@ button:focus{
 /*リストのレイアウト設定*/
 #g-nav li {
   list-style: none;
-  text-align: center;
+  text-align: left;                    /* 独自に変更 */
   background-color: white;          /* 独自に追加 */
 }
 
