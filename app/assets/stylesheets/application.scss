@@ -212,12 +212,16 @@ button:focus{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  background-color: orange;         /* 独自に追加 */
+  padding: 0;                         /* 独自に追加 */
+  margin: 0;                          /* 独自に追加 */
 }
 
 /*リストのレイアウト設定*/
 #g-nav li {
   list-style: none;
   text-align: center;
+  background-color: white;          /* 独自に追加 */
 }
 
 #g-nav li a {
