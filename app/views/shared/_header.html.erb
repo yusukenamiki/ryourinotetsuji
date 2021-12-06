@@ -5,7 +5,7 @@
   <% end %>
 
   <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
-    <span class="navbar-toggler-icon"></span>
+    <i class="fas fa-bars"></i>
   </button>
 
   <div id="menu" class="collapse navbar-collapse">
@@ -28,22 +28,42 @@
       <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item dropdown ml-3">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "rounded-circle", size: "32x32" %>
+          <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon32 rounded-circle" %>
           </a>
           <div class="dropdown-menu dropdown-menu-right py-0" aria-labelledby="navbarDropdownMenuLink">
-            <div class="dropdown-header py-5 ryaku" style="font-size: 1.4rem;">
-              <%= current_user.username %>
+            <div class="dropdown-header py-5">
+              <div class="wrapper">
+                <div>
+                  <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
+                </div>
+                <div class="ryaku pl-4">
+                  <div class="ryaku text-dark" style="font-size: 1.4rem;">
+                    <strong><%= current_user.username %></strong>
+                  </div>
+                  <div class="ryaku" style="font-size: 1.2rem;">
+                    <%= current_user.email %>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div class="dropdown-divider my-0"></div>
+
             <%= link_to user_path(current_user), class: "dropdown-item" do %>
-              <div class="text-secondary py-4">マイページ</div>
+              <div class="text-secondary py-4">
+                マイページ
+              </div>
             <% end %>
             <%= link_to new_recipe_path, class: "dropdown-item" do %>
-              <div class="text-secondary py-4">新規投稿</div>
+              <div class="text-secondary py-4">
+                新規投稿
+              </div>
             <% end %>
             <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-              <div class="text-secondary py-4">ログアウト</div>
+              <div class="text-secondary py-4">
+                ログアウト
+              </div>
             <% end %>
           </div>
         </li>
