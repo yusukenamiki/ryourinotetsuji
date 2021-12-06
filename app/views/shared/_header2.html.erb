@@ -13,37 +13,68 @@
     <div id="g-nav-list">
       <ul>
         <% if user_signed_in? %>
-          <li><a href="#">icon username email</a></li>
-          <li><a href="#">レシピ一覧</a></li>
-          <li><a href="#">ユーザー一覧</a></li>
-          <li><a href="#">マイページ</a></li>
-          <li><a href="#">新規投稿</a></li>
-          <li><a href="#">ログアウト</a></li>
+          <div class="wrapper px-4 py-5">
+            <div>
+              <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
+            </div>
+            <div class="ryaku pl-4">
+              <div class="ryaku text-dark" style="font-size: 1.4rem;">
+                <strong><%= current_user.username %></strong>
+              </div>
+              <div class="ryaku" style="font-size: 1.2rem;">
+                <%= current_user.email %>
+              </div>
+            </div>
+          </div>
+
+          <hr class="m-0">
+
+          <%= link_to recipes_path do %>
+            <div class="text-secondary p-4">
+              レシピ一覧
+            </div>
+          <% end %>
+          <%= link_to users_path do %>
+            <div class="text-secondary p-4">
+              ユーザー一覧
+            </div>
+          <% end %>
+          <%= link_to user_path(current_user) do %>
+            <div class="text-secondary p-4">
+              マイページ
+            </div>
+          <% end %>
+          <%= link_to new_recipe_path do %>
+            <div class="text-secondary p-4">
+              新規投稿
+            </div>
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <div class="text-secondary p-4">
+              ログアウト
+            </div>
+          <% end %>
         <% else %>
           <%= link_to recipes_path do %>
             <div class="text-secondary p-4">
               レシピ一覧
             </div>
           <% end %>
-
           <%= link_to users_path do %>
             <div class="text-secondary p-4">
               ユーザー一覧
             </div>
           <% end %>
-
           <%= link_to new_user_registration_path do %>
             <div class="text-secondary p-4">
               新規登録
             </div>
           <% end %>
-
           <%= link_to new_user_session_path do %>
             <div class="text-secondary p-4">
               ログイン
             </div>
           <% end %>
-
         <% end %>
       </ul>
     </div>
