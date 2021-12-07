@@ -1,6 +1,6 @@
-<div class="navbar shadow-sm fixed" style="background-color:#fcefca;">
+<div class="navbar shadow-sm fixed py-0 px-4" style="background-color:#fcefca; height: 6.4rem;">
   <%= link_to root_path, class:"link-title" do %>
-    <h2 class="mt-1 mr-2 py-4" style="font-family: 'Kiwi Maru', serif;">レシピ館</h2>
+    <h2 class="m-0" style="font-family: 'Kiwi Maru', serif;">レシピ館</h2>
   <% end %>
 
   <div class="openbtn1">
@@ -56,22 +56,22 @@
           <% end %>
         <% else %>
           <%= link_to recipes_path do %>
-            <div class="text-secondary p-4">
+            <div class="text-secondary px-4 py-5">
               レシピ一覧
             </div>
           <% end %>
           <%= link_to users_path do %>
-            <div class="text-secondary p-4">
+            <div class="text-secondary px-4 py-5">
               ユーザー一覧
             </div>
           <% end %>
           <%= link_to new_user_registration_path do %>
-            <div class="text-secondary p-4">
+            <div class="text-secondary px-4 py-5">
               新規登録
             </div>
           <% end %>
           <%= link_to new_user_session_path do %>
-            <div class="text-secondary p-4">
+            <div class="text-secondary px-4 py-5">
               ログイン
             </div>
           <% end %>
