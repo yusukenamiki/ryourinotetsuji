@@ -173,6 +173,7 @@ button:focus{
 /*
 - ヘッダー再構築用
 ------------------------------------*/
+
 /*========= ナビゲーションのためのCSS ===============*/
 #g-nav {
   /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
@@ -213,27 +214,10 @@ button:focus{
   left: 50%;
   transform: translate(-50%,-50%);
   background-color: #ffffff;                /* 独自に追加 */
-  padding: 0;                                  /* 独自に追加 */
-  margin: 0;                                   /* 独自に追加 */
-  width: 65%;                                  /* 独自に追加 */
+  padding: 0;                                 /* 独自に追加 */
+  margin: 0;                                  /* 独自に追加 */
+  width: 65%;                                 /* 独自に追加 */
 }
-
-// /*リストのレイアウト設定*/
-// #g-nav li {
-//   list-style: none;
-//   text-align: left;                    /* 独自に変更 */
-//   background-color: white;          /* 独自に追加 */
-// }
-
-// #g-nav li a {
-//   color: #333;
-//   text-decoration: none;
-//   padding: 10px;
-//   display: block;
-//   text-transform: uppercase;
-//   letter-spacing: 0.1em;
-//   font-weight: bold;
-// }
 
 /* 独自に追加 */
 #g-nav .text-secondary:hover {
@@ -244,8 +228,8 @@ button:focus{
 .openbtn1 {
   position: fixed;
   z-index: 9999;/*ボタンを最前面に*/
-  top: 0.7rem;                                 /* 独自に変更 */
-  right: 0.25rem;                              /* 独自に変更 */
+  top: 0.7rem;                                /* 独自に変更 */
+  right: 0.15rem;                             /* 独自に変更 */
   cursor: pointer;
   width: 50px;
   height: 50px;
@@ -256,11 +240,11 @@ button:focus{
   display: inline-block;
   transition: all .4s;
   position: absolute;
-  left: 1.25rem;                              /* 独自に変更 */
+  left: 14px;
   height: 3px;
   border-radius: 2px;
-  background-color: #6c757d;                /* 独自に変更 */
-  width: 50%;                                 /* 独自に変更 */
+  background-color: #6c757d;               /* 独自に変更 */
+  width: 45%;
 }
 
 .openbtn1 span:nth-of-type(1) {
@@ -292,15 +276,6 @@ button:focus{
   transform: translateY(-6px) rotate(45deg);
   width: 30%;
 }
-
-
-
-
-
-
-
-
-
 
 /*
 - 新規登録画面、ログイン画面、パスワードを忘れた場合画面、パスワード再設定画面
