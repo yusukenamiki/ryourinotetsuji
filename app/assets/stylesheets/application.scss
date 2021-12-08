@@ -35,8 +35,8 @@
 .container-login {
   position: relative;          /* 独自に追加 ( card をヘッダー分上げる為 ) */
   @extend .container-fluid;
-  max-width: 48rem;            /* 数値変更 */
-  padding: 0;                  /* 数値変更 */
+  max-width: 48rem;            /* 独自に変更 */
+  padding: 0;                  /* 独自に変更 */
 }
 
 // B [1/4] 8:50
@@ -100,13 +100,9 @@ a:link {
 /*
 - ヘッダー
 ------------------------------------*/
-// // ヘッダーを固定
-// .fixed {
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   z-index: 1;
-// }
+.tablet-pc-link {
+  display: none;
+}
 
 .btn-beige {
   background-color: #fcefca;
@@ -121,26 +117,6 @@ a:link {
 // ボタンクリック時の縁を非表示
 .btn-beige:focus, .btn-beige.focus {
   box-shadow: 0 0 0 0.2rem rgba(252, 239, 202, 0.5);
-}
-
-// バーガーアイコンの枠を消す
-.navbar-toggler{
-  border: none;
-}
-
-// バーガーアイコンクリック時の黒枠を消す
-button:focus{
-  outline: none;
-}
-
-.fa-bars {
-  font-size: 2rem;
-  color: #6c757d;
-}
-
-// ハンバーガーメニューの開閉の不具合を修正
-#menu {
-  transition: 0s;
 }
 
 .user-icon32 {
@@ -161,20 +137,6 @@ button:focus{
   text-overflow: ellipsis;
 }
 
-
-
-
-
-
-
-
-.take {
-  display: none;
-}
-
-/*
-- ヘッダー再構築用
-------------------------------------*/
 /*========= ナビゲーションのためのCSS ===============*/
 #g-nav {
   /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
@@ -658,26 +620,23 @@ a.text-danger:hover, a.text-danger:focus {
   }
 }
 
-/*------------------------------------
-- タブレット用デザインとして付け足すデザイン2
-------------------------------------*/
 @media (min-width: 768px) {
-
-  .take {
+  // ヘッダー
+  .tablet-pc-link {
     display: block;
   }
 
-  // ヘッダー再構築用
+  // ヘッダー
   .openbtn1 {
     display: none;
   }
 
+  // ヘッダー
   #g-nav {
     display: none;
   }
-
-
 }
+
 
 
 
