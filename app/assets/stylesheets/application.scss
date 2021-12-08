@@ -100,13 +100,13 @@ a:link {
 /*
 - ヘッダー
 ------------------------------------*/
-// ヘッダーを固定
-.fixed {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
+// // ヘッダーを固定
+// .fixed {
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+//   z-index: 1;
+// }
 
 .btn-beige {
   background-color: #fcefca;
@@ -168,7 +168,9 @@ button:focus{
 
 
 
-
+.take {
+  display: none;
+}
 
 /*
 - ヘッダー再構築用
@@ -656,6 +658,26 @@ a.text-danger:hover, a.text-danger:focus {
   }
 }
 
+/*------------------------------------
+- タブレット用デザインとして付け足すデザイン2
+------------------------------------*/
+@media (min-width: 768px) {
+
+  .take {
+    display: block;
+  }
+
+  // ヘッダー再構築用
+  .openbtn1 {
+    display: none;
+  }
+
+  #g-nav {
+    display: none;
+  }
+
+
+}
 
 
 
