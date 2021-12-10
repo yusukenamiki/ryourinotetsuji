@@ -399,17 +399,13 @@ input[type="password"] {
 }
 
 /*
-- レシピ編集
+- レシピ編集画面、新規投稿画面、プロフィールを編集画面
 ------------------------------------*/
 .container-edit {
   @extend .container-fluid;
   max-width: 60rem;
   padding: 0;
 }
-
-
-
-
 
 
 
@@ -637,7 +633,7 @@ a.text-danger:hover, a.text-danger:focus {
     display: none;
   }
 
-  // レシピ編集
+  // レシピ編集画面、新規投稿画面、プロフィールを編集画面
   .container-edit > .card {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
     margin-top: 6.4rem;
