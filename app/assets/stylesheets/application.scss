@@ -398,33 +398,34 @@ input[type="password"] {
   box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// フォーム幅 ( プロフィールを編集、レシピ編集、新規投稿 )
+/*
+- レシピ編集
+------------------------------------*/
 .container-edit {
   @extend .container-fluid;
-  max-width: 768px;
-  padding: 2rem;
+  max-width: 60rem;
+  padding: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -634,6 +635,12 @@ a.text-danger:hover, a.text-danger:focus {
   // ヘッダー
   #g-nav {
     display: none;
+  }
+
+  // レシピ編集
+  .container-edit > .card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
+    margin-top: 6.4rem;
   }
 }
 
