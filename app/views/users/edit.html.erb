@@ -10,11 +10,15 @@
 <% end %>
 
 <div class="container-edit">
-  <div class="text-left p-5">
-    <%= form_for @user do |f| %>
+  <div class="card border-0 p-5 text-left text-dark">
 
-      <div class="form-group">
-        <%= f.label :username, "ユーザー名" %><br />
+    <div class="text-center" style="font-size: 2.2rem; margin: 3rem 0 4.5rem;">
+      <strong>プロフィールを編集</strong>
+    </div>
+
+    <%= form_for @user do |f| %>
+      <div class="form-group mb-5">
+        <strong><%= f.label :username, "ユーザー名" %></strong>
         <%= f.text_field :username,
                          autofocus: true,
                          autocomplete: "email",
@@ -24,8 +28,8 @@
                          maxlength: '30' %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :email, "メールアドレス" %><br />
+      <div class="form-group mb-5">
+        <strong><%= f.label :email, "メールアドレス" %></strong>
         <%= f.email_field :email,
                           autofocus: true,
                           autocomplete: "email",
@@ -35,8 +39,8 @@
                           maxlength: '100' %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :profile, "プロフィール" %><br />
+      <div class="form-group mb-5">
+        <strong><%= f.label :profile, "プロフィール" %></strong>
         <%= f.text_area :profile,
                         rows: 5,
                         class: "form-control text-dark",
@@ -45,12 +49,14 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :profile_image, "プロフィール画像" %><br />
+        <strong><%= f.label :profile_image, "プロフィール画像" %></strong><br />
         <%= f.attachment_field :profile_image %>
       </div>
 
-      <%= f.submit "更新", class:"btn btn-warning" %>
-
+      <div style="margin: 5.5rem 0 3rem;">
+        <%= f.submit "更新", class:"btn btn-warning btn-block" %>
+      </div>
     <% end %>
+
   </div>
 </div>
