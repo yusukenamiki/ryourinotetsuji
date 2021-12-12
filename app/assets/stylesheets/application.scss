@@ -407,7 +407,14 @@ input[type="password"] {
   padding: 0;
 }
 
-
+/*
+- パスワードを変更画面
+------------------------------------*/
+.container-edit2 {
+  @extend .container-fluid;
+  max-width: 48rem;
+  padding: 0;
+}
 
 
 
@@ -614,6 +621,12 @@ a.text-danger:hover, a.text-danger:focus {
     position: absolute;
     top: 5.1rem;
     right: 0;
+  }
+
+  // パスワードを変更画面
+  .container-edit2 > .card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
+    margin-top: 6.4rem;
   }
 }
 
