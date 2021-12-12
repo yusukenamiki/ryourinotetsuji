@@ -1,11 +1,15 @@
 <%= bootstrap_devise_error_messages! %>
 
-<div class="container-login">
-  <div class="text-left p-5">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<div class="container-edit">
+  <div class="card border-0 p-5 text-left text-dark">
 
-      <div class="form-group">
-        <%= f.label :current_password %>
+    <div class="text-center" style="font-size: 2.2rem; margin: 3rem 0 4.5rem;">
+      <strong>パスワードを変更</strong>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <div class="form-group mb-5">
+        <strong><%= f.label :current_password %></strong>
         <%= f.password_field :current_password,
                              autocomplete: "current-password",
                              class: "form-control",
@@ -14,8 +18,8 @@
                              maxlength: '30' %>
       </div>
 
-      <div class="form-group">
-        <%= f.label :password, "新しいパスワード" %>
+      <div class="form-group mb-5">
+        <strong><%= f.label :password, "新しいパスワード" %></strong>
         <%= f.password_field :password,
                              autocomplete: "new-password",
                              class: "form-control",
@@ -23,21 +27,26 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :password_confirmation, "新しいパスワードの確認" %>
+        <strong><%= f.label :password_confirmation, "新しいパスワードの確認" %></strong>
         <%= f.password_field :password_confirmation,
                              autocomplete: "new-password",
                              class: "form-control",
                              maxlength: '30' %>
       </div>
 
-      <div class="actions">
-        <%= f.submit t('.update'), class:"btn btn-danger btn-block" %>
+      <div style="margin: 5.5rem 0 3rem;">
+        <%= f.submit t('.update'), class:"btn btn-warning btn-block" %>
       </div>
     <% end %>
 
-    <hr class="devise-link my-5">
-    <div class="form-group">
-      <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete, class: 'btn btn-danger btn-block' %>
-    </div>
   </div>
+</div>
+
+
+
+
+
+<hr class="devise-link my-5">
+<div class="form-group">
+  <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete, class: 'btn btn-danger btn-block' %>
 </div>
