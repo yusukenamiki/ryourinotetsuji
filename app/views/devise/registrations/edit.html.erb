@@ -1,25 +1,8 @@
-<div class="text-white p-5" style="background-color:#332f28;">
-  <h1 class="display-5">ユーザー編集画面</h1>
-</div>
 <%= bootstrap_devise_error_messages! %>
 
 <div class="container-login">
   <div class="text-left p-5">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-
-      <div class="form-group">
-        <%= f.label :email %><br />
-        <%= f.email_field :email,
-                          autofocus: true,
-                          autocomplete: "email",
-                          class: "form-control",
-                          required: true,
-                          maxlength: '100' %>
-      </div>
-
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></div>
-      <% end %>
 
       <div class="form-group">
         <%= f.label :password %>
@@ -59,7 +42,6 @@
 
     <hr class="devise-link my-5">
     <div class="form-group">
-      <%= link_to "トップページ", root_path, class: 'btn btn-warning btn-block mb-4' %>
       <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete, class: 'btn btn-danger btn-block' %>
     </div>
   </div>
