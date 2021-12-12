@@ -407,6 +407,16 @@ input[type="password"] {
   padding: 0;
 }
 
+// dropdown-item active のbg
+.dropdown-item.active {
+  background-color: #f8f9fa;
+}
+
+// dropdown-item クリック時のbg
+.dropdown-item:active {
+  background-color: #f8f9fa;
+}
+
 /*
 - パスワードを変更画面
 ------------------------------------*/
@@ -627,8 +637,26 @@ a.text-danger:hover, a.text-danger:focus {
   .container-edit2 > .card {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
     margin-top: 6.4rem;
+    margin-bottom: 6.4rem;
   }
 }
+
+
+
+
+
+@media (min-width: 600px) {
+  // レシピ編集画面、新規投稿画面、プロフィールを編集画面
+  .container-edit > .card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
+    margin-top: 6.4rem;
+    margin-bottom: 6.4rem;
+  }
+}
+
+
+
+
 
 @media (min-width: 768px) {
   // ヘッダー
@@ -644,12 +672,6 @@ a.text-danger:hover, a.text-danger:focus {
   // ヘッダー
   #g-nav {
     display: none;
-  }
-
-  // レシピ編集画面、新規投稿画面、プロフィールを編集画面
-  .container-edit > .card {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
-    margin-top: 6.4rem;
   }
 }
 

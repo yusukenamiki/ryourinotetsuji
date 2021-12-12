@@ -10,6 +10,21 @@
 <% end %>
 
 <div class="container-edit">
+  <div class="card border-0 text-center text-dark">
+    <%= link_to edit_user_path(@user) do %>
+      <div class="text-dark p-5 dropdown-item active">
+        プロフィールを編集
+      </div>
+    <% end %>
+    <hr class="my-0">
+    <%= link_to edit_user_registration_path do %>
+      <div class="text-dark p-5 dropdown-item">
+        パスワードを変更
+      </div>
+    <% end %>
+    <hr class="my-0">
+  </div>
+
   <div class="card border-0 p-5 text-left text-dark">
 
     <div class="text-center" style="font-size: 2.2rem; margin: 3rem 0 4.5rem;">
