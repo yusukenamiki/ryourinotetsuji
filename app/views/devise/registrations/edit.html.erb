@@ -54,13 +54,9 @@
       </div>
     <% end %>
 
+    <div class="text-center mb-5" style="font-size: 1.2rem;">
+      <%= link_to "アカウントを削除される場合はこちら", registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete %>
+    </div>
+
   </div>
 </div>
-
-
-
-
-
-
-
-<%= link_to "アカウントを削除される場合はこちら", registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete %>
