@@ -37,7 +37,7 @@
               <span><%= time_ago_in_words(recipe.updated_at) %></span>前
             </div>
 
-            <div class="mt-3" style="font-size: 1.2rem;">
+            <div class="mt-3" style="width: 3rem; font-size: 1.2rem;">
               <% if user_signed_in? %>
                 <% if current_user.already_favorited?(recipe) %>
                   <%= link_to recipe_favorites_path(recipe), method: :delete do %>
