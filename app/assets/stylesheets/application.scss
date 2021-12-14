@@ -350,11 +350,15 @@ input[type="password"] {
 - レシピ一覧画面
 ------------------------------------*/
 .fa-heart {
-  color: #343a40;
+  color: #6c757d;
 }
 
 .heart-pink {
   color: rgb(237, 73, 86);
+}
+
+.heart-hover-color:hover {
+  color: #cccccc;
 }
 
 /*
