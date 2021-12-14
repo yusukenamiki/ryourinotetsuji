@@ -110,21 +110,30 @@
               <span><%= time_ago_in_words(recipe.updated_at) %></span>前
             </div>
 
-            <div class="wrapper mt-3" style="font-size: 1.2rem;">
-              <div>
-                <% if current_user.already_favorited?(recipe) %>
-                  <%= link_to recipe_favorites_path(recipe), method: :delete do %>
-                    <i class="fas fa-heart heart-pink"></i>
-                  <% end %>
-                <% else %>
-                  <%= link_to recipe_favorites_path(recipe), method: :post do %>
-                    <i class="far fa-heart heart-hover-color"></i>
-                  <% end %>
+            <div class="mt-3" style="font-size: 1.2rem;">
+              <% if current_user.already_favorited?(recipe) %>
+                <%= link_to recipe_favorites_path(recipe), method: :delete do %>
+                  <div class="wrapper heart-pink">
+                    <div>
+                      <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="ml-2">
+                      <%= recipe.favorites.count %>
+                    </div>
+                  </div>
                 <% end %>
-              </div>
-              <div class="ml-2">
-                <%= recipe.favorites.count %>
-              </div>
+              <% else %>
+                <%= link_to recipe_favorites_path(recipe), class:"link", method: :post do %>
+                  <div class="wrapper heart-hover-color">
+                    <div>
+                      <i class="far fa-heart"></i>
+                    </div>
+                    <div class="ml-2">
+                      <%= recipe.favorites.count %>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>
