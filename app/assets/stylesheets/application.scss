@@ -359,9 +359,10 @@ input[type="password"] {
 
 // ツールチップのデザインを設定
 .tooltip .tooltip-inner {
-  color:red;
-  background-color: #fff;
-  border: solid 1px #000;
+  color: #ffffff;                           /* 独自に変更 */
+  background-color: rgba(0, 0, 0, 0.6);     /* 独自に変更 */
+  font-size: 1.1rem;                          /* 独自に追加 */
+  padding: 0.3rem 0.9rem;                     /* 独自に追加 */
 }
 
 // ツールチップの三角部分を削除する設定
