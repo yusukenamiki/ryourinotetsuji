@@ -64,8 +64,8 @@ html {
 
 // body をヘッダー分下げる
 body {
-  // position: relative;
-  // top: 6.4rem;
+  position: relative;
+  top: 6.4rem;
   color: #6c757d;
   font-size: 1.4rem;
 }
@@ -363,6 +363,8 @@ input[type="password"] {
   background-color: rgba(0, 0, 0, 0.6);     /* 独自に変更 */
   font-size: 1.1rem;                          /* 独自に追加 */
   padding: 0.3rem 0.9rem;                     /* 独自に追加 */
+  position: relative;                         /* 独自に追加 ( ツールチップ をヘッダー分上げる為 ) */
+  top: -6.4rem;                               /* 独自に追加 ( ツールチップ をヘッダー分上げる為 ) */
 }
 
 // ツールチップの三角部分を削除する設定
