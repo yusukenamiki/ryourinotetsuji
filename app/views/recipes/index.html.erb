@@ -41,7 +41,7 @@
               <% if user_signed_in? %>
                 <% if current_user.already_favorited?(recipe) %>
                   <%= link_to recipe_favorites_path(recipe), method: :delete do %>
-                    <div class="wrapper heart-pink">
+                    <div class="wrapper heart-pink" data-toggle="tooltip" title="This is awesome" data-placement="bottom">
                       <div>
                         <i class="fas fa-heart"></i>
                       </div>
