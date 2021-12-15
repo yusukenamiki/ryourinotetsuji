@@ -53,7 +53,7 @@
           <div class="mt-4" style="width: 3rem;">
             <% if current_user.already_favorited?(@recipe) %>
               <%= link_to recipe_favorites_path(@recipe), method: :delete do %>
-                <div class="wrapper heart-pink">
+                <div class="wrapper heart-pink" data-toggle="tooltip" title="いいねを取り消す" data-placement="bottom">
                   <div>
                     <i class="fas fa-heart"></i>
                   </div>
@@ -64,7 +64,7 @@
               <% end %>
             <% else %>
               <%= link_to recipe_favorites_path(@recipe), class:"link", method: :create do %>
-                <div class="wrapper heart-hover-color">
+                <div class="wrapper heart-hover-color" data-toggle="tooltip" title="いいね" data-placement="bottom">
                   <div>
                     <i class="far fa-heart"></i>
                   </div>
