@@ -357,6 +357,21 @@ input[type="password"] {
   color: #cccccc;
 }
 
+// ツールチップのデザインを設定
+.tooltip .tooltip-inner {
+  color:red;
+  background-color: #fff;
+  border: solid 1px #000;
+}
+
+// ツールチップの三角部分を削除する設定
+.tooltip-auto[x-placement^=bottom] .arrow::before,
+.tooltip .arrow::before {
+  bottom: 0;
+  border-width: 0 !important;
+  border-bottom-color: #fff !important;
+}
+
 /*
 - ページネーション
 ------------------------------------*/
