@@ -303,19 +303,9 @@ input[type="password"] {
 /*
 - マイページ
 ------------------------------------*/
-.oya {
-  position: relative;
-}
-
 .user-icon87 {
   width: 8.7rem;
   height: 8.7rem;
-}
-
-.ko-mypage {
-  position: absolute;
-  top: 1.95rem;
-  right: 0;
 }
 
 .count-wrapper {
@@ -349,12 +339,30 @@ input[type="password"] {
 /*
 - レシピ一覧画面
 ------------------------------------*/
-.fa-heart {
-  color: #343a40;
-}
-
 .heart-pink {
   color: rgb(237, 73, 86);
+}
+
+.heart-hover-color:hover {
+  color: #cccccc;
+}
+
+// ツールチップのデザインを設定
+.tooltip .tooltip-inner {
+  color: #ffffff;                           /* 独自に変更 */
+  background-color: rgba(0, 0, 0, 0.6);     /* 独自に変更 */
+  font-size: 1.1rem;                          /* 独自に追加 */
+  padding: 0.3rem 0.9rem;                     /* 独自に追加 */
+  position: relative;                         /* 独自に追加 ( ツールチップ をヘッダー分上げる為 ) */
+  top: -6.4rem;                               /* 独自に追加 ( ツールチップ をヘッダー分上げる為 ) */
+}
+
+// ツールチップの三角部分を削除する設定
+.tooltip-auto[x-placement^=bottom] .arrow::before,
+.tooltip .arrow::before {
+  bottom: 0;
+  border-width: 0 !important;
+  border-bottom-color: #fff !important;
 }
 
 /*
