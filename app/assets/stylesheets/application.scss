@@ -73,6 +73,7 @@ body {
   color: #6c757d;
   font-size: 1.4rem;
   background-color: tomato;
+  height: calc(100vh - 6.4rem);    /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
 }
 
 // 全てのリンクの下線を外す
