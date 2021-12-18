@@ -591,8 +591,7 @@ a.text-danger:hover, a.text-danger:focus {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translateY(-50%);
     width: 48rem;
   }
 
