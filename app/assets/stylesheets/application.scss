@@ -50,9 +50,6 @@
   @extend .alert-danger;
 }
 
-/*------------------------------------
-- タブレット用デザインとして付け足すデザイン
-------------------------------------*/
 /*
 - 共通
 ------------------------------------*/
@@ -575,6 +572,34 @@ button.bg-danger:focus {
 
 a.text-danger:hover, a.text-danger:focus {
   color: #d32a00 !important;
+}
+
+
+
+
+
+
+
+
+
+
+// B [1/4] 8:50
+.container-login {
+  @extend .container-fluid;
+  max-width: 48rem;            /* 独自に変更 */
+  padding: 0;                  /* 独自に変更 */
+  position: relative;          /* 独自に追加 ( card をヘッダー分上げる ) */
+  top: -6.4rem;                /* 独自に追加 ( card をヘッダー分上げる ) */
+}
+
+// body をヘッダー分下げる
+body {
+  position: relative;
+  top: 6.4rem;
+  color: #6c757d;
+  font-size: 1.4rem;
+  background-color: tomato;
+  height: calc(100vh - 6.4rem);    /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
 }
 
 /*------------------------------------
