@@ -606,19 +606,15 @@ body {
 - タブレット用デザインとして付け足すデザイン
 ------------------------------------*/
 @media (min-width: 480px) {
-  // 新規登録画面、ログイン画面、パスワードを忘れた場合画面、パスワード再設定画面
-  .container-login {
-    height: 100vh;
-    background-color: gray;
+  // 余白を作る為だけのクラス
+  .yohaku64 {
+    height: 6.4rem;
   }
 
   .container-login > .card {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48rem;
   }
+
 
 
 
