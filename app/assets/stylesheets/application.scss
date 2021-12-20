@@ -33,10 +33,11 @@
 ------------------------------------*/
 // B [1/4] 8:50
 .container-login {
-  position: relative;          /* 独自に追加 ( card をヘッダー分上げる為 ) */
   @extend .container-fluid;
   max-width: 48rem;            /* 独自に変更 */
   padding: 0;                  /* 独自に変更 */
+  position: relative;          /* 独自に追加 ( card をヘッダー分上げる ) */
+  top: -6.4rem;                /* 独自に追加 ( card をヘッダー分上げる ) */
 }
 
 // B [1/4] 8:50
@@ -68,6 +69,8 @@ body {
   top: 6.4rem;
   color: #6c757d;
   font-size: 1.4rem;
+  background-color: tomato;
+  height: calc(100vh - 6.4rem);    /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
 }
 
 // 全てのリンクの下線を外す
@@ -232,12 +235,6 @@ a:link {
 /*
 - 新規登録画面、ログイン画面、パスワードを忘れた場合画面、パスワード再設定画面
 ------------------------------------*/
-// card をヘッダー分上げる
-.container-login > .card {
-  position: absolute;
-  top: -6.4rem;
-}
-
 .form-group {
   position: relative;
 }
@@ -434,23 +431,6 @@ input[type="password"] {
   padding: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 - COLOR danger
 ------------------------------------*/
@@ -598,16 +578,48 @@ a.text-danger:hover, a.text-danger:focus {
 
 
 
+
+
+
+
+
+// B [1/4] 8:50
+.container-login {
+  @extend .container-fluid;
+  max-width: 48rem;            /* 独自に変更 */
+  padding: 0;                  /* 独自に変更 */
+  position: relative;          /* 独自に追加 ( card をヘッダー分上げる ) */
+  top: -6.4rem;                /* 独自に追加 ( card をヘッダー分上げる ) */
+}
+
+// body をヘッダー分下げる
+body {
+  position: relative;
+  top: 6.4rem;
+  color: #6c757d;
+  font-size: 1.4rem;
+  background-color: tomato;
+  height: calc(100vh - 6.4rem);    /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
+}
+
 /*------------------------------------
 - タブレット用デザインとして付け足すデザイン
 ------------------------------------*/
 @media (min-width: 480px) {
-  // 新規登録画面、ログイン画面、パスワードを忘れた場合画面、パスワード再設定画面
+  // 余白を作る為だけのクラス
+  .yohaku64 {
+    height: 6.4rem;
+  }
+
   .container-login > .card {
-    position: absolute;                                      /* card をヘッダー分下げる */
-    top: 0;                                                  /* card をヘッダー分下げる */
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
   }
+
+
+
+
+
+
 
   // フォロー中画面、フォロワー画面、ユーザー一覧画面
   .kotei48 {
