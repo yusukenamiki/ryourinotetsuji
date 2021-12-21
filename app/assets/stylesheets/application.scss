@@ -605,7 +605,25 @@ body {
 /*------------------------------------
 - タブレット用デザインとして付け足すデザイン
 ------------------------------------*/
-@media (min-width: 480px) {
+@media (min-width: 480px) and (orientation: portrait) {
+  .container-login {
+    height: 100vh;
+  }
+
+  .container-login > .card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48rem;
+  }
+}
+
+
+
+
+
+@media (min-width: 480px) and (orientation: landscape) {
   // 余白を作る為だけのクラス
   .yohaku64 {
     height: 6.4rem;
@@ -614,13 +632,31 @@ body {
   .container-login > .card {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
   }
+}
 
 
 
 
 
+@media (min-width: 1024px) and (orientation: landscape) {
+  .container-login {
+    height: 100vh;
+  }
+
+  .container-login > .card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48rem;
+  }
+}
 
 
+
+
+
+@media (min-width: 480px) {
   // フォロー中画面、フォロワー画面、ユーザー一覧画面
   .kotei48 {
     width: 9.6rem;
