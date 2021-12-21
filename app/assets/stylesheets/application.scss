@@ -434,7 +434,7 @@ input[type="password"] {
 /*
 - パスワードを変更画面
 ------------------------------------*/
-.container-edit2 {
+.container-password {
   @extend .container-fluid;
   max-width: 48rem;
   padding: 0;
@@ -632,6 +632,11 @@ body {
   padding: 0;
 }
 
+.container-password {
+  @extend .container-fluid;
+  max-width: 48rem;
+  padding: 0;
+}
 
 /*------------------------------------
 - min-width: 480px
@@ -673,6 +678,16 @@ body {
 
 
 @media (min-width: 480px) {
+  // パスワードを変更画面
+  .yohaku-password {
+    height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+  }
+
+  // パスワードを変更画面
+  .container-password > .card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
+  }
+
   // フォロー中画面、フォロワー画面、ユーザー一覧画面
   .kotei48 {
     width: 9.6rem;
@@ -698,18 +713,6 @@ body {
     height: 15rem;
   }
 }
-
-// @media (min-width: 480px) and (orientation: landscape) {
-//   // パスワードを変更画面
-//   .yohaku-edit2 {
-//     height: 6.4rem;                                          /* 余白を作る為だけのクラス */
-//   }
-
-//   // パスワードを変更画面
-//   .container-edit2 > .card {
-//     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
-//   }
-// }
 
 /*------------------------------------
 - min-width: 600px
