@@ -404,7 +404,7 @@ input[type="password"] {
 }
 
 /*
-- レシピ編集画面、新規投稿画面、プロフィールを編集画面
+- レシピ編集画面、新規投稿画面
 ------------------------------------*/
 .container-edit {
   @extend .container-fluid;
@@ -420,6 +420,15 @@ input[type="password"] {
 // dropdown-item クリック時のbg
 .dropdown-item:active {
   background-color: #f8f9fa;
+}
+
+/*
+- プロフィールを編集画面
+------------------------------------*/
+.container-profile {
+  @extend .container-fluid;
+  max-width: 60rem;
+  padding: 0;
 }
 
 /*
@@ -617,6 +626,13 @@ body {
   padding: 0;
 }
 
+.container-profile {
+  @extend .container-fluid;
+  max-width: 60rem;
+  padding: 0;
+}
+
+
 /*------------------------------------
 - min-width: 480px
 ------------------------------------*/
@@ -681,14 +697,19 @@ body {
     width: 15rem;
     height: 15rem;
   }
-
-  // パスワードを変更画面
-  .container-edit2 > .card {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
-    margin-top: 6.4rem;
-    margin-bottom: 6.4rem;
-  }
 }
+
+// @media (min-width: 480px) and (orientation: landscape) {
+//   // パスワードを変更画面
+//   .yohaku-edit2 {
+//     height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+//   }
+
+//   // パスワードを変更画面
+//   .container-edit2 > .card {
+//     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
+//   }
+// }
 
 /*------------------------------------
 - min-width: 600px
@@ -722,6 +743,22 @@ body {
     top: 50%;
     transform: translateY(-50%);
     width: 60rem;
+  }
+}
+
+
+
+
+
+@media (min-width: 600px) {
+  // プロフィールを編集画面
+  .yohaku-profile {
+    height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+  }
+
+  // プロフィールを編集画面
+  .container-profile > .card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
   }
 }
 
