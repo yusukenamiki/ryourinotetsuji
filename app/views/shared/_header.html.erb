@@ -75,7 +75,13 @@
 
   <nav id="g-nav">
     <div id="g-nav-list">
+
+
+
       <ul>
+        <div class="yohaku-take">
+        </div>
+
         <% if user_signed_in? %>
           <div class="wrapper px-4 py-5">
             <div>
@@ -118,6 +124,11 @@
               ログアウト
             </div>
           <% end %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <div class="text-secondary p-4">
+              ログアウト
+            </div>
+          <% end %>
         <% else %>
           <%= link_to recipes_path do %>
             <div class="text-secondary px-4 py-5">
@@ -140,7 +151,13 @@
             </div>
           <% end %>
         <% end %>
+
+        <div class="yohaku-take">
+        </div>
       </ul>
+
+
+
     </div>
   </nav>
 </div>
