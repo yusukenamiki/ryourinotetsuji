@@ -1,24 +1,26 @@
 <%= bootstrap_devise_error_messages! %>
 
-<div class="container-edit2">
-  <div class="card border-0 text-center text-dark">
-    <%= link_to edit_user_path(@user) do %>
-      <div class="text-dark p-5 dropdown-item">
-        プロフィールを編集
-      </div>
-    <% end %>
-    <hr class="my-0">
-    <%= link_to edit_user_registration_path do %>
-      <div class="text-dark p-5 dropdown-item active">
-        パスワードを変更
-      </div>
-    <% end %>
-    <hr class="my-0">
+<div class="container-edit-password">
+  <div class="yohaku-edit-password">
   </div>
 
   <div class="card border-0 p-5 text-left text-dark">
+    <div class="text-center">
+      <%= link_to edit_user_path(@user) do %>
+        <div class="text-dark p-5 dropdown-item">
+          プロフィールを編集
+        </div>
+      <% end %>
+      <hr class="my-0">
+      <%= link_to edit_user_registration_path do %>
+        <div class="text-dark p-5 dropdown-item active">
+          パスワードを変更
+        </div>
+      <% end %>
+      <hr class="my-0">
+    </div>
 
-    <div class="text-center" style="font-size: 2.2rem; margin: 3rem 0 4.5rem;">
+    <div class="text-center" style="font-size: 2.2rem; margin: 6rem 0 4.5rem;">
       <strong>パスワードを変更</strong>
     </div>
 
@@ -62,5 +64,8 @@
     <div class="text-center mb-5" style="font-size: 1.2rem;">
       <%= link_to "アカウントを削除される場合はこちら", registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete %>
     </div>
+  </div>
+
+  <div class="yohaku-edit-password">
   </div>
 </div>

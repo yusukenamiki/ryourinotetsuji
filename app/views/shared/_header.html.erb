@@ -76,6 +76,9 @@
   <nav id="g-nav">
     <div id="g-nav-list">
       <ul>
+        <div class="yohaku-take">
+        </div>
+
         <% if user_signed_in? %>
           <div class="wrapper px-4 py-5">
             <div>
@@ -94,27 +97,27 @@
           <hr class="m-0">
 
           <%= link_to recipes_path do %>
-            <div class="text-secondary p-4">
+            <div class="text-secondary px-4 py-5">
               レシピ一覧
             </div>
           <% end %>
           <%= link_to users_path do %>
-            <div class="text-secondary p-4">
+            <div class="text-secondary px-4 py-5">
               ユーザー一覧
             </div>
           <% end %>
           <%= link_to user_path(current_user) do %>
-            <div class="text-secondary p-4">
+            <div class="text-secondary px-4 py-5">
               マイページ
             </div>
           <% end %>
           <%= link_to new_recipe_path do %>
-            <div class="text-secondary p-4">
+            <div class="text-secondary px-4 py-5">
               新規投稿
             </div>
           <% end %>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <div class="text-secondary p-4">
+            <div class="text-secondary px-4 py-5">
               ログアウト
             </div>
           <% end %>
@@ -140,7 +143,11 @@
             </div>
           <% end %>
         <% end %>
+
+        <div class="yohaku-take">
+        </div>
       </ul>
     </div>
   </nav>
+
 </div>
