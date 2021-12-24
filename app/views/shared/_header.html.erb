@@ -75,78 +75,81 @@
 
   <nav id="g-nav">
     <div id="g-nav-list">
-      <ul>
-        <div class="yohaku-take">
+
+      <div class="newyork">
+        <div class="yohaku-">
         </div>
 
-        <% if user_signed_in? %>
-          <div class="wrapper px-4 py-5">
-            <div>
-              <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
-            </div>
-            <div class="ryaku pl-4">
-              <div class="ryaku text-dark" style="font-size: 1.4rem;">
-                <strong><%= current_user.username %></strong>
+        <div class="obi">
+          <% if user_signed_in? %>
+            <div class="wrapper px-4 py-5">
+              <div>
+                <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
               </div>
-              <div class="ryaku" style="font-size: 1.2rem;">
-                <%= current_user.email %>
+              <div class="ryaku pl-4">
+                <div class="ryaku text-dark" style="font-size: 1.4rem;">
+                  <strong><%= current_user.username %></strong>
+                </div>
+                <div class="ryaku" style="font-size: 1.2rem;">
+                  <%= current_user.email %>
+                </div>
               </div>
             </div>
-          </div>
 
-          <hr class="m-0">
+            <hr class="m-0">
 
-          <%= link_to recipes_path do %>
-            <div class="text-secondary px-4 py-5">
-              レシピ一覧
-            </div>
+            <%= link_to recipes_path do %>
+              <div class="text-secondary px-4 py-5">
+                レシピ一覧
+              </div>
+            <% end %>
+            <%= link_to users_path do %>
+              <div class="text-secondary px-4 py-5">
+                ユーザー一覧
+              </div>
+            <% end %>
+            <%= link_to user_path(current_user) do %>
+              <div class="text-secondary px-4 py-5">
+                マイページ
+              </div>
+            <% end %>
+            <%= link_to new_recipe_path do %>
+              <div class="text-secondary px-4 py-5">
+                新規投稿
+              </div>
+            <% end %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <div class="text-secondary px-4 py-5">
+                ログアウト
+              </div>
+            <% end %>
+          <% else %>
+            <%= link_to recipes_path do %>
+              <div class="text-secondary px-4 py-5">
+                レシピ一覧
+              </div>
+            <% end %>
+            <%= link_to users_path do %>
+              <div class="text-secondary px-4 py-5">
+                ユーザー一覧
+              </div>
+            <% end %>
+            <%= link_to new_user_registration_path do %>
+              <div class="text-secondary px-4 py-5">
+                新規登録
+              </div>
+            <% end %>
+            <%= link_to new_user_session_path do %>
+              <div class="text-secondary px-4 py-5">
+                ログイン
+              </div>
+            <% end %>
           <% end %>
-          <%= link_to users_path do %>
-            <div class="text-secondary px-4 py-5">
-              ユーザー一覧
-            </div>
-          <% end %>
-          <%= link_to user_path(current_user) do %>
-            <div class="text-secondary px-4 py-5">
-              マイページ
-            </div>
-          <% end %>
-          <%= link_to new_recipe_path do %>
-            <div class="text-secondary px-4 py-5">
-              新規投稿
-            </div>
-          <% end %>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-            <div class="text-secondary px-4 py-5">
-              ログアウト
-            </div>
-          <% end %>
-        <% else %>
-          <%= link_to recipes_path do %>
-            <div class="text-secondary px-4 py-5">
-              レシピ一覧
-            </div>
-          <% end %>
-          <%= link_to users_path do %>
-            <div class="text-secondary px-4 py-5">
-              ユーザー一覧
-            </div>
-          <% end %>
-          <%= link_to new_user_registration_path do %>
-            <div class="text-secondary px-4 py-5">
-              新規登録
-            </div>
-          <% end %>
-          <%= link_to new_user_session_path do %>
-            <div class="text-secondary px-4 py-5">
-              ログイン
-            </div>
-          <% end %>
-        <% end %>
-
-        <div class="yohaku-take">
         </div>
-      </ul>
+
+        <div class="yohaku-">
+        </div>
+      </div>
     </div>
   </nav>
 

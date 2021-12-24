@@ -144,7 +144,7 @@ a:link {
   #g-nav {
     /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
     position: fixed;
-    z-index: 999;
+    // z-index: 998;
     /*ナビのスタート位置と形状*/
     top: 0;
     right: -120%;
@@ -164,32 +164,31 @@ a:link {
   #g-nav.panelactive #g-nav-list{
     /*ナビの数が増えた場合縦スクロール*/
     position: fixed;
-    z-index: 999;
+    // z-index: 999;
     width: 100%;
     height: 100vh;/*表示する高さ*/
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
 
-  /*ナビゲーション*/
-  #g-nav ul {
+  .newyork {
     /*ナビゲーション天地中央揃え*/
     position: absolute;
-    z-index: 999;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #ffffff;                /* 独自に追加 */
-    padding: 0;                                 /* 独自に追加 */
-    margin: 0;                                  /* 独自に追加 */
     width: 65%;                                 /* 独自に追加 */
   }
 
-  .yohaku-take {
-    position: relative;
-    left: -0.1rem;
-    width: calc(100% + 0.2rem);
+  .yohaku- {
     height: 6.4rem;                             /* 余白を作る為だけのクラス */
-    background-color: tomato;                 /* ● */
+  }
+
+  /*ナビゲーション*/
+  .obi {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* card に shadow-lg を設定 */
+    background-color: #ffffff;                /* 独自に追加 */
+    padding: 0;                                 /* 独自に追加 */
+    margin: 0;                                  /* 独自に追加 */
   }
 }
 
