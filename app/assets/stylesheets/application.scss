@@ -160,46 +160,40 @@ a:link {
 
 
 
-@media (orientation: landscape) {
-  // ナビゲーションの縦スクロール ( ※z-index: 999; のみ削除 )
-  #g-nav.panelactive #g-nav-list{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .container-g-nav {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 65%;
-  }
-
-  .yohaku-g-nav {
-    height: 6.4rem;                                          /* 余白を作る為だけのクラス */
-  }
-}
-
-@media (orientation: portrait) {
-  .container-g-nav {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 65%;
-  }
+// ナビゲーションの縦スクロール ( ※z-index: 999; のみ削除 )
+#g-nav.panelactive #g-nav-list{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 
 
 
+
+
+.container-g-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+}
+
+.yohaku-g-nav {
+  height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+}
 
 .hontai {
   box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;      /* shadow-lg を設定 */
   background-color: #ffffff;
 }
+
+
+
+
+
 
 /* .dropdown-item と同じホバー色 */
 #g-nav .text-secondary:hover {
