@@ -80,13 +80,12 @@
 
   <nav id="g-nav">
     <div id="g-nav-list">
-
       <% if user_signed_in? %>
-        <div class="container-g-nav">
-          <div class="yohaku-g-nav">
+        <div class="container-g-nav1">
+          <div class="yohaku-g-nav1">
           </div>
 
-          <div class="hontai">
+          <div class="hontai1">
             <div class="wrapper px-4 py-5">
               <div>
                 <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
@@ -135,15 +134,15 @@
             <% end %>
           </div>
 
-          <div class="yohaku-g-nav">
+          <div class="yohaku-g-nav1">
           </div>
         </div>
       <% else %>
-        <div class="container-g-nav">
-          <div class="yohaku-g-nav">
+        <div class="container-g-nav2">
+          <div class="yohaku-g-nav2">
           </div>
 
-          <div class="hontai">
+          <div class="hontai2">
             <%= link_to recipes_path do %>
               <div class="text-secondary px-4 py-5">
                 レシピ一覧
@@ -166,12 +165,10 @@
             <% end %>
           </div>
 
-          <div class="yohaku-g-nav">
+          <div class="yohaku-g-nav2">
           </div>
         </div>
       <% end %>
-
     </div>
   </nav>
-
 </div>
