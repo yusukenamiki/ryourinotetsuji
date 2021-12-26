@@ -44,6 +44,11 @@
                 マイページ
               </div>
             <% end %>
+            <%= link_to user_favorites_path(current_user), class: "dropdown-item" do %>
+              <div class="text-dark py-4">
+                いいね一覧
+              </div>
+            <% end %>
             <%= link_to new_recipe_path, class: "dropdown-item" do %>
               <div class="text-dark py-4">
                 新規投稿
@@ -111,6 +116,11 @@
             <%= link_to user_path(current_user) do %>
               <div class="text-secondary px-4 py-5">
                 マイページ
+              </div>
+            <% end %>
+            <%= link_to user_favorites_path(current_user) do %>
+              <div class="text-secondary px-4 py-5">
+                いいね一覧
               </div>
             <% end %>
             <%= link_to new_recipe_path do %>
