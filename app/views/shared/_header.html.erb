@@ -44,6 +44,11 @@
                 マイページ
               </div>
             <% end %>
+            <%= link_to user_favorites_path(current_user), class: "dropdown-item" do %>
+              <div class="text-dark py-4">
+                いいね一覧
+              </div>
+            <% end %>
             <%= link_to new_recipe_path, class: "dropdown-item" do %>
               <div class="text-dark py-4">
                 新規投稿
@@ -75,13 +80,12 @@
 
   <nav id="g-nav">
     <div id="g-nav-list">
+      <% if user_signed_in? %>
+        <div class="container-g-nav1">
+          <div class="yohaku-g-nav1">
+          </div>
 
-      <div class="container-g-nav">
-        <div class="yohaku-g-nav">
-        </div>
-
-        <div class="hontai">
-          <% if user_signed_in? %>
+          <div class="hontai1">
             <div class="wrapper px-4 py-5">
               <div>
                 <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
@@ -113,6 +117,11 @@
                 マイページ
               </div>
             <% end %>
+            <%= link_to user_favorites_path(current_user) do %>
+              <div class="text-secondary px-4 py-5">
+                いいね一覧
+              </div>
+            <% end %>
             <%= link_to new_recipe_path do %>
               <div class="text-secondary px-4 py-5">
                 新規投稿
@@ -123,7 +132,17 @@
                 ログアウト
               </div>
             <% end %>
-          <% else %>
+          </div>
+
+          <div class="yohaku-g-nav1">
+          </div>
+        </div>
+      <% else %>
+        <div class="container-g-nav2">
+          <div class="yohaku-g-nav2">
+          </div>
+
+          <div class="hontai2">
             <%= link_to recipes_path do %>
               <div class="text-secondary px-4 py-5">
                 レシピ一覧
@@ -144,14 +163,12 @@
                 ログイン
               </div>
             <% end %>
-          <% end %>
-        </div>
+          </div>
 
-        <div class="yohaku-g-nav">
+          <div class="yohaku-g-nav2">
+          </div>
         </div>
-      </div>
-
+      <% end %>
     </div>
   </nav>
-
 </div>

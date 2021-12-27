@@ -1,0 +1,56 @@
+<div class="container p-5" style="max-width: 480px;">
+  <div class="wrapper d-flex align-items-center justify-content-between">
+    <div>
+      <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class: "user-icon87 rounded-circle" %>
+    </div>
+    <div>
+      <% if @user.id == current_user.id %>
+        <%= link_to edit_user_path(@user) do %>
+          <button class="btn btn-outline-secondary">プロフィールを編集</button>
+        <% end %>
+      <% else %>
+        <% if @user.is_followed_by?(current_user) %>
+          <%=link_to user_relationships_path(@user), method: :delete do %>
+            <button class="btn btn-outline-secondary" style="width: 10.1rem;">フォロー中</button>
+          <% end %>
+        <% else %>
+          <%=link_to user_relationships_path(@user), method: :post do %>
+            <button class="btn btn-dark text-white">フォローする</button>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="text-dark mt-5">
+    <strong><%= @user.username %></strong>
+  </div>
+
+  <% if @user.id == current_user.id %>
+    <div class="mt-2" style="font-size: 1.2rem; word-wrap: break-word;">
+      <%= @user.email %>
+    </div>
+  <% end %>
+
+  <div class="count-wrapper text-center mt-5">
+    <div>
+      <div>投稿</div>
+      <div><strong><%= @user.recipes.count %></strong></div>
+      <div>件</div>
+    </div>
+    <div>
+      <div>フォロワー</div>
+      <div><strong><%= link_to @user.followers.count, followers_user_path(@user), class: "link-title" %></strong></div>
+      <div>人</div>
+    </div>
+    <div>
+      <div>フォロー中</div>
+      <div><strong><%= link_to @user.followings.count, followings_user_path(@user), class: "link-title" %></strong></div>
+      <div>人</div>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <%= simple_format @user.profile, {}, wrapper_tag: "div" %>
+  </div>
+</div>

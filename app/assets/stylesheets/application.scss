@@ -139,7 +139,7 @@ a:link {
   text-overflow: ellipsis;
 }
 
-/*========= ナビゲーションのためのCSS ===============*/
+/*========== ナビゲーションのためのCSS ==========*/
 // ハンバーガー内の画面の背景 ( ※z-index: 999; のみ削除 )
 #g-nav {
   position: fixed;
@@ -156,34 +156,71 @@ a:link {
   right: 0;
 }
 
+// ナビゲーションの縦スクロール ( ※z-index: 999; のみ削除 )
+#g-nav.panelactive #g-nav-list{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
+// .dropdown-item と同じホバー色
+#g-nav .text-secondary:hover {
+  background-color: #f8f9fa;                               /* 独自に追加 */
+}
 
+/*---------- if user_signed_in? ----------*/
+.container-g-nav1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+}
 
+.yohaku-g-nav1 {
+  height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+}
 
-@media (orientation: landscape) {
-  // ナビゲーションの縦スクロール ( ※z-index: 999; のみ削除 )
-  #g-nav.panelactive #g-nav-list{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
+.hontai1 {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;      /* shadow-lg を設定 */
+  background-color: #ffffff;
+}
 
-  .container-g-nav {
+@media (min-width: 375px) and (orientation: portrait) {
+  .container-g-nav1 {
     position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-50%);
     width: 65%;
   }
 
-  .yohaku-g-nav {
-    height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+  // 375 x 667 の場合、hontai1 上下の yohaku-g-nav1 が画面に納まらず中途半端に上下スクロールできてしまう為、none を設定
+  .yohaku-g-nav1 {
+    display: none;
   }
 }
 
+/*---------- else ----------*/
+.container-g-nav2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+}
+
+.yohaku-g-nav2 {
+  height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+}
+
+.hontai2 {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;      /* shadow-lg を設定 */
+  background-color: #ffffff;
+}
+
 @media (orientation: portrait) {
-  .container-g-nav {
+  .container-g-nav2 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -192,21 +229,7 @@ a:link {
   }
 }
 
-
-
-
-
-.hontai {
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;      /* shadow-lg を設定 */
-  background-color: #ffffff;
-}
-
-/* .dropdown-item と同じホバー色 */
-#g-nav .text-secondary:hover {
-  background-color: #f8f9fa;                               /* 独自に追加 */
-}
-
-/*========= ボタンのためのCSS ===============*/
+/*========== ボタンのためのCSS ==========*/
 .openbtn1 {
   position: fixed;
   z-index: 9999;/*ボタンを最前面に*/
