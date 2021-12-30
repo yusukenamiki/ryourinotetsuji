@@ -476,6 +476,8 @@ input[type="password"] {
   @extend .container-fluid;
   max-width: 60rem;
   padding: 0;
+  background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
+  height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
 }
 
 /*
@@ -506,10 +508,6 @@ input[type="password"] {
   padding: 0;
 }
 
-
-
-
-
 /*
 - B
 ------------------------------------*/
@@ -520,8 +518,8 @@ input[type="password"] {
   padding: 0;                      /* 独自に変更 */
   position: relative;              /* 独自に追加 ( card をヘッダー分上げる ) */
   top: -6.4rem;                    /* 独自に追加 ( card をヘッダー分上げる ) */
-  background-color: #ffffff;    /* 独自に追加 ( XR の画面で card と body の bg との境目を無くす為 card と同色を設定 ) */
-  height: 100vh;                   /* 独自に追加 ( card と同色を設定した bg を画面全体に表示 ) */
+  background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
+  height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
 }
 
 /*------------------------------------
@@ -530,7 +528,7 @@ input[type="password"] {
 // 新規登録、ログイン、パスワードを忘れた場合、パスワード再設定 ( 余白 card 余白セット )
 @media (min-width: 480px) and (orientation: landscape) {
   .container-login4 {
-    background: none;                                        /* bg そのものを none にし body の bg を表示させる */
+    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
   }
 
   .yohaku-login4 {
@@ -545,7 +543,7 @@ input[type="password"] {
 // 新規登録、ログイン、パスワードを忘れた場合、パスワード再設定 ( 上下中央セット )
 @media (min-width: 480px) and (orientation: portrait) {
   .container-login4 {
-    background: none;                                        /* bg そのものを none にし body の bg を表示させる */
+    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
     height: 100vh;
   }
 
@@ -609,6 +607,10 @@ input[type="password"] {
 ------------------------------------*/
 // レシピ編集、新規投稿 ( 余白 card 余白セット )
 @media (min-width: 600px) and (orientation: landscape) {
+  .container-recipe2 {
+    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
+  }
+
   .yohaku-recipe2 {
     height: 6.4rem;                                          /* 余白を作る為だけのクラス */
   }
@@ -621,6 +623,7 @@ input[type="password"] {
 // レシピ編集、新規投稿 ( 上下中央セット )
 @media (min-width: 600px) and (orientation: portrait) {
   .container-recipe2 {
+    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
     height: 100vh;
   }
 
