@@ -32,12 +32,14 @@
 - B
 ------------------------------------*/
 // B [1/4] 8:50
-.container-login4 {            /* 独自に変更 */
+.container-login4 {                /* 独自に変更 */
   @extend .container-fluid;
-  max-width: 48rem;            /* 独自に変更 */
-  padding: 0;                  /* 独自に変更 */
-  position: relative;          /* 独自に追加 ( card をヘッダー分上げる ) */
-  top: -6.4rem;                /* 独自に追加 ( card をヘッダー分上げる ) */
+  max-width: 48rem;                /* 独自に変更 */
+  padding: 0;                      /* 独自に変更 */
+  position: relative;              /* 独自に追加 ( card をヘッダー分上げる ) */
+  top: -6.4rem;                    /* 独自に追加 ( card をヘッダー分上げる ) */
+  background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
+  height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
 }
 
 // B [1/4] 8:50
@@ -510,19 +512,9 @@ input[type="password"] {
   height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
 }
 
-/*
-- B
-------------------------------------*/
-// B [1/4] 8:50
-.container-login4 {                /* 独自に変更 */
-  @extend .container-fluid;
-  max-width: 48rem;                /* 独自に変更 */
-  padding: 0;                      /* 独自に変更 */
-  position: relative;              /* 独自に追加 ( card をヘッダー分上げる ) */
-  top: -6.4rem;                    /* 独自に追加 ( card をヘッダー分上げる ) */
-  background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
-  height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
-}
+
+
+
 
 /*------------------------------------
 - min-width: 480px
