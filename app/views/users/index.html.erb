@@ -46,11 +46,11 @@
               <div class="kotei101 d-flex align-items-center">
                 <% if user.is_followed_by?(current_user) %>
                   <%=link_to user_relationships_path(user), method: :delete do %>
-                    <button class="btn btn-outline-secondary" style="width: 10.1rem;">フォロー中</button>
+                    <button class="btn btn-outline-secondary btn101">フォロー中</button>
                   <% end %>
                 <% else %>
                   <%=link_to user_relationships_path(user), method: :post do %>
-                    <button class="btn btn-dark text-white">フォローする</button>
+                    <button class="btn btn-dark text-white btn101">フォローする</button>
                   <% end %>
                 <% end %>
               </div>

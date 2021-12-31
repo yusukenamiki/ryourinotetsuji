@@ -32,12 +32,14 @@
 - B
 ------------------------------------*/
 // B [1/4] 8:50
-.container-login4 {            /* 独自に変更 */
+.container-login4 {                /* 独自に変更 */
   @extend .container-fluid;
-  max-width: 48rem;            /* 独自に変更 */
-  padding: 0;                  /* 独自に変更 */
-  position: relative;          /* 独自に追加 ( card をヘッダー分上げる ) */
-  top: -6.4rem;                /* 独自に追加 ( card をヘッダー分上げる ) */
+  max-width: 48rem;                /* 独自に変更 */
+  padding: 0;                      /* 独自に変更 */
+  position: relative;              /* 独自に追加 ( card をヘッダー分上げる ) */
+  top: -6.4rem;                    /* 独自に追加 ( card をヘッダー分上げる ) */
+  background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
+  height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
 }
 
 // B [1/4] 8:50
@@ -70,6 +72,7 @@ body {
   color: #6c757d;
   font-size: 1.4rem;
   height: calc(100vh - 6.4rem);    /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
+  background-color: #f8f9fa;
 }
 
 // 全てのリンクの下線を外す
@@ -102,6 +105,11 @@ a:link {
 /*
 - ヘッダー
 ------------------------------------*/
+.header64 {
+  background-color:#fcefca;
+  height: 6.4rem;
+}
+
 .tablet-pc-link {
   display: none;
 }
@@ -320,6 +328,11 @@ a:link {
   width: 10.1rem;
 }
 
+.btn101 {
+  width: 10.1rem;
+  padding: 0;
+}
+
 /*
 - マイページ
 ------------------------------------*/
@@ -396,10 +409,15 @@ a:link {
   text-align: center;
   border-radius: 50%;
   margin: 0 5px;
+  background: none;
 }
 
 .pagination>li>a:hover {
   color: #6c757d;
+}
+
+.page-item.disabled .page-link {
+  background: none;
 }
 
 .page-item.active .page-link {
@@ -460,6 +478,8 @@ input[type="password"] {
   @extend .container-fluid;
   max-width: 60rem;
   padding: 0;
+  background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
+  height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
 }
 
 /*
@@ -488,164 +508,9 @@ input[type="password"] {
   @extend .container-fluid;
   max-width: 48rem;
   padding: 0;
+  background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
+  height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
 }
-
-
-
-
-
-
-
-
-
-
-/*
-- COLOR danger
-------------------------------------*/
-.alert-danger {
-  color: #8c1b00;
-  background-color: #ffdcd3;
-  border-color: #ffccbf;
-}
-
-.alert-danger hr {
-  border-top-color: #ffb7a6;
-}
-
-.alert-danger .alert-link {
-  color: #591100;
-}
-
-.badge-danger {
-  color: #fff;
-  background-color: #ff3908;
-}
-
-.badge-danger[href]:hover, .badge-danger[href]:focus {
-  color: #fff;
-  background-color: #d32a00;
-}
-
-.bg-danger {
-  background-color: #ff3908 !important;
-}
-
-a.bg-danger:hover, a.bg-danger:focus,
-button.bg-danger:hover,
-button.bg-danger:focus {
-  background-color: #d32a00 !important;
-}
-
-.border-danger {
-  border-color: #ff3908 !important;
-}
-
-.btn-danger {
-  color: #fff;
-  background-color: #ff3908;
-  border-color: #ff3908;
-}
-
-.btn-danger:hover {
-  color: #fff;
-  background-color: #e32d00;
-  border-color: #d32a00;
-}
-
-.btn-danger:focus, .btn-danger.focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 57, 8, 0.5);
-}
-
-.btn-danger.disabled, .btn-danger:disabled {
-  color: #fff;
-  background-color: #ff3908;
-  border-color: #ff3908;
-}
-
-.btn-danger:not(:disabled):not(.disabled):active, .btn-danger:not(:disabled):not(.disabled).active, .show > .btn-danger.dropdown-toggle {
-  color: #fff;
-  background-color: #d32a00;
-  border-color: #c42700;
-}
-
-.btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus, .show > .btn-danger.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 57, 8, 0.5);
-}
-
-.btn-outline-danger {
-  color: #ff3908;
-  background-color: transparent;
-  border-color: #ff3908;
-}
-
-.btn-outline-danger:hover {
-  color: #fff;
-  background-color: #ff3908;
-  border-color: #ff3908;
-}
-
-.btn-outline-danger:focus, .btn-outline-danger.focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 57, 8, 0.5);
-}
-
-.btn-outline-danger.disabled, .btn-outline-danger:disabled {
-  color: #ff3908;
-  background-color: transparent;
-}
-
-.btn-outline-danger:not(:disabled):not(.disabled):active, .btn-outline-danger:not(:disabled):not(.disabled).active, .show > .btn-outline-danger.dropdown-toggle {
-  color: #fff;
-  background-color: #ff3908;
-  border-color: #ff3908;
-}
-
-.btn-outline-danger:not(:disabled):not(.disabled):active:focus, .btn-outline-danger:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-danger.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 57, 8, 0.5);
-}
-
-.list-group-item-danger {
-  color: #8c1b00;
-  background-color: #ffccbf;
-}
-
-.list-group-item-danger.list-group-item-action:hover, .list-group-item-danger.list-group-item-action:focus {
-  color: #8c1b00;
-  background-color: #ffb7a6;
-}
-
-.list-group-item-danger.list-group-item-action.active {
-  color: #fff;
-  background-color: #8c1b00;
-  border-color: #8c1b00;
-}
-
-.table-danger,
-.table-danger > th,
-.table-danger > td {
-  background-color: #ffccbf;
-}
-
-.table-hover .table-danger:hover {
-  background-color: #ffb7a6;
-}
-
-.table-hover .table-danger:hover > td,
-.table-hover .table-danger:hover > th {
-  background-color: #ffb7a6;
-}
-
-.text-danger {
-  color: #ff3908 !important;
-}
-
-a.text-danger:hover, a.text-danger:focus {
-  color: #d32a00 !important;
-}
-
-
-
-
-
 
 
 
@@ -656,6 +521,10 @@ a.text-danger:hover, a.text-danger:focus {
 ------------------------------------*/
 // 新規登録、ログイン、パスワードを忘れた場合、パスワード再設定 ( 余白 card 余白セット )
 @media (min-width: 480px) and (orientation: landscape) {
+  .container-login4 {
+    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
+  }
+
   .yohaku-login4 {
     height: 6.4rem;                                          /* 余白を作る為だけのクラス */
   }
@@ -668,6 +537,7 @@ a.text-danger:hover, a.text-danger:focus {
 // 新規登録、ログイン、パスワードを忘れた場合、パスワード再設定 ( 上下中央セット )
 @media (min-width: 480px) and (orientation: portrait) {
   .container-login4 {
+    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
     height: 100vh;
   }
 
@@ -686,6 +556,10 @@ a.text-danger:hover, a.text-danger:focus {
 
 // パスワードを変更 ( 余白 card 余白セット )
 @media (min-width: 480px) {
+  .container-edit-password {
+    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
+  }
+
   .yohaku-edit-password {
     height: 6.4rem;                                          /* 余白を作る為だけのクラス */
   }
@@ -731,6 +605,10 @@ a.text-danger:hover, a.text-danger:focus {
 ------------------------------------*/
 // レシピ編集、新規投稿 ( 余白 card 余白セット )
 @media (min-width: 600px) and (orientation: landscape) {
+  .container-recipe2 {
+    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
+  }
+
   .yohaku-recipe2 {
     height: 6.4rem;                                          /* 余白を作る為だけのクラス */
   }
@@ -743,6 +621,7 @@ a.text-danger:hover, a.text-danger:focus {
 // レシピ編集、新規投稿 ( 上下中央セット )
 @media (min-width: 600px) and (orientation: portrait) {
   .container-recipe2 {
+    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
     height: 100vh;
   }
 
