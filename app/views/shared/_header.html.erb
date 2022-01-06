@@ -6,10 +6,10 @@
     <div class="tablet-pc-link">
       <div class="btn-group">
         <%= link_to recipes_path do %>
-          <button type="button" class="btn btn-beige">レシピ一覧</button>
+          <button type="button" class="btn btn-header">レシピ一覧</button>
         <% end %>
         <%= link_to users_path do %>
-          <button type="button" class="btn btn-beige">ユーザー一覧</button>
+          <button type="button" class="btn btn-header">ユーザー一覧</button>
         <% end %>
       </div>
     </div>
@@ -66,10 +66,10 @@
       <% else %>
         <div class="btn-group">
           <%= link_to new_user_registration_path do %>
-            <button type="button" class="btn btn-beige">新規登録</button>
+            <button type="button" class="btn btn-header">新規登録</button>
           <% end %>
           <%= link_to new_user_session_path do %>
-            <button type="button" class="btn btn-beige">ログイン</button>
+            <button type="button" class="btn btn-header">ログイン</button>
           <% end %>
         </div>
       <% end %>

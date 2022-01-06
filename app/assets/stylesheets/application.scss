@@ -114,19 +114,21 @@ a:link {
   display: none;
 }
 
-.btn-beige {
-  background-color: #fcefca;
-  border-color: #fcefca;
+.btn-header {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  padding: 0 1.5rem;
+  height: 4rem;
 }
 
-.btn-beige:hover {
-  background-color: #fae4a8;
-  border-color: #fae4a8;
+.btn-header:hover {
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
 }
 
 // ボタンクリック時の縁を非表示
-.btn-beige:focus, .btn-beige.focus {
-  box-shadow: 0 0 0 0.2rem rgba(252, 239, 202, 0.5);
+.btn-header:focus, .btn-header.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
 }
 
 .user-icon32 {
