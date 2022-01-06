@@ -4,12 +4,14 @@
       <div class="mr-3" style="font-size: 2rem; font-family: 'Kiwi Maru', serif;">レシピ館</div>
     <% end %>
     <div class="tablet-pc-link">
-      <%= link_to recipes_path do %>
-        <button type="button" class="btn btn-beige">レシピ一覧</button>
-      <% end %>
-      <%= link_to users_path do %>
-        <button type="button" class="btn btn-beige">ユーザー一覧</button>
-      <% end %>
+      <div class="btn-group">
+        <%= link_to recipes_path do %>
+          <button type="button" class="btn btn-beige">レシピ一覧</button>
+        <% end %>
+        <%= link_to users_path do %>
+          <button type="button" class="btn btn-beige">ユーザー一覧</button>
+        <% end %>
+      </div>
     </div>
   </div>
 
