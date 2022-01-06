@@ -64,12 +64,14 @@
           </div>
         </div>
       <% else %>
-        <%= link_to new_user_registration_path do %>
-          <button type="button" class="btn btn-beige">新規登録</button>
-        <% end %>
-        <%= link_to new_user_session_path do %>
-          <button type="button" class="btn btn-beige">ログイン</button>
-        <% end %>
+        <div class="btn-group">
+          <%= link_to new_user_registration_path do %>
+            <button type="button" class="btn btn-beige">新規登録</button>
+          <% end %>
+          <%= link_to new_user_session_path do %>
+            <button type="button" class="btn btn-beige">ログイン</button>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
