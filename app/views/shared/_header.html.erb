@@ -4,12 +4,14 @@
       <div class="mr-3" style="font-size: 2rem; font-family: 'Kiwi Maru', serif;">レシピ館</div>
     <% end %>
     <div class="tablet-pc-link">
-      <%= link_to recipes_path do %>
-        <button type="button" class="btn btn-beige">レシピ一覧</button>
-      <% end %>
-      <%= link_to users_path do %>
-        <button type="button" class="btn btn-beige">ユーザー一覧</button>
-      <% end %>
+      <div class="btn-group">
+        <%= link_to recipes_path do %>
+          <button type="button" class="btn btn-header">レシピ一覧</button>
+        <% end %>
+        <%= link_to users_path do %>
+          <button type="button" class="btn btn-header">ユーザー一覧</button>
+        <% end %>
+      </div>
     </div>
   </div>
 
@@ -62,12 +64,14 @@
           </div>
         </div>
       <% else %>
-        <%= link_to new_user_registration_path do %>
-          <button type="button" class="btn btn-beige">新規登録</button>
-        <% end %>
-        <%= link_to new_user_session_path do %>
-          <button type="button" class="btn btn-beige">ログイン</button>
-        <% end %>
+        <div class="btn-group">
+          <%= link_to new_user_registration_path do %>
+            <button type="button" class="btn btn-header">新規登録</button>
+          <% end %>
+          <%= link_to new_user_session_path do %>
+            <button type="button" class="btn btn-header">ログイン</button>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
