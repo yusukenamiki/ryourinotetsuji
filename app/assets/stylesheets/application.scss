@@ -121,6 +121,14 @@ a:link {
 /*
 - ヘッダー
 ------------------------------------*/
+.fixed-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
 .header64 {
   background-color:#ffffff;
   height: 6.4rem;
