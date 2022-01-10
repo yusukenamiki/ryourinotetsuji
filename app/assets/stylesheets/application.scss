@@ -25,8 +25,8 @@
 ------------------------------------*/
 // A PART2 32:40 フラッシュメッセージの下の余白を消す
 .alert {                           /* 独自に変更 */
-  padding: 0 1.5rem;
-	margin-bottom: 0;
+  padding: 0 1.5rem;               /* 独自に追加 */
+	margin-bottom: 0.05rem;          /* 独自に変更 */
   border-radius: 0;                /* 独自に追加 */
   height: 6.4rem;                  /* 独自に追加 */
   display:table;                   /* 独自に追加 */
@@ -54,12 +54,17 @@
 
 // B [1/4] 8:50
 .alert-notice {
-  @extend .alert-info;
+  color: #ffffff;               /* 独自に変更 */
+  background-color: #30c8d6;    /* 独自に変更 */
+  border-color: #30c8d6;        /* 独自に変更 */
 }
 
 // B [1/4] 8:50
 .alert-alert {
-  @extend .alert-danger;
+  color: #ffffff;               /* 独自に変更 */
+  background-color: #7f0019;    /* 独自に変更 */
+  border-color: #7f0019;        /* 独自に変更 */
+  font-weight: 700;               /* 独自に追加 */
 }
 
 /*
