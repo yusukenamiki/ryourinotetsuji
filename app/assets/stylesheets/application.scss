@@ -24,8 +24,18 @@
 - A
 ------------------------------------*/
 // A PART2 32:40 フラッシュメッセージの下の余白を消す
-.alert:not(:last-child){
+.alert {                           /* 独自に変更 */
+  padding: 0 1.5rem;
 	margin-bottom: 0;
+  border-radius: 0;                /* 独自に追加 */
+  height: 6.4rem;                  /* 独自に追加 */
+  display:table;                   /* 独自に追加 */
+  width: 100%;                     /* 独自に追加 */
+}
+
+.alert-message-center {
+  display:table-cell;
+  vertical-align:middle;
 }
 
 /*

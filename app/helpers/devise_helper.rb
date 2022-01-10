@@ -5,8 +5,10 @@ module DeviseHelper
     html = ""
     resource.errors.full_messages.each do |error_message|
       html += <<-EOF
-      <div class="alert alert-danger rounded-0 py-4" role="alert">
-        #{error_message}
+      <div class="alert alert-danger" role="alert">
+        <div class="alert-message-center">
+          #{error_message}
+        </div>
       </div>
       EOF
     end
