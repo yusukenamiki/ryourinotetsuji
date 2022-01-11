@@ -131,7 +131,7 @@ a:link {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 1;
 }
 
 .header64 {
@@ -179,7 +179,7 @@ a:link {
 }
 
 /*========== ナビゲーションのためのCSS ==========*/
-// ハンバーガー内の画面の背景 ( ※z-index: 999; のみ削除 )
+// ハンバーガー内の画面の背景
 #g-nav {
   position: fixed;
   top: 0;
@@ -195,7 +195,7 @@ a:link {
   right: 0;
 }
 
-// ナビゲーションの縦スクロール ( ※z-index: 999; のみ削除 )
+// ナビゲーションの縦スクロール
 #g-nav.panelactive #g-nav-list{
   position: fixed;
   width: 100%;
@@ -271,7 +271,7 @@ a:link {
 /*========== ボタンのためのCSS ==========*/
 .openbtn1 {
   position: fixed;
-  z-index: 9999;/*ボタンを最前面に*/
+  z-index: 1;                                                /* 独自に変更 */
   top: 0.7rem;                                               /* 独自に変更 */
   right: 0.15rem;                                            /* 独自に変更 */
   cursor: pointer;
@@ -452,13 +452,13 @@ a:link {
 }
 
 .page-item.active .page-link {
+  z-index: 0;
   color: #fff;
   background-color: #ffc107;
   border-color: #ffc107;
   width: 30px;
   height: 30px;
   text-align: center;
-  z-index: 0;
 }
 
 .page-item:first-child .page-link {
