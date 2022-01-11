@@ -74,6 +74,8 @@
 .alert-login4 {
   position: relative;
   top: -6.4rem;
+  z-index: 1;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.4)!important;    /* shadow-sm と同じ見え方を設定 */
 }
 
 // 画像の縦横比を維持したまま、縦横のうち小さい方を基準に拡大・縮小され、中央の位置でトリミング
