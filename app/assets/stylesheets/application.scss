@@ -23,7 +23,7 @@
 /*
 - A
 ------------------------------------*/
-// A PART2 32:40 フラッシュメッセージの下の余白を消す
+// A PART2 32:40
 .alert {                           /* 独自に変更 */
   padding: 0 1.5rem;               /* 独自に追加 */
 	margin-bottom: 0.05rem;          /* 独自に変更 */
@@ -32,11 +32,6 @@
   display:table;                   /* 独自に追加 */
   width: 100%;                     /* 独自に追加 */
   font-size: 1.2rem;               /* 独自に追加 */
-}
-
-.alert-message-center {
-  display:table-cell;
-  vertical-align:middle;
 }
 
 /*
@@ -71,6 +66,16 @@
 /*
 - 共通
 ------------------------------------*/
+.alert-message-center {
+  display:table-cell;
+  vertical-align:middle;
+}
+
+.alert-login4 {
+  position: relative;
+  top: -6.4rem;
+}
+
 // 画像の縦横比を維持したまま、縦横のうち小さい方を基準に拡大・縮小され、中央の位置でトリミング
 img {
   object-fit: cover;
