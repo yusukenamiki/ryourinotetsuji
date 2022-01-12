@@ -1,5 +1,10 @@
 <% flash.each do |name, msg| %>
-  <div class="alert alert-<%= name %> rounded-0 py-4" role="alert">
-    <%= msg %>
+  <div class="alert alert-<%= name %> alert-dismissible fade show" role="alert">
+    <div class="alert-message-center">
+      <%= msg %>
+    </div>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">✕</span>
+    </button>
   </div>
 <% end %>
