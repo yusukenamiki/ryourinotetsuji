@@ -14,7 +14,7 @@
   <div class="yohaku-edit-profile">
   </div>
 
-  <div class="card border-0 p-5 text-left text-dark">
+  <div class="card border-0 p-0">
     <div class="text-center">
       <%= link_to edit_user_path(@user) do %>
         <div class="text-dark p-5 dropdown-item active">
@@ -30,51 +30,53 @@
       <hr class="my-0">
     </div>
 
-    <div class="text-center" style="font-size: 2.2rem; margin: 6rem 0 4.5rem;">
-      <strong>プロフィールを編集</strong>
-    </div>
-
-    <%= form_for @user do |f| %>
-      <div class="form-group mb-5">
-        <strong><%= f.label :username, "ユーザー名" %></strong>
-        <%= f.text_field :username,
-                         autofocus: true,
-                         autocomplete: "email",
-                         class: "form-control text-dark",
-                         style: "font-size: 1.4rem;",
-                         required: true,
-                         maxlength: '30' %>
+    <div class="p-5 text-dark">
+      <div class="text-center" style="font-size: 2.2rem; margin: 3rem 0 4.5rem;">
+        <strong>プロフィールを編集</strong>
       </div>
 
-      <div class="form-group mb-5">
-        <strong><%= f.label :email, "メールアドレス" %></strong>
-        <%= f.email_field :email,
+      <%= form_for @user do |f| %>
+        <div class="form-group mb-5">
+          <strong><%= f.label :username, "ユーザー名" %></strong>
+          <%= f.text_field :username,
                           autofocus: true,
                           autocomplete: "email",
                           class: "form-control text-dark",
                           style: "font-size: 1.4rem;",
                           required: true,
-                          maxlength: '100' %>
-      </div>
+                          maxlength: '30' %>
+        </div>
 
-      <div class="form-group mb-5">
-        <strong><%= f.label :profile, "プロフィール" %></strong>
-        <%= f.text_area :profile,
-                        rows: 5,
-                        class: "form-control text-dark",
-                        style: "font-size: 1.4rem;",
-                        maxlength: '150' %>
-      </div>
+        <div class="form-group mb-5">
+          <strong><%= f.label :email, "メールアドレス" %></strong>
+          <%= f.email_field :email,
+                            autofocus: true,
+                            autocomplete: "email",
+                            class: "form-control text-dark",
+                            style: "font-size: 1.4rem;",
+                            required: true,
+                            maxlength: '100' %>
+        </div>
 
-      <div class="form-group">
-        <strong><%= f.label :profile_image, "プロフィール画像" %></strong><br />
-        <%= f.attachment_field :profile_image %>
-      </div>
+        <div class="form-group mb-5">
+          <strong><%= f.label :profile, "プロフィール" %></strong>
+          <%= f.text_area :profile,
+                          rows: 5,
+                          class: "form-control text-dark",
+                          style: "font-size: 1.4rem;",
+                          maxlength: '150' %>
+        </div>
 
-      <div style="margin: 5.5rem 0 3rem;">
-        <%= f.submit "更新", class:"btn btn-warning btn-block" %>
-      </div>
-    <% end %>
+        <div class="form-group">
+          <strong><%= f.label :profile_image, "プロフィール画像" %></strong><br />
+          <%= f.attachment_field :profile_image %>
+        </div>
+
+        <div style="margin: 5.5rem 0 3rem;">
+          <%= f.submit "更新", class:"btn btn-warning btn-block" %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <div class="yohaku-edit-profile">

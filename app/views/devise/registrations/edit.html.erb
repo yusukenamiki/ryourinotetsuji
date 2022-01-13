@@ -5,7 +5,7 @@
   <div class="yohaku-edit-password">
   </div>
 
-  <div class="card border-0 p-5 text-left text-dark">
+  <div class="card border-0 p-0">
     <div class="text-center">
       <%= link_to edit_user_path(@user) do %>
         <div class="text-dark p-5 dropdown-item">
@@ -21,49 +21,51 @@
       <hr class="my-0">
     </div>
 
-    <div class="text-center" style="font-size: 2.2rem; margin: 6rem 0 4.5rem;">
-      <strong>パスワードを変更</strong>
-    </div>
-
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <div class="form-group mb-5">
-        <strong><%= f.label :current_password %></strong>
-        <%= f.password_field :current_password,
-                             autocomplete: "current-password",
-                             class: "form-control text-dark",
-                             style: "font-size: 1.4rem;",
-                             required: true,
-                             minlength: @minimum_password_length,
-                             maxlength: '30' %>
+    <div class="p-5 text-dark">
+      <div class="text-center" style="font-size: 2.2rem; margin: 3rem 0 4.5rem;">
+        <strong>パスワードを変更</strong>
       </div>
 
-      <div class="form-group mb-5">
-        <strong><%= f.label :password, "新しいパスワード（6文字以上）" %></strong>
-        <%= f.password_field :password,
-                             autocomplete: "new-password",
-                             class: "form-control text-dark",
-                             style: "font-size: 1.4rem;",
-                             maxlength: '30',
-                             placeholder: "空欄のままなら変更されません" %>
-      </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <div class="form-group mb-5">
+          <strong><%= f.label :current_password %></strong>
+          <%= f.password_field :current_password,
+                              autocomplete: "current-password",
+                              class: "form-control text-dark",
+                              style: "font-size: 1.4rem;",
+                              required: true,
+                              minlength: @minimum_password_length,
+                              maxlength: '30' %>
+        </div>
 
-      <div class="form-group">
-        <strong><%= f.label :password_confirmation, "新しいパスワード（確認用）" %></strong>
-        <%= f.password_field :password_confirmation,
-                             autocomplete: "new-password",
-                             class: "form-control text-dark",
-                             style: "font-size: 1.4rem;",
-                             maxlength: '30',
-                             placeholder: "空欄のままなら変更されません" %>
-      </div>
+        <div class="form-group mb-5">
+          <strong><%= f.label :password, "新しいパスワード（6文字以上）" %></strong>
+          <%= f.password_field :password,
+                              autocomplete: "new-password",
+                              class: "form-control text-dark",
+                              style: "font-size: 1.4rem;",
+                              maxlength: '30',
+                              placeholder: "空欄のままなら変更されません" %>
+        </div>
 
-      <div style="margin: 5.5rem 0 3rem;">
-        <%= f.submit t('.update'), class:"btn btn-warning btn-block" %>
-      </div>
-    <% end %>
+        <div class="form-group">
+          <strong><%= f.label :password_confirmation, "新しいパスワード（確認用）" %></strong>
+          <%= f.password_field :password_confirmation,
+                              autocomplete: "new-password",
+                              class: "form-control text-dark",
+                              style: "font-size: 1.4rem;",
+                              maxlength: '30',
+                              placeholder: "空欄のままなら変更されません" %>
+        </div>
 
-    <div class="text-center mb-5" style="font-size: 1.2rem;">
-      <%= link_to "アカウントを削除される場合はこちら", registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete %>
+        <div style="margin: 5.5rem 0 3rem;">
+          <%= f.submit t('.update'), class:"btn btn-warning btn-block" %>
+        </div>
+      <% end %>
+
+      <div class="text-center mb-5" style="font-size: 1.2rem;">
+        <%= link_to "アカウントを削除される場合はこちら", registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete %>
+      </div>
     </div>
   </div>
 
