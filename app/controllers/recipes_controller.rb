@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
     if @recipe.save
-      redirect_to recipe_path(@recipe), notice: 'レシピを投稿しました。'
+      redirect_to user_path(current_user), notice: 'レシピを投稿しました。'
     else
       render :new
     end
