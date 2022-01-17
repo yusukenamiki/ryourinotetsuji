@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.new(comment_params)
 
     if @comment.save
-      redirect_to [@recipe]
+      redirect_to [@recipe], notice: 'コメントを投稿しました。'
     else
       render 'recipes/show'
     end
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     comment = current_user.comments.find(params[:id])
     comment.destroy
 
-    redirect_to [:recipe, { id: params[:recipe_id] }]
+    redirect_to [:recipe, { id: params[:recipe_id] }], notice: 'コメントを削除しました。'
   end
 
   private
