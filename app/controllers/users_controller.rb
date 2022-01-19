@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
     if user_signed_in?
-      @users = User.where.not(id: current_user.id).order("created_at DESC").page(params[:page])
+      @users = User.where.not(id: current_user.id).order("created_at DESC").page(params[:page]).per(9)
     else
-      @users = User.order("created_at DESC").page(params[:page])
+      @users = User.order("created_at DESC").page(params[:page]).per(9)
     end
   end
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: 'プロフィールを編集しました。'
+      redirect_to user_path(@user), notice: 'プロフィールを変更しました。'
     else
       render :edit
     end

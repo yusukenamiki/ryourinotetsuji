@@ -1,14 +1,5 @@
 <%= render 'shared/header' %>
-<% if @user.errors.any? %>
-  <div class="alert alert-danger pt-4 rounded-0" role="alert">
-    <h2><%= pluralize(@user.errors.count, "error", locale: :en) %> prohibited this object from being saved: not successfully</h2>
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render 'shared/error', hoge: @user %>
 
 <div class="container-edit-profile">
   <div class="yohaku-edit-profile">
@@ -18,7 +9,7 @@
     <div class="text-center">
       <%= link_to edit_user_path(@user) do %>
         <div class="text-dark p-5 dropdown-item active">
-          プロフィールを編集
+          プロフィールを変更
         </div>
       <% end %>
       <hr class="my-0">
@@ -32,7 +23,7 @@
 
     <div class="p-5 text-dark">
       <div class="text-center" style="font-size: 2.2rem; margin: 3rem 0 4.5rem;">
-        <strong>プロフィールを編集</strong>
+        <strong>プロフィールを変更</strong>
       </div>
 
       <%= form_for @user do |f| %>
@@ -43,6 +34,7 @@
                           autocomplete: "email",
                           class: "form-control text-dark",
                           style: "font-size: 1.4rem;",
+                          required: true,
                           maxlength: '30' %>
         </div>
 
@@ -53,6 +45,7 @@
                             autocomplete: "email",
                             class: "form-control text-dark",
                             style: "font-size: 1.4rem;",
+                            required: true,
                             maxlength: '100' %>
         </div>
 
@@ -71,7 +64,7 @@
         </div>
 
         <div style="margin: 5.5rem 0 3rem;">
-          <%= f.submit "更新", class:"btn btn-warning btn-block" %>
+          <%= f.submit "プロフィールを変更", class:"btn btn-warning btn-block" %>
         </div>
       <% end %>
     </div>
