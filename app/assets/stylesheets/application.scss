@@ -383,6 +383,38 @@ a:link {
   width: 10.1rem;
 }
 
+/*========== フォロー中ボタン ==========*/
+// 通常時
+.btn-follow {
+  color: #6c757d;                              /* btn-outline-secondary を設定 */
+  border-color: #6c757d;                       /* btn-outline-secondary を設定 */
+}
+
+.btn-follow > .kaijo {
+  display: none;
+}
+
+// ホバー時
+.btn-follow:hover {
+  color: rgb(244, 33, 46);                     /* Twitter と同色を設定 */
+  background-color: rgba(244, 33, 46, 0.1);    /* Twitter と同色を設定 */
+  border-color: rgb(255, 221, 237);            /* Twitter と同色を設定 */
+}
+
+.btn-follow:hover > .chu {
+  display: none;
+}
+
+.btn-follow:hover > .kaijo {
+  display: inline;
+}
+
+// ボタンクリック時の縁を非表示
+.btn-follow:focus, .btn-follow.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+/*======================================*/
+
 .btn101 {
   width: 10.1rem;
   padding: 0;
