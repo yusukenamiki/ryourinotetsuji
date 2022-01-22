@@ -26,7 +26,7 @@
 // A PART2 32:40
 .alert {                           /* 独自に変更 */
   padding: 0 4rem 0 1.5rem;        /* 独自に追加 */
-	margin-bottom: 0.05rem;          /* 独自に変更 */
+  margin-bottom: 0;
   border-radius: 0;                /* 独自に追加 */
   height: 6.4rem;                  /* 独自に追加 */
   display:table;                   /* 独自に追加 */
@@ -95,6 +95,11 @@ button:focus {
   top: -6.4rem;
   z-index: 1;
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.4)!important;    /* shadow-sm と同じ見え方を設定 */
+}
+
+// 複数 alert がある場合、最後の alert 以外に適用
+.alert-alert:not(:last-child) {
+  border-bottom: 0.1rem solid #760019;
 }
 
 /*
