@@ -808,7 +808,7 @@ input[type="password"] {
 
 
 
-// #4cffffffffffffffff0e を rgb(76, 0, 15) に変更
+// #4cffffffffffffffff0e を rgb(76, 0, 15) に修正
 /*------------------------------------
 - COLOR color01
 ------------------------------------*/
@@ -854,6 +854,7 @@ button.bg-color01:focus {
     color: #fff;
     background-color: #7f0019;
     border-color: #7f0019;
+    font-weight: 700;                                   /* 独自に追加 */
 }
 
 .btn-color01:hover {
