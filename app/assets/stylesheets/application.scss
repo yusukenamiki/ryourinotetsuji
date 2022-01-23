@@ -563,10 +563,10 @@ input[type="password"] {
   height: 4.8rem;
 }
 
-// autofocus: true のデフォルトの色を上書き
+// フォームクリック時の色を上書き
 .form-control:focus {
-  border-color: #aaaaaa;                                      /* デフォルトと同じような対比に見える色を設定 */
-  box-shadow: 0 0 0.1rem 0.2rem rgba(108, 117, 125, 0.25);    /* 色を #6c757d に変更し、blur-radius を 0.1rem に変更 */
+  border-color: #8e8e8e;
+  box-shadow: none;
 }
 
 /*
