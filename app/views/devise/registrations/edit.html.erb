@@ -30,6 +30,7 @@
         <div class="form-group mb-5">
           <strong><%= f.label :current_password %></strong>
           <%= f.password_field :current_password,
+                              autofocus: true,
                               autocomplete: "current-password",
                               class: "form-control text-dark",
                               style: "font-size: 1.4rem;",
