@@ -31,7 +31,7 @@
           <strong><%= f.label :username, "ユーザーネーム" %></strong>
           <%= f.text_field :username,
                           autofocus: true,
-                          autocomplete: "email",
+                          autocomplete: "off",
                           class: "form-control text-dark",
                           style: "font-size: 1.4rem;",
                           required: true,
@@ -41,7 +41,7 @@
         <div class="form-group mb-5">
           <strong><%= f.label :email, "メールアドレス" %></strong>
           <%= f.email_field :email,
-                            autocomplete: "email",
+                            autocomplete: "off",
                             class: "form-control text-dark",
                             style: "font-size: 1.4rem;",
                             required: true,
