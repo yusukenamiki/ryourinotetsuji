@@ -31,7 +31,7 @@
           <strong><%= f.label :username, "ユーザーネーム" %></strong>
           <%= f.text_field :username,
                           autofocus: true,
-                          autocomplete: "email",
+                          autocomplete: "off",
                           class: "form-control text-dark",
                           style: "font-size: 1.4rem;",
                           required: true,
@@ -41,8 +41,7 @@
         <div class="form-group mb-5">
           <strong><%= f.label :email, "メールアドレス" %></strong>
           <%= f.email_field :email,
-                            autofocus: true,
-                            autocomplete: "email",
+                            autocomplete: "off",
                             class: "form-control text-dark",
                             style: "font-size: 1.4rem;",
                             required: true,
@@ -64,7 +63,7 @@
         </div>
 
         <div style="margin: 5.5rem 0 3rem;">
-          <%= f.submit "プロフィールを変更", class:"btn btn-warning btn-block" %>
+          <%= f.submit "プロフィールを変更", class:"btn btn-color01 btn-block" %>
         </div>
       <% end %>
     </div>

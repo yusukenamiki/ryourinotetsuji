@@ -26,7 +26,7 @@
 // A PART2 32:40
 .alert {                           /* 独自に変更 */
   padding: 0 4rem 0 1.5rem;        /* 独自に追加 */
-	margin-bottom: 0.05rem;          /* 独自に変更 */
+  margin-bottom: 0;
   border-radius: 0;                /* 独自に追加 */
   height: 6.4rem;                  /* 独自に追加 */
   display:table;                   /* 独自に追加 */
@@ -51,8 +51,8 @@
 // B [1/4] 8:50
 .alert-notice {
   color: #ffffff;               /* 独自に変更 */
-  background-color: #30c8d6;    /* 独自に変更 */
-  border-color: #30c8d6;        /* 独自に変更 */
+  background-color: #343a40;    /* 独自に変更 */
+  border-color: #343a40;        /* 独自に変更 */
 }
 
 // B [1/4] 8:50
@@ -95,6 +95,11 @@ button:focus {
   top: -6.4rem;
   z-index: 1;
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.4)!important;    /* shadow-sm と同じ見え方を設定 */
+}
+
+// 複数 alert がある場合、最後の alert 以外に適用
+.alert-alert:not(:last-child) {
+  border-bottom: 0.1rem solid #760019;
 }
 
 /*
@@ -510,8 +515,8 @@ a:link {
 .page-item.active .page-link {
   z-index: 0;
   color: #fff;
-  background-color: #ffc107;
-  border-color: #ffc107;
+  background-color: #7f0019;
+  border-color: #7f0019;
   width: 30px;
   height: 30px;
   text-align: center;
@@ -556,6 +561,12 @@ input[type="email"] {
 
 input[type="password"] {
   height: 4.8rem;
+}
+
+// フォームクリック時の色を上書き
+.form-control:focus {
+  border-color: #8e8e8e;
+  box-shadow: none;
 }
 
 /*
@@ -791,4 +802,153 @@ input[type="password"] {
     transform: translateY(-50%);
     width: 60rem;
   }
+}
+
+
+
+
+
+// #4cffffffffffffffff0e を rgb(76, 0, 15) に修正
+/*------------------------------------
+- COLOR color01
+------------------------------------*/
+.alert-color01 {
+    color: #040000;
+    background-color: #ff4c6f;
+    border-color: #ff375e;
+}
+
+.alert-color01 hr {
+    border-top-color: #ff1e4a;
+}
+
+.alert-color01 .alert-link {
+    color: #000000;
+}
+
+.badge-color01 {
+    color: #fff;
+    background-color: #7f0019;
+}
+
+.badge-color01[href]:hover, .badge-color01[href]:focus {
+    color: #fff;
+    background-color: rgb(76, 0, 15);
+}
+
+.bg-color01 {
+    background-color: #7f0019 !important;
+}
+
+a.bg-color01:hover, a.bg-color01:focus,
+button.bg-color01:hover,
+button.bg-color01:focus {
+    background-color: rgb(76, 0, 15) !important;
+}
+
+.border-color01 {
+    border-color: #7f0019 !important;
+}
+
+.btn-color01 {
+    color: #fff;
+    background-color: #7f0019;
+    border-color: #7f0019;
+    font-weight: 700;                                   /* 独自に追加 */
+}
+
+.btn-color01:hover {
+    color: #fff;
+    background-color: #5b0011;
+    border-color: rgb(76, 0, 15);
+}
+
+.btn-color01:focus, .btn-color01.focus {
+    box-shadow: 0 0 0 0.2rem rgba(127, 0, 25, 0.5);
+}
+
+.btn-color01.disabled, .btn-color01:disabled {
+    color: #fff;
+    background-color: #7f0019;
+    border-color: #7f0019;
+}
+
+.btn-color01:not(:disabled):not(.disabled):active, .btn-color01:not(:disabled):not(.disabled).active, .show > .btn-color01.dropdown-toggle {
+    color: #fff;
+    background-color: rgb(76, 0, 15);
+    border-color: #3c000b;
+}
+
+.btn-color01:not(:disabled):not(.disabled):active:focus, .btn-color01:not(:disabled):not(.disabled).active:focus, .show > .btn-color01.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(127, 0, 25, 0.5);
+}
+
+.btn-outline-color01 {
+    color: #7f0019;
+    background-color: transparent;
+    border-color: #7f0019;
+}
+
+.btn-outline-color01:hover {
+    color: #fff;
+    background-color: #7f0019;
+    border-color: #7f0019;
+}
+
+.btn-outline-color01:focus, .btn-outline-color01.focus {
+    box-shadow: 0 0 0 0.2rem rgba(127, 0, 25, 0.5);
+}
+
+.btn-outline-color01.disabled, .btn-outline-color01:disabled {
+    color: #7f0019;
+    background-color: transparent;
+}
+
+.btn-outline-color01:not(:disabled):not(.disabled):active, .btn-outline-color01:not(:disabled):not(.disabled).active, .show > .btn-outline-color01.dropdown-toggle {
+    color: #fff;
+    background-color: #7f0019;
+    border-color: #7f0019;
+}
+
+.btn-outline-color01:not(:disabled):not(.disabled):active:focus, .btn-outline-color01:not(:disabled):not(.disabled).active:focus, .show > .btn-outline-color01.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(127, 0, 25, 0.5);
+}
+
+.list-group-item-color01 {
+    color: #040000;
+    background-color: #ff375e;
+}
+
+.list-group-item-color01.list-group-item-action:hover, .list-group-item-color01.list-group-item-action:focus {
+    color: #040000;
+    background-color: #ff1e4a;
+}
+
+.list-group-item-color01.list-group-item-action.active {
+    color: #fff;
+    background-color: #040000;
+    border-color: #040000;
+}
+
+.table-color01,
+.table-color01 > th,
+.table-color01 > td {
+    background-color: #ff375e;
+}
+
+.table-hover .table-color01:hover {
+    background-color: #ff1e4a;
+}
+
+.table-hover .table-color01:hover > td,
+.table-hover .table-color01:hover > th {
+    background-color: #ff1e4a;
+}
+
+.text-color01 {
+    color: #7f0019 !important;
+}
+
+a.text-color01:hover, a.text-color01:focus {
+    color: rgb(76, 0, 15) !important;
 }

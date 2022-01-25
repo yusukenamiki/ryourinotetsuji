@@ -15,7 +15,7 @@
         <strong><%= f.label :title, "レシピ名" %></strong>
         <%= f.text_field :title,
                          autofocus: true,
-                         autocomplete: "email",
+                         autocomplete: "off",
                          class: "form-control text-dark",
                          style: "font-size: 1.4rem;",
                          required: true,
@@ -26,8 +26,6 @@
         <strong><%= f.label :body, "作り方" %></strong>
         <%= f.text_area :body,
                         rows: 5,
-                        autofocus: true,
-                        autocomplete: "email",
                         class: "form-control text-dark",
                         style: "font-size: 1.4rem;",
                         required: true %>
@@ -40,7 +38,7 @@
       </div>
 
       <div style="margin: 5.5rem 0 3rem;">
-        <%= f.submit "投稿", class:"btn btn-warning btn-block" %>
+        <%= f.submit "投稿", class:"btn btn-color01 btn-block" %>
       </div>
     <% end %>
   </div>
