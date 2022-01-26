@@ -4,7 +4,7 @@
 <div class="py-5">
   <div class="text-center">
     <h2 class="mb-5 text-dark" style="font-family: 'Kiwi Maru', serif;">
-      レシピ館
+      アプリ名
     </h2>
 
     <h4 class="mb-5">
@@ -20,6 +20,22 @@
   </div>
 </div>
 
+<div class="bg-white" style="height: 21rem;">
+</div>
+
+<div class="container p-5">
+  <div class="wrapper d-flex align-items-center justify-content-between mb-5">
+    <div class="text-dark font-weight-bold" style="font-size: 1.8rem;">
+      新着レシピ
+    </div>
+    <%= link_to recipes_path do %>
+      <div class="text-secondary">もっと見る<i class="fas fa-chevron-right pl-3"></i></div>
+    <% end %>
+  </div>
+
+  <%= render 'shared/recipes' %>
+</div>
+
 <footer class="d-flex align-items-center justify-content-center header64">
-  © 2022 レシピ館
+  © 2022 アプリ名
 </footer>
