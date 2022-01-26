@@ -28,6 +28,10 @@
     新着レシピ
   </div>
 
+  <%= link_to recipes_path do %>
+    <button type="button" class="btn btn-header">レシピ一覧</button>
+  <% end %>
+
   <%= render 'shared/recipes' %>
 </div>
 
