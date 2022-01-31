@@ -18,7 +18,7 @@
                          autocomplete: "off",
                          class: "form-control text-dark",
                          style: "font-size: 1.4rem;",
-                         required: true,
+
                          maxlength: '100' %>
       </div>
 
@@ -27,14 +27,12 @@
         <%= f.text_area :body,
                         rows: 5,
                         class: "form-control text-dark",
-                        style: "font-size: 1.4rem;",
-                        required: true %>
+                        style: "font-size: 1.4rem;" %>
       </div>
 
       <div class="form-group">
         <strong><%= f.label :image, "写真" %></strong><br />
-        <%= f.attachment_field :image,
-                               required: true %>
+        <%= f.attachment_field :image %>
       </div>
 
       <div style="margin: 5.5rem 0 3rem;">
