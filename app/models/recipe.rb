@@ -9,6 +9,6 @@ class Recipe < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :body
-    validates :image
+    validates :image, presence: { message: 'を選択してください。' }
   end
 end
