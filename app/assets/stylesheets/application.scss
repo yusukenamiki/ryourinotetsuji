@@ -580,6 +580,11 @@ input[type="password"] {
   height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
 }
 
+// エラーが発生した際、railsは自動で、エラーメッセージを含むフィールドをfield_with_errorsクラスを持つdivタグで囲んでくれる
+.field_with_errors {
+  display: contents;               /* このスタイルが適用されたタグは、存在しない扱いになる */
+}
+
 /*
 - プロフィールを編集
 ------------------------------------*/
