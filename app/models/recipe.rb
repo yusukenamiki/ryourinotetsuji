@@ -1,8 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :user
 
-  attachment :image
-
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
 
@@ -11,4 +9,6 @@ class Recipe < ApplicationRecord
     validates :body
     validates :image, presence: { message: 'を選択してください。' }
   end
+
+  attachment :image
 end
