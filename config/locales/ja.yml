@@ -1,5 +1,17 @@
 ja:
   activerecord:
+    attributes:
+      user:
+        username: ユーザーネーム
+        # email: devise.views.ja.ymlの、ja:activerecord:attributes:user:email: が適用されている
+        profile: 自己紹介
+        profile_image: プロフィール写真
+      recipe:
+        title: レシピ名
+        body: 作り方
+        image: 写真
+      comment:
+        body: コメント
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}。'
