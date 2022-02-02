@@ -574,7 +574,7 @@ input[type="password"] {
 ------------------------------------*/
 .alert-recipe2 {
   position: relative;
-  top: -6.4rem;
+  top: 0;
   z-index: 1;
   box-shadow: 0 .125rem .25rem rgba(0,0,0,.4)!important;    /* shadow-sm と同じ見え方を設定 */
 }
@@ -583,8 +583,8 @@ input[type="password"] {
   @extend .container-fluid;
   max-width: 60rem;
   padding: 0;
-  position: relative;              /* 独自に追加 ( card をヘッダー分上げる ) */
-  top: -6.4rem;                    /* 独自に追加 ( card をヘッダー分上げる ) */
+  position: relative;              /* 独自に追加 ( card をヘッダー分上げない ) */
+  top: 0;                          /* 独自に追加 ( card をヘッダー分上げない ) */
   background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
   height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
 }
