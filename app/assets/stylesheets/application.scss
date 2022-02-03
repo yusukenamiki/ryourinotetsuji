@@ -676,7 +676,7 @@ input[type="password"] {
   max-width: 60rem;
   padding: 0;
   position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
-  top: -3.2rem;                      /* 独自に追加 ( card をヘッダー分上げない ) */
+  top: 0;                            /* 独自に追加 ( card をヘッダー分上げない ) */
   background-color: #ffffff;       /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
   height: 100vh;                     /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
 }
@@ -700,6 +700,7 @@ input[type="password"] {
 @media (min-width: 600px) and (orientation: portrait) {
   .container-recipe2 {
     background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
+    top: -3.2rem;
   }
 
   .container-recipe2 > .card {
@@ -712,6 +713,10 @@ input[type="password"] {
 
 // ( 上下中央セット )
 @media (min-width: 1024px) and (orientation: landscape) {
+  .container-recipe2 {
+    top: -3.2rem;
+  }
+
   .yohaku-recipe2 {
     display: none;
   }
