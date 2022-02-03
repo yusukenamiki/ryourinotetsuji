@@ -760,8 +760,8 @@ input[type="password"] {
   @extend .container-fluid;
   max-width: 48rem;
   padding: 0;
-  background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
-  height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
+  background-color: #ffffff;       /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
+  height: calc(100vh - 6.4rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
 }
 
 // ( 余白 card 余白セット )
