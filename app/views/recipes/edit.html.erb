@@ -12,27 +12,26 @@
 
     <%= form_for @recipe do |f| %>
       <div class="form-group mb-5">
-        <strong><%= f.label :title, "レシピ名" %></strong>
+        <strong><%= f.label :title %></strong>
         <%= f.text_field :title,
                          autofocus: true,
                          autocomplete: "off",
                          class: "form-control text-dark",
                          style: "font-size: 1.4rem;",
-                         required: true,
+
                          maxlength: '100' %>
       </div>
 
       <div class="form-group mb-5">
-        <strong><%= f.label :body, "作り方" %></strong>
+        <strong><%= f.label :body %></strong>
         <%= f.text_area :body,
                         rows: 5,
                         class: "form-control text-dark",
-                        style: "font-size: 1.4rem;",
-                        required: true %>
+                        style: "font-size: 1.4rem;" %>
       </div>
 
       <div class="form-group">
-        <strong><%= f.label :image, "写真" %></strong><br />
+        <strong><%= f.label :image %></strong><br />
         <%= f.attachment_field :image %>
       </div>
 

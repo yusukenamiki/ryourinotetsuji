@@ -1,5 +1,6 @@
 <%= render 'shared/header' %>
 <%= render 'shared/flash_messages' %>
+<%= render 'shared/error', hoge: @comment %>
 
 <div class="container p-5">
   <div class="d-flex justify-content-center">
@@ -132,7 +133,7 @@
                               rows: 1,
                               style: "height: 4.8rem; font-size: 1.4rem; padding-top: 1.35rem;",
                               class: "form-control text-dark",
-                              required: true,
+
                               maxlength: '140',
                               placeholder: "コメントを追加…" %>
             </div>

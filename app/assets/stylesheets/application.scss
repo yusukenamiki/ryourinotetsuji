@@ -17,53 +17,40 @@
 @import "bootstrap";
 
 /*------------------------------------
-- min-width: 0px
-------------------------------------*/
-
-/*
 - A
 ------------------------------------*/
 // A PART2 32:40
-.alert {                           /* 独自に変更 */
-  padding: 0 4rem 0 1.5rem;        /* 独自に追加 */
+.alert {                             /* 独自に変更 */
+  padding: 0 4rem 0 1.5rem;          /* 独自に追加 */
   margin-bottom: 0;
-  border-radius: 0;                /* 独自に追加 */
-  height: 6.4rem;                  /* 独自に追加 */
-  display:table;                   /* 独自に追加 */
-  width: 100%;                     /* 独自に追加 */
-  font-size: 1.2rem;               /* 独自に追加 */
+  border-radius: 0;                  /* 独自に追加 */
+  height: 6.4rem;                    /* 独自に追加 */
+  display:table;                     /* 独自に追加 */
+  width: 100%;                       /* 独自に追加 */
+  font-size: 1.2rem;                 /* 独自に追加 */
 }
 
-/*
+/*------------------------------------
 - B
 ------------------------------------*/
-// B [1/4] 8:50
-.container-login4 {                /* 独自に変更 */
-  @extend .container-fluid;
-  max-width: 48rem;                /* 独自に変更 */
-  padding: 0;                      /* 独自に変更 */
-  position: relative;              /* 独自に追加 ( card をヘッダー分上げる ) */
-  top: -6.4rem;                    /* 独自に追加 ( card をヘッダー分上げる ) */
-  background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
-  height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
-}
+// B [1/4] 8:50                      /* 参照㋐ */
 
 // B [1/4] 8:50
 .alert-notice {
-  color: #ffffff;               /* 独自に変更 */
-  background-color: #343a40;    /* 独自に変更 */
-  border-color: #343a40;        /* 独自に変更 */
+  color: #ffffff;                  /* 独自に変更 */
+  background-color: #343a40;       /* 独自に変更 */
+  border-color: #343a40;           /* 独自に変更 */
 }
 
 // B [1/4] 8:50
 .alert-alert {
-  color: #ffffff;               /* 独自に変更 */
-  background-color: #7f0019;    /* 独自に変更 */
-  border-color: #7f0019;        /* 独自に変更 */
-  font-weight: 700;               /* 独自に追加 */
+  color: #ffffff;                  /* 独自に変更 */
+  background-color: #7f0019;       /* 独自に変更 */
+  border-color: #7f0019;           /* 独自に変更 */
+  font-weight: 700;                  /* 独自に追加 */
 }
 
-/*
+/*------------------------------------
 - フラッシュメッセージ
 ------------------------------------*/
 // フラッシュメッセージの文字を上下中央
@@ -89,20 +76,12 @@ button:focus {
   outline: none;
 }
 
-// login4画面のフラッシュメッセージの位置
-.alert-login4 {
-  position: relative;
-  top: -6.4rem;
-  z-index: 1;
-  box-shadow: 0 .125rem .25rem rgba(0,0,0,.4)!important;    /* shadow-sm と同じ見え方を設定 */
-}
-
 // 複数 alert がある場合、最後の alert 以外に適用
 .alert-alert:not(:last-child) {
   border-bottom: 0.1rem solid #760019;
 }
 
-/*
+/*------------------------------------
 - 共通
 ------------------------------------*/
 // 画像の縦横比を維持したまま、縦横のうち小さい方を基準に拡大・縮小され、中央の位置でトリミング
@@ -121,7 +100,7 @@ body {
   top: 6.4rem;
   color: #6c757d;
   font-size: 1.4rem;
-  height: calc(100vh - 6.4rem);    /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
+  height: calc(100vh - 6.4rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
   background-color: #f8f9fa;
 }
 
@@ -152,7 +131,7 @@ a:link {
   height: 4.8rem;
 }
 
-/*
+/*------------------------------------
 - ヘッダー
 ------------------------------------*/
 .fixed-header {
@@ -160,7 +139,7 @@ a:link {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .header64 {
@@ -170,6 +149,12 @@ a:link {
 
 .tablet-pc-link {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .tablet-pc-link {
+    display: block;
+  }
 }
 
 .btn-header {
@@ -215,8 +200,14 @@ a:link {
   right: -120%;
   width: 100%;
   height: 100vh;
-  background: rgba(250, 250, 250, 0.95);                   /* 独自に変更 */
+  background: rgba(250, 250, 250, 0.95);        /* 独自に変更 */
   transition: all 0.6s;
+}
+
+@media (min-width: 768px) {
+  #g-nav {
+    display: none;
+  }
 }
 
 /*アクティブクラスがついたら位置を0に*/
@@ -235,7 +226,7 @@ a:link {
 
 // .dropdown-item と同じホバー色
 #g-nav .text-secondary:hover {
-  background-color: #f8f9fa;                               /* 独自に追加 */
+  background-color: #f8f9fa;                    /* 独自に追加 */
 }
 
 /*---------- if user_signed_in? ----------*/
@@ -246,15 +237,6 @@ a:link {
   width: 65%;
 }
 
-.yohaku-g-nav1 {
-  height: 6.4rem;                                          /* 余白を作る為だけのクラス */
-}
-
-.hontai1 {
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;      /* shadow-lg を設定 */
-  background-color: #ffffff;
-}
-
 @media (min-width: 375px) and (orientation: portrait) {
   .container-g-nav1 {
     position: absolute;
@@ -263,11 +245,22 @@ a:link {
     transform: translateX(-50%) translateY(-50%);
     width: 65%;
   }
+}
 
+.yohaku-g-nav1 {
+  height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+}
+
+@media (min-width: 375px) and (orientation: portrait) {
   // 375 x 667 の場合、hontai1 上下の yohaku-g-nav1 が画面に納まらず中途半端に上下スクロールできてしまう為、none を設定
   .yohaku-g-nav1 {
     display: none;
   }
+}
+
+.hontai1 {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
+  background-color: #ffffff;
 }
 
 /*---------- else ----------*/
@@ -276,15 +269,6 @@ a:link {
   left: 50%;
   transform: translateX(-50%);
   width: 65%;
-}
-
-.yohaku-g-nav2 {
-  height: 6.4rem;                                          /* 余白を作る為だけのクラス */
-}
-
-.hontai2 {
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;      /* shadow-lg を設定 */
-  background-color: #ffffff;
 }
 
 @media (orientation: portrait) {
@@ -297,15 +281,30 @@ a:link {
   }
 }
 
+.yohaku-g-nav2 {
+  height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+}
+
+.hontai2 {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
+  background-color: #ffffff;
+}
+
 /*========== ボタンのためのCSS ==========*/
 .openbtn1 {
   position: fixed;
-  z-index: 1;                                                /* 独自に変更 */
-  top: 0.7rem;                                               /* 独自に変更 */
-  right: 0.15rem;                                            /* 独自に変更 */
+  z-index: 2;                             /* 独自に変更 */
+  top: 0.7rem;                            /* 独自に変更 */
+  right: 0.15rem;                         /* 独自に変更 */
   cursor: pointer;
   width: 50px;
   height: 50px;
+}
+
+@media (min-width: 768px) {
+  .openbtn1 {
+    display: none;
+  }
 }
 
 /*×に変化*/
@@ -316,7 +315,7 @@ a:link {
   left: 14px;
   height: 3px;
   border-radius: 2px;
-  background-color: #6c757d;                               /* 独自に変更 */
+  background-color: #6c757d;            /* 独自に変更 */
   width: 45%;
 }
 
@@ -350,7 +349,7 @@ a:link {
   width: 30%;
 }
 
-/*
+/*------------------------------------
 - フォロー中画面、フォロワー画面、ユーザー一覧画面
 ------------------------------------*/
 .wrapper {
@@ -361,9 +360,22 @@ a:link {
   width: 4.8rem;
 }
 
+@media (min-width: 480px) {
+  .kotei48 {
+    width: 9.6rem;
+  }
+}
+
 .user-icon48 {
   width: 4.8rem;
   height: 4.8rem;
+}
+
+@media (min-width: 480px) {
+  .user-icon48 {
+    width: 9.6rem;
+    height: 9.6rem;
+  }
 }
 
 .kahen {
@@ -384,15 +396,29 @@ a:link {
  overflow: hidden;
 }
 
+@media (min-width: 480px) {
+  .text-ellipsis2 {
+    display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+   overflow: hidden;
+  }
+}
+
 .kotei101 {
   width: 10.1rem;
+}
+
+.btn101 {
+  width: 10.1rem;
+  padding: 0;
 }
 
 /*========== フォロー中ボタン ==========*/
 // 通常時
 .btn-follow {
-  color: #6c757d;                              /* btn-outline-secondary を設定 */
-  border-color: #6c757d;                       /* btn-outline-secondary を設定 */
+  color: #6c757d;                      /* btn-outline-secondary を設定 */
+  border-color: #6c757d;               /* btn-outline-secondary を設定 */
 }
 
 .btn-follow > .kaijo {
@@ -418,19 +444,20 @@ a:link {
 .btn-follow:focus, .btn-follow.focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
 }
-/*======================================*/
 
-.btn101 {
-  width: 10.1rem;
-  padding: 0;
-}
-
-/*
+/*------------------------------------
 - マイページ
 ------------------------------------*/
 .user-icon87 {
   width: 8.7rem;
   height: 8.7rem;
+}
+
+@media (min-width: 480px) {
+  .user-icon87 {
+    width: 15rem;
+    height: 15rem;
+  }
 }
 
 .count-wrapper {
@@ -439,7 +466,7 @@ a:link {
   width: 80%;
 }
 
-/*
+/*------------------------------------
 - レシピ詳細画面
 ------------------------------------*/
 .kotei40 {
@@ -461,7 +488,7 @@ a:link {
   height: 4rem;
 }
 
-/*
+/*------------------------------------
 - レシピ一覧画面
 ------------------------------------*/
 .heart-pink {
@@ -474,12 +501,12 @@ a:link {
 
 // ツールチップのデザインを設定
 .tooltip .tooltip-inner {
-  color: #ffffff;                           /* 独自に変更 */
-  background-color: rgba(0, 0, 0, 0.6);     /* 独自に変更 */
-  font-size: 1.1rem;                          /* 独自に追加 */
-  padding: 0.3rem 0.9rem;                     /* 独自に追加 */
-  position: relative;                         /* 独自に追加 ( ツールチップ をヘッダー分上げる為 ) */
-  top: -6.4rem;                               /* 独自に追加 ( ツールチップ をヘッダー分上げる為 ) */
+  color: #ffffff;                          /* 独自に変更 */
+  background-color: rgba(0, 0, 0, 0.6);    /* 独自に変更 */
+  font-size: 1.1rem;                         /* 独自に追加 */
+  padding: 0.3rem 0.9rem;                    /* 独自に追加 */
+  position: relative;                        /* 独自に追加 ( ツールチップ をヘッダー分上げる為 ) */
+  top: -6.4rem;                              /* 独自に追加 ( ツールチップ をヘッダー分上げる為 ) */
 }
 
 // ツールチップの三角部分を削除する設定
@@ -490,7 +517,7 @@ a:link {
   border-bottom-color: #fff !important;
 }
 
-/*
+/*------------------------------------
 - ページネーション
 ------------------------------------*/
 .pagination>li>a {
@@ -536,8 +563,8 @@ a:link {
   box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0);
 }
 
-/*
-- 新規登録、ログイン、パスワードを忘れた場合、パスワード再設定
+/*------------------------------------
+- 新規登録、ログイン、パスワードを忘れた場合、パスワードの再設定
 ------------------------------------*/
 .form-group {
   position: relative;
@@ -569,55 +596,25 @@ input[type="password"] {
   box-shadow: none;
 }
 
-/*
-- レシピ編集、新規投稿
-------------------------------------*/
-.container-recipe2 {
+.alert-login4 {
+  position: relative;
+  top: -6.4rem;
+  z-index: 1;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.4)!important;    /* shadow-sm と同じ見え方を設定 */
+}
+
+// B [1/4] 8:50                      /* 参照㋐ */
+.container-login4 {                  /* 独自に変更 */
   @extend .container-fluid;
-  max-width: 60rem;
-  padding: 0;
-  background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
-  height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
+  max-width: 48rem;                  /* 独自に変更 */
+  padding: 0;                        /* 独自に変更 */
+  position: relative;                /* 独自に追加 ( card をヘッダー分上げる ) */
+  top: -6.4rem;                      /* 独自に追加 ( card をヘッダー分上げる ) */
+  background-color: #ffffff;       /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
+  height: 100vh;                     /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
 }
 
-/*
-- プロフィールを編集
-------------------------------------*/
-.container-edit-profile {
-  @extend .container-fluid;
-  max-width: 60rem;
-  padding: 0;
-}
-
-// dropdown-item active のbg
-.dropdown-item.active {
-  background-color: #f8f9fa;
-}
-
-// dropdown-item クリック時のbg
-.dropdown-item:active {
-  background-color: #f8f9fa;
-}
-
-/*
-- パスワードを変更
-------------------------------------*/
-.container-edit-password {
-  @extend .container-fluid;
-  max-width: 48rem;
-  padding: 0;
-  background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
-  height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
-}
-
-
-
-
-
-/*------------------------------------
-- min-width: 480px
-------------------------------------*/
-// 新規登録、ログイン、パスワードを忘れた場合、パスワード再設定 ( 余白 card 余白セット )
+// ( 余白 card 余白セット )
 @media (min-width: 480px) and (orientation: landscape) {
   .container-login4 {
     background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
@@ -632,11 +629,10 @@ input[type="password"] {
   }
 }
 
-// 新規登録、ログイン、パスワードを忘れた場合、パスワード再設定 ( 上下中央セット )
+// ( 上下中央セット )
 @media (min-width: 480px) and (orientation: portrait) {
   .container-login4 {
     background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
-    height: 100vh;
   }
 
   .container-login4 > .card {
@@ -644,15 +640,135 @@ input[type="password"] {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 48rem;
   }
 }
 
+// ( 上下中央セット )
+@media (min-width: 1024px) and (orientation: landscape) {
+  .yohaku-login4 {
+    display: none;
+  }
 
+  .container-login4 > .card {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
 
+/*------------------------------------
+- 新規投稿、レシピ編集
+------------------------------------*/
+// エラーが発生した際、railsは自動で、エラーメッセージを含むフィールドをfield_with_errorsクラスを持つdivタグで囲んでくれる
+.field_with_errors {
+  display: contents;                                          /* このスタイルが適用されたタグは、存在しない扱いになる */
+}
 
+.alert-recipe2 {
+  position: relative;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.4)!important;    /* shadow-sm と同じ見え方を設定 */
+}
 
-// パスワードを変更 ( 余白 card 余白セット )
+.container-recipe2 {
+  @extend .container-fluid;
+  max-width: 60rem;
+  padding: 0;
+  position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
+  top: -3.2rem;                      /* 独自に追加 ( card をヘッダー分上げない ) */
+  background-color: #ffffff;       /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
+  height: 100vh;                     /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
+}
+
+// ( 余白 card 余白セット )
+@media (min-width: 600px) and (orientation: landscape) {
+  .container-recipe2 {
+    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
+  }
+
+  .yohaku-recipe2 {
+    height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+  }
+
+  .container-recipe2 > .card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
+  }
+}
+
+// ( 上下中央セット )
+@media (min-width: 600px) and (orientation: portrait) {
+  .container-recipe2 {
+    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
+    height: 100vh;
+  }
+
+  .container-recipe2 > .card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60rem;
+  }
+}
+
+// ( 上下中央セット )
+@media (min-width: 1024px) and (orientation: landscape) {
+  .container-recipe2 {
+    height: 100vh;
+  }
+
+  .container-recipe2 > .card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60rem;
+  }
+}
+
+/*------------------------------------
+- プロフィールを変更
+------------------------------------*/
+// dropdown-item active のbg
+.dropdown-item.active {
+  background-color: #f8f9fa;
+}
+
+// dropdown-item クリック時のbg
+.dropdown-item:active {
+  background-color: #f8f9fa;
+}
+
+.container-edit-profile {
+  @extend .container-fluid;
+  max-width: 60rem;
+  padding: 0;
+}
+
+// ( 余白 card 余白セット )
+@media (min-width: 600px) {
+  .yohaku-edit-profile {
+    height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+  }
+
+  .container-edit-profile > .card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
+  }
+}
+
+/*------------------------------------
+- パスワードを変更
+------------------------------------*/
+.container-edit-password {
+  @extend .container-fluid;
+  max-width: 48rem;
+  padding: 0;
+  background-color: #ffffff;    /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
+  height: 100vh;                   /* 独自に追加 ( 上記 background-color を画面全体に表示 ) */
+}
+
+// ( 余白 card 余白セット )
 @media (min-width: 480px) {
   .container-edit-password {
     background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
@@ -671,138 +787,6 @@ input[type="password"] {
 
 
 
-@media (min-width: 480px) {
-  // フォロー中画面、フォロワー画面、ユーザー一覧画面
-  .kotei48 {
-    width: 9.6rem;
-  }
-
-  // フォロー中画面、フォロワー画面、ユーザー一覧画面
-  .text-ellipsis2 {
-    display: -webkit-box;
-   -webkit-box-orient: vertical;
-   -webkit-line-clamp: 2;
-   overflow: hidden;
-  }
-
-  // フォロー中画面、フォロワー画面、ユーザー一覧画面
-  .user-icon48 {
-    width: 9.6rem;
-    height: 9.6rem;
-  }
-
-  // マイページ
-  .user-icon87 {
-    width: 15rem;
-    height: 15rem;
-  }
-}
-
-/*------------------------------------
-- min-width: 600px
-------------------------------------*/
-// レシピ編集、新規投稿 ( 余白 card 余白セット )
-@media (min-width: 600px) and (orientation: landscape) {
-  .container-recipe2 {
-    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
-  }
-
-  .yohaku-recipe2 {
-    height: 6.4rem;                                          /* 余白を作る為だけのクラス */
-  }
-
-  .container-recipe2 > .card {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
-  }
-}
-
-// レシピ編集、新規投稿 ( 上下中央セット )
-@media (min-width: 600px) and (orientation: portrait) {
-  .container-recipe2 {
-    background: none;                                        /* background そのものを none にし、body の background-color を表示させる */
-    height: 100vh;
-  }
-
-  .container-recipe2 > .card {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60rem;
-  }
-}
-
-
-
-
-
-// プロフィールを編集 ( 余白 card 余白セット )
-@media (min-width: 600px) {
-  .yohaku-edit-profile {
-    height: 6.4rem;                                          /* 余白を作る為だけのクラス */
-  }
-
-  .container-edit-profile > .card {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
-  }
-}
-
-/*------------------------------------
-- min-width: 768px
-------------------------------------*/
-@media (min-width: 768px) {
-  // ヘッダー
-  .tablet-pc-link {
-    display: block;
-  }
-
-  // ヘッダー
-  .openbtn1 {
-    display: none;
-  }
-
-  // ヘッダー
-  #g-nav {
-    display: none;
-  }
-}
-
-/*------------------------------------
-- min-width: 1024px
-------------------------------------*/
-// 新規登録、ログイン、パスワードを忘れた場合、パスワード再設定 ( 上下中央セット )
-@media (min-width: 1024px) and (orientation: landscape) {
-  .container-login4 {
-    height: 100vh;
-  }
-
-  .container-login4 > .card {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48rem;
-  }
-}
-
-
-
-
-
-// レシピ編集、新規投稿 ( 上下中央セット )
-@media (min-width: 1024px) and (orientation: landscape) {
-  .container-recipe2 {
-    height: 100vh;
-  }
-
-  .container-recipe2 > .card {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60rem;
-  }
-}
 
 
 
@@ -854,7 +838,7 @@ button.bg-color01:focus {
     color: #fff;
     background-color: #7f0019;
     border-color: #7f0019;
-    font-weight: 700;                                   /* 独自に追加 */
+    font-weight: 700;                /* 独自に追加 */
 }
 
 .btn-color01:hover {

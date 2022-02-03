@@ -28,28 +28,28 @@
 
       <%= form_for @user do |f| %>
         <div class="form-group mb-5">
-          <strong><%= f.label :username, "ユーザーネーム" %></strong>
+          <strong><%= f.label :username %></strong>
           <%= f.text_field :username,
                           autofocus: true,
                           autocomplete: "off",
                           class: "form-control text-dark",
                           style: "font-size: 1.4rem;",
-                          required: true,
+
                           maxlength: '30' %>
         </div>
 
         <div class="form-group mb-5">
-          <strong><%= f.label :email, "メールアドレス" %></strong>
+          <strong><%= f.label :email %></strong>
           <%= f.email_field :email,
                             autocomplete: "off",
                             class: "form-control text-dark",
                             style: "font-size: 1.4rem;",
-                            required: true,
+
                             maxlength: '100' %>
         </div>
 
         <div class="form-group mb-5">
-          <strong><%= f.label :profile, "自己紹介" %></strong>
+          <strong><%= f.label :profile %></strong>
           <%= f.text_area :profile,
                           rows: 5,
                           class: "form-control text-dark",
@@ -58,7 +58,7 @@
         </div>
 
         <div class="form-group">
-          <strong><%= f.label :profile_image, "プロフィール写真" %></strong><br />
+          <strong><%= f.label :profile_image %></strong><br />
           <%= f.attachment_field :profile_image %>
         </div>
 
