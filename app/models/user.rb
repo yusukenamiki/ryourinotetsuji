@@ -13,7 +13,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  attachment :profile_image
+  attachment :profile_image, type: :image
 
   def self.guest
     find_or_create_by(username: "ゲストユーザー", email: 'guestuser@example.com') do |user|
