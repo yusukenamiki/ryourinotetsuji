@@ -10,5 +10,5 @@ class Recipe < ApplicationRecord
     validates :image, presence: { message: 'を選択してください。' }
   end
 
-  attachment :image
+  attachment :image, type: :image
 end

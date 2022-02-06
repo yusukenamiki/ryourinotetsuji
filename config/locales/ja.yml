@@ -18,6 +18,10 @@ ja:
           attributes:
             profile_image:
               invalid_content_type: "のファイル形式は、JPEG・GIF・PNGのいずれかにしてください。"
+        recipe:
+          attributes:
+            image:
+              invalid_content_type: "のファイル形式は、JPEG・GIF・PNGのいずれかにしてください。"
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}。'
         restrict_dependent_destroy:
