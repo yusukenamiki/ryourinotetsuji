@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :username, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  validates :profile_image, file_size: { less_than: 2.megabytes }
 
   attachment :profile_image, type: :image
 
