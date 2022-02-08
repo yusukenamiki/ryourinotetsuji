@@ -13,6 +13,16 @@ ja:
       comment:
         body: コメント
     errors:
+      models:
+        user:
+          attributes:
+            profile_image:
+              invalid_content_type: "のファイル形式は、JPEG・GIF・PNGのいずれかにしてください。"
+              file_size_is_less_than: "のファイルサイズは、2MB以内にしてください。"
+        recipe:
+          attributes:
+            image:
+              invalid_content_type: "のファイル形式は、JPEG・GIF・PNGのいずれかにしてください。"
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}。'
         restrict_dependent_destroy:

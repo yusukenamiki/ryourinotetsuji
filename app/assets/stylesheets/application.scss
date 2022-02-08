@@ -664,6 +664,29 @@ input[type="password"] {
   display: contents;                                          /* このスタイルが適用されたタグは、存在しない扱いになる */
 }
 
+/*========== attachment_field ==========*/
+// 通常時のデフォルトのスタイルを一部上書き
+input[type="file" i]::-webkit-file-upload-button {
+  font-weight: 700;                                           /* 独自に追加 */
+  height: 4.8rem;                                             /* 独自に追加 */
+  border-radius: 0.25rem;                                     /* 独自に追加 */
+  margin-inline-end: 1rem;
+  background-color: rgb(216, 216, 217);                     /* 数量ボタンと同色を設定 */
+  color: #343a40;
+  padding: 1rem;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-color: rgb(216, 216, 217);                         /* 数量ボタンと同色を設定 */
+}
+
+// ホバー時
+input[type="file" i]::-webkit-file-upload-button:hover {
+  background-color: rgb(196, 196, 198);                     /* 数量ボタンと同色を設定 */
+  border-color: rgb(196, 196, 198);                         /* 数量ボタンと同色を設定 */
+  cursor: pointer;
+}
+/*======================================*/
+
 .alert-recipe2 {
   position: relative;
   top: 0;
