@@ -6,7 +6,7 @@ class Recipe < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
-  validates :image, presence: true, presence: { message: 'を選択してください。' }, file_size: { less_than: 5.megabytes }
+  validates :image, presence: { message: 'を選択してください。' }, file_size: { less_than: 5.megabytes }
 
   attachment :image, type: :image
 end
