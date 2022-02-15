@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :following
 
   validates :username, presence: true, length: { maximum: 30 }, uniqueness: true
+  validates :email, length: { maximum: 254 }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :profile, length: { maximum: 150 }
