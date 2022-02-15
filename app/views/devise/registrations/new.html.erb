@@ -24,7 +24,8 @@
                          autocomplete: "on",
                          class: "form-control text-dark",
                          style: "font-size: 1.4rem;",
-
+                         required: true,
+                         maxlength: '30',
                          placeholder: "ユーザーネーム" %>
       </div>
 
@@ -33,7 +34,8 @@
                           autocomplete: "email",
                           class: "form-control text-dark",
                           style: "font-size: 1.4rem; padding-right: 5.95rem;",
-
+                          required: true,
+                          maxlength: '254',
                           placeholder: "メールアドレス" %>
       </div>
 
@@ -42,7 +44,9 @@
                              autocomplete: "new-password",
                              class: "form-control text-dark",
                              style: "font-size: 1.4rem;",
-
+                             required: true,
+                             minlength: @minimum_password_length,
+                             maxlength: '128',
                              placeholder: "パスワード（6文字以上）" %>
       </div>
 
@@ -51,7 +55,9 @@
                              autocomplete: "new-password",
                              class: "form-control text-dark",
                              style: "font-size: 1.4rem;",
-
+                             required: true,
+                             minlength: @minimum_password_length,
+                             maxlength: '128',
                              placeholder: "パスワード（確認用）" %>
       </div>
 
