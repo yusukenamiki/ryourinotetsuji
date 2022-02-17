@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
       if user_signed_in?
         redirect_to user_path(current_user), alert: 'ゲストユーザーの編集・削除はできません。'
       else
-        redirect_to root_path, alert: 'ゲストユーザーの編集・削除はできません。'
+        redirect_to new_password_path(resource_name), alert: 'メールアドレスは不正な値です。'
       end
     end
   end
