@@ -30,9 +30,11 @@
   </div>
 
   <% if @user.id == current_user.id %>
-    <div class="mt-2" style="font-size: 1.2rem; word-wrap: break-word;">
-      <%= @user.email %>
-    </div>
+    <% if current_user.email != 'guestuser@example.com' %>
+      <div class="mt-2" style="font-size: 1.2rem; word-wrap: break-word;">
+        <%= @user.email %>
+      </div>
+    <% end %>
   <% end %>
 
   <div class="count-wrapper text-center mt-5">
