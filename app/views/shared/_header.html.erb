@@ -24,19 +24,32 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right shadow py-0" aria-labelledby="navbarDropdownMenuLink">
             <div class="dropdown-header py-5">
-              <div class="wrapper">
-                <div>
-                  <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
-                </div>
-                <div class="ryaku pl-4">
-                  <div class="ryaku text-dark" style="font-size: 1.4rem;">
-                    <strong><%= current_user.username %></strong>
+              <% if current_user.email == 'guestuser@example.com' %>
+                <div class="wrapper d-flex align-items-center">
+                  <div>
+                    <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
                   </div>
-                  <div class="ryaku" style="font-size: 1.2rem;">
-                    <%= current_user.email %>
+                  <div class="ryaku pl-4">
+                    <div class="ryaku text-dark" style="font-size: 1.4rem;">
+                      <strong><%= current_user.username %></strong>
+                    </div>
                   </div>
                 </div>
-              </div>
+              <% else %>
+                <div class="wrapper">
+                  <div>
+                    <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
+                  </div>
+                  <div class="ryaku pl-4">
+                    <div class="ryaku text-dark" style="font-size: 1.4rem;">
+                      <strong><%= current_user.username %></strong>
+                    </div>
+                    <div class="ryaku" style="font-size: 1.2rem;">
+                      <%= current_user.email %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
             </div>
 
             <div class="dropdown-divider my-0"></div>
@@ -90,19 +103,32 @@
           </div>
 
           <div class="hontai1">
-            <div class="wrapper px-4 py-5">
-              <div>
-                <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
-              </div>
-              <div class="ryaku pl-4">
-                <div class="ryaku text-dark" style="font-size: 1.4rem;">
-                  <strong><%= current_user.username %></strong>
+            <% if current_user.email == 'guestuser@example.com' %>
+              <div class="wrapper px-4 py-5 d-flex align-items-center">
+                <div>
+                  <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
                 </div>
-                <div class="ryaku" style="font-size: 1.2rem;">
-                  <%= current_user.email %>
+                <div class="ryaku pl-4">
+                  <div class="ryaku text-dark" style="font-size: 1.4rem;">
+                    <strong><%= current_user.username %></strong>
+                  </div>
                 </div>
               </div>
-            </div>
+            <% else %>
+              <div class="wrapper px-4 py-5">
+                <div>
+                  <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
+                </div>
+                <div class="ryaku pl-4">
+                  <div class="ryaku text-dark" style="font-size: 1.4rem;">
+                    <strong><%= current_user.username %></strong>
+                  </div>
+                  <div class="ryaku" style="font-size: 1.2rem;">
+                    <%= current_user.email %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
 
             <hr class="m-0">
 
