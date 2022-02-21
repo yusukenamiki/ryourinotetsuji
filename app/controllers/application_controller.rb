@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     email = resource&.email || params[:user][:email].downcase
     if email == 'guestuser@example.com'
       if user_signed_in?
-        redirect_to user_path(current_user), alert: 'ゲストユーザーの編集・削除はできません。'
+        redirect_to user_path(current_user), alert: '不正なアクセスです。'
       else
         redirect_to new_password_path(resource_name), alert: 'メールアドレスは不正な値です。'
       end
