@@ -45,8 +45,8 @@
 // B [1/4] 8:50
 .alert-alert {
   color: #ffffff;                  /* 独自に変更 */
-  background-color: #7f0019;       /* 独自に変更 */
-  border-color: #7f0019;           /* 独自に変更 */
+  background-color: #800019;       /* 独自に変更 */
+  border-color: #800019;           /* 独自に変更 */
   font-weight: 700;                  /* 独自に追加 */
 }
 
@@ -78,7 +78,7 @@ button:focus {
 
 // 複数 alert がある場合、最後の alert 以外に適用
 .alert-alert:not(:last-child) {
-  border-bottom: 0.1rem solid #760019;
+  border-bottom: 0.1rem solid #770019;
 }
 
 /*------------------------------------
@@ -542,8 +542,8 @@ a:link {
 .page-item.active .page-link {
   z-index: 0;
   color: #fff;
-  background-color: #7f0019;
-  border-color: #7f0019;
+  background-color: #800019;
+  border-color: #800019;
   width: 30px;
   height: 30px;
   text-align: center;
