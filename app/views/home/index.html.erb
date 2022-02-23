@@ -37,7 +37,15 @@
 </div>
 
 <footer class="d-flex align-items-center justify-content-center header64">
-  <%= link_to '利用規約', page_path('terms') %>
-  <%= link_to 'プライバシーポリシー', page_path('privacy') %>
+  <%= link_to page_path('terms') do %>
+    <div class="text-secondary">
+      利用規約
+    </div>
+  <% end %>
+  <%= link_to page_path('privacy') do %>
+    <div class="text-secondary">
+      プライバシーポリシー
+    </div>
+  <% end %>
   © 2022 アプリ名
 </footer>
