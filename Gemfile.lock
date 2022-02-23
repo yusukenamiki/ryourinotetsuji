@@ -108,6 +108,7 @@ GEM
       mime-types (>= 1.0)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    high_voltage (3.1.2)
     http-accept (1.7.0)
     http-cookie (1.0.4)
       domain_name (~> 0.5)
@@ -287,6 +288,7 @@ DEPENDENCIES
   devise
   devise-i18n
   file_validators
+  high_voltage
   jbuilder (~> 2.7)
   jquery-rails
   kaminari
