@@ -841,16 +841,6 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 /*------------------------------------
 - 利用規約、プライバシーポリシー
 ------------------------------------*/
-// dropdown-item active のbg
-.dropdown-item.active {
-  background-color: #f8f9fa;
-}
-
-// dropdown-item クリック時のbg
-.dropdown-item:active {
-  background-color: #f8f9fa;
-}
-
 .container-terms-privacy {
   @extend .container-fluid;
   max-width: 60rem;
