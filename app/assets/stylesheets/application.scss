@@ -841,9 +841,17 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 /*------------------------------------
 - 利用規約、プライバシーポリシー
 ------------------------------------*/
+.container-terms-privacy ol {
+  margin-bottom: 0;
+}
+
+.container-terms-privacy li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
 .container-terms-privacy {
   @extend .container-fluid;
-  max-width: 60rem;
+  max-width: 96rem;
   padding: 0;
 }
 
