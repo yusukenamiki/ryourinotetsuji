@@ -838,6 +838,36 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   }
 }
 
+/*------------------------------------
+- プロフィールを変更
+------------------------------------*/
+// dropdown-item active のbg
+.dropdown-item.active {
+  background-color: #f8f9fa;
+}
+
+// dropdown-item クリック時のbg
+.dropdown-item:active {
+  background-color: #f8f9fa;
+}
+
+.container-edit-profile {
+  @extend .container-fluid;
+  max-width: 60rem;
+  padding: 0;
+}
+
+// ( 余白 card 余白セット )
+@media (min-width: 600px) {
+  .yohaku-edit-profile {
+    height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+  }
+
+  .container-edit-profile > .card {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
+  }
+}
+
 
 
 
