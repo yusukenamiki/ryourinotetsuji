@@ -839,7 +839,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 }
 
 /*------------------------------------
-- プロフィールを変更
+- 利用規約、プライバシーポリシー
 ------------------------------------*/
 // dropdown-item active のbg
 .dropdown-item.active {
@@ -851,7 +851,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   background-color: #f8f9fa;
 }
 
-.container-edit-profile {
+.container-terms-privacy {
   @extend .container-fluid;
   max-width: 60rem;
   padding: 0;
@@ -859,11 +859,11 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 
 // ( 余白 card 余白セット )
 @media (min-width: 600px) {
-  .yohaku-edit-profile {
+  .yohaku-terms-privacy {
     height: 6.4rem;                                          /* 余白を作る為だけのクラス */
   }
 
-  .container-edit-profile > .card {
+  .container-terms-privacy > .card {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
   }
 }
