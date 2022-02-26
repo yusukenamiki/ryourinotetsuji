@@ -132,6 +132,38 @@ a:link {
 }
 
 /*------------------------------------
+- フッター
+------------------------------------*/
+.bg-footer {
+  background-color:#ffffff;
+  padding: 4.5rem 0;
+}
+
+.link3 {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .link3 {
+    text-align: initial;
+    display: flex;
+    justify-content: space-between;
+    width: 40rem;
+    margin: 0 auto;
+  }
+}
+
+.link3-mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .link3-mb-4 {
+    margin-bottom: 0;
+  }
+}
+
+/*------------------------------------
 - ヘッダー
 ------------------------------------*/
 .fixed-header {
@@ -803,6 +835,44 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 
   .container-edit-password > .card {
     box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
+  }
+}
+
+/*------------------------------------
+- 利用規約、プライバシーポリシー
+------------------------------------*/
+.container-terms-privacy ol {
+  margin-bottom: 0;
+}
+
+.container-terms-privacy li {
+  margin-bottom: 1rem;
+}
+
+.container-terms-privacy {
+  @extend .container-fluid;
+  max-width: 96rem;
+  padding: 0;
+}
+
+.container-terms-privacy > .card {
+  padding: 3rem;
+  background-color: #f8f9fa;
+}
+
+// ( 余白 card 余白セット )
+@media (min-width: 768px) {
+  .container-terms-privacy {
+    padding: 0 6.4rem;
+  }
+
+  .yohaku-terms-privacy {
+    height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+  }
+
+  .container-terms-privacy > .card {
+    padding: 3rem 6rem;
+    background-color: #ffffff;
   }
 }
 
