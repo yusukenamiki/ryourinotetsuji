@@ -855,14 +855,24 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   padding: 0;
 }
 
+.container-terms-privacy > .card {
+  padding: 3rem;
+  background-color: #f8f9fa;
+}
+
 // ( 余白 card 余白セット )
-@media (min-width: 600px) {
+@media (min-width: 768px) {
+  .container-terms-privacy {
+    padding: 0 6.4rem;
+  }
+
   .yohaku-terms-privacy {
     height: 6.4rem;                                          /* 余白を作る為だけのクラス */
   }
 
   .container-terms-privacy > .card {
-    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;    /* shadow-lg を設定 */
+    padding: 3rem 6rem;
+    background-color: #ffffff;
   }
 }
 
