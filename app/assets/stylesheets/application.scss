@@ -877,38 +877,38 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 }
 
 /*------------------------------------
-- 利用規約、プライバシーポリシー
+- お問い合わせ
 ------------------------------------*/
-.container-terms-privacy ol {
+.container-inquiry ol {
   margin-bottom: 0;
 }
 
-.container-terms-privacy li {
+.container-inquiry li {
   margin-bottom: 1rem;
 }
 
-.container-terms-privacy {
+.container-inquiry {
   @extend .container-fluid;
   max-width: 96rem;
   padding: 0;
 }
 
-.container-terms-privacy > .card {
+.container-inquiry > .card {
   padding: 3rem;
   background-color: #f8f9fa;
 }
 
 // ( 余白 card 余白セット )
 @media (min-width: 768px) {
-  .container-terms-privacy {
+  .container-inquiry {
     padding: 0 6.4rem;
   }
 
-  .yohaku-terms-privacy {
+  .yohaku-inquiry {
     height: 6.4rem;                                          /* 余白を作る為だけのクラス */
   }
 
-  .container-terms-privacy > .card {
+  .container-inquiry > .card {
     padding: 3rem 6rem;
     background-color: #ffffff;
   }
