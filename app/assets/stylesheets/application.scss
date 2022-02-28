@@ -879,14 +879,6 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 /*------------------------------------
 - お問い合わせ
 ------------------------------------*/
-.container-inquiry ol {
-  margin-bottom: 0;
-}
-
-.container-inquiry li {
-  margin-bottom: 1rem;
-}
-
 .container-inquiry {
   @extend .container-fluid;
   max-width: 96rem;
