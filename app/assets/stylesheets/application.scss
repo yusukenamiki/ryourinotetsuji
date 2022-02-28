@@ -876,6 +876,44 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   }
 }
 
+/*------------------------------------
+- 利用規約、プライバシーポリシー
+------------------------------------*/
+.container-terms-privacy ol {
+  margin-bottom: 0;
+}
+
+.container-terms-privacy li {
+  margin-bottom: 1rem;
+}
+
+.container-terms-privacy {
+  @extend .container-fluid;
+  max-width: 96rem;
+  padding: 0;
+}
+
+.container-terms-privacy > .card {
+  padding: 3rem;
+  background-color: #f8f9fa;
+}
+
+// ( 余白 card 余白セット )
+@media (min-width: 768px) {
+  .container-terms-privacy {
+    padding: 0 6.4rem;
+  }
+
+  .yohaku-terms-privacy {
+    height: 6.4rem;                                          /* 余白を作る為だけのクラス */
+  }
+
+  .container-terms-privacy > .card {
+    padding: 3rem 6rem;
+    background-color: #ffffff;
+  }
+}
+
 
 
 
