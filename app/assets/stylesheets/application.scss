@@ -892,7 +892,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   .container-inquiry {
     position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
     top: 0;                            /* 独自に追加 ( card をヘッダー分上げない ) */
-    background-color: tomato;
+    background-color: #f8f9fa;
     height: calc(100vh - 31rem);       /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem + フッター分の 24.6rem の計 31rem を引く */
   }
 
@@ -936,7 +936,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
     padding: 0;
     position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
     top: 0;                            /* 独自に追加 ( card をヘッダー分上げない ) */
-    background-color: tomato;
+    background-color: #f8f9fa;
     height: calc(100vh - 23.8rem);     /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem + フッター分の 17.4rem の計 23.8rem を引く */
   }
 
