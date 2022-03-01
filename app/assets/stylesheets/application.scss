@@ -880,7 +880,6 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 - お問い合わせ
 ------------------------------------*/
 .container-inquiry {
-  @extend .container-fluid;
   padding: 0;
 }
 
@@ -889,24 +888,34 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   background-color: #f8f9fa;
 }
 
-// XRタテ
-@media (min-width: 414px) and (orientation: portrait) {
+@media (min-width: 375px) and (min-height: 668px) {
   .container-inquiry {
     position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
     top: 0;                            /* 独自に追加 ( card をヘッダー分上げない ) */
-    background-color: tomato;       /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
-    height: calc(100vh - 31rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
+    background-color: tomato;
+    height: calc(100vh - 31rem);       /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem + フッター分の 24.6rem の計 31rem を引く */
   }
 
   .container-inquiry > .card {
-    // position: absolute;
+    // position: absolute;             /* 本来必要な設定だが、なぜか card の width が崩れるので設定しない
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
+    max-width: 64rem;
   }
 }
 
-// XRヨコ
+@media (min-width: 768px) and (min-height: 668px) {
+  .container-inquiry {
+    height: calc(100vh - 23.8rem);     /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem + フッター分の 17.4rem の計 23.8rem を引く */
+  }
+
+  .container-inquiry > .card {
+    padding: 3rem 6rem;
+    background-color: #ffffff;
+  }
+}
+
 @media (min-width: 768px) and (orientation: landscape) {
   .container-inquiry {
     padding: 0 6.4rem;
@@ -922,27 +931,13 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   }
 }
 
-// ipadタテ -
-@media (min-width: 768px) and (orientation: portrait) {
-  .container-inquiry {
-    height: calc(100vh - 23.8rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
-  }
-
-  .container-inquiry > .card {
-    padding: 3rem 6rem;
-    background-color: #ffffff;
-    max-width: 64rem;
-  }
-}
-
-// ipadヨコ -
 @media (min-width: 1024px) and (orientation: landscape) {
   .container-inquiry {
     padding: 0;
     position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
     top: 0;                            /* 独自に追加 ( card をヘッダー分上げない ) */
-    background-color: tomato;       /* 独自に追加 ( XR の画面の card と body の background-color との境目を無くす為、card と同色を設定 ) */
-    height: calc(100vh - 23.8rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
+    background-color: tomato;
+    height: calc(100vh - 23.8rem);     /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem + フッター分の 17.4rem の計 23.8rem を引く */
   }
 
   .yohaku-inquiry {
@@ -952,7 +947,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   .container-inquiry > .card {
     padding: 3rem 6rem;
     background-color: #ffffff;
-    // position: absolute;
+    // position: absolute;             /* 本来必要な設定だが、なぜか card の width が崩れるので設定しない
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
