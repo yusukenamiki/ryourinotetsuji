@@ -1,6 +1,19 @@
 <%= render 'shared/header' %>
 <%= render 'shared/flash_messages' %>
 
+
+
+
+
+<% if @search_users.any? %>
+<% else %>
+  検索結果がありません。
+<% end %>
+
+
+
+
+
 <div class="container p-5">
   <div class="d-flex justify-content-center">
     <div class="col px-0" style="max-width: 600px;">
