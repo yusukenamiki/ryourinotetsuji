@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   def set_search
     @search = User.ransack(params[:q])
-    @search_users = @search.result.page(params[:page])
+    @search_users = @search.result.order("created_at DESC").page(params[:page])
   end
 
   private
