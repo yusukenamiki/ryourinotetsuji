@@ -1,11 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
-    if user_signed_in?
-      @users = User.where.not(id: current_user.id).order("created_at DESC").page(params[:page]).per(9)
-    else
-      @users = User.order("created_at DESC").page(params[:page]).per(9)
-    end
   end
 
   def followings
