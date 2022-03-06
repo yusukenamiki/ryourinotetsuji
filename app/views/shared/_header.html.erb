@@ -20,8 +20,8 @@
 
 
     <%= search_form_for @search, url: users_path do |f| %>
-      <dt><%= f.text_field :username_cont ,placeholder: '検索するテキストを入力...' %></dt>
-      <dd><%= f.submit ("検索") , class: 'search-btn'%></dd>
+      <%= f.text_field :username_cont %>
+      <%= f.submit ("検索") %>
     <% end %>
 
 
