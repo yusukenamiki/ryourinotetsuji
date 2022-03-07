@@ -1,23 +1,15 @@
 <%= render 'shared/header' %>
 <%= render 'shared/flash_messages' %>
 
-
-
-
-
-<% if @search_users.any? %>
-<% else %>
-  検索結果がありません。
-<% end %>
-
-
-
-
-
 <div class="container p-5">
   <div class="d-flex justify-content-center">
     <div class="col px-0" style="max-width: 600px;">
       <div>
+        <% if @search_users.any? %>
+        <% else %>
+          検索結果がありません。
+        <% end %>
+
         <% @search_users.each do |user| %>
           <div class="wrapper mb-5 pb-5">
             <div class="kotei48 d-flex align-items-center">
