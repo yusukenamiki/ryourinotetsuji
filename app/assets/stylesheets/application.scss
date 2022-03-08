@@ -975,12 +975,12 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   background-color: tomato;    /* 後で変更 ( transparent; に戻す ) */
   cursor: pointer;
   position: absolute;
-  right: 0px;
+  right: 0;
   height: 4rem;
   width: 4rem;
   border-style: none;
-  border-radius: 0px 4px 4px 0px;
-  padding: 0px;
+  border-radius: 0 0.25rem 0.25rem 0;
+  padding: 0;
 }
 
 .search_wap .fa-search {
