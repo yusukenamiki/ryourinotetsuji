@@ -987,6 +987,13 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   color: red;
 }
 
+// 検索フォームクリック時の縁を非表示
+input[type="text"]:focus {
+  outline: none;
+}
+
+
+
 // 作業用に複製
 .form-control::placeholder {
   color: #cccccc;
