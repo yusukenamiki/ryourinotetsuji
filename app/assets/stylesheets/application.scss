@@ -973,7 +973,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 }
 
 .search_wap .search_button {
-  background-color: transparent;
+  background-color: tomato;    /* 後で変更 ( transparent; に戻す ) */
   cursor: pointer;
   position: absolute;
   right: 0px;
@@ -992,6 +992,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   font-size: 13px;
   font-weight: 900;
   color: #999999;
+  background-color: green;    /* 後で変更 ( 削除 ) */
 }
 
 
