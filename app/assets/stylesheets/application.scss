@@ -966,7 +966,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   border: none;
   border-radius: 0.25rem;
   background: #efefef;
-  height: 40px;
+  height: 4rem;
   width: 100%;
   padding: 10px 20px;
 }
@@ -976,8 +976,8 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   cursor: pointer;
   position: absolute;
   right: 0px;
-  height: 40px;
-  width: 40px;
+  height: 4rem;
+  width: 4rem;
   border-style: none;
   border-radius: 0px 4px 4px 0px;
   padding: 0px;
@@ -993,8 +993,14 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   background-color: green;    /* 後で変更 ( 削除 ) */
 }
 
-
-
+// 作業用に複製
+.form-control::placeholder {
+  color: #cccccc;
+  font-size: 1.4rem;
+  line-height: 4.8rem;
+  position: absolute;
+  top: 0;
+}
 
 
 
