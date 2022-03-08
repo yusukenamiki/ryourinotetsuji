@@ -958,22 +958,18 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 /*------------------------------------
 - 検索フォーム
 ------------------------------------*/
-@mixin input {
-  border: none;
-  border-radius: 50px;
-  background: #F4F8F9;
-  height: 37px;
-  width: 100%;
-  padding: 10px 20px;
-}
-
 .search_wap {
   margin-right: 15px;
   position: relative;
 }
 
 .search_wap .input {
-  @include input;
+  border: none;
+  border-radius: 50px;
+  background: #F4F8F9;
+  height: 37px;
+  width: 100%;
+  padding: 10px 20px;
   margin: 13px 0 0;
 }
 
@@ -998,8 +994,6 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   font-weight: 900;
   color: #999999;
 }
-
-
 
 
 
