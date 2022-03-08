@@ -21,12 +21,12 @@
 
   <div class="search_wap">
     <%= search_form_for @search, url: users_path do |f| %>
-      <%= f.text_field :username_cont , placeholder: "何かお探しですか？", class: 'input' %>
-        <%= button_tag type: 'submit', class: 'search__button' do %>
-          <div class="icon_wap">
-            <i class="fas fa-search"></i>
-          </div>
-        <% end %>
+      <%= f.text_field :username_cont, placeholder: "何かお探しですか？", class: 'input' %>
+      <%= button_tag type: 'submit', class: 'search__button' do %>
+        <div class="icon_wap">
+          <i class="fas fa-search"></i>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
