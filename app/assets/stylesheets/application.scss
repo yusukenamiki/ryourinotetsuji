@@ -984,13 +984,8 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 }
 
 .search_wap .fa-search {
-  position: absolute;
-  right: 14px;
-  top: 13px;
-  font-size: 13px;
-  font-weight: 900;
-  color: #999999;
-  background-color: green;    /* 後で変更 ( 削除 ) */
+  color: red;
+  background-color: transparent;    /* 後で変更 ( 削除 ) */
 }
 
 // 作業用に複製
