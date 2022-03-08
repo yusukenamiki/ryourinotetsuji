@@ -968,16 +968,16 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   background: #efefef;
   height: 4rem;
   width: 100%;
-  padding: 0 2rem;
+  padding: 0 4.4rem 0 1.5rem;
 }
 
 .search_wap .search_button {
-  background-color: tomato;    /* 後で変更 ( transparent; に戻す ) */
+  background-color: transparent;
   cursor: pointer;
   position: absolute;
   right: 0;
   height: 4rem;
-  width: 4rem;
+  width: 4.4rem;                     /* pl 1.5rem + fa-search 1.4rem + pr 1.5rem = 4.4rem */
   border-style: none;
   border-radius: 0 0.25rem 0.25rem 0;
   padding: 0;
@@ -985,7 +985,6 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 
 .search_wap .fa-search {
   color: red;
-  background-color: transparent;    /* 後で変更 ( 削除 ) */
 }
 
 // 作業用に複製
