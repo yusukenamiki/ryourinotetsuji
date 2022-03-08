@@ -963,7 +963,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   position: relative;
 }
 
-.search_wap .input {
+.search_wap .search_input {
   border: none;
   border-radius: 50px;
   background: #F4F8F9;
@@ -973,7 +973,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   margin: 13px 0 0;
 }
 
-.search_wap .search__button {
+.search_wap .search_button {
   background-color: transparent;
   cursor: pointer;
   position: absolute;
@@ -986,7 +986,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   padding: 0px;
 }
 
-.search_wap .search__button .icon_wap i {
+.search_wap .fa-search {
   position: absolute;
   right: 14px;
   top: 13px;
