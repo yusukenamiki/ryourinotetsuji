@@ -955,6 +955,66 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   }
 }
 
+/*------------------------------------
+- 検索フォーム
+------------------------------------*/
+.search_wap {
+  position: relative;
+}
+
+.search_wap .search_input {
+  border: none;
+  border-radius: 0.25rem;
+  background: #efefef;
+  height: 4rem;
+  width: 100%;
+  padding: 0 4.4rem 0 1.5rem;
+  color: #343a40;                      /* 独自に追加 ( フォームに入力すると表示される文字色を login4 と同色に設定 ) */
+}
+
+// プレースホルダー文字色                /* 独自に追加 */
+.search_wap .search_input::placeholder {
+  color: #8e8e8e;
+}
+
+.search_wap .search_button {
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  height: 4rem;
+  width: 4.4rem;                         /* pl 1.5rem + fa-search 1.4rem + pr 1.5rem = 4.4rem */
+  border-style: none;
+  border-radius: 0 0.25rem 0.25rem 0;
+  padding: 0;
+}
+
+.search_wap .fa-search {
+  color: #8e8e8e;
+}
+
+// 検索フォームクリック時の縁を非表示    /* 独自に追加 */
+input[type="text"]:focus {
+  outline: none;
+}
+
+
+
+/*======================================*/
+// 作業用にクラスを複製 ( 作業終了後、削除する )
+.form-group {
+  position: relative;
+}
+
+.form-control::placeholder {
+  color: #cccccc;
+  font-size: 1.4rem;
+  line-height: 4.8rem;
+  position: absolute;
+  top: 0;
+}
+/*======================================*/
+
 
 
 
