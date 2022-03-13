@@ -179,6 +179,16 @@ a:link {
   height: 6.4rem;
 }
 
+.logotype {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .logotype {
+    display: block;
+  }
+}
+
 .tablet-pc-link {
   display: none;
 }
