@@ -26,6 +26,14 @@
 
 
 
+  <div class="search_wap">
+    <%= search_form_for @search, url: recipes_path do |f| %>
+      <%= f.text_field :title_cont, placeholder: "検索", class: 'search_input' %>
+      <%= button_tag type: 'submit', class: 'search_button' do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    <% end %>
+  </div>
 
 
 
