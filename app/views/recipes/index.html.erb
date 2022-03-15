@@ -3,6 +3,13 @@
 
 <div class="container p-5">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 px-2">
+    <% if @search_recipes.any? %>
+    <% else %>
+      <div class="text-center">
+        一致する結果はありませんでした。
+      </div>
+    <% end %>
+
     <%= render 'shared/recipes' %>
   </div>
 
