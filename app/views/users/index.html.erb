@@ -12,7 +12,7 @@
           </div>
         <% end %>
 
-        <% @search_users.each do |user| %>
+        <% @users.each do |user| %>
           <div class="wrapper mb-5 pb-5">
             <div class="kotei48 d-flex align-items-center">
               <%= link_to user_path(user) do %>
@@ -74,9 +74,9 @@
   </div>
 
   <div class="d-flex justify-content-center">
-    <%= paginate @search_users %>
+    <%= paginate @users %>
   </div>
   <div class="d-flex justify-content-center mb-0">
-    <%= page_entries_info @search_users %>
+    <%= page_entries_info @users %>
   </div>
 </div>
