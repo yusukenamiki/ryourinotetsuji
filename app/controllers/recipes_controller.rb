@@ -1,8 +1,5 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  def index
-    @recipes = Recipe.order("updated_at DESC").page(params[:page]).per(9)
-  end
 
   def show
     @recipe = Recipe.find(params[:id])
