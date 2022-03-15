@@ -5,13 +5,6 @@
   <div class="d-flex justify-content-center">
     <div class="col px-0" style="max-width: 600px;">
       <div>
-        <% if @search_users.any? %>
-        <% else %>
-          <div class="text-center">
-            一致する結果はありませんでした。
-          </div>
-        <% end %>
-
         <% @users.each do |user| %>
           <div class="wrapper mb-5 pb-5">
             <div class="kotei48 d-flex align-items-center">
