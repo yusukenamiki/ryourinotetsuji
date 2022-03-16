@@ -1,23 +1,25 @@
-<div class="navbar fixed-header shadow-sm py-0 px-4 header64">
-  <div class="d-flex align-items-center justify-content-start">
-    <%= link_to root_path, class:"link-title" do %>
-      <div class="d-flex align-items-center">
-        <div class="mr-3">
-          <%= image_tag 'symbol-mark.png', size: '34x34' %>
+<div class="navbar fixed-header shadow-sm py-0 px-4 header64 wrapper justify-content-between">
+  <div class="kotei392">
+    <div class="d-flex align-items-center justify-content-start">
+      <%= link_to root_path, class:"link-title" do %>
+        <div class="d-flex align-items-center">
+          <div class="mr-3">
+            <%= image_tag 'symbol-mark.png', size: '34x34' %>
+          </div>
+          <div class="mr-3 logotype" style="font-size: 2rem; font-family: 'Kiwi Maru', serif;">
+            料理のあぷり
+          </div>
         </div>
-        <div class="mr-3 logotype" style="font-size: 2rem; font-family: 'Kiwi Maru', serif;">
-          料理のあぷり
+      <% end %>
+      <div class="tablet-pc-link">
+        <div class="btn-group">
+          <%= link_to recipes_path do %>
+            <button type="button" class="btn btn-header">レシピ一覧</button>
+          <% end %>
+          <%= link_to users_path do %>
+            <button type="button" class="btn btn-header">ユーザー一覧</button>
+          <% end %>
         </div>
-      </div>
-    <% end %>
-    <div class="tablet-pc-link">
-      <div class="btn-group">
-        <%= link_to recipes_path do %>
-          <button type="button" class="btn btn-header">レシピ一覧</button>
-        <% end %>
-        <%= link_to users_path do %>
-          <button type="button" class="btn btn-header">ユーザー一覧</button>
-        <% end %>
       </div>
     </div>
   </div>
@@ -26,147 +28,37 @@
 
 
 
-  <div class="search_wap">
-    <%= search_form_for @search, url: recipes_path do |f| %>
-      <%= f.text_field :title_cont, placeholder: "検索", class: 'search_input' %>
-      <%= button_tag type: 'submit', class: 'search_button' do %>
-        <i class="fas fa-search"></i>
-      <% end %>
-    <% end %>
-  </div>
-
-
-
-
-
-  <div class="openbtn1">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <nav id="g-nav">
-    <div id="g-nav-list">
-      <% if user_signed_in? %>
-        <div class="container-g-nav1">
-          <div class="yohaku-g-nav1">
-          </div>
-
-          <div class="hontai1">
-            <% if current_user.email == 'guestuser@example.com' %>
-              <div class="wrapper px-4 py-5 d-flex align-items-center">
-                <div>
-                  <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
-                </div>
-                <div class="ryaku pl-4">
-                  <div class="ryaku text-dark" style="font-size: 1.4rem;">
-                    <strong><%= current_user.username %></strong>
-                  </div>
-                </div>
-              </div>
-            <% else %>
-              <div class="wrapper px-4 py-5">
-                <div>
-                  <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
-                </div>
-                <div class="ryaku pl-4">
-                  <div class="ryaku text-dark" style="font-size: 1.4rem;">
-                    <strong><%= current_user.username %></strong>
-                  </div>
-                  <div class="ryaku" style="font-size: 1.2rem;">
-                    <%= current_user.email %>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-
-            <hr class="m-0">
-
-            <%= link_to recipes_path do %>
-              <div class="text-secondary px-4 py-5">
-                レシピ一覧
-              </div>
-            <% end %>
-            <%= link_to users_path do %>
-              <div class="text-secondary px-4 py-5">
-                ユーザー一覧
-              </div>
-            <% end %>
-            <%= link_to user_path(current_user) do %>
-              <div class="text-secondary px-4 py-5">
-                マイページ
-              </div>
-            <% end %>
-            <%= link_to user_favorites_path(current_user) do %>
-              <div class="text-secondary px-4 py-5">
-                いいね一覧
-              </div>
-            <% end %>
-            <%= link_to new_recipe_path do %>
-              <div class="text-secondary px-4 py-5">
-                新規投稿
-              </div>
-            <% end %>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <div class="text-secondary px-4 py-5">
-                ログアウト
-              </div>
-            <% end %>
-          </div>
-
-          <div class="yohaku-g-nav1">
-          </div>
-        </div>
-      <% else %>
-        <div class="container-g-nav2">
-          <div class="yohaku-g-nav2">
-          </div>
-
-          <div class="hontai2">
-            <%= link_to recipes_path do %>
-              <div class="text-secondary px-4 py-5">
-                レシピ一覧
-              </div>
-            <% end %>
-            <%= link_to users_path do %>
-              <div class="text-secondary px-4 py-5">
-                ユーザー一覧
-              </div>
-            <% end %>
-            <%= link_to new_user_registration_path do %>
-              <div class="text-secondary px-4 py-5">
-                新規登録
-              </div>
-            <% end %>
-            <%= link_to new_user_session_path do %>
-              <div class="text-secondary px-4 py-5">
-                ログイン
-              </div>
-            <% end %>
-          </div>
-
-          <div class="yohaku-g-nav2">
-          </div>
-        </div>
+  <div class="kahen">
+    <div class="search_wap">
+      <%= search_form_for @search, url: recipes_path do |f| %>
+        <%= f.text_field :title_cont, placeholder: "検索", class: 'search_input' %>
+        <%= button_tag type: 'submit', class: 'search_button' do %>
+          <i class="fas fa-search"></i>
+        <% end %>
       <% end %>
     </div>
-  </nav>
+  </div>
 
 
 
 
 
-  <div class="tablet-pc-link">
-    <div class="d-flex align-items-center justify-content-end">
-      <% if user_signed_in? %>
-        <div class="dropdown">
-          <a href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon32 rounded-circle" %>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right shadow py-0" aria-labelledby="navbarDropdownMenuLink">
-            <div class="dropdown-header py-5">
+    <div class="openbtn1">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="g-nav">
+      <div id="g-nav-list">
+        <% if user_signed_in? %>
+          <div class="container-g-nav1">
+            <div class="yohaku-g-nav1">
+            </div>
+
+            <div class="hontai1">
               <% if current_user.email == 'guestuser@example.com' %>
-                <div class="wrapper d-flex align-items-center">
+                <div class="wrapper px-4 py-5 d-flex align-items-center">
                   <div>
                     <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
                   </div>
@@ -177,7 +69,7 @@
                   </div>
                 </div>
               <% else %>
-                <div class="wrapper">
+                <div class="wrapper px-4 py-5">
                   <div>
                     <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
                   </div>
@@ -191,42 +83,156 @@
                   </div>
                 </div>
               <% end %>
+
+              <hr class="m-0">
+
+              <%= link_to recipes_path do %>
+                <div class="text-secondary px-4 py-5">
+                  レシピ一覧
+                </div>
+              <% end %>
+              <%= link_to users_path do %>
+                <div class="text-secondary px-4 py-5">
+                  ユーザー一覧
+                </div>
+              <% end %>
+              <%= link_to user_path(current_user) do %>
+                <div class="text-secondary px-4 py-5">
+                  マイページ
+                </div>
+              <% end %>
+              <%= link_to user_favorites_path(current_user) do %>
+                <div class="text-secondary px-4 py-5">
+                  いいね一覧
+                </div>
+              <% end %>
+              <%= link_to new_recipe_path do %>
+                <div class="text-secondary px-4 py-5">
+                  新規投稿
+                </div>
+              <% end %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <div class="text-secondary px-4 py-5">
+                  ログアウト
+                </div>
+              <% end %>
             </div>
 
-            <div class="dropdown-divider my-0"></div>
+            <div class="yohaku-g-nav1">
+            </div>
+          </div>
+        <% else %>
+          <div class="container-g-nav2">
+            <div class="yohaku-g-nav2">
+            </div>
 
-            <%= link_to user_path(current_user), class: "dropdown-item" do %>
-              <div class="text-dark py-4">
-                マイページ
+            <div class="hontai2">
+              <%= link_to recipes_path do %>
+                <div class="text-secondary px-4 py-5">
+                  レシピ一覧
+                </div>
+              <% end %>
+              <%= link_to users_path do %>
+                <div class="text-secondary px-4 py-5">
+                  ユーザー一覧
+                </div>
+              <% end %>
+              <%= link_to new_user_registration_path do %>
+                <div class="text-secondary px-4 py-5">
+                  新規登録
+                </div>
+              <% end %>
+              <%= link_to new_user_session_path do %>
+                <div class="text-secondary px-4 py-5">
+                  ログイン
+                </div>
+              <% end %>
+            </div>
+
+            <div class="yohaku-g-nav2">
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </nav>
+
+
+
+
+
+  <div class="kotei176">
+    <div class="tablet-pc-link">
+      <div class="d-flex align-items-center justify-content-end">
+        <% if user_signed_in? %>
+          <div class="dropdown">
+            <a href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon32 rounded-circle" %>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow py-0" aria-labelledby="navbarDropdownMenuLink">
+              <div class="dropdown-header py-5">
+                <% if current_user.email == 'guestuser@example.com' %>
+                  <div class="wrapper d-flex align-items-center">
+                    <div>
+                      <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
+                    </div>
+                    <div class="ryaku pl-4">
+                      <div class="ryaku text-dark" style="font-size: 1.4rem;">
+                        <strong><%= current_user.username %></strong>
+                      </div>
+                    </div>
+                  </div>
+                <% else %>
+                  <div class="wrapper">
+                    <div>
+                      <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
+                    </div>
+                    <div class="ryaku pl-4">
+                      <div class="ryaku text-dark" style="font-size: 1.4rem;">
+                        <strong><%= current_user.username %></strong>
+                      </div>
+                      <div class="ryaku" style="font-size: 1.2rem;">
+                        <%= current_user.email %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
               </div>
+
+              <div class="dropdown-divider my-0"></div>
+
+              <%= link_to user_path(current_user), class: "dropdown-item" do %>
+                <div class="text-dark py-4">
+                  マイページ
+                </div>
+              <% end %>
+              <%= link_to user_favorites_path(current_user), class: "dropdown-item" do %>
+                <div class="text-dark py-4">
+                  いいね一覧
+                </div>
+              <% end %>
+              <%= link_to new_recipe_path, class: "dropdown-item" do %>
+                <div class="text-dark py-4">
+                  新規投稿
+                </div>
+              <% end %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+                <div class="text-dark py-4">
+                  ログアウト
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% else %>
+          <div class="btn-group">
+            <%= link_to new_user_registration_path do %>
+              <button type="button" class="btn btn-header">新規登録</button>
             <% end %>
-            <%= link_to user_favorites_path(current_user), class: "dropdown-item" do %>
-              <div class="text-dark py-4">
-                いいね一覧
-              </div>
-            <% end %>
-            <%= link_to new_recipe_path, class: "dropdown-item" do %>
-              <div class="text-dark py-4">
-                新規投稿
-              </div>
-            <% end %>
-            <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-              <div class="text-dark py-4">
-                ログアウト
-              </div>
+            <%= link_to new_user_session_path do %>
+              <button type="button" class="btn btn-header">ログイン</button>
             <% end %>
           </div>
-        </div>
-      <% else %>
-        <div class="btn-group">
-          <%= link_to new_user_registration_path do %>
-            <button type="button" class="btn btn-header">新規登録</button>
-          <% end %>
-          <%= link_to new_user_session_path do %>
-            <button type="button" class="btn btn-header">ログイン</button>
-          <% end %>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
