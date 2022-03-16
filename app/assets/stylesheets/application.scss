@@ -166,6 +166,16 @@ a:link {
 /*------------------------------------
 - ヘッダー
 ------------------------------------*/
+// 作業用ブロック1    ←※作業終了後、削除する
+// 作業用ブロック3B   ←※作業終了後、削除する
+// 作業用ブロック3A   ←※作業終了後、削除する
+// 作業用ブロック2    ←※作業終了後、削除する
+
+
+
+
+
+// 作業用ブロック1    ←※作業終了後、削除する
 .fixed-header {
   position: fixed;
   top: 0;
@@ -216,6 +226,11 @@ a:link {
   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
 }
 
+
+
+
+
+// 作業用ブロック3B   ←※作業終了後、削除する
 .user-icon32 {
   width: 3.2rem;
   height: 3.2rem;
@@ -233,6 +248,10 @@ a:link {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+
+
+
 
 /*========== ナビゲーションのためのCSS ==========*/
 // ハンバーガー内の画面の背景
@@ -333,6 +352,7 @@ a:link {
 }
 
 /*========== ボタンのためのCSS ==========*/
+// 作業用ブロック3A   ←※作業終了後、削除する
 .openbtn1 {
   position: fixed;
   z-index: 2;                             /* 独自に変更 */
@@ -968,6 +988,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 /*------------------------------------
 - 検索フォーム
 ------------------------------------*/
+// 作業用ブロック2    ←※作業終了後、削除する
 .search_wap {
   position: relative;
 }
@@ -1007,23 +1028,6 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 input[type="text"]:focus {
   outline: none;
 }
-
-
-
-/*======================================*/
-// 作業用にクラスを複製 ( 作業終了後、削除する )
-.form-group {
-  position: relative;
-}
-
-.form-control::placeholder {
-  color: #cccccc;
-  font-size: 1.4rem;
-  line-height: 4.8rem;
-  position: absolute;
-  top: 0;
-}
-/*======================================*/
 
 
 
