@@ -188,6 +188,12 @@ a:link {
   padding: 0 5rem 0 1.5rem;
 }
 
+@media (min-width: 768px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
+}
+
 // 作業用ブロック1    ←※作業終了後、削除する
 .fixed-header {
   position: fixed;
