@@ -166,24 +166,6 @@ a:link {
 /*------------------------------------
 - ヘッダー
 ------------------------------------*/
-// 作業用ブロック1    ←※作業終了後、削除する
-// 作業用ブロック3B   ←※作業終了後、削除する
-// 作業用ブロック3A   ←※作業終了後、削除する
-// 作業用ブロック2    ←※作業終了後、削除する
-// 作業用参考         ←※作業終了後、削除する
-
-
-
-
-
-.kotei387 {
-  max-width: 38.7rem;
-}
-
-.kotei161 {
-  max-width: 16.1rem;
-}
-
 .navbar {
   padding: 0 5.25rem 0 1.5rem;
 }
@@ -194,12 +176,61 @@ a:link {
   }
 }
 
+.kotei387 {
+  max-width: 38.7rem;
+}
+
 .kahen600 {
   max-width: 60rem;
   flex: 1;
 }
 
-// 作業用ブロック1    ←※作業終了後、削除する
+.kotei161 {
+  max-width: 16.1rem;
+}
+
+/*========== 検索フォーム ==========*/
+.search_wap {
+  position: relative;
+}
+
+.search_wap .search_input {
+  border: none;
+  border-radius: 0.25rem;
+  background: #efefef;
+  height: 3.4rem;
+  width: 100%;
+  padding: 0 4.4rem 0 1.5rem;
+  color: #343a40;                      /* 独自に追加 ( フォームに入力すると表示される文字色を login4 と同色に設定 ) */
+}
+
+// プレースホルダー文字色                /* 独自に追加 */
+.search_wap .search_input::placeholder {
+  color: #8e8e8e;
+}
+
+.search_wap .search_button {
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  height: 3.4rem;
+  width: 4.4rem;                         /* pl 1.5rem + fa-search 1.4rem + pr 1.5rem = 4.4rem */
+  border-style: none;
+  border-radius: 0 0.25rem 0.25rem 0;
+  padding: 0;
+}
+
+.search_wap .fa-search {
+  color: #8e8e8e;
+}
+
+// 検索フォームクリック時の縁を非表示    /* 独自に追加 */
+input[type="text"]:focus {
+  outline: none;
+}
+/*==================================*/
+
 .fixed-header {
   position: fixed;
   top: 0;
@@ -250,11 +281,6 @@ a:link {
   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
 }
 
-
-
-
-
-// 作業用ブロック3B   ←※作業終了後、削除する
 .user-icon34 {
   width: 3.4rem;
   height: 3.4rem;
@@ -272,10 +298,6 @@ a:link {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
-
-
-
 
 /*========== ナビゲーションのためのCSS ==========*/
 // ハンバーガー内の画面の背景
@@ -376,7 +398,6 @@ a:link {
 }
 
 /*========== ボタンのためのCSS ==========*/
-// 作業用ブロック3A   ←※作業終了後、削除する
 .openbtn1 {
   position: fixed;
   z-index: 2;                             /* 独自に変更 */
@@ -438,7 +459,6 @@ a:link {
 /*------------------------------------
 - フォロー中画面、フォロワー画面、ユーザー一覧画面
 ------------------------------------*/
-// 作業用参考         ←※作業終了後、削除する
 .wrapper {
   display: flex;
 }
@@ -1008,50 +1028,6 @@ input[type="file" i]::-webkit-file-upload-button:hover {
     transform: translateY(-50%) translateX(-50%);
     max-width: 64rem;
   }
-}
-
-/*------------------------------------
-- 検索フォーム
-------------------------------------*/
-// 作業用ブロック2    ←※作業終了後、削除する
-.search_wap {
-  position: relative;
-}
-
-.search_wap .search_input {
-  border: none;
-  border-radius: 0.25rem;
-  background: #efefef;
-  height: 3.4rem;
-  width: 100%;
-  padding: 0 4.4rem 0 1.5rem;
-  color: #343a40;                      /* 独自に追加 ( フォームに入力すると表示される文字色を login4 と同色に設定 ) */
-}
-
-// プレースホルダー文字色                /* 独自に追加 */
-.search_wap .search_input::placeholder {
-  color: #8e8e8e;
-}
-
-.search_wap .search_button {
-  background-color: transparent;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  height: 3.4rem;
-  width: 4.4rem;                         /* pl 1.5rem + fa-search 1.4rem + pr 1.5rem = 4.4rem */
-  border-style: none;
-  border-radius: 0 0.25rem 0.25rem 0;
-  padding: 0;
-}
-
-.search_wap .fa-search {
-  color: #8e8e8e;
-}
-
-// 検索フォームクリック時の縁を非表示    /* 独自に追加 */
-input[type="text"]:focus {
-  outline: none;
 }
 
 
