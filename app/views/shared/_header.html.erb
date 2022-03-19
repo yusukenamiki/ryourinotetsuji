@@ -1,114 +1,36 @@
-<div class="navbar fixed-header shadow-sm py-0 px-4 header64">
-  <div class="d-flex align-items-center justify-content-start">
-    <%= link_to root_path, class:"link-title" do %>
-      <div class="d-flex align-items-center">
-        <div class="mr-3">
-          <%= image_tag 'symbol-mark.png', size: '30x30' %>
+<div class="navbar fixed-header shadow-sm header64 wrapper">
+  <div class="kotei387">
+    <div class="d-flex align-items-center justify-content-start">
+      <%= link_to root_path, class:"link-title" do %>
+        <div class="d-flex align-items-center">
+          <div class="mr-4">
+            <%= image_tag 'symbol-mark.png', size: '34x34' %>
+          </div>
+          <div class="mr-4 logotype" style="font-size: 2rem; font-family: 'Kiwi Maru', serif;">
+            料理のあぷり
+          </div>
         </div>
-        <div class="mr-3 logotype" style="font-size: 2rem; font-family: 'Kiwi Maru', serif;">
-          料理のあぷり
+      <% end %>
+      <div class="tablet-pc-link">
+        <div class="btn-group">
+          <%= link_to recipes_path do %>
+            <button type="button" class="btn btn-header" style="margin-left: 0.75rem;">レシピ一覧</button>
+          <% end %>
+          <%= link_to users_path do %>
+            <button type="button" class="btn btn-header" style="margin-right: 0.75rem;">ユーザー一覧</button>
+          <% end %>
         </div>
-      </div>
-    <% end %>
-    <div class="tablet-pc-link">
-      <div class="btn-group">
-        <%= link_to recipes_path do %>
-          <button type="button" class="btn btn-header">レシピ一覧</button>
-        <% end %>
-        <%= link_to users_path do %>
-          <button type="button" class="btn btn-header">ユーザー一覧</button>
-        <% end %>
       </div>
     </div>
   </div>
 
-
-
-
-
-  <div class="search_wap">
-    <%= search_form_for @search, url: recipes_path do |f| %>
-      <%= f.text_field :title_cont, placeholder: "検索", class: 'search_input' %>
-      <%= button_tag type: 'submit', class: 'search_button' do %>
-        <i class="fas fa-search"></i>
-      <% end %>
-    <% end %>
-  </div>
-
-
-
-
-
-  <div class="tablet-pc-link">
-    <div class="d-flex align-items-center justify-content-end">
-      <% if user_signed_in? %>
-        <div class="dropdown">
-          <a href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon32 rounded-circle" %>
-          </a>
-          <div class="dropdown-menu dropdown-menu-right shadow py-0" aria-labelledby="navbarDropdownMenuLink">
-            <div class="dropdown-header py-5">
-              <% if current_user.email == 'guestuser@example.com' %>
-                <div class="wrapper d-flex align-items-center">
-                  <div>
-                    <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
-                  </div>
-                  <div class="ryaku pl-4">
-                    <div class="ryaku text-dark" style="font-size: 1.4rem;">
-                      <strong><%= current_user.username %></strong>
-                    </div>
-                  </div>
-                </div>
-              <% else %>
-                <div class="wrapper">
-                  <div>
-                    <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
-                  </div>
-                  <div class="ryaku pl-4">
-                    <div class="ryaku text-dark" style="font-size: 1.4rem;">
-                      <strong><%= current_user.username %></strong>
-                    </div>
-                    <div class="ryaku" style="font-size: 1.2rem;">
-                      <%= current_user.email %>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-
-            <div class="dropdown-divider my-0"></div>
-
-            <%= link_to user_path(current_user), class: "dropdown-item" do %>
-              <div class="text-dark py-4">
-                マイページ
-              </div>
-            <% end %>
-            <%= link_to user_favorites_path(current_user), class: "dropdown-item" do %>
-              <div class="text-dark py-4">
-                いいね一覧
-              </div>
-            <% end %>
-            <%= link_to new_recipe_path, class: "dropdown-item" do %>
-              <div class="text-dark py-4">
-                新規投稿
-              </div>
-            <% end %>
-            <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-              <div class="text-dark py-4">
-                ログアウト
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% else %>
-        <div class="btn-group">
-          <%= link_to new_user_registration_path do %>
-            <button type="button" class="btn btn-header">新規登録</button>
-          <% end %>
-          <%= link_to new_user_session_path do %>
-            <button type="button" class="btn btn-header">ログイン</button>
-          <% end %>
-        </div>
+  <div class="kahen600">
+    <div class="search_wap">
+      <%= search_form_for @search, url: recipes_path do |f| %>
+        <%= f.text_field :title_cont, placeholder: "検索", class: 'search_input' %>
+        <%= button_tag type: 'submit', class: 'search_button' do %>
+          <i class="fas fa-search"></i>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -225,4 +147,80 @@
       <% end %>
     </div>
   </nav>
+
+  <div class="kotei161">
+    <div class="tablet-pc-link">
+      <div class="d-flex align-items-center justify-content-end">
+        <% if user_signed_in? %>
+          <div class="dropdown ml-5 mr-4">
+            <a href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon34 rounded-circle" %>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow py-0" aria-labelledby="navbarDropdownMenuLink">
+              <div class="dropdown-header py-5">
+                <% if current_user.email == 'guestuser@example.com' %>
+                  <div class="wrapper d-flex align-items-center">
+                    <div>
+                      <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
+                    </div>
+                    <div class="ryaku pl-4">
+                      <div class="ryaku text-dark" style="font-size: 1.4rem;">
+                        <strong><%= current_user.username %></strong>
+                      </div>
+                    </div>
+                  </div>
+                <% else %>
+                  <div class="wrapper">
+                    <div>
+                      <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "user-icon40 rounded-circle" %>
+                    </div>
+                    <div class="ryaku pl-4">
+                      <div class="ryaku text-dark" style="font-size: 1.4rem;">
+                        <strong><%= current_user.username %></strong>
+                      </div>
+                      <div class="ryaku" style="font-size: 1.2rem;">
+                        <%= current_user.email %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+
+              <div class="dropdown-divider my-0"></div>
+
+              <%= link_to user_path(current_user), class: "dropdown-item" do %>
+                <div class="text-dark py-4">
+                  マイページ
+                </div>
+              <% end %>
+              <%= link_to user_favorites_path(current_user), class: "dropdown-item" do %>
+                <div class="text-dark py-4">
+                  いいね一覧
+                </div>
+              <% end %>
+              <%= link_to new_recipe_path, class: "dropdown-item" do %>
+                <div class="text-dark py-4">
+                  新規投稿
+                </div>
+              <% end %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
+                <div class="text-dark py-4">
+                  ログアウト
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% else %>
+          <div class="btn-group">
+            <%= link_to new_user_registration_path do %>
+              <button type="button" class="btn btn-header" style="margin-left: 0.75rem;">新規登録</button>
+            <% end %>
+            <%= link_to new_user_session_path do %>
+              <button type="button" class="btn btn-header" style="margin-right: 0.75rem;">ログイン</button>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
