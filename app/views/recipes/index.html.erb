@@ -1,22 +1,35 @@
 <%= render 'shared/header' %>
 <%= render 'shared/flash_messages' %>
 
-<div class="container p-5">
-  <% if @search_recipes.any? %>
-  <% else %>
-    <div class="text-center">
-      一致する結果はありませんでした。
-    </div>
-  <% end %>
 
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 px-2">
-    <%= render 'shared/recipes' %>
-  </div>
 
-  <div class="d-flex justify-content-center mt-4">
-    <%= paginate @search_recipes %>
-  </div>
-  <div class="d-flex justify-content-center mb-0">
-    <%= page_entries_info @search_recipes %>
-  </div>
-</div>
+
+
+    <% if @search_recipes.any? %>
+      <div class="container p-5">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 px-2">
+          <%= render 'shared/recipes' %>
+        </div>
+
+        <div class="d-flex justify-content-center mt-4">
+          <%= paginate @search_recipes %>
+        </div>
+        <div class="d-flex justify-content-center mb-0">
+          <%= page_entries_info @search_recipes %>
+        </div>
+      </div>
+    <% else %>
+      <div class="container-inquiry">
+        <div class="yohaku-inquiry">
+        </div>
+
+        <div class="card border-0 text-center text-dark">
+          <div class="text-center">
+            一致する結果はありませんでした。
+          </div>
+        </div>
+
+        <div class="yohaku-inquiry">
+        </div>
+      </div>
+    <% end %>
