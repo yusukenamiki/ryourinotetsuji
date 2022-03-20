@@ -1,12 +1,30 @@
 <%= render 'shared/header' %>
 <%= render 'shared/flash_messages' %>
 
-<% if @search_recipes.any? %>
-<% else %>
-  <div class="text-center">
-    一致する結果はありませんでした。
+
+
+
+
+<div class="container-inquiry">
+  <div class="yohaku-inquiry">
   </div>
-<% end %>
+
+  <div class="card border-0 text-center text-dark">
+    <% if @search_recipes.any? %>
+    <% else %>
+      <div class="text-center">
+        一致する結果はありませんでした。
+      </div>
+    <% end %>
+  </div>
+
+  <div class="yohaku-inquiry">
+  </div>
+</div>
+
+
+
+
 
 <div class="container p-5">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 px-2">
