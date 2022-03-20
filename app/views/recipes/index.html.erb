@@ -5,22 +5,22 @@
 
 
 
-<div class="container-inquiry">
-  <div class="yohaku-inquiry">
-  </div>
-
-  <div class="card border-0 text-center text-dark">
     <% if @search_recipes.any? %>
     <% else %>
-      <div class="text-center">
-        一致する結果はありませんでした。
+      <div class="container-inquiry">
+        <div class="yohaku-inquiry">
+        </div>
+
+        <div class="card border-0 text-center text-dark">
+          <div class="text-center">
+            一致する結果はありませんでした。
+          </div>
+        </div>
+
+        <div class="yohaku-inquiry">
+        </div>
       </div>
     <% end %>
-  </div>
-
-  <div class="yohaku-inquiry">
-  </div>
-</div>
 
 
 
