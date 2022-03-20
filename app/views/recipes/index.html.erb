@@ -1,14 +1,14 @@
 <%= render 'shared/header' %>
 <%= render 'shared/flash_messages' %>
 
-<div class="container p-5">
-  <% if @search_recipes.any? %>
-  <% else %>
-    <div class="text-center">
-      一致する結果はありませんでした。
-    </div>
-  <% end %>
+<% if @search_recipes.any? %>
+<% else %>
+  <div class="text-center">
+    一致する結果はありませんでした。
+  </div>
+<% end %>
 
+<div class="container p-5">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 px-2">
     <%= render 'shared/recipes' %>
   </div>
