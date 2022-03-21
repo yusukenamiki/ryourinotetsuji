@@ -1035,35 +1035,24 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 ------------------------------------*/
 .container-result {
   padding: 0;
+  position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
+  top: 0;                            /* 独自に追加 ( card をヘッダー分上げない ) */
+  background-color: #f8f9fa;
+  height: calc(100vh - 6.4rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
 }
 
 .container-result > .card {
   padding: 3rem;
   background-color: #f8f9fa;
+  // position: absolute;             /* 本来必要な設定だが、なぜか card の width が崩れるので設定しない
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  max-width: 64rem;
 }
 
-@media (min-width: 320px) {
-  .container-result {
-    position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
-    top: 0;                            /* 独自に追加 ( card をヘッダー分上げない ) */
-    background-color: #f8f9fa;
-    height: calc(100vh - 6.4rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
-  }
-
-  .container-result > .card {
-    // position: absolute;             /* 本来必要な設定だが、なぜか card の width が崩れるので設定しない
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    max-width: 64rem;
-  }
-}
 
 @media (min-width: 768px) {
-  .container-result {
-    height: calc(100vh - 6.4rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
-  }
-
   .container-result > .card {
     background-color: #ffffff;
   }
