@@ -1030,6 +1030,42 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   }
 }
 
+/*------------------------------------
+- 検索結果
+------------------------------------*/
+.container-result {
+  padding: 0;
+  position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
+  top: 0;                            /* 独自に追加 ( card をヘッダー分上げない ) */
+  background-color: #f8f9fa;
+  height: calc(100vh - 6.4rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
+}
+
+.container-result > .card {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  height: 26rem;
+  // position: absolute;             /* 本来必要な設定だが、なぜか card の width が崩れるので設定しない
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  max-width: 37.5rem;
+  width: calc(100% - 6rem);
+}
+
+@media (min-width: 375px) {
+  .container-result > .card {
+    height: 35rem;
+  }
+}
+
+@media (orientation: landscape) {
+  .container-result > .card {
+    max-height: 35rem;
+    height: calc(100% - 12.8rem);
+  }
+}
+
 
 
 
