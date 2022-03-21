@@ -1059,50 +1059,13 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   }
 }
 
-@media (min-width: 768px) and (min-height: 668px) {
+@media (min-width: 768px) {
   .container-result {
     height: calc(100vh - 6.4rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
   }
 
   .container-result > .card {
     background-color: #ffffff;
-  }
-}
-
-@media (min-width: 768px) and (orientation: landscape) {
-  .container-result {
-    padding: 0 6.4rem;
-  }
-
-  .yohaku-result {
-    height: 6.4rem;                                          /* 余白を作る為だけのクラス */
-  }
-
-  .container-result > .card {
-    background-color: #ffffff;
-  }
-}
-
-@media (min-width: 1024px) and (orientation: landscape) {
-  .container-result {
-    padding: 0;
-    position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
-    top: 0;                            /* 独自に追加 ( card をヘッダー分上げない ) */
-    background-color: #f8f9fa;
-    height: calc(100vh - 6.4rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
-  }
-
-  .yohaku-result {
-    display: none;
-  }
-
-  .container-result > .card {
-    background-color: #ffffff;
-    // position: absolute;             /* 本来必要な設定だが、なぜか card の width が崩れるので設定しない
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    max-width: 64rem;
   }
 }
 
