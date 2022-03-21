@@ -1047,7 +1047,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
     position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
     top: 0;                            /* 独自に追加 ( card をヘッダー分上げない ) */
     background-color: #f8f9fa;
-    height: calc(100vh - 31rem);       /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem + フッター分の 24.6rem の計 31rem を引く */
+    height: calc(100vh - 6.4rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
   }
 
   .container-result > .card {
@@ -1061,7 +1061,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 
 @media (min-width: 768px) and (min-height: 668px) {
   .container-result {
-    height: calc(100vh - 23.8rem);     /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem + フッター分の 17.4rem の計 23.8rem を引く */
+    height: calc(100vh - 6.4rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
   }
 
   .container-result > .card {
@@ -1091,7 +1091,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
     position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
     top: 0;                            /* 独自に追加 ( card をヘッダー分上げない ) */
     background-color: #f8f9fa;
-    height: calc(100vh - 23.8rem);     /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem + フッター分の 17.4rem の計 23.8rem を引く */
+    height: calc(100vh - 6.4rem);      /* 100vh から、下にスクロールできてしまうヘッダー分の 6.4rem を引く */
   }
 
   .yohaku-result {
