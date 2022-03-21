@@ -1042,7 +1042,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   background-color: #f8f9fa;
 }
 
-@media (min-width: 375px) and (min-height: 668px) {
+@media (min-width: 320px) {
   .container-result {
     position: relative;                /* 独自に追加 ( card をヘッダー分上げない ) */
     top: 0;                            /* 独自に追加 ( card をヘッダー分上げない ) */
