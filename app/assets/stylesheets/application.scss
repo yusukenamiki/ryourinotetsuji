@@ -1053,7 +1053,12 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   width: calc(100% - 6rem);
 }
 
-
+@media (orientation: landscape) {
+  .container-result > .card {
+    max-height: 35rem;
+    height: calc(100% - 12.8rem);
+  }
+}
 
 
 
