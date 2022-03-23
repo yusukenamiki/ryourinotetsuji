@@ -53,9 +53,9 @@ Rails/BulkChangeTable:
 # Offense count: 1
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: slashes, arguments
-Rails/FilePath:
-  Exclude:
-    - 'config/environments/development.rb'
+
+
+
 
 # Offense count: 2
 # Configuration parameters: Include.

@@ -2,3 +2,7 @@ inherit_from: .rubocop_todo.yml
 
 require:
   - rubocop-rails
+
+Rails/FilePath:
+  Exclude:
+    - 'config/environments/development.rb'
