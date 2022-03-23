@@ -2,11 +2,11 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    if user_signed_in?
-      @users = User.where.not(id: current_user.id).order("created_at DESC").page(params[:page]).per(9)
-    else
-      @users = User.order("created_at DESC").page(params[:page]).per(9)
-    end
+    @users = if user_signed_in?
+               User.where.not(id: current_user.id).order('created_at DESC').page(params[:page]).per(9)
+             else
+               User.order('created_at DESC').page(params[:page]).per(9)
+             end
   end
 
   def followings
@@ -42,6 +42,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:username, :email, :profile, :profile_image)
   end

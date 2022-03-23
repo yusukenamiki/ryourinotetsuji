@@ -22,9 +22,7 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
-    if @recipe.user != current_user
-      redirect_to recipes_path, alert: '不正なアクセスです。'
-    end
+    redirect_to recipes_path, alert: '不正なアクセスです。' if @recipe.user != current_user
   end
 
   def update
@@ -43,8 +41,8 @@ class RecipesController < ApplicationController
   end
 
   private
+
   def recipe_params
     params.require(:recipe).permit(:title, :body, :image)
   end
-
 end

@@ -2,11 +2,11 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_search
 
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(_resource)
     user_path(current_user)
   end
 
-  def after_sign_up_path_for(resource)
+  def after_sign_up_path_for(_resource)
     user_path(current_user)
   end
 
@@ -23,10 +23,11 @@ class ApplicationController < ActionController::Base
 
   def set_search
     @search = Recipe.ransack(params[:q])
-    @search_recipes = @search.result.order("updated_at DESC").page(params[:page]).per(9)
+    @search_recipes = @search.result.order('updated_at DESC').page(params[:page]).per(9)
   end
 
   private
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
   end
