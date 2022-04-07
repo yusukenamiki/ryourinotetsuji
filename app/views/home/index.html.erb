@@ -22,7 +22,36 @@
   </div>
 </div>
 
-<%= render 'shared/footer' %>
+
+
+
+
+<footer class="bg-footer">
+  <div class="link3" style="margin-bottom: 4.5rem;">
+    <%= link_to page_path('terms') do %>
+      <div class="text-dark link3-mb-4">
+        利用規約
+      </div>
+    <% end %>
+    <%= link_to page_path('privacy') do %>
+      <div class="text-dark link3-mb-4">
+        プライバシーポリシー
+      </div>
+    <% end %>
+    <%= link_to page_path('inquiry') do %>
+      <div class="text-dark link3-mb-4">
+        お問い合わせ
+      </div>
+    <% end %>
+  </div>
+  <div class="text-center" style="font-size: 1.2rem;">
+    © 2022 料理のてつじ
+  </div>
+</footer>
+
+
+
+
 
 <div class="container p-5">
   <div class="wrapper d-flex align-items-center justify-content-between mb-5">
