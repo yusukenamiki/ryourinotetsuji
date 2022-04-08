@@ -1081,7 +1081,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 ------------------------------------*/
 .bg-description {
   background-color:#ffffff;
-  padding: 4.5rem 0;
+  padding: 6rem 0;
 }
 
 .description3 {
@@ -1093,13 +1093,13 @@ input[type="file" i]::-webkit-file-upload-button:hover {
     text-align: initial;
     display: flex;
     justify-content: space-between;
-    width: 40rem;
+    width: 70rem;
     margin: 0 auto;
   }
 }
 
-.description3-mb-4 {
-  margin-bottom: 1.5rem;
+.description3-mb-4:not(:last-child) {
+  margin-bottom: 4.5rem;
 }
 
 @media (min-width: 768px) {
