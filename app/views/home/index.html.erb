@@ -8,17 +8,9 @@
     <div class="mb-4 text-dark" style="font-size: 4.8rem; font-family: 'New Tegomin', serif;">
       料理のてつじ
     </div>
-
-    <div class="mb-5">
+    <div class="mb-4">
       料理レシピの投稿・共有サービス
     </div>
-
-    <% if user_signed_in? %>
-    <% else %>
-      <%= link_to new_user_registration_path do %>
-        <button type="button" class="btn btn-color01" style="width: 200px;">今すぐはじめる</button>
-      <% end %>
-    <% end %>
   </div>
 </div>
 
@@ -26,8 +18,8 @@
 
 
 
-<div style="background-color: #f8f9fa; padding: 4.5rem 0;">
-  <div class="text-center" style="font-size: 1.8rem; margin-bottom: 4.5rem;">
+<div style="background-color: #f8f9fa; padding: 6rem 0;">
+  <div class="text-center" style="font-size: 1.8rem; margin-bottom: 6rem;">
     料理のてつじではこんな事が可能です
   </div>
   <div class="description-oya text-center">
@@ -65,6 +57,15 @@
       </div>
     </div>
   </div>
+
+  <% if user_signed_in? %>
+  <% else %>
+    <div class="text-center" style="margin-top: 6rem;">
+      <%= link_to new_user_registration_path do %>
+        <button type="button" class="btn btn-color01" style="width: 200px;">今すぐはじめる</button>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 
