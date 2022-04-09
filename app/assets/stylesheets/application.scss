@@ -1084,13 +1084,8 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   padding: 6rem 0;
 }
 
-.description3 {
-  text-align: center;
-}
-
 @media (min-width: 768px) {
-  .description3 {
-    text-align: initial;
+  .description-oya {
     display: flex;
     justify-content: space-between;
     width: 70rem;
@@ -1098,12 +1093,17 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   }
 }
 
-.description3-mb-4:not(:last-child) {
+.description-ko {
+  width: 32rem;
+  margin: 0 auto;
+}
+
+.description-ko:not(:last-child) {
   margin-bottom: 4.5rem;
 }
 
 @media (min-width: 768px) {
-  .description3-mb-4 {
+  .description-ko:not(:last-child) {
     margin-bottom: 0;
   }
 }
