@@ -1066,6 +1066,48 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   }
 }
 
+/*------------------------------------
+- トップページ
+------------------------------------*/
+.main-image {
+  height: 940px;
+  background-image: url(meal.png);
+  background-repeat: none;
+  background-size: contain;
+}
+
+/*------------------------------------
+- 説明
+------------------------------------*/
+.bg-description {
+  background-color:#ffffff;
+  padding: 6rem 0;
+}
+
+@media (min-width: 768px) {
+  .description-oya {
+    display: flex;
+    justify-content: space-between;
+    width: 70rem;
+    margin: 0 auto;
+  }
+}
+
+.description-ko {
+  width: 32rem;
+  margin: 0 auto;
+}
+
+.description-ko:not(:last-child) {
+  margin-bottom: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  .description-ko:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
 
 
 

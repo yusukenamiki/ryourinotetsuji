@@ -1,15 +1,17 @@
 <%= render 'shared/header' %>
 <%= render 'shared/flash_messages' %>
 
+<div class="main-image"></div>
+
 <div class="py-5">
   <div class="text-center">
-    <h2 class="mb-5 text-dark" style="font-family: 'New Tegomin', serif;">
+    <div class="mb-4 text-dark" style="font-size: 4.8rem; font-family: 'New Tegomin', serif;">
       料理のてつじ
-    </h2>
+    </div>
 
-    <h4 class="mb-5">
-      レシピを投稿しよう
-    </h4>
+    <div class="mb-5">
+      料理レシピの投稿・共有サービス
+    </div>
 
     <% if user_signed_in? %>
     <% else %>
@@ -20,8 +22,54 @@
   </div>
 </div>
 
-<div class="bg-white" style="height: 21rem;">
+
+
+
+
+<div class="bg-description">
+  <div class="text-center" style="font-size: 1.8rem; margin-bottom: 4.5rem;">
+    料理のてつじではこんな事が可能です
+  </div>
+  <div class="description-oya text-center">
+    <div class="description-ko px-5">
+      <div class="mb-3" style="font-size: 4.8rem;">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="mb-3">
+        <strong>検索</strong>
+      </div>
+      <div style="font-size: 1.2rem;">
+        レシピ一覧画面や検索バーなどからレシピを検索することが可能です。
+      </div>
+    </div>
+    <div class="description-ko px-5">
+      <div class="mb-3" style="font-size: 4.8rem; padding-left: 1.3rem;">
+        </i><i class="far fa-edit"></i>
+      </div>
+      <div class="mb-3">
+        <strong>投稿</strong>
+      </div>
+      <div style="font-size: 1.2rem;">
+        レシピの投稿や他のユーザーのレシピにコメントを投稿することが可能です。
+      </div>
+    </div>
+    <div class="description-ko px-5">
+      <div class="mb-3" style="font-size: 4.8rem;">
+        </i><i class="far fa-heart"></i>
+      </div>
+      <div class="mb-3">
+        <strong>いいね</strong>
+      </div>
+      <div style="font-size: 1.2rem;">
+        いいねしたレシピは、いいね一覧画面から確認することが可能です。いいねの数は人気レシピの順位に反映されます。
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+
 
 <div class="container p-5">
   <div class="wrapper d-flex align-items-center justify-content-between mb-5">
