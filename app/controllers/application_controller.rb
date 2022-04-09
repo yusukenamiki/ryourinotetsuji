@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
 
   def hogehoge
     recipes = Recipe.includes(:favorited_users).sort {|a,b| b.favorited_users.size <=> a.favorited_users.size}
-    @recipes = Kaminari.paginate_array(recipes).page(params[:page]).per(5)
+    @recipes = Kaminari.paginate_array(recipes).page(params[:page]).per(3)
   end
 
   private
