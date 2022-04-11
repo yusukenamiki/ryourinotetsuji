@@ -1153,7 +1153,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 
 .ranking-li::after { /* 順位（文字）のスタイル */
   counter-increment: rank;
-  content: counter(rank) " 位";
+  content: counter(rank); /* 独自に変更 */
   position: absolute;
   top: 10px;
   left: 10px;
