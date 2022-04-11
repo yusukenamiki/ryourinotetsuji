@@ -1131,15 +1131,15 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 }
 
 .ranking-li:nth-child(1)::before { /* 1位（王冠）のスタイル */
-  color: #e6c300;
+  color: #ffd200; /* 独自に変更 */
 }
 
 .ranking-li:nth-child(2)::before { /* 2位（王冠）のスタイル */
-  color: #a9a9a9;
+  color: #8e8e93; /* 独自に変更 */
 }
 
 .ranking-li:nth-child(3)::before { /* 3位（王冠）のスタイル */
-  color: #815a2b;
+  color: #e3a448; /* 独自に変更 */
 }
 
 .ranking-li:nth-child(n + 4)::before { /* 3位以下のスタイル */
