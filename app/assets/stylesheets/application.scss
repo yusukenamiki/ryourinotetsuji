@@ -1127,6 +1127,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   top: -45px; /* 王冠の位置（縦軸） */
   left: -20px; /* 王冠の位置（横軸） */
   font-size: 80px; /* 王冠の大きさ */
+  z-index: 1; /* 独自に追加 */
 }
 
 .ranking-li:nth-child(1)::before { /* 1位（王冠）のスタイル */
@@ -1146,6 +1147,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   position: absolute;
   border-bottom: 100px solid transparent;
   border-left: 100px solid rgba(0,0,0,0.8);
+  z-index: 1; /* 独自に追加 */
 }
 
 .ranking-li::after { /* 順位（文字）のスタイル */
@@ -1156,6 +1158,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   left: 10px;
   font-size: 1.2em;
   color: #fff;
+  z-index: 1; /* 独自に追加 */
 }
 
 
