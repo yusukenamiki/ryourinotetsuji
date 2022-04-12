@@ -1145,17 +1145,17 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 .ranking-li:nth-child(n + 4)::before { /* 3位以下のスタイル */
   content: "";
   position: absolute;
-  border-bottom: 100px solid transparent;
-  border-left: 100px solid rgba(0,0,0,0.8);
   z-index: 1; /* 独自に追加 */
   margin: 0.1rem 0 0 0.6rem; /* 独自に追加 */
+  padding: 2.5rem 2.5rem; /* 独自に追加 */
+  background: rgba(0,0,0,0.8); /* 背景色 */ /* 独自に追加 */
 }
 
 .ranking-li::after { /* 順位（文字）のスタイル */
   counter-increment: rank;
   content: counter(rank); /* 独自に変更 */
   position: absolute;
-  top: 1.2rem; /* 独自に変更 */
+  top: 1.3rem; /* 独自に変更 */
   left: 3rem; /* 独自に変更 */
   font-size: 1.4rem; /* 独自に変更 */
   font-weight: 700;  /* 独自に追加 */
