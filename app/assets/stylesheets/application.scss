@@ -1076,9 +1076,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   background-size: contain;
 }
 
-/*------------------------------------
-- 説明
-------------------------------------*/
+/*========== 説明部分 ==========*/
 @media (min-width: 768px) {
   .description-oya {
     display: flex;
@@ -1115,62 +1113,64 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   position: relative;
 }
 
-.ranking-li:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.ranking-li:nth-child(-n + 3)::before { /* 王冠のスタイル */
+// 王冠のスタイル
+.ranking-li:nth-child(-n + 3)::before {
   font-family: "Font Awesome 5 Free";
   content: "\f521";
   font-weight: 900;
   position: absolute;
-  top: -0.9rem; /* 王冠の位置（縦軸） */ /* 独自に変更 */
-  left: 0.9rem; /* 王冠の位置（横軸） */ /* 独自に変更 */
-  font-size: 4rem; /* 王冠の大きさ */ /* 独自に変更 */
-  z-index: 1; /* 独自に追加 */
+  top: -0.9rem;                               /* 独自に変更 */
+  left: 0.9rem;                               /* 独自に変更 */
+  font-size: 4rem;                            /* 独自に変更 */
+  z-index: 1;                                 /* 独自に追加 */
 }
 
-.ranking-li:nth-child(1)::before { /* 1位（王冠）のスタイル */
-  color: #ffd200; /* 独自に変更 */
+// 1位（王冠）のスタイル
+.ranking-li:nth-child(1)::before {
+  color: #ffd200;                          /* 独自に変更 */
 }
 
-.ranking-li:nth-child(2)::before { /* 2位（王冠）のスタイル */
-  color: #8e8e93; /* 独自に変更 */
+// 2位（王冠）のスタイル
+.ranking-li:nth-child(2)::before {
+  color: #8e8e93;                          /* 独自に変更 */
 }
 
-.ranking-li:nth-child(3)::before { /* 3位（王冠）のスタイル */
-  color: #e3a448; /* 独自に変更 */
+// 3位（王冠）のスタイル
+.ranking-li:nth-child(3)::before {
+  color: #e3a448;                          /* 独自に変更 */
 }
 
-.ranking-li:nth-child(n + 4)::before { /* 3位以下のスタイル */
+// 4位以下のスタイル
+.ranking-li:nth-child(n + 4)::before {
   content: "";
   position: absolute;
-  z-index: 1; /* 独自に追加 */
-  margin: 0.1rem 0 0 0.6rem; /* 独自に追加 */
-  padding: 2.5rem 2.5rem; /* 独自に追加 */
-  background: rgba(255, 255, 255, 0.9); /* 背景色 */ /* 独自に追加 */
+  z-index: 1;                                 /* 独自に追加 */
+  margin: 0.1rem 0 0 0.6rem;                  /* 独自に追加 */
+  padding: 2.5rem 2.5rem;                     /* 独自に追加 */
+  background: rgba(255, 255, 255, 0.9);    /* 独自に追加 */
 }
 
-.ranking-li::after { /* 順位（文字）のスタイル */
+// 順位（文字）のスタイル
+.ranking-li::after {
   counter-increment: rank;
-  content: counter(rank); /* 独自に変更 */
+  content: counter(rank);                     /* 独自に変更 */
   position: absolute;
-  top: 1.3rem; /* 独自に変更 */
-  left: 3rem; /* 独自に変更 */
-  font-size: 1.4rem; /* 独自に変更 */
-  font-weight: 700;  /* 独自に追加 */
+  top: 1.3rem;                                /* 独自に変更 */
+  left: 3rem;                                 /* 独自に変更 */
+  font-size: 1.4rem;                          /* 独自に変更 */
+  font-weight: 700;                           /* 独自に追加 */
   color: #fff;
-  z-index: 1; /* 独自に追加 */
+  z-index: 1;                                 /* 独自に追加 */
 }
 
-.ranking-li:nth-child(n + 4)::after { /* 順位（文字）のスタイル */ /* 独自に追加 */
-  top: 1.4rem; /* 独自に変更 */
-  left: 2.8rem; /* 独自に変更 */
-  color: #6c757d;
+.ranking-li:nth-child(n + 4)::after {         /* 独自に追加 */
+  top: 1.4rem;
+  left: 2.8rem;
+  color: #6c757d;                          /* 独自に変更 */
 }
 
-.ranking-li:nth-child(n + 10)::after { /* 順位（文字）のスタイル */ /* 独自に追加 */
-  left: 2.4rem; /* 独自に変更 */
+.ranking-li:nth-child(n + 10)::after {        /* 独自に追加 */
+  left: 2.4rem;
 }
 
 
