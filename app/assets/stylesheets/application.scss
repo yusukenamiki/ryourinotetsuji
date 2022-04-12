@@ -1148,7 +1148,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   z-index: 1; /* 独自に追加 */
   margin: 0.1rem 0 0 0.6rem; /* 独自に追加 */
   padding: 2.5rem 2.5rem; /* 独自に追加 */
-  background: rgba(0,0,0,0.8); /* 背景色 */ /* 独自に追加 */
+  background: rgba(255, 255, 255, 0.9); /* 背景色 */ /* 独自に追加 */
 }
 
 .ranking-li::after { /* 順位（文字）のスタイル */
@@ -1161,6 +1161,16 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   font-weight: 700;  /* 独自に追加 */
   color: #fff;
   z-index: 1; /* 独自に追加 */
+}
+
+.ranking-li:nth-child(n + 4)::after { /* 順位（文字）のスタイル */ /* 独自に追加 */
+  top: 1.4rem; /* 独自に変更 */
+  left: 2.8rem; /* 独自に変更 */
+  color: #6c757d;
+}
+
+.ranking-li:nth-child(n + 10)::after { /* 順位（文字）のスタイル */ /* 独自に追加 */
+  left: 2.4rem; /* 独自に変更 */
 }
 
 
