@@ -1120,7 +1120,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   font-weight: 900;
   position: absolute;
   top: -0.9rem;                               /* 独自に変更 */
-  left: 0.9rem;                               /* 独自に変更 */
+  left: 0.85rem;                              /* 独自に変更 */
   font-size: 4rem;                            /* 独自に変更 */
   z-index: 1;                                 /* 独自に追加 */
 }
@@ -1156,7 +1156,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   content: counter(rank);                     /* 独自に変更 */
   position: absolute;
   top: 1.3rem;                                /* 独自に変更 */
-  left: 3rem;                                 /* 独自に変更 */
+  left: 2.95rem;                              /* 独自に変更 */
   font-size: 1.4rem;                          /* 独自に変更 */
   font-weight: 700;                           /* 独自に追加 */
   color: #fff;
