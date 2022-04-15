@@ -1177,8 +1177,15 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 - retsu
 ------------------------------------*/
 .retsu2 {
-  max-width: 67.5rem;
+  max-width: 49.5rem;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .retsu2 {
+    max-width: 67.5rem;
+    margin: 0 auto;
+  }
 }
 
 
