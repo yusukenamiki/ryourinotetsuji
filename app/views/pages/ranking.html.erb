@@ -1,0 +1,27 @@
+<%= render 'shared/header' %>
+
+
+
+
+
+<div class="container" style="padding: 6.4rem 2.25rem 3rem;">
+  <div class="text-center" style="margin-bottom: 6.4rem;">
+    <div class="text-dark font-weight-bold" style="font-size: 1.8rem;">
+      ランキング
+    </div>
+  </div>
+
+  <div class="row no-gutters row-cols-1 row-cols-md-2 retsu2 ranking">
+    <% @recipes.each do |recipe| %>
+      <div class="col ranking-li">
+        <%= render 'shared/recipes', recipe: recipe %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+<%= render 'shared/footer' %>

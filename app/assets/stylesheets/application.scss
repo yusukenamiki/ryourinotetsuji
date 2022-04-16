@@ -1120,7 +1120,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   font-weight: 900;
   position: absolute;
   top: -0.9rem;                               /* 独自に変更 */
-  left: 0.9rem;                               /* 独自に変更 */
+  left: 0.85rem;                              /* 独自に変更 */
   font-size: 4rem;                            /* 独自に変更 */
   z-index: 1;                                 /* 独自に追加 */
 }
@@ -1145,7 +1145,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   content: "";
   position: absolute;
   z-index: 1;                                 /* 独自に追加 */
-  margin: 0.1rem 0 0 0.6rem;                  /* 独自に追加 */
+  margin: 0.1rem 0 0 0.85rem;                 /* 独自に追加 */
   padding: 2.5rem 2.5rem;                     /* 独自に追加 */
   background: rgba(255, 255, 255, 0.9);    /* 独自に追加 */
 }
@@ -1156,7 +1156,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   content: counter(rank);                     /* 独自に変更 */
   position: absolute;
   top: 1.3rem;                                /* 独自に変更 */
-  left: 3rem;                                 /* 独自に変更 */
+  left: 2.95rem;                              /* 独自に変更 */
   font-size: 1.4rem;                          /* 独自に変更 */
   font-weight: 700;                           /* 独自に追加 */
   color: #fff;
@@ -1171,6 +1171,20 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 
 .ranking-li:nth-child(n + 10)::after {        /* 独自に追加 */
   left: 2.4rem;
+}
+
+/*------------------------------------
+- retsu
+------------------------------------*/
+.retsu2 {
+  max-width: 49.5rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .retsu2 {
+    max-width: 67.5rem;
+  }
 }
 
 
