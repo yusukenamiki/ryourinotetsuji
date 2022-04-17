@@ -12,7 +12,7 @@
   <div class="row no-gutters row-cols-1 row-cols-md-2 row-cols-lg-3">
     <% @recipes.reverse_each do |recipe| %>
       <div class="col">
-        <div class="card shadow-sm">
+        <div class="card shadow-sm" style="margin: 0 0.75rem 1.5rem;">
           <%= link_to recipe_path(recipe) do %>
             <%= attachment_image_tag recipe, :image, width: '100%', height: '300px' %>
           <% end %>
