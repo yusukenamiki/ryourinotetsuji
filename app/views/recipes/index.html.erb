@@ -3,9 +3,9 @@
 
 <% if @search_recipes.any? %>
   <div class="container" style="padding: 3rem;">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 px-2">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
       <% @search_recipes.each do |recipe| %>
-        <div class="col px-1">
+        <div class="col">
           <%= render 'shared/recipes', recipe: recipe %>
         </div>
       <% end %>
