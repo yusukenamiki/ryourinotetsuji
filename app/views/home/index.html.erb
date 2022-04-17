@@ -98,8 +98,8 @@
 
 
 <div style="background-color: #f8f9fa;">
-  <div class="container p-5">
-    <div class="wrapper d-flex align-items-center justify-content-between mb-5">
+  <div class="container" style="padding: 3rem 2.25rem;">
+    <div class="d-flex align-items-center justify-content-between retsu3" style="padding: 0 0.75rem 3rem;">
       <div class="text-dark font-weight-bold" style="font-size: 1.8rem;">
         ランキング
       </div>
@@ -108,9 +108,9 @@
       <% end %>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 px-2 ranking">
+    <div class="row no-gutters row-cols-1 row-cols-md-2 row-cols-lg-3 retsu3 ranking">
       <% @recipes.each do |recipe| %>
-        <div class="col px-1 ranking-li">
+        <div class="col ranking-li">
           <%= render 'shared/recipes', recipe: recipe %>
         </div>
       <% end %>
