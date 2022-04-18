@@ -9,15 +9,13 @@
     投稿一覧
   </div>
 
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 px-2">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
     <% @user.recipes.reverse_each do |recipe| %>
-      <div class="col px-1">
-        <div class="card shadow-sm mx-2 mb-4">
-          <div class="p-0">
-            <%= link_to recipe_path(recipe) do %>
-              <%= attachment_image_tag recipe, :image, width: '100%;', height: '300px;' %>
-            <% end %>
-          </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <%= link_to recipe_path(recipe) do %>
+            <%= attachment_image_tag recipe, :image, width: '100%;', height: '300px;' %>
+          <% end %>
 
           <div class="card-body p-4">
             <div class="text-ellipsis1">
