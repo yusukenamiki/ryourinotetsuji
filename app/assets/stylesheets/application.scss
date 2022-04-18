@@ -1198,6 +1198,17 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   }
 }
 
+.retsu3-hr {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .retsu3-hr {
+    max-width: 90rem;
+  }
+}
+
 
 
 
