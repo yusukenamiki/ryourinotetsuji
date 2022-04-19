@@ -1076,7 +1076,27 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   background-size: contain;
 }
 
-/*========== 説明部分 ==========*/
+/*========== description部分 ==========*/
+.description-title2 {
+  display: block;
+}
+
+@media (min-width: 480px) {
+  .description-title2 {
+    display: none;
+  }
+}
+
+.description-title1 {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .description-title1 {
+    display: block;
+  }
+}
+
 @media (min-width: 768px) {
   .description-oya {
     display: flex;
