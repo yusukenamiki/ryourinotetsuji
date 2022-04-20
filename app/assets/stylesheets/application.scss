@@ -1077,6 +1077,12 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   background-position: center center;   /* 独自に追加 */
 }
 
+@media (min-width: 480px) {
+  .main-image {
+    height: 50.25rem;
+  }
+}
+
 /*========== description部分 ==========*/
 .description-title2 {
   display: block;
