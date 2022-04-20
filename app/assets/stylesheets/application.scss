@@ -1070,10 +1070,11 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 - トップページ
 ------------------------------------*/
 .main-image {
-  height: 940px;
+  height: 33.5rem;                      /* 独自に変更 */
   background-image: url(meal.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;               /* 独自に変更 */
+  background-position: center center;   /* 独自に追加 */
 }
 
 /*========== description部分 ==========*/
