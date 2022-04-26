@@ -1083,6 +1083,12 @@ input[type="file" i]::-webkit-file-upload-button:hover {
   }
 }
 
+@media (min-width: 2112px) {            /* 5800px * 1380px の画像の height が 502.5px の時の width は 2112px */
+  .main-image {
+    background-size: contain;
+  }
+}
+
 /*========== description部分 ==========*/
 .description-title2 {
   display: block;
