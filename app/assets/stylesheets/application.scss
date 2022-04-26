@@ -1070,13 +1070,46 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 - トップページ
 ------------------------------------*/
 .main-image {
-  height: 940px;
-  background-image: url(meal.png);
-  background-repeat: none;
-  background-size: contain;
+  height: 33.5rem;                      /* 独自に変更 */
+  background-image: url(top.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;               /* 独自に変更 */
+  background-position: center center;   /* 独自に追加 */
 }
 
-/*========== 説明部分 ==========*/
+@media (min-width: 480px) {
+  .main-image {
+    height: 50.25rem;
+  }
+}
+
+@media (min-width: 2112px) {            /* 5800px * 1380px の画像の height が 502.5px の時の width は 2112px */
+  .main-image {
+    background-size: contain;
+  }
+}
+
+/*========== description部分 ==========*/
+.description-title2 {
+  display: block;
+}
+
+@media (min-width: 480px) {
+  .description-title2 {
+    display: none;
+  }
+}
+
+.description-title1 {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .description-title1 {
+    display: block;
+  }
+}
+
 @media (min-width: 768px) {
   .description-oya {
     display: flex;
