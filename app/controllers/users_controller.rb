@@ -27,6 +27,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user != current_user
       redirect_to users_path, alert: '不正なアクセスです。'
+    elsif @user.email == 'guestuser@example.com'
+      redirect_to user_path(@user), alert: '不正なアクセスです。'
     end
   end
 
