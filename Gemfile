@@ -66,3 +66,4 @@ gem 'kaminari'
 gem 'file_validators'
 gem 'high_voltage'
 gem 'ransack'
+gem "refile-s3"
