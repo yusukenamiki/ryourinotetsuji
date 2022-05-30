@@ -1071,7 +1071,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 ------------------------------------*/
 .main-image {
   height: 33.5rem;                      /* 独自に変更 */
-  background-image: url(top.png);
+  background-image:image-url("top.png");
   background-repeat: no-repeat;
   background-size: cover;               /* 独自に変更 */
   background-position: center center;   /* 独自に追加 */
