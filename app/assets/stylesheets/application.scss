@@ -599,6 +599,12 @@ input[type="text"]:focus {
   padding: 3rem;
 }
 
+@media (min-width: 576px) {                  /* card の width がいったん 480px で固定されるタイミングで padding を変化 */
+  .recipes-show-padding {
+    padding: 6.4rem 3rem 3rem;
+  }
+}
+
 /*------------------------------------
 - レシピ一覧画面
 ------------------------------------*/
