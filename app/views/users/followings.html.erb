@@ -1,9 +1,7 @@
 <%= render 'shared/header' %>
 
-<div class="container p-5">
-  <div class="text-center text-dark mb-5" style="font-size: 1.6rem;">
-    フォロー中 <%= @users.count %>人
-  </div>
-
-  <%= render 'shared/followers_followings' %>
+<div class="text-center text-dark my-5" style="font-size: 1.6rem;">
+  フォロー中 <%= @users.count %>人
 </div>
+
+<%= render 'shared/followers_followings' %>
