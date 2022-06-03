@@ -581,6 +581,12 @@ input[type="text"]:focus {
   padding: 3rem 3rem 6rem;
 }
 
+@media (min-width: 480px) {          /* user-icon87 が変化するタイミングで padding を変化 */
+  .profile-padding {
+    padding: 6.4rem 3rem 6rem;
+  }
+}
+
 /*------------------------------------
 - レシピ詳細画面
 ------------------------------------*/
