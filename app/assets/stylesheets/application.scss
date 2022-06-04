@@ -521,6 +521,18 @@ input[type="text"]:focus {
   padding: 0;
 }
 
+.users-index-padding {
+  padding: 4.5rem 3rem 6rem;
+}
+
+.followers-followings-title-margin {
+  margin: 4.5rem 0;
+}
+
+.followers-followings-padding {
+  padding: 4.5rem 3rem;
+}
+
 /*========== フォロー中ボタン ==========*/
 // 通常時
 .btn-follow {
@@ -573,6 +585,16 @@ input[type="text"]:focus {
   width: 80%;
 }
 
+.profile-padding {
+  padding: 3rem 3rem 6rem;
+}
+
+@media (min-width: 480px) {          /* user-icon87 が変化するタイミングで padding を変化 */
+  .profile-padding {
+    padding: 6.4rem 3rem 6rem;
+  }
+}
+
 /*------------------------------------
 - レシピ詳細画面
 ------------------------------------*/
@@ -593,6 +615,16 @@ input[type="text"]:focus {
 .user-icon40 {
   width: 4rem;
   height: 4rem;
+}
+
+.recipes-show-padding {
+  padding: 3rem;
+}
+
+@media (min-width: 576px) {                  /* card の width がいったん 480px で固定されるタイミングで padding を変化 */
+  .recipes-show-padding {
+    padding: 6.4rem 3rem 3rem;
+  }
 }
 
 /*------------------------------------
@@ -624,12 +656,12 @@ input[type="text"]:focus {
   border-bottom-color: #fff !important;
 }
 
-.recipes-padding {
+.recipes-index-padding {
   padding: 3rem 2.25rem 4.5rem;
 }
 
 @media (min-width: 768px) {
-  .recipes-padding {
+  .recipes-index-padding {
     padding: 6.4rem 2.25rem;
   }
 }
