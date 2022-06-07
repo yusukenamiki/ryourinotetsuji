@@ -68,3 +68,4 @@ gem 'high_voltage'
 gem 'ransack'
 gem "refile-s3"
 gem 'dotenv-rails'
+gem 'aws-sdk-rails'
