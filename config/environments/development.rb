@@ -32,7 +32,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://www.ryourinotetsuji.com/' }
 
   if Rails.application.credentials.gmail.present?
     mail_address = Rails.application.credentials.gmail[:address]
@@ -43,7 +43,7 @@ Rails.application.configure do
   end
 
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :aws_sdk
   config.action_mailer.smtp_settings = {
     enable_starttls_auto: true,
     address: "smtp.gmail.com",
@@ -78,5 +78,5 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.action_mailer.default_url_options = { host: '192.168.33.11', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://www.ryourinotetsuji.com/' }
 end
