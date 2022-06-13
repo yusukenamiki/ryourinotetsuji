@@ -1,20 +1,20 @@
 <footer class="bg-footer">
   <div class="link3" style="margin-bottom: 4.5rem;">
-    <%= link_to page_path('terms') do %>
-      <div class="text-dark link3-mb-4">
+    <div class="link3-mb-4">
+      <%= link_to page_path('terms'), class:"link-title" do %>
         利用規約
-      </div>
-    <% end %>
-    <%= link_to page_path('privacy') do %>
-      <div class="text-dark link3-mb-4">
+      <% end %>
+    </div>
+    <div class="link3-mb-4">
+      <%= link_to page_path('privacy'), class:"link-title" do %>
         プライバシーポリシー
-      </div>
-    <% end %>
-    <%= link_to page_path('inquiry') do %>
-      <div class="text-dark link3-mb-4">
+      <% end %>
+    </div>
+    <div class="link3-mb-4">
+      <%= link_to page_path('inquiry'), class:"link-title" do %>
         お問い合わせ
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
   <div class="text-center" style="font-size: 1.2rem;">
     © 2022 料理のてつじ
