@@ -1,24 +1,40 @@
-# README
+# 料理のてつじ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+## 概要
+料理レシピの投稿・共有サービス
 
-* System dependencies
+## URL
+https://www.ryourinotetsuji.com/
 
-* Configuration
+## 機能一覧
+- ゲストログイン機能
+- ユーザー新規登録機能
+- ユーザーログイン機能
+- ユーザー一覧表示機能
+- ユーザー詳細表示機能
+- ユーザー編集機能
+- レシピ一覧表示機能
+- レシピランキング表示機能
+- レシピ詳細表示機能
+- レシピ投稿機能
+- レシピ編集機能
+- ページネーション機能
+- レスポンシブデザイン
+- いいね機能
+- フォロー機能
+- コメント機能
+- 検索機能
+- 画像ファイルのアップロード機能
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用技術
+- Ruby 2.6.5
+- Ruby on Rails 6.0.3.7
+- MySQL
+- Bootstrap
+- AWS ( VPC, EC2, Route53, ACM, ELB, S3, SES )
+- Nginx, Puma
+- RSpec
+- Git, GitHub
+- Vagrant
