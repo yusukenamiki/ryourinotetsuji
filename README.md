@@ -38,3 +38,6 @@ https://www.ryourinotetsuji.com/
 - RSpec
 - Git, GitHub
 - Vagrant
+
+## ER図
+![ER図](https://user-images.githubusercontent.com/88889364/174847651-7891ded6-9d75-4857-b32a-f068d4d0ac15.png)
