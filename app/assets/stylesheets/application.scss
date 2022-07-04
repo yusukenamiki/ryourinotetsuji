@@ -1141,6 +1141,7 @@ input[type="file" i]::-webkit-file-upload-button:hover {
 @media (min-width: 480px) {
   .main-image {
     height: 50.25rem;
+    background-image:image-url("top1005.png");/* 独自に変更 ( スペースをあけて「 url」ではなく、スペースをあけずに「image-url」と書かないと、本番環境で画像が表示されない */
   }
 }
 
