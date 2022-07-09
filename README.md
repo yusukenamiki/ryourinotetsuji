@@ -40,4 +40,4 @@ https://www.ryourinotetsuji.com/
 - Vagrant
 
 ## ER図
-![ER図](https://user-images.githubusercontent.com/88889364/174847651-7891ded6-9d75-4857-b32a-f068d4d0ac15.png)
+![ER図](https://user-images.githubusercontent.com/88889364/178103943-e6002caf-51e0-4b0b-863d-16930906b08b.png)
