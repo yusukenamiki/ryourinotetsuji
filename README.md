@@ -1,6 +1,6 @@
 # 料理のてつじ
 
-![ryourinotetsuji_top](https://user-images.githubusercontent.com/88889364/178109494-b1dcd50e-85c1-498f-b46d-567867c7fc20.png)
+![ryourinotetsuji_top](https://user-images.githubusercontent.com/88889364/178113485-d2d16a83-0271-4d29-b4d8-442ebe0e8928.png)
 
 ## 概要
 料理レシピの投稿・共有サービスです。
